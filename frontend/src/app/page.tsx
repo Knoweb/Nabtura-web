@@ -1,5 +1,7 @@
 import Hero from "@/components/home/Hero";
 import GlobalAnimatedBackground from "@/components/home/GlobalAnimatedBackground";
+
+export const revalidate = 0;
 import Challenge from "@/components/home/Challenge";
 import Difference from "@/components/home/Difference";
 import FeaturedSolutions from "@/components/home/FeaturedSolutions";
@@ -15,15 +17,26 @@ import Investment from "@/components/home/Investment";
 import WeMakeItWork from "@/components/home/WeMakeItWork";
 import UAECredibility from "@/components/home/UAECredibility";
 import FinalCTA from "@/components/home/FinalCTA";
+import { fetchAPI } from "@/lib/api";
 
-export default function Home() {
+export default async function Home() {
+  let latestBlogs = [];
+  try {
+    const res = await fetchAPI("/blogs?populate=*&pagination[limit]=5&sort[0]=publishedAt:desc");
+    if (res && res.data) {
+      latestBlogs = res.data;
+    }
+  } catch (error) {
+    console.warn("Failed to fetch latest blogs for home page slider", error);
+  }
+
   return (
     <>
       <Hero />
       <GlobalAnimatedBackground />
       <div className="global-bg-wrapper relative z-10">
         <Challenge />
-        <Difference />
+        <Difference blogs={latestBlogs} />
         <FeaturedSolutions />
         <Ecosystem />
         <WhoWeServe />
