@@ -65,19 +65,19 @@ export default function WhoWeServe() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-          {/* Left Column: Selector */}
-          <div className="lg:col-span-4">
-            <h3 className="text-xl text-gray-500 font-light mb-6">I AM A...</h3>
-            <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-12">
+          {/* Top Section: Compact Pill Selector */}
+          <div>
+            <h3 className="text-sm tracking-[0.2em] text-gray-500 font-bold mb-6 uppercase">Select Your Industry</h3>
+            <div className="flex flex-wrap gap-3">
               {audiences.map((audience) => (
                 <button
                   key={audience.id}
                   onClick={() => setActiveAudience(audience.id)}
-                  className={`text-left text-xl md:text-2xl font-bold tracking-wide transition-all duration-300 py-2 border-l-2 pl-4 ${
+                  className={`px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 border ${
                     activeAudience === audience.id 
-                      ? "border-nabtura-green text-white" 
-                      : "border-transparent text-gray-600 hover:text-gray-300 hover:border-gray-700"
+                      ? "bg-nabtura-green text-black border-nabtura-green shadow-lg shadow-nabtura-green/20 scale-105" 
+                      : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   {audience.label}
@@ -86,45 +86,49 @@ export default function WhoWeServe() {
             </div>
           </div>
 
-          {/* Right Column: Dynamic Content */}
-          <div className="lg:col-span-8 bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 min-h-[500px] flex flex-col justify-center">
+          {/* Bottom Section: Dynamic Content */}
+          <div className="bg-[#0a0a0a] border border-white/10 rounded-[2rem] p-8 md:p-12 min-h-[400px] flex flex-col justify-center shadow-2xl relative overflow-hidden">
+            {/* Subtle background glow based on active selection */}
+            <div className="absolute top-0 right-0 w-96 h-96 bg-nabtura-green/5 rounded-full blur-[100px] -z-10 translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+            
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeAudience}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4 }}
+                className="z-10"
               >
-                <h3 className="text-3xl md:text-5xl font-bold text-nabtura-green mb-10">
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-10">
                   {content.headline}
                 </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
                   <div>
-                    <h4 className="text-sm tracking-[0.2em] text-gray-500 uppercase mb-4">Possible Solutions</h4>
+                    <h4 className="text-sm tracking-[0.2em] text-nabtura-green uppercase mb-4 font-semibold">Possible Solutions</h4>
                     <ul className="space-y-3">
                       {content.solutions.map((sol: string) => (
                         <li key={sol} className="flex items-center text-lg text-gray-200">
-                          <span className="w-1.5 h-1.5 rounded-full bg-white/50 mr-3" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-nabtura-green mr-3" />
                           {sol}
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-sm tracking-[0.2em] text-gray-500 uppercase mb-4">Potential Benefits</h4>
+                    <h4 className="text-sm tracking-[0.2em] text-nabtura-green uppercase mb-4 font-semibold">Potential Benefits</h4>
                     <div className="flex flex-wrap gap-2 text-gray-300">
                       {content.benefits.map((ben: string, idx: number) => (
-                        <span key={ben}>
-                          {ben} {idx < content.benefits.length - 1 && <span className="text-nabtura-green mx-2">•</span>}
+                        <span key={ben} className="bg-white/5 px-4 py-2 rounded-lg text-sm border border-white/5">
+                          {ben}
                         </span>
                       ))}
                     </div>
                   </div>
                 </div>
 
-                <button className="group flex items-center text-white font-bold tracking-wider hover:text-nabtura-light-green transition-colors">
+                <button className="group flex items-center text-nabtura-light-green font-bold tracking-wider hover:text-white transition-colors">
                   {content.cta} <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
                 </button>
               </motion.div>
