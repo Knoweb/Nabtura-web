@@ -99,18 +99,22 @@ export default function Hero() {
           transition={{ delay: 1.5, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          <Link
-            href="#explore"
-            className="w-full sm:w-auto px-8 py-4 bg-nabtura-green text-black font-semibold rounded-full hover:bg-nabtura-light-green transition-all transform hover:scale-105"
-          >
-            EXPLORE NABTURA
-          </Link>
-          <Link
-            href="#location"
-            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all transform hover:scale-105"
-          >
-            TELL US ABOUT YOUR LOCATION
-          </Link>
+          <motion.div whileTap={{ scale: 0.95 }}>
+            <Link
+              href="#explore"
+              className="w-full sm:w-auto px-8 py-4 bg-nabtura-green text-black font-semibold rounded-full hover:bg-nabtura-light-green transition-all block"
+            >
+              EXPLORE NABTURA
+            </Link>
+          </motion.div>
+          <motion.div whileTap={{ scale: 0.95 }}>
+            <Link
+              href="#contact"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all block"
+            >
+              TELL US ABOUT YOUR LOCATION
+            </Link>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -119,9 +123,11 @@ export default function Hero() {
            transition={{ delay: 2, duration: 1 }}
            className="mt-12"
         >
-          <Link href="#invest" className="text-sm text-gray-400 hover:text-white flex items-center justify-center gap-2 transition-colors">
-            Looking to invest? <span>→</span>
-          </Link>
+          <motion.div whileTap={{ scale: 0.95 }} className="inline-block">
+            <Link href="#invest" className="text-sm text-gray-400 hover:text-white flex items-center justify-center gap-2 transition-colors p-2">
+              Looking to invest? <span>→</span>
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -12,7 +12,7 @@ const options = [
 
 export default function Investment() {
   return (
-    <section className="bg-black text-white relative overflow-hidden py-32 border-b border-white/5">
+    <section id="invest" className="bg-black text-white relative overflow-hidden py-32 border-b border-white/5">
       
       {/* Premium Background Visual */}
       <div className="absolute inset-0 z-0">
