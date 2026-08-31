@@ -64,44 +64,45 @@ export default function SolutionsDirectoryPage() {
       />
 
       <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="columns-1 lg:columns-2 gap-8 lg:gap-12">
           {solutionCategories.map((category, i) => {
             const Icon = category.icon;
             return (
-              <div key={i} className={`relative overflow-hidden group border border-white/10 rounded-[3rem] transition-colors ${category.borderColor}`}>
-                {/* Background Image */}
-                <div 
-                  className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${category.imageSrc})` }}
-                />
+              <div key={i} className={`group bg-[#0a0a0a] border border-white/10 rounded-[2rem] overflow-hidden transition-all hover:border-white/20 break-inside-avoid mb-8 lg:mb-12 shadow-2xl`}>
+                {/* Top Image Section */}
+                <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+                  <div 
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${category.imageSrc})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+                  
+                  {/* Icon floating on the image edge */}
+                  <div className="absolute bottom-4 left-8 w-14 h-14 rounded-2xl bg-black/80 backdrop-blur-md flex items-center justify-center border border-white/10 shadow-xl">
+                    <Icon className={`w-7 h-7 ${category.color}`} />
+                  </div>
+                </div>
                 
-                {/* Gradient Overlay for Text Readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
-
-                <div className="relative z-10 p-10 h-full flex flex-col">
-                  <div className="flex items-center gap-6 mb-8">
-                    <div className="w-16 h-16 rounded-full bg-black/50 flex items-center justify-center border border-white/10 backdrop-blur-md">
-                      <Icon className={`w-8 h-8 ${category.color}`} />
-                    </div>
-                    <div>
-                      <h2 className="text-2xl font-bold tracking-widest uppercase text-white shadow-black drop-shadow-md">{category.title}</h2>
-                      <p className="text-gray-300 mt-2 text-sm max-w-md drop-shadow-md">{category.description}</p>
-                    </div>
+                {/* Bottom Content Section */}
+                <div className="p-8 pt-4">
+                  <div className="mb-8">
+                    <h2 className="text-2xl font-bold tracking-widest uppercase text-white mb-2">{category.title}</h2>
+                    <p className="text-gray-400 text-sm leading-relaxed">{category.description}</p>
                   </div>
 
-                  <div className="space-y-4 mt-auto">
+                  <div className="flex flex-col gap-2">
                     {category.links.map((link, j) => (
                       <Link 
                         key={j} 
                         href={link.href}
-                        className="group/link block bg-black/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-black/70 hover:border-white/30 transition-all"
+                        className="group/link flex items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
                       >
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h3 className={`font-bold text-lg text-gray-100 group-hover/link:${category.color} transition-colors`}>{link.name}</h3>
-                            <p className="text-sm text-gray-400 mt-1">{link.desc}</p>
-                          </div>
-                          <ArrowRight className={`w-5 h-5 text-gray-500 group-hover/link:${category.color} group-hover/link:translate-x-2 transition-all`} />
+                        <div>
+                          <h3 className={`font-semibold text-gray-200 group-hover/link:${category.color} transition-colors`}>{link.name}</h3>
+                          <p className="text-xs text-gray-500 mt-1">{link.desc}</p>
+                        </div>
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-white/5 group-hover/link:bg-white/10 transition-colors`}>
+                          <ArrowRight className={`w-4 h-4 text-gray-400 group-hover/link:${category.color} transition-colors`} />
                         </div>
                       </Link>
                     ))}
