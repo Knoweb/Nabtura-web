@@ -31,7 +31,7 @@ export default function Hero() {
           setLatestBlog(res.data[0]);
         }
       } catch (error) {
-        console.error("Failed to fetch latest blog", error);
+        console.warn("Failed to fetch latest blog", error);
       }
     }
     getLatestBlog();

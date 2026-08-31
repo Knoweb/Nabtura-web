@@ -3,6 +3,33 @@
 import { motion } from "framer-motion";
 import { Zap, SlidersHorizontal, MapPin, Activity, Eye, BrainCircuit, Sliders, Cpu, Sparkles } from "lucide-react";
 
+const sampleBlogs = [
+  {
+    id: 1,
+    title: "NABTURA Launches Smart Greenhouse Project in Dubai",
+    slug: "nabtura-launches-smart-greenhouse-dubai",
+    content: "We are thrilled to announce the completion of our latest smart greenhouse facility in the heart of Dubai, utilizing state-of-the-art climate control.",
+    coverImage: { url: "https://picsum.photos/seed/greenhouse1/800/600" },
+    publishedAt: "2026-08-15T10:00:00Z"
+  },
+  {
+    id: 2,
+    title: "The Future of Microgreens in Urban Hospitality",
+    slug: "future-microgreens-urban-hospitality",
+    content: "How luxury hotels and restaurants in the UAE are adopting on-site vertical farming to provide hyper-local, fresh microgreens to their guests.",
+    coverImage: { url: "https://picsum.photos/seed/microgreens2/800/600" },
+    publishedAt: "2026-08-10T14:30:00Z"
+  },
+  {
+    id: 3,
+    title: "Water Intelligence: Saving 40% in Landscape Irrigation",
+    slug: "water-intelligence-saving-irrigation",
+    content: "Our new automated sensor-driven irrigation systems have successfully reduced water consumption by 40% across major commercial landscapes.",
+    coverImage: { url: "https://picsum.photos/seed/irrigation3/800/600" },
+    publishedAt: "2026-08-05T09:15:00Z"
+  }
+];
+
 const pillars = [
   {
     icon: Zap,
@@ -72,33 +99,101 @@ export default function Difference() {
           </h2>
         </motion.div>
 
-        {/* Three Pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
-          {pillars.map((pillar, idx) => (
-            <motion.div
-              key={pillar.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.2 }}
-              className="group bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors"
-            >
-              <div className="w-12 h-12 rounded-full bg-nabtura-green/20 flex items-center justify-center mb-6 group-hover:bg-nabtura-green/40 transition-colors">
-                <pillar.icon className="text-nabtura-green" size={24} />
+        {/* Split Layout: Pillars (Left) & News Slider (Right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-24">
+          
+          {/* Left Side: Three Pillars */}
+          <div className="flex flex-col gap-6">
+            {pillars.map((pillar, idx) => (
+              <motion.div
+                key={pillar.title}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.2 }}
+                className="group flex flex-col sm:flex-row items-start sm:items-center bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors gap-6"
+              >
+                <div className="w-16 h-16 flex-shrink-0 rounded-full bg-nabtura-green/20 flex items-center justify-center group-hover:bg-nabtura-green/40 transition-colors">
+                  <pillar.icon className="text-nabtura-green w-8 h-8" />
+                </div>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-bold tracking-widest mb-1">{pillar.title}</h3>
+                  <p className="text-gray-400 font-medium text-sm mb-3">{pillar.subtitle}</p>
+                  <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                    {pillar.features.map((feature) => (
+                      <li key={feature} className="flex items-center text-xs text-gray-300">
+                        <span className="w-1 h-1 rounded-full bg-nabtura-green mr-2 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Right Side: News & Blogs Slider */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            viewport={{ once: true }}
+            className="h-full flex flex-col bg-white/5 border border-white/10 rounded-3xl p-6 xl:p-8 relative overflow-hidden"
+          >
+            {/* Soft Glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/10 blur-[80px] rounded-full pointer-events-none" />
+            
+            <div className="flex items-center justify-between mb-8 relative z-10">
+              <div>
+                <h3 className="text-2xl font-bold tracking-widest uppercase">LATEST UPDATES</h3>
+                <p className="text-sm text-nabtura-green tracking-wider mt-1">News & Achievements</p>
               </div>
-              <h3 className="text-2xl font-bold tracking-widest mb-2">{pillar.title}</h3>
-              <p className="text-gray-400 mb-6 font-medium">{pillar.subtitle}</p>
-              
-              <ul className="space-y-3">
-                {pillar.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm text-gray-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-nabtura-green mr-3" />
-                    {feature}
-                  </li>
+              <span className="flex h-3 w-3 relative">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-nabtura-green opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-nabtura-green"></span>
+              </span>
+            </div>
+
+            {/* Vertical Auto-scrolling Slider Container */}
+            <div className="relative flex-grow overflow-hidden mask-image-vertical">
+              <motion.div 
+                className="flex flex-col gap-6"
+                animate={{ y: ["0%", "-50%"] }}
+                transition={{ 
+                  y: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 20,
+                    ease: "linear",
+                  }
+                }}
+              >
+                {/* We render the list twice to create a seamless infinite scroll effect */}
+                {[...sampleBlogs, ...sampleBlogs].map((blog, i) => (
+                  <div key={`${blog.id}-${i}`} className="flex flex-col bg-black/40 border border-white/5 rounded-2xl overflow-hidden hover:border-nabtura-green/30 transition-colors group">
+                    <div className="h-40 w-full overflow-hidden relative">
+                      <img 
+                        src={blog.coverImage.url} 
+                        alt={blog.title} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h4 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-nabtura-green transition-colors leading-tight">
+                        {blog.title}
+                      </h4>
+                      <p className="text-xs text-gray-400 line-clamp-2">
+                        {blog.content.replace(/<[^>]*>?/gm, '')}
+                      </p>
+                      <a href={`/blog/${blog.slug}`} className="inline-block mt-4 text-xs font-bold text-nabtura-green tracking-widest uppercase hover:text-white transition-colors">
+                        Read More &rarr;
+                      </a>
+                    </div>
+                  </div>
                 ))}
-              </ul>
-            </motion.div>
-          ))}
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Smart Cycle - SmartArt Style */}
