@@ -59,7 +59,7 @@ export default function Challenge() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tighter mb-16 text-center md:text-left"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-16 text-center md:text-left"
         >
           THE WAY WE GROW<br />HAS TO CHANGE.
         </motion.h2>
@@ -76,7 +76,7 @@ export default function Challenge() {
                   activeTab === challenge.id ? "opacity-100 pl-4" : "opacity-40 hover:opacity-70"
                 }`}
               >
-                <h3 className="text-4xl md:text-5xl font-extrabold tracking-widest border-l-4 border-transparent">
+                <h3 className="text-3xl md:text-4xl font-extrabold tracking-widest border-l-4 border-transparent">
                   {activeTab === challenge.id && (
                     <motion.span 
                       layoutId="activeBorder"
@@ -99,7 +99,7 @@ export default function Challenge() {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="text-2xl lg:text-4xl font-light leading-snug text-gray-200 border-l border-white/20 pl-8 py-4">
+                <p className="text-xl lg:text-2xl font-light leading-snug text-gray-200 border-l border-white/20 pl-8 py-4">
                   {activeChallenge?.description}
                 </p>
               </motion.div>
@@ -108,7 +108,7 @@ export default function Challenge() {
           
           {/* Mobile Description (shows right under the active word) */}
           <div className="md:hidden mt-4">
-            <p className="text-xl font-light text-gray-300">
+            <p className="text-lg font-light text-gray-300">
                {activeChallenge?.description}
             </p>
           </div>
