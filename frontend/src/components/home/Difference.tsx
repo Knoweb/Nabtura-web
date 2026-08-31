@@ -45,7 +45,7 @@ const cycle = ["SENSE", "MONITOR", "ANALYZE", "CONTROL", "AUTOMATE", "OPTIMIZE"]
 
 export default function Difference() {
   return (
-    <section className="bg-black text-white py-24 border-t border-white/5 relative overflow-hidden">
+    <section className="bg-transparent text-white py-24 border-t border-white/5 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-nabtura-green/10 blur-[120px] rounded-full pointer-events-none" />
 

@@ -9,7 +9,7 @@ export default function AboutPage() {
         eyebrow="ABOUT NABTURA"
         headline="BASED IN THE UAE. BUILT TO THINK BEYOND IT."
         tagline="Engineering green solutions for challenging environments."
-        bgImageUrl="/smart_greenhouse_mockup_1788109457162.jpg"
+        bgImageUrl="/possibility_smart_greenhouse_1788160454551.jpg"
         accentColor="text-nabtura-sand"
       />
 

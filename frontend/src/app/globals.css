@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #09110E;
+  --color-background: #101614;
   --color-foreground: #ededed;
   --font-sans: var(--font-outfit);
   
@@ -15,8 +15,8 @@
   /* UAE/Desert & Premium Investment Accents */
   --color-nabtura-sand: #D4AF37;
   
-  /* Premium Dark Background (Instead of pure black) */
-  --color-nabtura-slate: #09110E;
+  /* Premium Dark Background (Lighter than pure black for readability) */
+  --color-nabtura-slate: #16201C;
 }
 
 body {

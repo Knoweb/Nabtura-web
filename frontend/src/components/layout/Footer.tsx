@@ -3,7 +3,7 @@ import { Phone, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-gray-400 py-16 border-t border-white/10">
+    <footer className="bg-nabtura-slate text-gray-400 py-16 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
