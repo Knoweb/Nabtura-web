@@ -128,17 +128,23 @@ export default function WhoWeServe() {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    if (!scrollRef.current || isHovered) return;
+    if (isHovered) return;
     const interval = setInterval(() => {
-      if (scrollRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        if (scrollLeft + clientWidth >= scrollWidth - 10) {
-          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+      setActiveAudience((current) => {
+        const currentIndex = audiences.findIndex(a => a.id === current);
+        const nextIndex = (currentIndex + 1) % audiences.length;
+        
+        if (scrollRef.current) {
+          const buttons = scrollRef.current.querySelectorAll('button');
+          if (buttons[nextIndex]) {
+             // Scroll the next button into view centrally
+             buttons[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
         }
-      }
-    }, 3000);
+        
+        return audiences[nextIndex].id;
+      });
+    }, 4000); // 4 seconds per slide
     return () => clearInterval(interval);
   }, [isHovered]);
 
@@ -167,17 +173,9 @@ export default function WhoWeServe() {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {/* Left Scroll Button */}
-            <button 
-              onClick={() => scroll("left")}
-              className="absolute left-0 z-20 w-10 h-10 rounded-full bg-black/80 flex items-center justify-center text-white border border-white/20 shadow-lg hover:bg-nabtura-green hover:text-black transition-colors -ml-2 opacity-0 group-hover/scroll:opacity-100 hidden md:flex"
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-
             <div 
               ref={scrollRef}
-              className="flex overflow-x-auto gap-3 pb-4 snap-x w-full px-2" 
+              className="flex overflow-x-auto gap-3 pb-4 snap-x w-full pr-12" 
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <style dangerouslySetInnerHTML={{__html: `
@@ -198,17 +196,22 @@ export default function WhoWeServe() {
               ))}
             </div>
 
-            {/* Right Scroll Button */}
-            <button 
-              onClick={() => scroll("right")}
-              className="absolute right-0 z-20 w-10 h-10 rounded-full bg-black/80 flex items-center justify-center text-white border border-white/20 shadow-lg hover:bg-nabtura-green hover:text-black transition-colors -mr-2 opacity-0 group-hover/scroll:opacity-100 hidden md:flex"
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            {/* Always visible Right Scroll Button */}
+            <div className="absolute right-0 z-20 pb-4">
+              <motion.button 
+                onClick={() => scroll("right")}
+                animate={{ x: [0, 8, 0] }}
+                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-nabtura-green border border-white/20 shadow-[0_0_20px_rgba(0,0,0,0.9)] hover:bg-nabtura-green hover:text-black transition-colors"
+              >
+                <ChevronRight className="w-6 h-6 ml-1" />
+              </motion.button>
+            </div>
 
-            {/* Optional gradient fade on edges to indicate scrolling */}
-            <div className="absolute left-0 top-0 bottom-4 w-8 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
-            <div className="absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
+            {/* Gradient fade on right edge to indicate scrolling */}
+            <div className="absolute right-0 top-0 bottom-4 w-16 bg-gradient-to-l from-black via-black/80 to-transparent pointer-events-none z-10" />
           </div>
 
           {/* Bottom Section: Dynamic Content */}
