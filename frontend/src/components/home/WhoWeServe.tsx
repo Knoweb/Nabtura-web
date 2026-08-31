@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -258,9 +259,11 @@ export default function WhoWeServe() {
                   </div>
                 </div>
 
-                <button className="group flex items-center text-nabtura-light-green font-bold tracking-wider hover:text-white transition-colors">
-                  {content.cta} <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
-                </button>
+                <Link href="/possibilities">
+                  <button className="group flex items-center text-nabtura-light-green font-bold tracking-wider hover:text-white transition-colors">
+                    {content.cta} <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
+                  </button>
+                </Link>
               </motion.div>
             </AnimatePresence>
           </div>

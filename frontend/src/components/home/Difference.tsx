@@ -52,9 +52,11 @@ const cycleSteps = [
 
 export default function Difference() {
   return (
-    <section className="bg-black text-white py-24 border-t border-white/5 relative overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-64 bg-nabtura-green/10 blur-[120px] rounded-full pointer-events-none" />
+    <section className="bg-[#050A08] text-white py-24 border-t border-white/5 relative overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-nabtura-green/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-nabtura-light-green/5 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+      <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-nabtura-blue/5 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
