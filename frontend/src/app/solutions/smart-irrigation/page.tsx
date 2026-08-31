@@ -14,28 +14,28 @@ export default function SmartIrrigationPage() {
       />
 
       {/* The Challenge & Standalone Solution */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/10">
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-divider">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold text-content mb-8">
               The Water Challenge
             </h2>
-            <p className="text-gray-400 text-xl font-light leading-relaxed mb-8">
+            <p className="text-content-muted text-xl font-light leading-relaxed mb-8">
               In challenging climates, water is the most valuable and scarce resource. Conventional irrigation methods result in massive water loss through evaporation, runoff, and over-watering. NABTURA’s intelligent systems ensure that water is delivered precisely when and where it is needed, drastically reducing waste while improving plant health.
             </p>
             <div className="bg-nabtura-blue/10 border-l-4 border-nabtura-blue p-6 rounded-r-2xl">
               <h4 className="text-nabtura-blue font-bold tracking-widest text-sm uppercase mb-2">Available as a Standalone Solution</h4>
-              <p className="text-gray-300 font-light text-lg">
+              <p className="text-content-muted font-light text-lg">
                 You don't need a full NABTURA greenhouse or landscape to benefit. You can approach us purely to upgrade or install a world-class smart irrigation network.
               </p>
             </div>
           </div>
           
-          <div className="bg-white/5 backdrop-blur-xl/50 p-12 rounded-[3rem] border border-white/5">
-            <h3 className="text-2xl font-bold text-white mb-6">Applications</h3>
+          <div className="bg-overlay backdrop-blur-xl/50 p-12 rounded-[3rem] border border-divider">
+            <h3 className="text-2xl font-bold text-content mb-6">Applications</h3>
             <ul className="space-y-4">
               {["Agriculture", "Commercial Landscapes", "Urban Forests", "Hospitality / Resorts", "Premium Residential", "Desert Greening"].map((app) => (
-                <li key={app} className="flex items-center gap-4 text-gray-300">
+                <li key={app} className="flex items-center gap-4 text-content-muted">
                   <CheckCircle2 className="text-nabtura-blue w-5 h-5 shrink-0" />
                   <span className="text-lg font-light">{app}</span>
                 </li>
@@ -46,11 +46,11 @@ export default function SmartIrrigationPage() {
       </section>
 
       {/* What Makes It Smart */}
-      <section className="py-24 bg-transparent border-b border-white/10">
+      <section className="py-24 bg-transparent border-b border-divider">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">What Makes Irrigation Smart?</h2>
-            <p className="text-gray-400 text-xl font-light">An ecosystem designed to sense, decide, and deliver.</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-content mb-6">What Makes Irrigation Smart?</h2>
+            <p className="text-content-muted text-xl font-light">An ecosystem designed to sense, decide, and deliver.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -64,19 +64,19 @@ export default function SmartIrrigationPage() {
             ].map((feature, i) => {
               const Icon = feature.icon;
               return (
-                <div key={i} className="bg-nabtura-slate border border-white/5 p-8 rounded-3xl hover:border-nabtura-blue/50 transition-colors group">
+                <div key={i} className="bg-nabtura-slate border border-divider p-8 rounded-3xl hover:border-nabtura-blue/50 transition-colors group">
                   <div className="w-12 h-12 bg-nabtura-blue/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-nabtura-blue/20 transition-colors">
                     <Icon className="text-nabtura-blue w-6 h-6" />
                   </div>
-                  <h4 className="text-white font-bold text-lg mb-3 tracking-wide">{feature.title}</h4>
-                  <p className="text-gray-400 font-light text-sm leading-relaxed">{feature.desc}</p>
+                  <h4 className="text-content font-bold text-lg mb-3 tracking-wide">{feature.title}</h4>
+                  <p className="text-content-muted font-light text-sm leading-relaxed">{feature.desc}</p>
                 </div>
               );
             })}
           </div>
 
           <div className="mt-20 text-center">
-            <Link href="/contact" className="group inline-flex items-center text-white bg-white/10 hover:bg-nabtura-blue hover:text-black px-8 py-4 rounded-full font-bold tracking-widest text-sm uppercase transition-all">
+            <Link href="/contact" className="group inline-flex items-center text-content bg-overlay hover:bg-nabtura-blue hover:text-black px-8 py-4 rounded-full font-bold tracking-widest text-sm uppercase transition-all">
               Request an Irrigation Assessment
               <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-2 transition-transform" />
             </Link>
@@ -87,3 +87,4 @@ export default function SmartIrrigationPage() {
     </main>
   );
 }
+

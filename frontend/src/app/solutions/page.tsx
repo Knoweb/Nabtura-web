@@ -68,17 +68,17 @@ export default function SolutionsDirectoryPage() {
           {solutionCategories.map((category, i) => {
             const Icon = category.icon;
             return (
-              <div key={i} className={`group bg-nabtura-slate border border-white/10 rounded-[2rem] overflow-hidden transition-all hover:border-white/20 break-inside-avoid mb-8 lg:mb-12 shadow-2xl`}>
+              <div key={i} className={`group bg-[#0a0a0a] border border-white/10 rounded-[2rem] overflow-hidden transition-all hover:border-white/20 break-inside-avoid mb-8 lg:mb-12 shadow-2xl`}>
                 {/* Top Image Section */}
                 <div className="relative h-48 sm:h-56 w-full overflow-hidden">
                   <div 
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                     style={{ backgroundImage: `url(${category.imageSrc})` }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-nabtura-slate to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
                   
                   {/* Icon floating on the image edge */}
-                  <div className="absolute bottom-4 left-8 w-14 h-14 rounded-2xl bg-nabtura-slate/80 backdrop-blur-md flex items-center justify-center border border-white/10 shadow-xl">
+                  <div className="absolute bottom-4 left-8 w-14 h-14 rounded-2xl bg-black/80 backdrop-blur-md flex items-center justify-center border border-white/10 shadow-xl">
                     <Icon className={`w-7 h-7 ${category.color}`} />
                   </div>
                 </div>

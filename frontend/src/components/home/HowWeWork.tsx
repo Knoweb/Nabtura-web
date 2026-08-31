@@ -23,11 +23,11 @@ const models = [
 
 export default function HowWeWork() {
   return (
-    <section id="how-we-work" className="bg-nabtura-slate text-white py-32 border-b border-white/5">
+    <section id="how-we-work" className="bg-nabtura-slate text-content py-32 border-b border-divider">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-20 max-w-4xl mx-auto">
-          <h2 className="text-sm tracking-[0.3em] text-gray-500 font-bold mb-6 uppercase">
+          <h2 className="text-sm tracking-[0.3em] text-content-muted font-bold mb-6 uppercase">
             FLEXIBLE WAYS TO WORK WITH NABTURA
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
@@ -47,19 +47,19 @@ export default function HowWeWork() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-white/5 border border-white/10 rounded-3xl p-10 hover:bg-white/10 hover:border-white/20 transition-all group"
+                className="bg-overlay border border-divider rounded-3xl p-10 hover:bg-overlay hover:border-divider transition-all group"
               >
-                <div className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-xl flex items-center justify-center mb-8 border border-white/5 group-hover:border-nabtura-green transition-colors">
-                  <Icon className="w-8 h-8 text-gray-400 group-hover:text-nabtura-light-green transition-colors" />
+                <div className="w-16 h-16 rounded-full bg-overlay backdrop-blur-xl flex items-center justify-center mb-8 border border-divider group-hover:border-nabtura-green transition-colors">
+                  <Icon className="w-8 h-8 text-content-muted group-hover:text-nabtura-light-green transition-colors" />
                 </div>
-                <h4 className="text-2xl font-bold text-white mb-4 leading-tight">
+                <h4 className="text-2xl font-bold text-content mb-4 leading-tight">
                   {model.title}
                 </h4>
-                <p className="text-gray-400 font-light text-lg">
+                <p className="text-content-muted font-light text-lg">
                   {model.desc}
                 </p>
                 
-                <div className="mt-8 pt-8 border-t border-white/10">
+                <div className="mt-8 pt-8 border-t border-divider">
                   <span className="text-sm font-bold tracking-widest uppercase text-nabtura-green group-hover:text-nabtura-light-green flex items-center">
                     Explore <ArrowRight className="ml-2 w-4 h-4" />
                   </span>
@@ -70,11 +70,11 @@ export default function HowWeWork() {
         </div>
 
         <div className="text-center">
-          <p className="text-gray-400 text-lg mb-6">
+          <p className="text-content-muted text-lg mb-6">
             Need the location prepared too? Site preparation, infrastructure and supporting civil works can be considered.
           </p>
           <div className="inline-flex flex-col items-center">
-            <p className="text-white font-bold tracking-widest uppercase text-sm mb-4">
+            <p className="text-content font-bold tracking-widest uppercase text-sm mb-4">
               NOT SURE WHICH MODEL SUITS YOU?
             </p>
             <button className="group inline-flex items-center text-nabtura-light-green font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-light-green pb-1 transition-all">
@@ -88,3 +88,4 @@ export default function HowWeWork() {
     </section>
   );
 }
+
