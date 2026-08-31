@@ -56,7 +56,7 @@ export default function GreenWhereItMatters() {
         </p>
 
         {/* Rotating Concepts */}
-        <div className="bg-black/50 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-16 max-w-4xl mx-auto shadow-2xl shadow-nabtura-green/5 relative">
+        <div className="bg-white/5 backdrop-blur-xl/50 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-16 max-w-4xl mx-auto shadow-2xl shadow-nabtura-green/5 relative">
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-nabtura-green text-black px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase">
             Concepts
           </div>

@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
@@ -27,11 +22,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-black text-white">
+      <body className="min-h-full flex flex-col bg-nabtura-slate text-white font-sans relative selection:bg-nabtura-green selection:text-black">
+        {/* Ambient Premium Glows */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-nabtura-green/10 blur-[120px] rounded-full mix-blend-screen opacity-50"></div>
+          <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-nabtura-blue/10 blur-[150px] rounded-full mix-blend-screen opacity-50"></div>
+        </div>
+
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow relative z-0">{children}</main>
         <Footer />
       </body>
     </html>

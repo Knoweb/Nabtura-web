@@ -49,7 +49,7 @@ export default function HowWeWork() {
                 transition={{ delay: i * 0.1, duration: 0.5 }}
                 className="bg-white/5 border border-white/10 rounded-3xl p-10 hover:bg-white/10 hover:border-white/20 transition-all group"
               >
-                <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center mb-8 border border-white/5 group-hover:border-nabtura-green transition-colors">
+                <div className="w-16 h-16 rounded-full bg-white/5 backdrop-blur-xl flex items-center justify-center mb-8 border border-white/5 group-hover:border-nabtura-green transition-colors">
                   <Icon className="w-8 h-8 text-gray-400 group-hover:text-nabtura-light-green transition-colors" />
                 </div>
                 <h4 className="text-2xl font-bold text-white mb-4 leading-tight">

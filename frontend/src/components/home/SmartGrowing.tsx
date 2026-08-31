@@ -49,7 +49,7 @@ export default function SmartGrowing() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1, duration: 0.5 }}
-                    className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-black border border-white/10 flex items-center justify-center mb-6 group-hover:border-nabtura-green group-hover:bg-white/5 transition-all shadow-xl"
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center mb-6 group-hover:border-nabtura-green group-hover:bg-white/5 transition-all shadow-xl"
                   >
                     <Icon className="w-8 h-8 md:w-10 md:h-10 text-gray-400 group-hover:text-nabtura-light-green transition-colors" strokeWidth={1.5} />
                   </motion.div>
@@ -63,7 +63,7 @@ export default function SmartGrowing() {
         </div>
 
         {/* Bottom Statement */}
-        <div className="bg-black/50 backdrop-blur-xl border border-white/10 rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto shadow-2xl">
+        <div className="bg-white/5 backdrop-blur-xl/50 backdrop-blur-xl border border-white/10 rounded-3xl p-10 md:p-16 text-center max-w-4xl mx-auto shadow-2xl">
           <h4 className="text-3xl md:text-4xl font-bold text-white mb-8">
             SOIL ISN'T ALWAYS REQUIRED.
           </h4>

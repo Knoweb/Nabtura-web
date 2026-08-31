@@ -31,7 +31,7 @@ export default function SmartIrrigationPage() {
             </div>
           </div>
           
-          <div className="bg-black/50 p-12 rounded-[3rem] border border-white/5">
+          <div className="bg-white/5 backdrop-blur-xl/50 p-12 rounded-[3rem] border border-white/5">
             <h3 className="text-2xl font-bold text-white mb-6">Applications</h3>
             <ul className="space-y-4">
               {["Agriculture", "Commercial Landscapes", "Urban Forests", "Hospitality / Resorts", "Premium Residential", "Desert Greening"].map((app) => (
@@ -46,7 +46,7 @@ export default function SmartIrrigationPage() {
       </section>
 
       {/* What Makes It Smart */}
-      <section className="py-24 bg-black border-b border-white/10">
+      <section className="py-24 bg-transparent border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">What Makes Irrigation Smart?</h2>

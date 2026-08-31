@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function UrbanForestsPage() {
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="CREATE GREEN"
         headline="URBAN FORESTS"
@@ -54,7 +54,7 @@ export default function UrbanForestsPage() {
                   const Icon = step.icon;
                   return (
                     <div key={i} className="flex gap-6 items-start group">
-                      <div className="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center shrink-0 group-hover:border-nabtura-green transition-colors">
+                      <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center shrink-0 group-hover:border-nabtura-green transition-colors">
                         <Icon className="w-5 h-5 text-gray-400 group-hover:text-nabtura-green transition-colors" />
                       </div>
                       <div>
@@ -67,7 +67,7 @@ export default function UrbanForestsPage() {
               </div>
             </div>
 
-            <div className="bg-black/50 p-12 rounded-[3rem] border border-white/5 flex flex-col justify-center">
+            <div className="bg-white/5 backdrop-blur-xl/50 p-12 rounded-[3rem] border border-white/5 flex flex-col justify-center">
               <h3 className="text-3xl font-bold text-white mb-6">Why Create One?</h3>
               <ul className="space-y-4 text-gray-300 font-light text-lg mb-12">
                 <li>• Reduce urban heat islands significantly.</li>

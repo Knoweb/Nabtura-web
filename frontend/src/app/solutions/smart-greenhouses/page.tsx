@@ -24,11 +24,11 @@ export default function SmartGreenhousesPage() {
               Conventional agriculture struggles in extreme climates. Our smart greenhouses create an optimal, isolated environment where every factor—climate, water, and nutrients—is managed to maximize yield and quality, regardless of the harsh conditions outside.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-black/50 p-6 rounded-2xl border border-white/5">
+              <div className="bg-white/5 backdrop-blur-xl/50 p-6 rounded-2xl border border-white/5">
                 <h4 className="text-nabtura-green font-bold text-2xl mb-2">365</h4>
                 <p className="text-gray-400 text-sm tracking-widest uppercase">Days of Production</p>
               </div>
-              <div className="bg-black/50 p-6 rounded-2xl border border-white/5">
+              <div className="bg-white/5 backdrop-blur-xl/50 p-6 rounded-2xl border border-white/5">
                 <h4 className="text-nabtura-green font-bold text-2xl mb-2">-90%</h4>
                 <p className="text-gray-400 text-sm tracking-widest uppercase">Water Usage</p>
               </div>
@@ -50,7 +50,7 @@ export default function SmartGreenhousesPage() {
       </section>
 
       {/* How it works */}
-      <section className="py-24 bg-black border-b border-white/10">
+      <section className="py-24 bg-transparent border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">How the Smart Greenhouse Works</h2>
@@ -92,7 +92,7 @@ export default function SmartGreenhousesPage() {
             <h3 className="text-2xl font-bold text-white mb-6">Who Is It For?</h3>
             <div className="flex flex-wrap gap-3">
               {["Investors", "Commercial Farms", "Developers", "Government", "Retailers", "Hotels"].map((audience) => (
-                <span key={audience} className="px-4 py-2 rounded-full bg-black border border-white/20 text-gray-300 text-sm font-bold tracking-widest uppercase">
+                <span key={audience} className="px-4 py-2 rounded-full bg-transparent border border-white/20 text-gray-300 text-sm font-bold tracking-widest uppercase">
                   {audience}
                 </span>
               ))}

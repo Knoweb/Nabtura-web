@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function SmartMicrogreensPage() {
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="GROW FOOD"
         headline="SMART MICROGREENS"
@@ -54,7 +54,7 @@ export default function SmartMicrogreensPage() {
               </ul>
             </div>
 
-            <div className="bg-black/50 border border-white/5 p-10 rounded-3xl">
+            <div className="bg-white/5 backdrop-blur-xl/50 border border-white/5 p-10 rounded-3xl">
               <h3 className="text-2xl font-bold text-white mb-8">Who Is It For?</h3>
               <div className="grid grid-cols-2 gap-6">
                 {[

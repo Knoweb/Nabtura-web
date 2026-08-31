@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function LandscapesPage() {
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="CREATE GREEN"
         headline="LANDSCAPES"
@@ -57,7 +57,7 @@ export default function LandscapesPage() {
             ].map((type, i) => {
               const Icon = type.icon;
               return (
-                <div key={i} className="bg-black/50 border border-white/5 p-8 rounded-3xl hover:border-nabtura-green/50 transition-colors group">
+                <div key={i} className="bg-white/5 backdrop-blur-xl/50 border border-white/5 p-8 rounded-3xl hover:border-nabtura-green/50 transition-colors group">
                   <Icon className="text-nabtura-green w-8 h-8 mb-6 group-hover:scale-110 transition-transform" />
                   <h4 className="text-white font-bold text-lg mb-3 tracking-wide">{type.title}</h4>
                   <p className="text-gray-400 font-light text-sm">{type.desc}</p>
