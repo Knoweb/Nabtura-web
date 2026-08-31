@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 const audiences = [
   { id: "investor", label: "Investors & Entrepreneurs" },
@@ -36,12 +36,84 @@ const contentMap: Record<string, any> = {
     cta: "SEE HOTEL POSSIBILITIES",
   },
   investor: {
-    headline: "Smart agriculture. Solid returns.",
-    solutions: ["Smart Greenhouse", "Microgreens", "Partnership opportunities"],
-    benefits: ["Scalability", "Food Security", "Managed Operations", "Tech-Driven ROI"],
-    cta: "SEE INVESTMENT POSSIBILITIES",
+    headline: "START SOMETHING THAT GROWS.",
+    solutions: ["Smart Microgreens", "Compact Growing Facility", "Smart Greenhouse", "Managed Growing", "Commercial Hydroponics", "Partnership Opportunities"],
+    benefits: ["Entry-Level Opportunities", "Scalable Growing", "Managed Options", "Technology Support"],
+    cta: "EXPLORE BUSINESS OPPORTUNITIES",
   },
-  // Default fallback for others in this demo
+  residential: {
+    headline: "GROW CLOSER TO HOME.",
+    solutions: ["Grow-at-Home", "Kitchen Garden", "Herb Garden", "Compact Hydroponics", "Mini Greenhouse", "Edible Landscape", "Smart Landscape"],
+    benefits: ["Fresh Produce", "Convenience", "Green Living", "Food Visibility", "Beautiful Outdoor Space"],
+    cta: "EXPLORE YOUR HOME'S POTENTIAL",
+  },
+  villa: {
+    headline: "GROW CLOSER TO HOME.",
+    solutions: ["Grow-at-Home", "Kitchen Garden", "Herb Garden", "Compact Hydroponics", "Mini Greenhouse", "Edible Landscape", "Smart Landscape"],
+    benefits: ["Fresh Produce", "Convenience", "Green Living", "Food Visibility", "Beautiful Outdoor Space"],
+    cta: "EXPLORE YOUR HOME'S POTENTIAL",
+  },
+  landowner: {
+    headline: "GROW CLOSER TO HOME.",
+    solutions: ["Grow-at-Home", "Kitchen Garden", "Herb Garden", "Compact Hydroponics", "Mini Greenhouse", "Edible Landscape", "Smart Landscape"],
+    benefits: ["Fresh Produce", "Convenience", "Green Living", "Food Visibility", "Beautiful Outdoor Space"],
+    cta: "EXPLORE YOUR HOME'S POTENTIAL",
+  },
+  government: {
+    headline: "CREATE GREEN AT A LARGER SCALE.",
+    solutions: ["Urban Forests", "Desert Greening", "Smart Irrigation", "Public Landscapes", "Controlled Agriculture", "Nurseries", "Environmental Projects"],
+    benefits: ["Greener Communities", "Water Management", "Public Experience", "Food Initiatives", "Environmental Improvement"],
+    cta: "DISCUSS A PROJECT",
+  },
+  school: {
+    headline: "CREATE GREEN AT A LARGER SCALE.",
+    solutions: ["Urban Forests", "Desert Greening", "Smart Irrigation", "Public Landscapes", "Controlled Agriculture", "Nurseries", "Educational Growing"],
+    benefits: ["Greener Communities", "Water Management", "Public Experience", "Food Initiatives", "Demonstration Projects"],
+    cta: "DISCUSS A PROJECT",
+  },
+  developer: {
+    headline: "LET'S BUILD GREEN TOGETHER.",
+    solutions: ["Smart Agriculture Systems", "Landscape Solutions", "Smart Irrigation", "Urban Forests", "Environmental Solutions", "Nursery Support", "Technical Consultancy"],
+    benefits: ["Specialist Expertise", "Integrated Solutions", "Project Support", "Technology Integration", "Long-Term Management"],
+    cta: "PARTNER WITH NABTURA",
+  },
+  healthcare: {
+    headline: "CREATE GREEN FOR WELLBEING.",
+    solutions: ["Healing Gardens", "Green Retreats", "Landscapes", "Sensory Gardens", "Smart Irrigation", "Edible Gardens", "Environmental Spaces"],
+    benefits: ["Restorative Environment", "Patient/Visitor Experience", "Outdoor Spaces", "Green Ambience"],
+    cta: "EXPLORE WELLNESS GREEN SPACES",
+  },
+  corporate: {
+    headline: "Transform your space intelligently.",
+    solutions: ["Smart Greenhouses", "Landscapes", "Urban Forests", "Smart Irrigation", "Corporate Gardens"],
+    benefits: ["Workplace Experience", "Green Identity", "Employee Engagement", "Productive Spaces", "Environmental Initiatives"],
+    cta: "EXPLORE CORPORATE GREEN SOLUTIONS",
+  },
+  grower: {
+    headline: "Scale your production intelligently.",
+    solutions: ["Smart Greenhouses", "Commercial Hydroponics", "Smart Irrigation", "Managed Growing"],
+    benefits: ["Scalability", "Food Security", "Managed Operations", "Tech-Driven ROI"],
+    cta: "EXPLORE GROWING SOLUTIONS",
+  },
+  mall: {
+    headline: "Transform retail into a green experience.",
+    solutions: ["Indoor Landscapes", "Urban Forests", "Green Atriums", "Smart Irrigation"],
+    benefits: ["Aesthetics", "Customer Experience", "Green Identity", "Extended Dwell Time"],
+    cta: "EXPLORE RETAIL POSSIBILITIES",
+  },
+  retail: {
+    headline: "Transform retail into a green experience.",
+    solutions: ["Indoor Landscapes", "Urban Forests", "Green Atriums", "Smart Irrigation"],
+    benefits: ["Aesthetics", "Customer Experience", "Green Identity", "Extended Dwell Time"],
+    cta: "EXPLORE RETAIL POSSIBILITIES",
+  },
+  industrial: {
+    headline: "Make industrial spaces work harder.",
+    solutions: ["Controlled Agriculture", "Smart Greenhouses", "Commercial Hydroponics", "Environmental Projects"],
+    benefits: ["Space Utilization", "Sustainability", "Food Security", "Operational Efficiency"],
+    cta: "EXPLORE INDUSTRIAL POSSIBILITIES",
+  },
+  // Default fallback for any others
   default: {
     headline: "Transform your space intelligently.",
     solutions: ["Smart Greenhouses", "Landscapes", "Urban Forests", "Smart Irrigation"],
@@ -52,6 +124,29 @@ const contentMap: Record<string, any> = {
 
 export default function WhoWeServe() {
   const [activeAudience, setActiveAudience] = useState("restaurant");
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (!scrollRef.current || isHovered) return;
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth - 10) {
+          scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+        }
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isHovered]);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: direction === "left" ? -300 : 300, behavior: "smooth" });
+    }
+  };
 
   const content = contentMap[activeAudience] || contentMap.default;
 
@@ -67,8 +162,24 @@ export default function WhoWeServe() {
 
         <div className="flex flex-col gap-6">
           {/* Top Section: Horizontal Scrollable Pill Selector */}
-          <div className="relative">
-            <div className="flex overflow-x-auto gap-3 pb-4 snap-x w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+          <div 
+            className="relative flex items-center group/scroll"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            {/* Left Scroll Button */}
+            <button 
+              onClick={() => scroll("left")}
+              className="absolute left-0 z-20 w-10 h-10 rounded-full bg-black/80 flex items-center justify-center text-white border border-white/20 shadow-lg hover:bg-nabtura-green hover:text-black transition-colors -ml-2 opacity-0 group-hover/scroll:opacity-100 hidden md:flex"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+
+            <div 
+              ref={scrollRef}
+              className="flex overflow-x-auto gap-3 pb-4 snap-x w-full px-2" 
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
               <style dangerouslySetInnerHTML={{__html: `
                 .flex.overflow-x-auto::-webkit-scrollbar { display: none; }
               `}} />
@@ -86,8 +197,18 @@ export default function WhoWeServe() {
                 </button>
               ))}
             </div>
-            {/* Optional gradient fade on the right to indicate scrolling */}
-            <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-black to-transparent pointer-events-none" />
+
+            {/* Right Scroll Button */}
+            <button 
+              onClick={() => scroll("right")}
+              className="absolute right-0 z-20 w-10 h-10 rounded-full bg-black/80 flex items-center justify-center text-white border border-white/20 shadow-lg hover:bg-nabtura-green hover:text-black transition-colors -mr-2 opacity-0 group-hover/scroll:opacity-100 hidden md:flex"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+
+            {/* Optional gradient fade on edges to indicate scrolling */}
+            <div className="absolute left-0 top-0 bottom-4 w-8 bg-gradient-to-r from-black to-transparent pointer-events-none z-10" />
+            <div className="absolute right-0 top-0 bottom-4 w-8 bg-gradient-to-l from-black to-transparent pointer-events-none z-10" />
           </div>
 
           {/* Bottom Section: Dynamic Content */}
