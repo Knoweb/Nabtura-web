@@ -68,9 +68,48 @@ export default function Header() {
     return pathname.startsWith(href);
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
+    if (pathname === "/" && href.startsWith("/#")) {
+      e.preventDefault();
+      const targetId = href.substring(2);
+      const element = document.getElementById(targetId);
+      if (element) {
+        const headerOffset = 100;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        const startPosition = window.pageYOffset;
+        const distance = offsetPosition - startPosition;
+        let startTime: number | null = null;
+        const duration = 1200; // 1.2s smooth cinematic scroll
+
+        const easeInOutQuart = (t: number, b: number, c: number, d: number) => {
+          t /= d / 2;
+          if (t < 1) return c / 2 * t * t * t * t + b;
+          t -= 2;
+          return -c / 2 * (t * t * t * t - 2) + b;
+        };
+
+        const animation = (currentTime: number) => {
+          if (startTime === null) startTime = currentTime;
+          const timeElapsed = currentTime - startTime;
+          const run = easeInOutQuart(timeElapsed, startPosition, distance, duration);
+          window.scrollTo(0, run);
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          } else {
+            window.history.pushState(null, "", `#${targetId}`);
+          }
+        };
+        
+        requestAnimationFrame(animation);
+      }
+    }
+  };
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? "bg-black/90 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black" : "bg-gradient-to-b from-black/80 to-transparent"
+      isScrolled ? "bg-black/90 backdrop-blur-xl shadow-lg shadow-black" : "bg-gradient-to-b from-black/80 to-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
@@ -87,11 +126,15 @@ export default function Header() {
               {navLinks.map((link) => {
                 const isActive = checkIsActive(link.href);
                 return (
-                  <Link href={link.href} key={link.name} passHref legacyBehavior>
-                    <motion.a
+                  <Link 
+                    href={link.href} 
+                    key={link.name}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                  >
+                    <motion.span
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`relative text-xs font-bold tracking-wider uppercase whitespace-nowrap transition-colors py-2 cursor-pointer ${
+                      className={`inline-block relative text-xs font-bold tracking-wider uppercase whitespace-nowrap transition-colors py-2 cursor-pointer ${
                         isActive ? "text-nabtura-green" : "text-gray-300 hover:text-white"
                       }`}
                     >
@@ -106,20 +149,20 @@ export default function Header() {
                           transition={{ type: "spring", stiffness: 300, damping: 30 }}
                         />
                       )}
-                    </motion.a>
+                    </motion.span>
                   </Link>
                 );
               })}
             </nav>
 
-            <Link href="/contact" passHref legacyBehavior>
-              <motion.a
+            <Link href="/contact">
+              <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-nabtura-green text-black px-6 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-nabtura-light-green transition-all uppercase shadow-lg shadow-nabtura-green/20 whitespace-nowrap ml-2 cursor-pointer"
+                className="inline-block bg-nabtura-green text-black px-6 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-nabtura-light-green transition-all uppercase shadow-lg shadow-nabtura-green/20 whitespace-nowrap ml-2 cursor-pointer"
               >
                 START A CONVERSATION
-              </motion.a>
+              </motion.span>
             </Link>
           </div>
 

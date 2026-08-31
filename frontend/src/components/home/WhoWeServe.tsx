@@ -136,9 +136,11 @@ export default function WhoWeServe() {
         
         if (scrollRef.current) {
           const buttons = scrollRef.current.querySelectorAll('button');
-          if (buttons[nextIndex]) {
-             // Scroll the next button into view centrally
-             buttons[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          const targetButton = buttons[nextIndex] as HTMLElement;
+          if (targetButton) {
+             const container = scrollRef.current;
+             const scrollLeft = targetButton.offsetLeft - (container.clientWidth / 2) + (targetButton.clientWidth / 2);
+             container.scrollTo({ left: scrollLeft, behavior: 'smooth' });
           }
         }
         
