@@ -56,7 +56,7 @@ export default function WhoWeServe() {
   const content = contentMap[activeAudience] || contentMap.default;
 
   return (
-    <section className="bg-black text-white py-24 border-t border-white/5">
+    <section id="who-we-serve" className="bg-black text-white py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
