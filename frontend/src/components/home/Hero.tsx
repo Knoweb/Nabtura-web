@@ -29,7 +29,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-nabtura-slate text-white">
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-nabtura-slate text-content">
       {/* Cinematic Background Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence>
@@ -51,7 +51,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-sm md:text-base tracking-[0.3em] text-gray-400 mb-6 uppercase"
+          className="text-sm md:text-base tracking-[0.3em] text-content-muted mb-6 uppercase"
         >
           Smart Agriculture & Intelligent Green Solutions
         </motion.p>
@@ -65,7 +65,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
-              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-tight"
+              className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-content leading-tight"
             >
               {words[index]}
             </motion.h1>
@@ -78,7 +78,7 @@ export default function Hero() {
           transition={{ delay: 1, duration: 1 }}
           className="space-y-4 mb-12"
         >
-          <div className="flex flex-wrap justify-center gap-4 text-xl sm:text-2xl font-light text-gray-300">
+          <div className="flex flex-wrap justify-center gap-4 text-xl sm:text-2xl font-light text-content-muted">
             <span>GROW FOOD</span>
             <span className="hidden sm:inline">•</span>
             <span>MANAGE WATER</span>
@@ -88,7 +88,7 @@ export default function Hero() {
           <p className="text-nabtura-green font-medium tracking-wide">
             Smart Controlled Adapted
           </p>
-          <p className="text-gray-400 max-w-2xl mx-auto mt-6 text-sm sm:text-base">
+          <p className="text-content-muted max-w-2xl mx-auto mt-6 text-sm sm:text-base">
             Based in the UAE. Designed for challenging environments. Built for wider markets.
           </p>
         </motion.div>
@@ -110,7 +110,7 @@ export default function Hero() {
           <motion.div whileTap={{ scale: 0.95 }}>
             <Link
               href="#contact"
-              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all block"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-white/30 text-content font-semibold rounded-full hover:bg-overlay transition-all block"
             >
               TELL US ABOUT YOUR LOCATION
             </Link>
@@ -124,7 +124,7 @@ export default function Hero() {
            className="mt-12"
         >
           <motion.div whileTap={{ scale: 0.95 }} className="inline-block">
-            <Link href="#invest" className="text-sm text-gray-400 hover:text-white flex items-center justify-center gap-2 transition-colors p-2">
+            <Link href="#invest" className="text-sm text-content-muted hover:text-content flex items-center justify-center gap-2 transition-colors p-2">
               Looking to invest? <span>→</span>
             </Link>
           </motion.div>
@@ -133,3 +133,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -83,7 +83,7 @@ export default function LandscapesPage() {
                 { title: "SmartCare", desc: "Technical maintenance and system monitoring." },
               ].map((step, i) => (
                 <div key={i} className="flex gap-6 relative z-10">
-                  <div className="w-12 h-12 rounded-full bg-nabtura-slate border border-nabtura-green flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-black border border-nabtura-green flex items-center justify-center shrink-0">
                     <Wrench className="w-5 h-5 text-nabtura-green" />
                   </div>
                   <div>

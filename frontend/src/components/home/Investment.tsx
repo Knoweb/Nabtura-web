@@ -12,7 +12,7 @@ const options = [
 
 export default function Investment() {
   return (
-    <section id="invest" className="bg-transparent text-white relative overflow-hidden py-32 border-b border-white/5">
+    <section id="invest" className="bg-black text-white relative overflow-hidden py-32 border-b border-white/5">
       
       {/* Premium Background Visual */}
       <div className="absolute inset-0 z-0">
@@ -55,7 +55,7 @@ export default function Investment() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="bg-nabtura-slate/60 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/5 backdrop-blur-xl/80 hover:border-nabtura-sand/50 transition-all group"
+                  className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/5 backdrop-blur-xl/80 hover:border-nabtura-sand/50 transition-all group"
                 >
                   <Icon className="w-8 h-8 text-gray-500 group-hover:text-nabtura-sand mb-6 transition-colors" />
                   <h4 className="text-lg font-bold text-white tracking-widest uppercase mb-3">

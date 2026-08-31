@@ -17,7 +17,7 @@ export default function SpaceTransformation() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-transparent text-white py-32 border-b border-white/5">
+    <section className="bg-black text-white py-32 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-sm tracking-[0.3em] text-gray-500 font-bold mb-6 uppercase">
