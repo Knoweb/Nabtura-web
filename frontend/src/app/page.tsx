@@ -1,4 +1,5 @@
 import Hero from "@/components/home/Hero";
+import GlobalAnimatedBackground from "@/components/home/GlobalAnimatedBackground";
 import Challenge from "@/components/home/Challenge";
 import Difference from "@/components/home/Difference";
 import FeaturedSolutions from "@/components/home/FeaturedSolutions";
@@ -19,21 +20,25 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Challenge />
-      <Difference />
-      <FeaturedSolutions />
-      <Ecosystem />
-      <WhoWeServe />
-      <GreenWhereItMatters />
-      <SpaceTransformation />
-      <SmartGrowing />
-      <WaterIntelligence />
-      <GrowingGreen />
-      <HowWeWork />
-      <Investment />
-      <WeMakeItWork />
-      <UAECredibility />
-      <FinalCTA />
+      <GlobalAnimatedBackground />
+      <div className="global-bg-wrapper relative z-10">
+        <Challenge />
+        <Difference />
+        <FeaturedSolutions />
+        <Ecosystem />
+        <WhoWeServe />
+        <GreenWhereItMatters />
+        <SpaceTransformation />
+        <SmartGrowing />
+        <WaterIntelligence />
+        <GrowingGreen />
+        <HowWeWork />
+        <Investment />
+        <WeMakeItWork />
+        <UAECredibility />
+        <FinalCTA />
+      </div>
     </>
   );
 }
+

@@ -14,11 +14,11 @@ const benefits = [
 
 export default function GrowingGreen() {
   return (
-    <section className="bg-nabtura-slate text-white py-32 border-b border-white/5 relative overflow-hidden">
+    <section className="bg-transparent text-content py-16 md:py-12 md:py-16 border-b border-divider relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-20 max-w-4xl mx-auto">
-          <h2 className="text-sm tracking-[0.3em] text-gray-500 font-bold mb-6 uppercase">
+          <h2 className="text-sm tracking-[0.3em] text-content-muted font-bold mb-6 uppercase">
             GROWING FOOD. GROWING GREEN.
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
@@ -36,11 +36,11 @@ export default function GrowingGreen() {
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('/smart_greenhouse_mockup_1788109457162.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl group-hover:bg-white/5 backdrop-blur-xl/20 transition-colors" />
+            <div className="absolute inset-0 bg-overlay backdrop-blur-xl group-hover:bg-overlay backdrop-blur-xl/20 transition-colors" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <p className="text-sm tracking-widest font-bold text-nabtura-light-green mb-2 uppercase">Agriculture</p>
-              <h4 className="text-3xl font-bold text-white">Controlled Food Production</h4>
+              <h4 className="text-3xl font-bold text-content">Controlled Food Production</h4>
             </div>
           </motion.div>
 
@@ -52,17 +52,17 @@ export default function GrowingGreen() {
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('/smart_landscapes_mockup_1788109519811.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl group-hover:bg-white/5 backdrop-blur-xl/20 transition-colors" />
+            <div className="absolute inset-0 bg-overlay backdrop-blur-xl group-hover:bg-overlay backdrop-blur-xl/20 transition-colors" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <p className="text-sm tracking-widest font-bold text-nabtura-green mb-2 uppercase">Environment</p>
-              <h4 className="text-3xl font-bold text-white">Green Environment</h4>
+              <h4 className="text-3xl font-bold text-content">Green Environment</h4>
             </div>
           </motion.div>
         </div>
 
         {/* Concise Benefits Grid */}
-        <div className="bg-white/5 backdrop-blur-xl/30 backdrop-blur-md rounded-3xl p-10 border border-white/5 max-w-5xl mx-auto">
+        <div className="bg-overlay backdrop-blur-xl/30 backdrop-blur-md rounded-3xl p-10 border border-divider max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, i) => (
               <motion.div 
@@ -71,10 +71,10 @@ export default function GrowingGreen() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.4 }}
-                className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl hover:bg-white/10 transition-colors"
+                className="flex items-center gap-4 bg-overlay p-4 rounded-2xl hover:bg-overlay transition-colors"
               >
                 <CheckCircle2 className="w-6 h-6 text-nabtura-light-green shrink-0" />
-                <span className="font-bold tracking-wide text-gray-300">{benefit}</span>
+                <span className="font-bold tracking-wide text-content-muted">{benefit}</span>
               </motion.div>
             ))}
           </div>
@@ -84,3 +84,4 @@ export default function GrowingGreen() {
     </section>
   );
 }
+

@@ -86,11 +86,11 @@ export default function SolutionsDirectoryPage() {
                 {/* Bottom Content Section */}
                 <div className="p-8 pt-4">
                   <div className="mb-8">
-                    <h2 className="text-2xl font-bold tracking-widest uppercase text-white mb-2">{category.title}</h2>
-                    <p className="text-gray-400 text-sm leading-relaxed">{category.description}</p>
+                    <h2 className="text-3xl font-bold tracking-widest uppercase text-white mb-2">{category.title}</h2>
+                    <p className="text-gray-400 text-base leading-relaxed">{category.description}</p>
                   </div>
 
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-3">
                     {category.links.map((link, j) => (
                       <Link 
                         key={j} 
@@ -98,8 +98,8 @@ export default function SolutionsDirectoryPage() {
                         className="group/link flex items-center justify-between p-4 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
                       >
                         <div>
-                          <h3 className={`font-semibold text-gray-200 group-hover/link:${category.color} transition-colors`}>{link.name}</h3>
-                          <p className="text-xs text-gray-500 mt-1">{link.desc}</p>
+                          <h3 className={`font-semibold text-lg text-gray-200 group-hover/link:${category.color} transition-colors`}>{link.name}</h3>
+                          <p className="text-sm text-gray-500 mt-1">{link.desc}</p>
                         </div>
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-white/5 group-hover/link:bg-white/10 transition-colors`}>
                           <ArrowRight className={`w-4 h-4 text-gray-400 group-hover/link:${category.color} transition-colors`} />

@@ -12,15 +12,7 @@ const options = [
 
 export default function Investment() {
   return (
-    <section className="bg-black text-white relative overflow-hidden py-32 border-b border-white/5">
-      
-      {/* Premium Background Visual */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[url('/smart_greenhouse_mockup_1788109457162.jpg')] bg-cover bg-center opacity-30 mix-blend-luminosity" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
-      </div>
-
+    <section id="invest" className="bg-transparent text-white relative overflow-hidden py-16 md:py-12 md:py-16 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -55,7 +47,7 @@ export default function Investment() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/5 backdrop-blur-xl/80 hover:border-nabtura-sand/50 transition-all group"
+                  className="bg-transparent/60 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/5 backdrop-blur-xl/80 hover:border-nabtura-sand/50 transition-all group"
                 >
                   <Icon className="w-8 h-8 text-gray-500 group-hover:text-nabtura-sand mb-6 transition-colors" />
                   <h4 className="text-lg font-bold text-white tracking-widest uppercase mb-3">
