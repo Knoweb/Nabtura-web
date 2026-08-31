@@ -5,7 +5,7 @@ import { ArrowRight, MapPin, TrendingUp, Lightbulb, Phone, Mail, MessageCircle }
 
 export default function FinalCTA() {
   return (
-    <section className="bg-nabtura-slate text-white relative">
+    <section id="contact" className="bg-nabtura-slate text-white relative">
       
       {/* Section 16: Behind NABTURA (Corporate Link) */}
       <div className="border-b border-white/5 py-12 bg-transparent">
