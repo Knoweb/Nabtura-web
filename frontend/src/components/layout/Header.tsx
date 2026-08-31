@@ -111,7 +111,7 @@ export default function Header() {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? "bg-black/90 backdrop-blur-xl shadow-lg shadow-black" : "bg-gradient-to-b from-black/80 to-transparent"
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center z-50">
@@ -121,8 +121,8 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation & CTA */}
-          <div className="hidden xl:flex items-center gap-6">
-            <nav className="flex items-center gap-6">
+          <div className="hidden xl:flex items-center gap-8">
+            <nav className="flex items-center gap-10">
               {navLinks.map((link) => {
                 const isActive = checkIsActive(link.href);
                 return (
@@ -134,7 +134,7 @@ export default function Header() {
                     <motion.span
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`inline-block relative text-xs font-bold tracking-wider uppercase whitespace-nowrap transition-colors py-2 cursor-pointer ${
+                      className={`inline-block relative text-[13px] font-bold tracking-wider uppercase whitespace-nowrap transition-colors py-2 cursor-pointer ${
                         isActive ? "text-nabtura-green" : "text-gray-300 hover:text-white"
                       }`}
                     >
@@ -155,11 +155,11 @@ export default function Header() {
               })}
             </nav>
 
-            <Link href="/contact">
+            <Link href="/contact" className="ml-4">
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block bg-nabtura-green text-black px-6 py-3 rounded-full text-xs font-bold tracking-widest hover:bg-nabtura-light-green transition-all uppercase shadow-lg shadow-nabtura-green/20 whitespace-nowrap ml-2 cursor-pointer"
+                className="inline-block bg-nabtura-green text-black px-6 py-3 rounded-full text-[13px] font-extrabold tracking-widest hover:bg-nabtura-light-green transition-all uppercase shadow-lg shadow-nabtura-green/20 whitespace-nowrap cursor-pointer"
               >
                 START A CONVERSATION
               </motion.span>
