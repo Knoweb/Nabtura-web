@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opportunities",
+  "info": {
+    "singularName": "opportunity",
+    "pluralName": "opportunities",
+    "displayName": "Opportunity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

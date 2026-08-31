@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "concepts",
+  "info": {
+    "singularName": "concept",
+    "pluralName": "concepts",
+    "displayName": "Concept"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "targetLink": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
