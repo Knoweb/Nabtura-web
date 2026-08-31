@@ -53,6 +53,7 @@ export default function Header() {
     { name: "WHO WE SERVE", href: "/#who-we-serve" },
     { name: "WORK WITH NABTURA", href: "/#how-we-work" },
     { name: "POSSIBILITIES", href: "/possibilities" },
+    { name: "BLOGS", href: "/blog" },
     { name: "ABOUT", href: "/about" },
     { name: "CONTACT", href: "/contact" },
   ];
