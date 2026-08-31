@@ -54,7 +54,7 @@ export default function Ecosystem() {
   const [activeId, setActiveId] = useState<string>("grow");
 
   return (
-    <section className="bg-nabtura-slate text-content py-24 border-y border-divider relative overflow-hidden">
+    <section className="bg-transparent text-content py-12 md:py-16 border-y border-divider relative overflow-hidden">
       {/* Abstract background element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-nabtura-green/5 blur-[120px] rounded-full pointer-events-none" />
 

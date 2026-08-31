@@ -23,7 +23,7 @@ const capabilities = [
 
 export default function WeMakeItWork() {
   return (
-    <section className="bg-nabtura-slate text-content py-32 border-b border-divider relative overflow-hidden">
+    <section className="bg-transparent text-content py-16 md:py-12 md:py-16 border-b border-divider relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-24 max-w-4xl mx-auto">

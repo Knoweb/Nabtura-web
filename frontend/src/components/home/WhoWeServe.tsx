@@ -160,8 +160,8 @@ export default function WhoWeServe() {
   const content = contentMap[activeAudience] || contentMap.default;
 
   return (
-    <section id="who-we-serve" className="bg-black text-white py-24 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="who-we-serve" className="relative text-white py-12 md:py-16 border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
             WHAT COULD NABTURA<br />
@@ -207,7 +207,7 @@ export default function WhoWeServe() {
                 transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-12 h-12 rounded-full bg-black flex items-center justify-center text-nabtura-green border border-white/20 shadow-[0_0_20px_rgba(0,0,0,0.9)] hover:bg-nabtura-green hover:text-black transition-colors"
+                className="w-12 h-12 rounded-full bg-transparent flex items-center justify-center text-nabtura-green border border-white/20 shadow-[0_0_20px_rgba(0,0,0,0.9)] hover:bg-nabtura-green hover:text-black transition-colors"
               >
                 <ChevronRight className="w-6 h-6 ml-1" />
               </motion.button>

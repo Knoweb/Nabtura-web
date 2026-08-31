@@ -24,7 +24,7 @@ const models = [
 
 export default function HowWeWork() {
   return (
-    <section id="how-we-work" className="bg-nabtura-slate text-content py-32 border-b border-divider">
+    <section id="how-we-work" className="bg-transparent text-content py-16 md:py-12 md:py-16 border-b border-divider">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-20 max-w-4xl mx-auto">

@@ -5,7 +5,7 @@ import { ArrowRight, MapPin, TrendingUp, Lightbulb, Phone, Mail, MessageCircle }
 
 export default function FinalCTA() {
   return (
-    <section id="contact" className="bg-nabtura-slate text-content relative">
+    <section id="contact" className="bg-transparent text-content relative">
       
       {/* Section 16: Behind NABTURA (Corporate Link) */}
       <div className="border-b border-divider py-12 bg-transparent">
@@ -30,7 +30,7 @@ export default function FinalCTA() {
       </div>
 
       {/* Section 17: Final Commercial CTA */}
-      <div className="py-32 relative overflow-hidden">
+      <div className="py-16 md:py-12 md:py-16 relative overflow-hidden">
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-nabtura-green/10 blur-[150px] rounded-full pointer-events-none" />
 

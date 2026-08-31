@@ -14,7 +14,7 @@ const journeySteps = [
 
 export default function SmartGrowing() {
   return (
-    <section className="bg-nabtura-slate text-content py-32 border-b border-divider relative overflow-hidden">
+    <section className="bg-transparent text-content py-16 md:py-12 md:py-16 border-b border-divider relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-nabtura-green/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-nabtura-blue/5 blur-[120px] rounded-full pointer-events-none" />

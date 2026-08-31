@@ -13,7 +13,7 @@ const waterSequence = [
 
 export default function WaterIntelligence() {
   return (
-    <section className="bg-black text-white py-32 border-b border-white/5 relative overflow-hidden">
+    <section className="bg-transparent text-white py-16 md:py-12 md:py-16 border-b border-white/5 relative overflow-hidden">
       {/* Dynamic Water Background */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-nabtura-blue/20 via-transparent to-transparent" />

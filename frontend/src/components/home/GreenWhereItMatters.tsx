@@ -26,9 +26,9 @@ export default function GreenWhereItMatters() {
   }, []);
 
   return (
-    <section className="bg-nabtura-slate text-content py-32 relative overflow-hidden">
+    <section className="bg-transparent text-content py-16 md:py-12 md:py-16 relative overflow-hidden">
       {/* Static subtle background for the section */}
-      <div className="absolute inset-0 z-0 bg-nabtura-slate">
+      <div className="absolute inset-0 z-0 bg-transparent">
         <div className="absolute inset-0 bg-gradient-to-b from-nabtura-slate via-nabtura-slate/50 to-nabtura-slate pointer-events-none" />
       </div>
 
