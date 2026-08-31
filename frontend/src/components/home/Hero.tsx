@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const words = [
-  "CONTROLLED AGRICULTURE.",
-  "MICROGREENS.",
-  "INTELLIGENT LANDSCAPE.",
-  "WATER.",
-  "GREENER ENVIRONMENT.",
+  "CONTROLLED AGRICULTURE",
+  "MICROGREENS",
+  "INTELLIGENT LANDSCAPE",
+  "WATER",
+  "GREENER ENVIRONMENT",
 ];
 
 const bgImages = [
@@ -79,14 +79,14 @@ export default function Hero() {
           className="space-y-4 mb-12"
         >
           <div className="flex flex-wrap justify-center gap-4 text-xl sm:text-2xl font-light text-gray-300">
-            <span>GROW FOOD.</span>
+            <span>GROW FOOD</span>
             <span className="hidden sm:inline">•</span>
-            <span>MANAGE WATER.</span>
+            <span>MANAGE WATER</span>
             <span className="hidden sm:inline">•</span>
-            <span>CREATE GREEN.</span>
+            <span>CREATE GREEN</span>
           </div>
           <p className="text-nabtura-green font-medium tracking-wide">
-            Smart. Controlled. Adapted.
+            Smart Controlled Adapted
           </p>
           <p className="text-gray-400 max-w-2xl mx-auto mt-6 text-sm sm:text-base">
             Based in the UAE. Designed for challenging environments. Built for wider markets.

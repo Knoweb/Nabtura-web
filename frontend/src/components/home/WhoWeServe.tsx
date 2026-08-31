@@ -58,23 +58,25 @@ export default function WhoWeServe() {
   return (
     <section id="who-we-serve" className="bg-black text-white py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-16">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
             WHAT COULD NABTURA<br />
             DO FOR YOU?
           </h2>
         </div>
 
-        <div className="flex flex-col gap-12">
-          {/* Top Section: Compact Pill Selector */}
-          <div>
-            <h3 className="text-sm tracking-[0.2em] text-gray-500 font-bold mb-6 uppercase">Select Your Industry</h3>
-            <div className="flex flex-wrap gap-3">
+        <div className="flex flex-col gap-6">
+          {/* Top Section: Horizontal Scrollable Pill Selector */}
+          <div className="relative">
+            <div className="flex overflow-x-auto gap-3 pb-4 snap-x w-full" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <style dangerouslySetInnerHTML={{__html: `
+                .flex.overflow-x-auto::-webkit-scrollbar { display: none; }
+              `}} />
               {audiences.map((audience) => (
                 <button
                   key={audience.id}
                   onClick={() => setActiveAudience(audience.id)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 border ${
+                  className={`flex-shrink-0 snap-start px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 border ${
                     activeAudience === audience.id 
                       ? "bg-nabtura-green text-black border-nabtura-green shadow-lg shadow-nabtura-green/20 scale-105" 
                       : "bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:text-white"
@@ -84,6 +86,8 @@ export default function WhoWeServe() {
                 </button>
               ))}
             </div>
+            {/* Optional gradient fade on the right to indicate scrolling */}
+            <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-black to-transparent pointer-events-none" />
           </div>
 
           {/* Bottom Section: Dynamic Content */}
