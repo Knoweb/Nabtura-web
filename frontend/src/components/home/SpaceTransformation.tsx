@@ -17,7 +17,7 @@ export default function SpaceTransformation() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="bg-black text-white py-32 border-b border-white/5">
+    <section className="bg-transparent text-white py-16 md:py-12 md:py-16 border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-sm tracking-[0.3em] text-gray-500 font-bold mb-6 uppercase">
@@ -56,7 +56,7 @@ export default function SpaceTransformation() {
 
           {/* Transformation Display */}
           <div className="lg:col-span-7">
-            <div className="relative bg-nabtura-slate border border-white/10 rounded-3xl p-10 md:p-16 min-h-[400px] flex flex-col justify-center overflow-hidden shadow-2xl">
+            <div className="relative bg-transparent border border-white/10 rounded-3xl p-10 md:p-16 min-h-[400px] flex flex-col justify-center overflow-hidden shadow-2xl">
               
               {/* Decorative accent */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/10 blur-[80px] rounded-full pointer-events-none" />

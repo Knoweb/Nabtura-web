@@ -6,7 +6,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 
 export default function UAECredibility() {
   return (
-    <section className="bg-black text-white relative py-32 border-b border-white/5 overflow-hidden">
+    <section className="bg-transparent text-white relative py-16 md:py-12 md:py-16 border-b border-white/5 overflow-hidden">
       
       {/* UAE Background */}
       <div className="absolute inset-0 z-0">
