@@ -30,7 +30,7 @@ export default function FinalCTA() {
       </div>
 
       {/* Section 17: Final Commercial CTA */}
-      <div className="py-16 md:py-12 md:py-16 relative overflow-hidden">
+      <div className="py-16 md:py-16 md:pb-24 relative overflow-hidden">
         {/* Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-nabtura-green/10 blur-[150px] rounded-full pointer-events-none" />
 

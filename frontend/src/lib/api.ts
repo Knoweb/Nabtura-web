@@ -15,14 +15,14 @@ export async function fetchAPI(path: string, options = {}) {
     const response = await fetch(requestUrl, mergedOptions);
 
     if (!response.ok) {
-      console.error(response.statusText);
+      console.warn(`API Error: ${response.statusText}`);
       throw new Error(`An error occurred please try again`);
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Fetch API Error:", error);
+    console.warn("Fetch API Error:", error);
     throw error;
   }
 }
