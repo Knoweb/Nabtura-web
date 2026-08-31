@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Wrench, Sprout, Briefcase } from "lucide-react";
 
@@ -77,10 +78,12 @@ export default function HowWeWork() {
             <p className="text-content font-bold tracking-widest uppercase text-sm mb-4">
               NOT SURE WHICH MODEL SUITS YOU?
             </p>
-            <button className="group inline-flex items-center text-nabtura-light-green font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-light-green pb-1 transition-all">
-              FIND THE RIGHT MODEL
-              <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4" />
-            </button>
+            <Link href="/solutions">
+              <button className="group inline-flex items-center text-nabtura-light-green font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-light-green pb-1 transition-all">
+                FIND THE RIGHT MODEL
+                <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4" />
+              </button>
+            </Link>
           </div>
         </div>
 
