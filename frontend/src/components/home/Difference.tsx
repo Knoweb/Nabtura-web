@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Zap, SlidersHorizontal, MapPin, Activity, Eye, BrainCircuit, Sliders, Cpu, Sparkles } from "lucide-react";
 
@@ -29,6 +30,23 @@ const sampleBlogs = [
     publishedAt: "2026-08-05T09:15:00Z"
   }
 ];
+
+interface Blog {
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+  coverImage?: {
+    url: string;
+  };
+  publishedAt?: string;
+}
+
+const getImageUrl = (url?: string) => {
+  if (!url) return "https://picsum.photos/seed/placeholder/800/600";
+  if (url.startsWith("http")) return url;
+  return `http://localhost:1337${url}`; // Or process.env.NEXT_PUBLIC_STRAPI_URL
+};
 
 const pillars = [
   {
@@ -77,7 +95,17 @@ const cycleSteps = [
   { name: "OPTIMIZE", icon: Sparkles },
 ];
 
-export default function Difference() {
+export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
+  const displayBlogs = blogs && blogs.length > 0 ? blogs : sampleBlogs;
+  const [currentBlogIdx, setCurrentBlogIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBlogIdx((prev) => (prev + 1) % displayBlogs.length);
+    }, 5000); // Auto-slide every 5 seconds
+    return () => clearInterval(timer);
+  }, [displayBlogs.length]);
+
   return (
     <section className="bg-transparent text-white py-12 md:py-16 border-t border-white/5 relative overflow-hidden">
       {/* Background Glows */}
@@ -154,44 +182,52 @@ export default function Difference() {
               </span>
             </div>
 
-            {/* Vertical Auto-scrolling Slider Container */}
-            <div className="relative flex-grow overflow-hidden mask-image-vertical">
+            {/* Horizontal Slider Container */}
+            <div className="relative flex-grow overflow-hidden mt-2">
               <motion.div 
-                className="flex flex-col gap-6"
-                animate={{ y: ["0%", "-50%"] }}
-                transition={{ 
-                  y: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 20,
-                    ease: "linear",
-                  }
-                }}
+                className="flex h-full"
+                animate={{ x: `-${currentBlogIdx * 100}%` }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
               >
-                {/* We render the list twice to create a seamless infinite scroll effect */}
-                {[...sampleBlogs, ...sampleBlogs].map((blog, i) => (
-                  <div key={`${blog.id}-${i}`} className="flex flex-col bg-black/40 border border-white/5 rounded-2xl overflow-hidden hover:border-nabtura-green/30 transition-colors group">
-                    <div className="h-40 w-full overflow-hidden relative">
-                      <img 
-                        src={blog.coverImage.url} 
-                        alt={blog.title} 
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <h4 className="text-lg font-bold line-clamp-2 mb-2 group-hover:text-nabtura-green transition-colors leading-tight">
-                        {blog.title}
-                      </h4>
-                      <p className="text-xs text-gray-400 line-clamp-2">
-                        {blog.content.replace(/<[^>]*>?/gm, '')}
-                      </p>
-                      <a href={`/blog/${blog.slug}`} className="inline-block mt-4 text-xs font-bold text-nabtura-green tracking-widest uppercase hover:text-white transition-colors">
-                        Read More &rarr;
-                      </a>
+                {displayBlogs.map((blog) => (
+                  <div key={blog.id} className="min-w-full px-1 flex flex-col h-full">
+                    <div className="flex flex-col flex-grow bg-black/40 border border-white/5 rounded-2xl overflow-hidden hover:border-nabtura-green/30 transition-colors group">
+                      <div className="h-48 xl:h-56 w-full overflow-hidden relative flex-shrink-0">
+                        <img 
+                          src={getImageUrl(blog.coverImage?.url)} 
+                          alt={blog.title} 
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                        />
+                      </div>
+                      <div className="p-5 flex flex-col flex-grow">
+                        <h4 className="text-lg xl:text-xl font-bold line-clamp-2 mb-3 group-hover:text-nabtura-green transition-colors leading-tight">
+                          {blog.title}
+                        </h4>
+                        <p className="text-sm text-gray-400 line-clamp-3 flex-grow">
+                          {blog.content ? blog.content.replace(/<[^>]*>?/gm, '') : ''}
+                        </p>
+                        <a href={`/blog/${blog.slug}`} className="inline-block mt-5 text-xs font-bold text-nabtura-green tracking-widest uppercase hover:text-white transition-colors">
+                          Read More &rarr;
+                        </a>
+                      </div>
                     </div>
                   </div>
                 ))}
               </motion.div>
+            </div>
+
+            {/* Slider Dots */}
+            <div className="flex justify-center gap-2 mt-6 relative z-10">
+              {displayBlogs.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setCurrentBlogIdx(idx)}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === currentBlogIdx ? "bg-nabtura-green w-8" : "bg-white/20 hover:bg-white/40 w-2"
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
             </div>
           </motion.div>
         </div>
