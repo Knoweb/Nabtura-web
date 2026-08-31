@@ -7,20 +7,37 @@ const pillars = [
   {
     icon: Zap,
     title: "SMART",
-    subtitle: "Know what's happening.",
-    features: ["Sensors", "Data", "Monitoring", "Automation"],
+    subtitle: "Better visibility, decisions & operation.",
+    features: [
+      "Sensors & Data",
+      "Monitoring & Alerts",
+      "Automation",
+      "Cloud Connectivity",
+      "Remote Management",
+    ],
   },
   {
     icon: SlidersHorizontal,
     title: "CONTROLLED",
-    subtitle: "Manage what matters.",
-    features: ["Climate", "Water", "Nutrients", "Growing Conditions"],
+    subtitle: "Conditions for better performance.",
+    features: [
+      "Climate & Water",
+      "Nutrients",
+      "Irrigation",
+      "Lighting & Ventilation",
+      "Growing Conditions",
+    ],
   },
   {
     icon: MapPin,
     title: "ADAPTED",
-    subtitle: "Designed for where you are.",
-    features: ["Location", "Climate", "Purpose", "Scale"],
+    subtitle: "Designed around your need.",
+    features: [
+      "Location & Climate",
+      "Water & Crop/Plant",
+      "Purpose & Scale",
+      "User & Commercial Objective",
+    ],
   },
 ];
 
