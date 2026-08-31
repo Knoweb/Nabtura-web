@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 
 export default function UAECredibility() {
   return (
-    <section className="bg-black text-white relative py-32 border-b border-white/5 overflow-hidden">
+    <section className="bg-transparent text-white relative py-16 md:py-12 md:py-16 border-b border-white/5 overflow-hidden">
       
       {/* UAE Background */}
       <div className="absolute inset-0 z-0">
@@ -35,10 +36,12 @@ export default function UAECredibility() {
             Our UAE base places us close to some of the world’s most demanding challenges in climate, water management, food production and urban greening. That experience shapes how we approach every location.
           </p>
 
-          <button className="group inline-flex items-center text-white bg-white/5 hover:bg-white/10 border border-white/20 hover:border-nabtura-sand px-8 py-4 rounded-full font-bold tracking-widest text-sm uppercase transition-all">
-            ABOUT NABTURA
-            <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4 text-nabtura-sand" />
-          </button>
+          <Link href="/about">
+            <button className="group inline-flex items-center text-white bg-white/5 hover:bg-white/10 border border-white/20 hover:border-nabtura-sand px-8 py-4 rounded-full font-bold tracking-widest text-sm uppercase transition-all">
+              ABOUT NABTURA
+              <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4 text-nabtura-sand" />
+            </button>
+          </Link>
         </div>
       </div>
     </section>

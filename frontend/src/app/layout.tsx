@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} h-full antialiased`}
+      className={`${outfit.variable} h-full antialiased scroll-pt-28`}
     >
       <body className="min-h-full flex flex-col bg-nabtura-slate text-white font-sans relative selection:bg-nabtura-green selection:text-black">
         {/* Ambient Premium Glows */}

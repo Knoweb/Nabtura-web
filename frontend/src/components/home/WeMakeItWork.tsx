@@ -23,7 +23,7 @@ const capabilities = [
 
 export default function WeMakeItWork() {
   return (
-    <section className="bg-nabtura-slate text-white py-32 border-b border-white/5 relative overflow-hidden">
+    <section className="bg-transparent text-content py-16 md:py-12 md:py-16 border-b border-divider relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center mb-24 max-w-4xl mx-auto">
@@ -33,7 +33,7 @@ export default function WeMakeItWork() {
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
             WE MAKE IT <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-nabtura-green">WORK.</span>
           </h3>
-          <p className="text-xl md:text-2xl text-gray-400 font-light leading-relaxed">
+          <p className="text-xl md:text-2xl text-content-muted font-light leading-relaxed">
             From an idea or available location to an operating green solution, NABTURA can stay involved for as much of the journey as you need.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default function WeMakeItWork() {
         <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-24">
           {lifecycle.map((step, i) => (
             <div key={step} className="flex items-center">
-              <span className="text-sm md:text-base font-bold tracking-[0.2em] text-gray-300 hover:text-white transition-colors cursor-default">
+              <span className="text-sm md:text-base font-bold tracking-[0.2em] text-content-muted hover:text-content transition-colors cursor-default">
                 {step}
               </span>
               {i < lifecycle.length - 1 && (
@@ -61,12 +61,12 @@ export default function WeMakeItWork() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-nabtura-green/50 hover:bg-white/5 transition-all group"
+              className="bg-overlay backdrop-blur-xl border border-divider rounded-2xl p-8 hover:border-nabtura-green/50 hover:bg-overlay transition-all group"
             >
-              <h4 className="text-lg font-bold text-white mb-3 tracking-widest uppercase">
+              <h4 className="text-lg font-bold text-content mb-3 tracking-widest uppercase">
                 {cap.name}
               </h4>
-              <p className="text-gray-400 text-sm font-light">
+              <p className="text-content-muted text-sm font-light">
                 {cap.desc}
               </p>
             </motion.div>
@@ -74,7 +74,7 @@ export default function WeMakeItWork() {
         </div>
 
         <div className="text-center">
-          <button className="group inline-flex items-center text-white font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-green pb-1 transition-all">
+          <button className="group inline-flex items-center text-content font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-green pb-1 transition-all">
             HOW WE DELIVER
             <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4 text-nabtura-light-green" />
           </button>
@@ -84,3 +84,4 @@ export default function WeMakeItWork() {
     </section>
   );
 }
+

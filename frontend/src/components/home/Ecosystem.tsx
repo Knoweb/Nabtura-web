@@ -54,13 +54,13 @@ export default function Ecosystem() {
   const [activeId, setActiveId] = useState<string>("grow");
 
   return (
-    <section className="bg-nabtura-slate text-white py-24 border-y border-white/5 relative overflow-hidden">
+    <section className="bg-transparent text-content py-12 md:py-16 border-y border-divider relative overflow-hidden">
       {/* Abstract background element */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-nabtura-green/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-sm tracking-[0.3em] text-gray-400 font-bold mb-4 uppercase">
+          <h2 className="text-sm tracking-[0.3em] text-content-muted font-bold mb-4 uppercase">
             THE COMPLETE NABTURA ECOSYSTEM
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight">
@@ -84,12 +84,12 @@ export default function Ecosystem() {
                   onClick={() => setActiveId(node.id)}
                   className={`relative p-6 rounded-2xl border transition-all duration-300 text-left flex flex-col items-start gap-4 ${
                     isActive 
-                      ? `bg-white/10 ${node.borderColor} shadow-lg shadow-white/5` 
-                      : "bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/10"
+                      ? `bg-overlay ${node.borderColor} shadow-lg shadow-white/5` 
+                      : "bg-overlay border-divider hover:border-divider hover:bg-overlay"
                   }`}
                 >
-                  <Icon className={`w-8 h-8 ${isActive ? node.color : "text-gray-400"}`} />
-                  <span className={`font-bold tracking-wider text-sm md:text-base ${isActive ? "text-white" : "text-gray-400"}`}>
+                  <Icon className={`w-8 h-8 ${isActive ? node.color : "text-content-muted"}`} />
+                  <span className={`font-bold tracking-wider text-sm md:text-base ${isActive ? "text-content" : "text-content-muted"}`}>
                     {node.title}
                   </span>
                 </button>
@@ -98,7 +98,7 @@ export default function Ecosystem() {
           </div>
 
           {/* Dynamic Content Display */}
-          <div className="lg:col-span-7 bg-white/5 backdrop-blur-xl/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12 min-h-[400px]">
+          <div className="lg:col-span-7 bg-overlay backdrop-blur-xl/40 backdrop-blur-sm border border-divider rounded-3xl p-8 md:p-12 min-h-[400px]">
             <AnimatePresence mode="wait">
               {ecosystem.map((node) => (
                 node.id === activeId && (
@@ -119,12 +119,12 @@ export default function Ecosystem() {
                       {node.solutions.map((solution) => (
                         <div key={solution.name} className="group cursor-pointer">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="text-2xl md:text-3xl font-bold text-white group-hover:text-nabtura-light-green transition-colors">
+                            <h4 className="text-2xl md:text-3xl font-bold text-content group-hover:text-nabtura-light-green transition-colors">
                               {solution.name}
                             </h4>
                             <ArrowRight className="w-6 h-6 text-gray-600 group-hover:text-nabtura-light-green transform group-hover:translate-x-2 transition-all" />
                           </div>
-                          <p className="text-gray-400 text-lg">
+                          <p className="text-content-muted text-lg">
                             {solution.desc}
                           </p>
                         </div>
@@ -140,3 +140,4 @@ export default function Ecosystem() {
     </section>
   );
 }
+
