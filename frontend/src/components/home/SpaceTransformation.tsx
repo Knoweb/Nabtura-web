@@ -5,12 +5,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowRightCircle } from "lucide-react";
 
 const transformations = [
-  { before: "EMPTY LAND", after: "SMART GREENHOUSE" },
-  { before: "UNUSED ROOM", after: "SMART MICROGREENS" },
-  { before: "RESTAURANT TERRACE", after: "DINING FOREST" },
-  { before: "SCHOOL COURTYARD", after: "LEARNING GARDEN" },
-  { before: "VILLA GARDEN", after: "FRESH FOOD + GREEN LIVING" },
-  { before: "ARID SPACE", after: "PURPOSEFUL GREEN" },
+  { before: "EMPTY LAND", after: "SMART GREENHOUSE", seedBefore: 10, seedAfter: 101 },
+  { before: "UNUSED ROOM", after: "SMART MICROGREENS", seedBefore: 20, seedAfter: 201 },
+  { before: "RESTAURANT TERRACE", after: "DINING FOREST", seedBefore: 30, seedAfter: 301 },
+  { before: "SCHOOL COURTYARD", after: "LEARNING GARDEN", seedBefore: 40, seedAfter: 401 },
+  { before: "VILLA GARDEN", after: "FRESH FOOD + GREEN LIVING", seedBefore: 50, seedAfter: 501 },
+  { before: "ARID SPACE", after: "PURPOSEFUL GREEN", seedBefore: 60, seedAfter: 601 },
 ];
 
 export default function SpaceTransformation() {
@@ -56,7 +56,7 @@ export default function SpaceTransformation() {
 
           {/* Transformation Display */}
           <div className="lg:col-span-7">
-            <div className="relative bg-transparent border border-white/10 rounded-3xl p-10 md:p-16 min-h-[400px] flex flex-col justify-center overflow-hidden shadow-2xl">
+            <div className="relative bg-transparent border border-white/10 rounded-3xl p-6 md:p-10 min-h-[500px] flex flex-col justify-center overflow-hidden shadow-2xl">
               
               {/* Decorative accent */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/10 blur-[80px] rounded-full pointer-events-none" />
@@ -64,37 +64,56 @@ export default function SpaceTransformation() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 1.05 }}
                   transition={{ duration: 0.4 }}
-                  className="relative z-10"
+                  className="relative z-10 w-full h-full"
                 >
-                  <div className="flex flex-col gap-8">
-                    {/* Before State */}
-                    <div>
-                      <span className="inline-block px-3 py-1 rounded-md bg-gray-800 text-gray-400 text-xs font-bold tracking-widest uppercase mb-3">
-                        Before
-                      </span>
-                      <h4 className="text-3xl md:text-4xl font-light text-gray-500">
-                        {transformations[activeIndex].before}
-                      </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
+                    
+                    {/* Before Image Panel */}
+                    <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-white/5">
+                      <img 
+                        src={`https://picsum.photos/seed/${transformations[activeIndex].seedBefore}/800/800`} 
+                        alt="Before" 
+                        className="absolute inset-0 w-full h-full object-cover grayscale opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-6 left-6 right-6 z-10">
+                        <span className="inline-block px-3 py-1 rounded-md bg-black/60 backdrop-blur-md text-gray-400 border border-white/10 text-xs font-bold tracking-widest uppercase mb-3">
+                          Before
+                        </span>
+                        <h4 className="text-2xl font-light text-white leading-tight">
+                          {transformations[activeIndex].before}
+                        </h4>
+                      </div>
                     </div>
 
-                    {/* Arrow Divider */}
-                    <div className="py-4">
-                      <ArrowRightCircle className="w-12 h-12 text-nabtura-green/50 animate-pulse" strokeWidth={1} />
+                    {/* After Image Panel */}
+                    <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-nabtura-green/20 shadow-[0_0_30px_rgba(21,184,118,0.1)]">
+                      <img 
+                        src={`https://picsum.photos/seed/${transformations[activeIndex].seedAfter}/800/800`} 
+                        alt="After" 
+                        className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+                      
+                      {/* Transformation Arrow (Mobile Overlay) */}
+                      <div className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 md:hidden bg-nabtura-slate rounded-full p-1 border border-white/10">
+                        <ArrowRightCircle className="w-8 h-8 text-nabtura-green" />
+                      </div>
+
+                      <div className="absolute bottom-6 left-6 right-6 z-10">
+                        <span className="inline-block px-3 py-1 rounded-md bg-nabtura-green/20 backdrop-blur-md border border-nabtura-green/30 text-nabtura-light-green text-xs font-bold tracking-widest uppercase mb-3 shadow-lg">
+                          NABTURA Transformation
+                        </span>
+                        <h4 className="text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-md">
+                          {transformations[activeIndex].after}
+                        </h4>
+                      </div>
                     </div>
 
-                    {/* After State */}
-                    <div>
-                      <span className="inline-block px-3 py-1 rounded-md bg-nabtura-green/20 text-nabtura-light-green text-xs font-bold tracking-widest uppercase mb-3">
-                        NABTURA Transformation
-                      </span>
-                      <h4 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                        {transformations[activeIndex].after}
-                      </h4>
-                    </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
