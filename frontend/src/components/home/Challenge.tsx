@@ -42,7 +42,7 @@ export default function Challenge() {
   const activeChallenge = challenges.find((c) => c.id === activeTab);
 
   return (
-    <section className="relative min-h-[80vh] flex items-center bg-black text-white overflow-hidden py-24">
+    <section className="relative min-h-[80vh] flex items-center bg-transparent text-white overflow-hidden py-24">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}

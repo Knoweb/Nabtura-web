@@ -1,13 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #0a0a0a;
+  --color-background: #09110E;
   --color-foreground: #ededed;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-outfit);
   
-  --color-nabtura-green: #a3e635; /* Lime 400 for premium green */
-  --color-nabtura-light-green: #bef264; /* Lime 300 */
+  /* Primary Green (Smart Agriculture & Nature) */
+  --color-nabtura-green: #15B876;
+  --color-nabtura-light-green: #34D399;
+  
+  /* Water Intelligence (Smart Irrigation & Tech) */
+  --color-nabtura-blue: #0EA5E9;
+  
+  /* UAE/Desert & Premium Investment Accents */
+  --color-nabtura-sand: #D4AF37;
+  
+  /* Premium Dark Background (Instead of pure black) */
+  --color-nabtura-slate: #09110E;
 }
 
 body {

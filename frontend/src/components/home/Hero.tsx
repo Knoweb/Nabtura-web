@@ -12,23 +12,38 @@ const words = [
   "GREENER ENVIRONMENT.",
 ];
 
+const bgImages = [
+  "/images/dubai-landscapes.jpg",
+  "/images/dubai-greenhouse.jpg",
+  "/images/dubai-water.jpg",
+];
+
 export default function Hero() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
-    }, 3000);
+    }, 4000); // Slowed down slightly for a more premium feel
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black text-white">
-      {/* Background with cinematic overlay */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black z-10" />
-        {/* Placeholder for actual background image/video. Using a dark gradient for now. */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-green-900/20 via-black to-black" />
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-nabtura-slate text-white">
+      {/* Cinematic Background Slider */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <AnimatePresence>
+          <motion.div
+            key={bgImages[index % bgImages.length]}
+            initial={{ opacity: 0, scale: 1.1, x: 50 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            exit={{ opacity: 0, scale: 1.05, x: -50 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${bgImages[index % bgImages.length]})` }}
+          />
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-nabtura-slate z-10" />
       </div>
 
       <div className="relative z-20 text-center px-4 max-w-5xl mx-auto w-full">

@@ -5,17 +5,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const audiences = [
-  { id: "investor", label: "Investor" },
-  { id: "grower", label: "Grower" },
-  { id: "landowner", label: "Landowner" },
-  { id: "developer", label: "Developer" },
-  { id: "hotel", label: "Hotel / Resort" },
-  { id: "restaurant", label: "Restaurant" },
-  { id: "school", label: "School / University" },
-  { id: "mall", label: "Mall / Retailer" },
-  { id: "corporate", label: "Business / Corporate" },
-  { id: "villa", label: "Home / Villa Owner" },
-  { id: "government", label: "Government / Institution" },
+  { id: "investor", label: "Investors & Entrepreneurs" },
+  { id: "grower", label: "Growers & Farms" },
+  { id: "landowner", label: "Landowners" },
+  { id: "developer", label: "Developers" },
+  { id: "hotel", label: "Hotels & Resorts" },
+  { id: "restaurant", label: "Restaurants & F&B" },
+  { id: "mall", label: "Shopping Malls & Retail" },
+  { id: "school", label: "Schools & Universities" },
+  { id: "corporate", label: "Corporate Campuses" },
+  { id: "residential", label: "Residential Developments" },
+  { id: "villa", label: "Premium Villas" },
+  { id: "healthcare", label: "Healthcare & Wellness" },
+  { id: "government", label: "Government & Municipalities" },
+  { id: "industrial", label: "Industrial/Logistics Facilities" },
+  { id: "retail", label: "Retailers/Supermarkets" },
 ];
 
 const contentMap: Record<string, any> = {
@@ -52,7 +56,7 @@ export default function WhoWeServe() {
   const content = contentMap[activeAudience] || contentMap.default;
 
   return (
-    <section className="bg-black text-white py-24 border-t border-white/5">
+    <section id="who-we-serve" className="bg-black text-white py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
