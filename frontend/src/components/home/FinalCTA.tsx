@@ -8,7 +8,7 @@ export default function FinalCTA() {
     <section className="bg-nabtura-slate text-white relative">
       
       {/* Section 16: Behind NABTURA (Corporate Link) */}
-      <div className="border-b border-white/5 py-12 bg-black">
+      <div className="border-b border-white/5 py-12 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h4 className="text-gray-500 text-xs font-bold tracking-[0.3em] uppercase mb-2">

@@ -25,7 +25,7 @@ const featured = [
     description: "Green spaces designed to perform.",
     tags: ["Hospitality", "Commercial", "Residential"],
     href: "#",
-    imageSrc: "/images/landscapes.jpg",
+    imageSrc: "/images/dubai-landscapes.jpg",
   },
 ];
 

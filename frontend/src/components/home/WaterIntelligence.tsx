@@ -79,7 +79,7 @@ export default function WaterIntelligence() {
                     transition={{ delay: index * 0.15, duration: 0.5 }}
                     className="flex items-center gap-8 group"
                   >
-                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-black border border-white/10 flex items-center justify-center shrink-0 group-hover:border-nabtura-blue group-hover:bg-nabtura-blue/5 transition-all shadow-xl shadow-nabtura-blue/5 relative">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center shrink-0 group-hover:border-nabtura-blue group-hover:bg-nabtura-blue/5 transition-all shadow-xl shadow-nabtura-blue/5 relative">
                       {/* Active indicator dot */}
                       <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-nabtura-blue opacity-0 group-hover:opacity-100 transition-opacity blur-[2px]" />
                       <Icon className="w-8 h-8 md:w-10 md:h-10 text-gray-500 group-hover:text-nabtura-blue transition-colors" strokeWidth={1.5} />

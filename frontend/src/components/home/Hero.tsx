@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-black text-white">
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-transparent text-white">
       {/* Background with cinematic overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black z-10" />

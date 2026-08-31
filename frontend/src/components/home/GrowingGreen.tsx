@@ -36,7 +36,7 @@ export default function GrowingGreen() {
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('/smart_greenhouse_mockup_1788109457162.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl group-hover:bg-white/5 backdrop-blur-xl/20 transition-colors" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <p className="text-sm tracking-widest font-bold text-nabtura-light-green mb-2 uppercase">Agriculture</p>
@@ -52,7 +52,7 @@ export default function GrowingGreen() {
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[url('/smart_landscapes_mockup_1788109519811.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
+            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl group-hover:bg-white/5 backdrop-blur-xl/20 transition-colors" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <p className="text-sm tracking-widest font-bold text-nabtura-green mb-2 uppercase">Environment</p>
@@ -62,7 +62,7 @@ export default function GrowingGreen() {
         </div>
 
         {/* Concise Benefits Grid */}
-        <div className="bg-black/30 backdrop-blur-md rounded-3xl p-10 border border-white/5 max-w-5xl mx-auto">
+        <div className="bg-white/5 backdrop-blur-xl/30 backdrop-blur-md rounded-3xl p-10 border border-white/5 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, i) => (
               <motion.div 

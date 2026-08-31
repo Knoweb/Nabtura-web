@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function EnvironmentalProjectsPage() {
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="TRANSFORM ENVIRONMENTS"
         headline="ENVIRONMENTAL PROJECTS"
@@ -37,7 +37,7 @@ export default function EnvironmentalProjectsPage() {
               { title: "Implements & manages where appropriate" }
             ].map((step, i) => (
               <div key={i} className="flex items-center gap-6 group">
-                <div className="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center shrink-0 group-hover:border-nabtura-green transition-colors">
+                <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center shrink-0 group-hover:border-nabtura-green transition-colors">
                   <span className="text-gray-500 font-bold group-hover:text-nabtura-light-green">0{i+1}</span>
                 </div>
                 <h4 className="text-2xl md:text-3xl font-bold text-gray-300 group-hover:text-white transition-colors">{step.title}</h4>

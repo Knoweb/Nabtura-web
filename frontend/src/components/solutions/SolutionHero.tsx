@@ -18,7 +18,7 @@ export default function SolutionHero({
   accentColor = "text-nabtura-green"
 }: SolutionHeroProps) {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-black pt-20 border-b border-white/10">
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 border-b border-white/10">
       
       {/* Background Image */}
       <div className="absolute inset-0 z-0">

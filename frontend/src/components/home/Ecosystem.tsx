@@ -98,7 +98,7 @@ export default function Ecosystem() {
           </div>
 
           {/* Dynamic Content Display */}
-          <div className="lg:col-span-7 bg-black/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12 min-h-[400px]">
+          <div className="lg:col-span-7 bg-white/5 backdrop-blur-xl/40 backdrop-blur-sm border border-white/10 rounded-3xl p-8 md:p-12 min-h-[400px]">
             <AnimatePresence mode="wait">
               {ecosystem.map((node) => (
                 node.id === activeId && (

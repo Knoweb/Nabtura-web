@@ -74,57 +74,9 @@ export default function Header() {
                 HOME
               </Link>
 
-              {/* Solutions Dropdown */}
-              <div 
-                className="relative group h-24 flex items-center"
-                onMouseEnter={() => setActiveMenu("solutions")}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
-                <button className="text-xs font-bold tracking-wider text-gray-300 hover:text-white transition-colors uppercase flex items-center gap-1 whitespace-nowrap">
-                  SOLUTIONS <ChevronDown className="w-4 h-4" />
-                </button>
-                
-                <AnimatePresence>
-                  {activeMenu === "solutions" && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-24 left-1/2 -translate-x-1/2 w-[800px] bg-black/95 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl p-8 grid grid-cols-2 gap-x-12 gap-y-8"
-                    >
-                      {solutionsMenu.map((section) => {
-                        const Icon = section.icon;
-                        return (
-                          <div key={section.title}>
-                            <div className="flex items-center gap-3 mb-4">
-                              <Icon className={`w-5 h-5 ${section.color}`} />
-                              <h4 className="text-sm font-bold tracking-widest text-white uppercase">{section.title}</h4>
-                            </div>
-                            <ul className="space-y-3">
-                              {section.links.map((link) => (
-                                <li key={link.name}>
-                                  <Link href={link.href} className="text-sm text-gray-400 hover:text-nabtura-light-green transition-colors block">
-                                    {link.name}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        );
-                      })}
-                      
-                      <div className="col-span-2 mt-4 pt-6 border-t border-white/10 text-center">
-                        <p className="text-gray-400 text-sm mb-3">Not sure what you need?</p>
-                        <Link href="/contact" className="inline-flex items-center text-nabtura-light-green hover:text-white text-sm font-bold tracking-widest uppercase transition-colors group">
-                          Find Your NABTURA Solution
-                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              <Link href="/solutions" className="text-xs font-bold tracking-wider text-gray-300 hover:text-white transition-colors uppercase whitespace-nowrap">
+                SOLUTIONS
+              </Link>
 
               <Link href="/#who-we-serve" className="text-xs font-bold tracking-wider text-gray-300 hover:text-white transition-colors uppercase whitespace-nowrap">
                 WHO WE SERVE
@@ -170,29 +122,13 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "100vh" }}
             exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-black/95 backdrop-blur-2xl absolute top-0 left-0 w-full pt-24 px-6 overflow-y-auto"
+            className="xl:hidden bg-black/95 backdrop-blur-3xl absolute top-0 left-0 w-full pt-24 px-6 overflow-y-auto"
           >
             <div className="flex flex-col gap-6 pb-20">
               <Link href="/" className="text-xl font-bold text-white tracking-widest">HOME</Link>
               
               <div className="space-y-4">
-                <span className="text-xl font-bold text-white tracking-widest">SOLUTIONS</span>
-                <div className="pl-4 space-y-6 border-l border-white/20">
-                  {solutionsMenu.map((section) => (
-                    <div key={section.title}>
-                      <span className={`text-xs font-bold tracking-widest uppercase ${section.color} block mb-3`}>
-                        {section.title}
-                      </span>
-                      <ul className="space-y-3 pl-2">
-                        {section.links.map((link) => (
-                          <li key={link.name}>
-                            <Link href={link.href} className="text-gray-300 text-sm">{link.name}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
+                <Link href="/solutions" className="text-xl font-bold text-white tracking-widest inline-block">SOLUTIONS</Link>
               </div>
 
               <Link href="/#who-we-serve" className="text-xl font-bold text-white tracking-widest">WHO WE SERVE</Link>

@@ -32,7 +32,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="CONTACT NABTURA"
         headline="START A CONVERSATION."
@@ -59,7 +59,7 @@ export default function ContactPage() {
                         className={`w-full flex items-center justify-between bg-nabtura-slate border border-white/5 p-6 rounded-2xl group transition-all ${type.border}`}
                       >
                         <div className="flex items-center gap-6">
-                          <div className="w-12 h-12 rounded-full bg-black flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
+                          <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl flex items-center justify-center border border-white/10 group-hover:border-white/20 transition-colors">
                             <Icon className={`w-5 h-5 ${type.color}`} />
                           </div>
                           <span className="text-white font-bold text-lg">{type.title}</span>
@@ -96,19 +96,19 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-gray-400 mb-2">Name</label>
-                      <input required type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input required type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-gray-400 mb-2">Email</label>
-                      <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-gray-400 mb-2">Phone</label>
-                      <input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-gray-400 mb-2">Message</label>
-                      <textarea required rows={4} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} className="w-full bg-black border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors"></textarea>
+                      <textarea required rows={4} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} className="w-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green transition-colors"></textarea>
                     </div>
                     
                     {status === "error" && <p className="text-red-500 text-sm font-bold">Failed to send message. Please try again.</p>}
@@ -128,19 +128,19 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold text-white mb-8">Direct Contact</h3>
               <div className="space-y-6 mb-12">
                 <a href="#" className="flex items-center gap-4 text-gray-300 hover:text-nabtura-green transition-colors group">
-                  <div className="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center group-hover:border-nabtura-green transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center group-hover:border-nabtura-green transition-colors">
                     <MessageCircle className="w-5 h-5 text-nabtura-green" />
                   </div>
                   <span className="font-bold text-lg tracking-wide">WhatsApp Us</span>
                 </a>
                 <a href="tel:+971569300075" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
-                  <div className="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center group-hover:border-white transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center group-hover:border-white transition-colors">
                     <Phone className="w-5 h-5 text-gray-400" />
                   </div>
                   <span className="font-light text-lg tracking-wide">+971 56 9300075</span>
                 </a>
                 <a href="mailto:info@nabtura.com" className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors group">
-                  <div className="w-12 h-12 rounded-full bg-black border border-white/10 flex items-center justify-center group-hover:border-white transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 flex items-center justify-center group-hover:border-white transition-colors">
                     <Mail className="w-5 h-5 text-gray-400" />
                   </div>
                   <span className="font-light text-lg tracking-wide">info@nabtura.com</span>

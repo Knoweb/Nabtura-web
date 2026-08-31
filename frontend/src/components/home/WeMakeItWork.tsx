@@ -61,7 +61,7 @@ export default function WeMakeItWork() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-black border border-white/10 rounded-2xl p-8 hover:border-nabtura-green/50 hover:bg-white/5 transition-all group"
+              className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 hover:border-nabtura-green/50 hover:bg-white/5 transition-all group"
             >
               <h4 className="text-lg font-bold text-white mb-3 tracking-widest uppercase">
                 {cap.name}

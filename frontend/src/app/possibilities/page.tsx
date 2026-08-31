@@ -17,7 +17,7 @@ const possibilities = [
 
 export default function PossibilitiesPage() {
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="POSSIBILITIES"
         headline="IMAGINE WHAT YOUR SPACE COULD BECOME."
@@ -43,7 +43,7 @@ export default function PossibilitiesPage() {
           ))}
         </div>
 
-        <div className="mt-24 bg-black/50 border border-white/10 rounded-[3rem] p-12 text-center max-w-4xl mx-auto">
+        <div className="mt-24 bg-white/5 backdrop-blur-xl/50 border border-white/10 rounded-[3rem] p-12 text-center max-w-4xl mx-auto">
           <h3 className="text-3xl font-bold text-white mb-6">Have a different location in mind?</h3>
           <p className="text-gray-400 text-lg font-light mb-8">
             Tell us about your space. We assess the situation, develop the idea, and engineer the NABTURA solution.

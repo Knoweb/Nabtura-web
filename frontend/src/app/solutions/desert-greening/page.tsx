@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function DesertGreeningPage() {
   return (
-    <main className="min-h-screen bg-black pt-20">
+    <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="CREATE GREEN"
         headline="DESERT GREENING"
@@ -58,7 +58,7 @@ export default function DesertGreeningPage() {
             ].map((step, i) => {
               const Icon = step.icon;
               return (
-                <div key={i} className="bg-black border border-white/5 p-8 rounded-3xl hover:border-nabtura-sand/50 transition-colors">
+                <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/5 p-8 rounded-3xl hover:border-nabtura-sand/50 transition-colors">
                   <Icon className="text-nabtura-sand w-8 h-8 mb-6" />
                   <h4 className="text-white font-bold text-lg mb-3 tracking-wide">{step.title}</h4>
                   <p className="text-gray-400 font-light text-sm leading-relaxed">{step.desc}</p>
