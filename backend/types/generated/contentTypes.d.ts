@@ -626,6 +626,37 @@ export interface ApiOpportunityOpportunity extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPossibilityPossibility extends Struct.CollectionTypeSchema {
+  collectionName: 'possibilities';
+  info: {
+    description: 'Possibility gallery concepts';
+    displayName: 'Possibility';
+    pluralName: 'possibilities';
+    singularName: 'possibility';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    desc: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::possibility.possibility'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   collectionName: 'projects';
   info: {
@@ -1204,6 +1235,7 @@ declare module '@strapi/strapi' {
       'api::concept.concept': ApiConceptConcept;
       'api::enquiry.enquiry': ApiEnquiryEnquiry;
       'api::opportunity.opportunity': ApiOpportunityOpportunity;
+      'api::possibility.possibility': ApiPossibilityPossibility;
       'api::project.project': ApiProjectProject;
       'api::solution.solution': ApiSolutionSolution;
       'plugin::content-releases.release': PluginContentReleasesRelease;

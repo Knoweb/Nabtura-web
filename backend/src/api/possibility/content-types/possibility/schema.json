@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "possibilities",
+  "info": {
+    "singularName": "possibility",
+    "pluralName": "possibilities",
+    "displayName": "Possibility",
+    "description": "Possibility gallery concepts"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "desc": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "required": true
+    }
+  }
+}
