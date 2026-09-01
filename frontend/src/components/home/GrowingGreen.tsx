@@ -35,9 +35,9 @@ export default function GrowingGreen() {
             transition={{ duration: 0.6 }}
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-[url('/smart_greenhouse_mockup_1788109457162.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-overlay backdrop-blur-xl group-hover:bg-overlay backdrop-blur-xl/20 transition-colors" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-[url('/possibility_smart_greenhouse_1788160454551.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <p className="text-sm tracking-widest font-bold text-nabtura-light-green mb-2 uppercase">Agriculture</p>
               <h4 className="text-3xl font-bold text-content">Controlled Food Production</h4>
@@ -51,9 +51,9 @@ export default function GrowingGreen() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-[url('/smart_landscapes_mockup_1788109519811.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-overlay backdrop-blur-xl group-hover:bg-overlay backdrop-blur-xl/20 transition-colors" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-[url('/possibility_urban_oasis_1788160434157.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
               <p className="text-sm tracking-widest font-bold text-nabtura-green mb-2 uppercase">Environment</p>
               <h4 className="text-3xl font-bold text-content">Green Environment</h4>

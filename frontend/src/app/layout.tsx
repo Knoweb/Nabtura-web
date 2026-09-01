@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import GlobalAnimatedBackground from "@/components/home/GlobalAnimatedBackground";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -24,7 +25,9 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} h-full antialiased scroll-pt-28`}
     >
-      <body className="min-h-full flex flex-col bg-nabtura-slate text-white font-sans relative selection:bg-nabtura-green selection:text-black">
+      <body className="min-h-full flex flex-col bg-transparent text-white font-sans relative selection:bg-nabtura-green selection:text-black">
+        <GlobalAnimatedBackground />
+        
         {/* Ambient Premium Glows */}
         <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
           <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-nabtura-green/10 blur-[120px] rounded-full mix-blend-screen opacity-50"></div>

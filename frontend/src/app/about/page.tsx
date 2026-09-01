@@ -22,7 +22,7 @@ export default function AboutPage() {
   };
 
   return (
-    <main className="min-h-screen relative overflow-hidden bg-[#050A08] pt-20">
+    <main className="min-h-screen relative overflow-hidden bg-transparent pt-20">
       
       {/* Ambient Background Glows */}
       <div className="absolute top-1/4 left-0 w-[800px] h-[800px] bg-nabtura-green/10 blur-[150px] rounded-full pointer-events-none z-0 mix-blend-screen" />

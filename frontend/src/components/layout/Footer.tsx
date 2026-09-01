@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-24 border-b border-white/10 pb-16">
           <div className="max-w-2xl">
             <h2 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-6">
-              NABTURA<span className="text-nabtura-green">.</span>
+              NABTURA
             </h2>
             <p className="text-xl md:text-2xl font-light text-content-muted leading-relaxed">
               Purpose-built green environments. Smart agriculture, water intelligence, and sustainable landscapes for the future.
@@ -34,14 +34,14 @@ export default function Footer() {
           </div>
           <div className="w-full lg:w-auto">
             <h4 className="text-sm font-bold tracking-widest uppercase text-white mb-4">STAY UPDATED</h4>
-            <div className="flex items-center border-b border-white/20 pb-2 focus-within:border-nabtura-green transition-colors">
+            <div className="flex items-center bg-white/5 border border-white/10 rounded-full pl-6 pr-2 py-1.5 focus-within:border-nabtura-green focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-nabtura-green/50 transition-all shadow-[0_0_15px_rgba(46,204,113,0.15)] group">
               <input 
                 type="email" 
                 placeholder="Enter your email address" 
-                className="bg-transparent border-none outline-none text-white placeholder-gray-600 flex-grow py-2 min-w-[250px]"
+                className="bg-transparent border-none outline-none text-white placeholder-gray-500 flex-grow py-2 min-w-[220px] text-sm tracking-wide"
               />
-              <button className="text-nabtura-green hover:text-white transition-colors p-2">
-                <ArrowRight className="w-5 h-5" />
+              <button className="text-black bg-nabtura-green hover:bg-nabtura-light-green transition-colors p-2.5 rounded-full shadow-[0_0_10px_rgba(46,204,113,0.3)] group-hover:scale-105">
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
