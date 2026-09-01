@@ -18,15 +18,15 @@ export default function SolutionHero({
   accentColor = "text-nabtura-green"
 }: SolutionHeroProps) {
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-transparent pt-20 border-b border-divider">
+    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-transparent pt-32 pb-20 border-b border-divider">
       
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40 scale-105"
+          className="absolute inset-0 bg-cover bg-center opacity-70 scale-105"
           style={{ backgroundImage: `url('${bgImageUrl}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/60 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
