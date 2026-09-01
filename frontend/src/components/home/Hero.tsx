@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { fetchAPI } from "@/lib/api";
 
 const words = [
   "CONTROLLED AGRICULTURE",
@@ -21,21 +20,6 @@ const bgImages = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const [latestBlog, setLatestBlog] = useState<any>(null);
-
-  useEffect(() => {
-    async function getLatestBlog() {
-      try {
-        const res = await fetchAPI("/blogs?populate=*&sort=createdAt:desc&pagination[limit]=1");
-        if (res.data && res.data.length > 0) {
-          setLatestBlog(res.data[0]);
-        }
-      } catch (error) {
-        console.warn("Failed to fetch latest blog", error);
-      }
-    }
-    getLatestBlog();
-  }, []);
 
   const bgImages = [
     "/images/greenhouse.jpg",
@@ -165,46 +149,6 @@ export default function Hero() {
         </motion.div>
 
       </div>
-
-      {/* Latest Blog Card - Absolutely positioned on the right */}
-      {latestBlog && (
-        <motion.div 
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 2.5, duration: 0.8 }}
-          className="hidden xl:block absolute right-8 top-1/2 -translate-y-1/2 w-80 z-30"
-        >
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 shadow-2xl hover:bg-white/15 transition-all group">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-bold tracking-wider text-nabtura-green uppercase">Latest Update</span>
-              <span className="w-2 h-2 rounded-full bg-nabtura-green animate-pulse"></span>
-            </div>
-            
-            {latestBlog.coverImage || latestBlog.coverimage || latestBlog.CoverImage ? (
-              <div className="w-full h-32 relative mb-4 rounded-lg overflow-hidden">
-                <img 
-                  src={(latestBlog.coverImage || latestBlog.coverimage || latestBlog.CoverImage).url.startsWith('http') 
-                    ? (latestBlog.coverImage || latestBlog.coverimage || latestBlog.CoverImage).url 
-                    : `http://localhost:1337${(latestBlog.coverImage || latestBlog.coverimage || latestBlog.CoverImage).url}`} 
-                  alt={latestBlog.title || latestBlog.Title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-            ) : null}
-            
-            <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2">
-              {latestBlog.title || latestBlog.Title}
-            </h3>
-            
-            <Link 
-              href={`/blog/${latestBlog.slug || latestBlog.documentId}`}
-              className="inline-flex items-center text-sm text-gray-300 hover:text-white mt-2 transition-colors"
-            >
-              Read Article <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
-          </div>
-        </motion.div>
-      )}
     </section>
   );
 }

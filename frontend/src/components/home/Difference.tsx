@@ -108,10 +108,41 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
 
   return (
     <section className="bg-transparent text-white py-12 md:py-16 border-t border-white/5 relative overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-nabtura-green/10 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
-      <div className="absolute bottom-1/4 -left-1/4 w-[800px] h-[800px] bg-nabtura-light-green/5 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
-      <div className="absolute top-1/4 -right-1/4 w-[800px] h-[800px] bg-nabtura-blue/5 blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+      {/* Animated Waves Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-40">
+        {/* Wave 1 (Back, slow) */}
+        <motion.svg
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-0 w-[200%] h-[300px] md:h-[400px] fill-emerald-900/40"
+          viewBox="0 0 2880 320"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" />
+        </motion.svg>
+
+        {/* Wave 2 (Middle, medium) */}
+        <motion.svg
+          animate={{ x: ["-50%", "0%"] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-0 w-[200%] h-[250px] md:h-[350px] fill-[#024a27]/50"
+          viewBox="0 0 2880 320"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,200 Q360,280 720,200 T1440,200 Q1800,280 2160,200 T2880,200 L2880,320 L0,320 Z" />
+        </motion.svg>
+
+        {/* Wave 3 (Front, fast) */}
+        <motion.svg
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30"
+          viewBox="0 0 2880 320"
+          preserveAspectRatio="none"
+        >
+          <path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" />
+        </motion.svg>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 

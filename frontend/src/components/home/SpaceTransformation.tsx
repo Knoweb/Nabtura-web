@@ -1,23 +1,66 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowRightCircle } from "lucide-react";
 
 const transformations = [
-  { before: "EMPTY LAND", after: "SMART GREENHOUSE", seedBefore: 10, seedAfter: 101 },
-  { before: "UNUSED ROOM", after: "SMART MICROGREENS", seedBefore: 20, seedAfter: 201 },
-  { before: "RESTAURANT TERRACE", after: "DINING FOREST", seedBefore: 30, seedAfter: 301 },
-  { before: "SCHOOL COURTYARD", after: "LEARNING GARDEN", seedBefore: 40, seedAfter: 401 },
-  { before: "VILLA GARDEN", after: "FRESH FOOD + GREEN LIVING", seedBefore: 50, seedAfter: 501 },
-  { before: "ARID SPACE", after: "PURPOSEFUL GREEN", seedBefore: 60, seedAfter: 601 },
+  { 
+    before: "EMPTY LAND", 
+    after: "SMART GREENHOUSE", 
+    imgBefore: "/images/before_greenhouse.jpg",
+    imgAfter: "/images/greenhouse.jpg"
+  },
+  { 
+    before: "UNUSED ROOM", 
+    after: "SMART MICROGREENS", 
+    imgBefore: "/images/before_microgreens.jpg",
+    imgAfter: "/images/microgreens.jpg"
+  },
+  { 
+    before: "RESTAURANT TERRACE", 
+    after: "DINING FOREST", 
+    imgBefore: "/images/before_landscapes.jpg",
+    imgAfter: "/images/dubai-landscapes.jpg"
+  },
+  { 
+    before: "SCHOOL COURTYARD", 
+    after: "LEARNING GARDEN", 
+    imgBefore: "/images/before_courtyard.jpg",
+    imgAfter: "/images/landscapes.jpg"
+  },
+  { 
+    before: "VILLA GARDEN", 
+    after: "FRESH FOOD + GREEN LIVING", 
+    imgBefore: "/images/before_villa.jpg",
+    imgAfter: "/images/dubai-greenhouse.jpg"
+  },
+  { 
+    before: "ARID SPACE", 
+    after: "PURPOSEFUL GREEN", 
+    imgBefore: "/images/before_arid.jpg",
+    imgAfter: "/images/dubai-water.jpg"
+  },
 ];
 
 export default function SpaceTransformation() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (isHovered) return;
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % transformations.length);
+    }, 4000); // Auto-advance every 4 seconds
+    return () => clearInterval(timer);
+  }, [isHovered]);
 
   return (
-    <section className="bg-transparent text-white py-16 md:py-12 md:py-16 border-b border-white/5">
+    <section 
+      className="bg-transparent text-white py-16 md:py-12 md:py-16 border-b border-white/5"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-sm tracking-[0.3em] text-gray-500 font-bold mb-6 uppercase">
@@ -42,6 +85,7 @@ export default function SpaceTransformation() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
+                  onMouseEnter={() => setActiveIndex(index)}
                   className={`text-left px-6 py-4 rounded-2xl transition-all duration-300 font-bold tracking-widest text-sm md:text-base border ${
                     isActive 
                       ? "bg-white/10 text-white border-white/20" 
@@ -64,27 +108,27 @@ export default function SpaceTransformation() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeIndex}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.05 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.4 }}
                   className="relative z-10 w-full h-full"
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
                     
-                    {/* Before Image Panel */}
-                    <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-white/5">
+                    {/* Before Image Panel (Realistic Empty State) */}
+                    <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-white/5 bg-[#050505]">
                       <img 
-                        src={`https://picsum.photos/seed/${transformations[activeIndex].seedBefore}/800/800`} 
+                        src={transformations[activeIndex].imgBefore} 
                         alt="Before" 
-                        className="absolute inset-0 w-full h-full object-cover grayscale opacity-50 group-hover:opacity-70 group-hover:scale-105 transition-all duration-700"
+                        className="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      <div className="absolute bottom-6 left-6 right-6 z-10">
-                        <span className="inline-block px-3 py-1 rounded-md bg-black/60 backdrop-blur-md text-gray-400 border border-white/10 text-xs font-bold tracking-widest uppercase mb-3">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-6 left-6 right-6 z-10 pointer-events-none">
+                        <span className="inline-block px-3 py-1 rounded-md bg-black/80 backdrop-blur-md text-gray-400 border border-white/10 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-3">
                           Before
                         </span>
-                        <h4 className="text-2xl font-light text-white leading-tight">
+                        <h4 className="text-xl md:text-2xl font-light text-white leading-tight">
                           {transformations[activeIndex].before}
                         </h4>
                       </div>
@@ -93,7 +137,7 @@ export default function SpaceTransformation() {
                     {/* After Image Panel */}
                     <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-nabtura-green/20 shadow-[0_0_30px_rgba(21,184,118,0.1)]">
                       <img 
-                        src={`https://picsum.photos/seed/${transformations[activeIndex].seedAfter}/800/800`} 
+                        src={transformations[activeIndex].imgAfter} 
                         alt="After" 
                         className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                       />
@@ -105,10 +149,10 @@ export default function SpaceTransformation() {
                       </div>
 
                       <div className="absolute bottom-6 left-6 right-6 z-10">
-                        <span className="inline-block px-3 py-1 rounded-md bg-nabtura-green/20 backdrop-blur-md border border-nabtura-green/30 text-nabtura-light-green text-xs font-bold tracking-widest uppercase mb-3 shadow-lg">
-                          NABTURA Transformation
+                        <span className="inline-block px-3 py-1 rounded-md bg-nabtura-green/20 backdrop-blur-md text-nabtura-light-green border border-nabtura-green/30 text-[10px] md:text-xs font-bold tracking-widest uppercase mb-3 shadow-[0_0_15px_rgba(21,184,118,0.2)]">
+                          Nabtura Transformation
                         </span>
-                        <h4 className="text-2xl md:text-3xl font-bold text-white leading-tight drop-shadow-md">
+                        <h4 className="text-2xl md:text-3xl font-bold text-white leading-tight">
                           {transformations[activeIndex].after}
                         </h4>
                       </div>
