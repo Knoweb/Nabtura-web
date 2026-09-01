@@ -67,8 +67,8 @@ export default function SpaceTransformation() {
             START WITH THE LOCATION
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-            YOU HAVE THE SPACE.<br />
-            <span className="text-nabtura-light-green">LET'S EXPLORE THE POSSIBILITY.</span>
+            YOU HAVE THE SPACE<br />
+            <span className="text-nabtura-light-green">LET'S EXPLORE THE POSSIBILITY</span>
           </h3>
           <p className="text-gray-400 text-lg md:text-xl tracking-wider font-light max-w-4xl mx-auto">
             Garden. Rooftop. Restaurant. School. Hotel. Commercial property. Land.

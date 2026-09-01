@@ -35,7 +35,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero
         eyebrow="CONTACT NABTURA"
-        headline="START A CONVERSATION."
+        headline="START A CONVERSATION"
         tagline="How can we help you grow?"
         bgImageUrl="/possibility_smart_greenhouse_1788160454551.jpg"
         accentColor="text-content"

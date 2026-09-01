@@ -30,7 +30,7 @@ export default function WaterIntelligence() {
               SMART WATER MANAGEMENT
             </h2>
             <h3 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
-              EVERY DROP HAS VALUE.
+              EVERY DROP HAS VALUE
             </h3>
             
             <div className="space-y-6 text-xl md:text-2xl font-light text-gray-400 leading-relaxed border-l-2 border-nabtura-blue/50 pl-6 mb-12">

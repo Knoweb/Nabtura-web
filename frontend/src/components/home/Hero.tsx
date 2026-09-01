@@ -124,7 +124,7 @@ export default function Hero() {
           </motion.div>
           <motion.div whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Link
-              href="#contact"
+              href="/contact"
               className="w-full flex justify-center sm:w-auto px-10 py-4 bg-black/40 backdrop-blur-md border border-white/20 text-white font-bold tracking-widest text-sm rounded-full hover:bg-white/10 hover:border-white/40 transition-all uppercase whitespace-nowrap"
             >
               TELL US YOUR LOCATION

@@ -43,7 +43,7 @@ export default function FeaturedSolutions() {
         >
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
             START WITH WHAT<br />
-            YOU WANT TO CREATE.
+            YOU WANT TO CREATE
           </h2>
         </motion.div>
 
