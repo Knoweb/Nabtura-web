@@ -171,7 +171,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-24">
           
           {/* Left Side: Three Pillars */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 h-full">
             {pillars.map((pillar, idx) => (
               <motion.div
                 key={pillar.title}
@@ -179,7 +179,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="group flex flex-col sm:flex-row items-start sm:items-center bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors gap-6"
+                className="group flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-center bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors gap-6"
               >
                 <div className={`w-16 h-16 flex-shrink-0 rounded-full flex items-center justify-center transition-all border border-transparent ${pillar.iconBg}`}>
                   <pillar.icon className={`w-8 h-8 transition-colors ${pillar.iconColor}`} />

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 const concepts = [
   { id: "dining", title: "Dining Forest", desc: "Dine within nature.", image: "/possibility_forest_restaurant_1788160295877.jpg" },
@@ -136,10 +137,10 @@ export default function GreenWhereItMatters() {
             ))}
           </div>
 
-          <button className="relative z-10 group/btn inline-flex items-center justify-center text-content font-bold tracking-widest border border-divider hover:border-nabtura-green hover:bg-nabtura-green/10 rounded-full px-8 py-4 transition-all uppercase text-sm mt-4">
+          <Link href="/possibilities" className="relative z-10 group/btn inline-flex items-center justify-center text-content font-bold tracking-widest border border-divider hover:border-nabtura-green hover:bg-nabtura-green/10 rounded-full px-8 py-4 transition-all uppercase text-sm mt-4">
             Explore Possibilities
             <ArrowRight className="ml-3 group-hover/btn:translate-x-2 transition-transform w-4 h-4" />
-          </button>
+          </Link>
         </div>
       </div>
     </section>
