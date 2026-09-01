@@ -24,11 +24,11 @@ export default function SmartGreenhousesPage() {
               Conventional agriculture struggles in extreme climates. Our smart greenhouses create an optimal, isolated environment where every factor—climate, water, and nutrients—is managed to maximize yield and quality, regardless of the harsh conditions outside.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-overlay backdrop-blur-xl/50 p-6 rounded-2xl border border-divider">
+              <div className="bg-white/5 backdrop-blur-md p-6 rounded-3xl shadow-lg hover:bg-white/10 transition-colors">
                 <h4 className="text-nabtura-green font-bold text-2xl mb-2">365</h4>
                 <p className="text-content-muted text-sm tracking-widest uppercase">Days of Production</p>
               </div>
-              <div className="bg-overlay backdrop-blur-xl/50 p-6 rounded-2xl border border-divider">
+              <div className="bg-white/5 backdrop-blur-md p-6 rounded-3xl shadow-lg hover:bg-white/10 transition-colors">
                 <h4 className="text-nabtura-green font-bold text-2xl mb-2">-90%</h4>
                 <p className="text-content-muted text-sm tracking-widest uppercase">Water Usage</p>
               </div>
@@ -36,7 +36,7 @@ export default function SmartGreenhousesPage() {
           </div>
           <div className="grid grid-cols-1 gap-6">
             {["SMART", "CONTROLLED", "ADAPTED"].map((pillar) => (
-              <div key={pillar} className="bg-overlay border border-divider p-8 rounded-3xl hover:border-nabtura-green transition-colors">
+              <div key={pillar} className="bg-white/5 backdrop-blur-md p-8 rounded-3xl shadow-lg hover:bg-white/10 transition-colors">
                 <h3 className="text-xl font-bold text-content tracking-widest uppercase mb-2">{pillar}</h3>
                 <p className="text-content-muted text-sm">
                   {pillar === "SMART" && "Technology supports better visibility, decisions and operation through sensors and automation."}
@@ -64,7 +64,7 @@ export default function SmartGreenhousesPage() {
               { title: "Water & Fertigation", desc: "Precision delivery of nutrients and recycled water." },
               { title: "Sensors & Cloud", desc: "24/7 monitoring, weather station integration, and remote alerts." }
             ].map((feature, i) => (
-              <div key={i} className="bg-nabtura-slate border border-divider p-8 rounded-3xl">
+              <div key={i} className="bg-white/5 backdrop-blur-md p-8 rounded-[2.5rem] hover:bg-white/10 transition-all shadow-lg">
                 <div className="w-12 h-12 bg-nabtura-green/20 rounded-full flex items-center justify-center mb-6 text-nabtura-green font-bold text-xl">0{i+1}</div>
                 <h4 className="text-content font-bold text-lg mb-3 tracking-wide">{feature.title}</h4>
                 <p className="text-content-muted font-light text-sm leading-relaxed">{feature.desc}</p>
@@ -88,17 +88,17 @@ export default function SmartGreenhousesPage() {
               ))}
             </ul>
           </div>
-          <div className="bg-overlay p-12 rounded-[3rem] border border-divider">
+          <div className="bg-white/5 backdrop-blur-xl p-12 rounded-[3rem] shadow-2xl">
             <h3 className="text-2xl font-bold text-content mb-6">Who Is It For?</h3>
             <div className="flex flex-wrap gap-3">
               {["Investors", "Commercial Farms", "Developers", "Government", "Retailers", "Hotels"].map((audience) => (
-                <span key={audience} className="px-4 py-2 rounded-full bg-transparent border border-divider text-content-muted text-sm font-bold tracking-widest uppercase">
+                <span key={audience} className="px-4 py-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-content-muted text-sm font-bold tracking-widest uppercase">
                   {audience}
                 </span>
               ))}
             </div>
             
-            <div className="mt-12 pt-8 border-t border-divider">
+            <div className="mt-12 pt-8 border-t border-white/5">
               <Link href="/contact" className="group inline-flex items-center text-nabtura-green font-bold tracking-widest uppercase text-sm">
                 Project Enquiry
                 <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-2 transition-transform" />
