@@ -23,12 +23,12 @@ export default function GlobalAnimatedBackground() {
       />
       
       {/* Huge Slow Moving Waves for the Entire Screen Background */}
-      <div className="absolute inset-0 opacity-30 mix-blend-screen">
+      <div className="absolute inset-0 opacity-60 mix-blend-screen">
         {/* Giant Wave 1 (Moves left, very slow) */}
         <motion.svg
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[10%] w-[200%] h-[120vh] fill-nabtura-green/10"
+          className="absolute top-[10%] w-[200%] h-[120vh] fill-nabtura-green/20"
           viewBox="0 0 2880 1000"
           preserveAspectRatio="none"
         >
@@ -39,7 +39,7 @@ export default function GlobalAnimatedBackground() {
         <motion.svg
           animate={{ x: ["-50%", "0%"] }}
           transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[20%] w-[200%] h-[150vh] fill-emerald-900/20"
+          className="absolute -top-[20%] w-[200%] h-[150vh] fill-emerald-500/20"
           viewBox="0 0 2880 1000"
           preserveAspectRatio="none"
         >

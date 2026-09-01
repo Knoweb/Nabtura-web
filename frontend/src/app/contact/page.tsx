@@ -33,17 +33,17 @@ export default function ContactPage() {
 
   return (
     <main className="min-h-screen bg-transparent pt-20">
-      <SolutionHero 
+      <SolutionHero
         eyebrow="CONTACT NABTURA"
         headline="START A CONVERSATION."
         tagline="How can we help you grow?"
-        bgImageUrl="/smart_greenhouse_mockup_1788109457162.jpg"
+        bgImageUrl="/possibility_smart_greenhouse_1788160454551.jpg"
         accentColor="text-content"
       />
 
       <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          
+
           {/* Enquiry Form Area */}
           <div>
             {!selectedType ? (
@@ -53,8 +53,8 @@ export default function ContactPage() {
                   {enquiryTypes.map((type, i) => {
                     const Icon = type.icon;
                     return (
-                      <button 
-                        key={i} 
+                      <button
+                        key={i}
                         onClick={() => setSelectedType(type.id)}
                         className={`w-full flex items-center justify-between bg-nabtura-slate border border-divider p-6 rounded-2xl group transition-all ${type.border}`}
                       >
@@ -96,21 +96,21 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Name</label>
-                      <input required type="text" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input required type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Email</label>
-                      <input required type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input required type="email" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Phone</label>
-                      <input type="tel" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input type="tel" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Message</label>
-                      <textarea required rows={4} value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors"></textarea>
+                      <textarea required rows={4} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors"></textarea>
                     </div>
-                    
+
                     {status === "error" && <p className="text-red-500 text-sm font-bold">Failed to send message. Please try again.</p>}
 
                     <button type="submit" disabled={status === "loading"} className="w-full bg-nabtura-green text-black font-bold tracking-widest uppercase py-4 rounded-xl hover:bg-nabtura-light-green transition-colors disabled:opacity-50">
@@ -150,17 +150,17 @@ export default function ContactPage() {
 
             <div className="pt-8 border-t border-divider">
               <p className="text-content-muted text-sm font-bold tracking-widest uppercase mb-2">Corporate Entity</p>
-              <p className="text-content-muted font-light mb-6">INFORGRID FZC<br/>Sharjah Publishing City, United Arab Emirates</p>
-              
+              <p className="text-content-muted font-light mb-6">INFORGRID FZC<br />Sharjah Publishing City, United Arab Emirates</p>
+
               {/* Map Embed Tile */}
               <div className="w-full h-[220px] rounded-2xl overflow-hidden border border-divider group relative">
-                 <iframe 
-                   src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City%20Free%20Zone&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                   className="w-full h-full absolute inset-0"
-                   style={{ border: 0 }} 
-                   allowFullScreen 
-                   loading="lazy">
-                 </iframe>
+                <iframe
+                  src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City%20Free%20Zone&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  className="w-full h-full absolute inset-0"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy">
+                </iframe>
               </div>
             </div>
           </div>

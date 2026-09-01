@@ -33,7 +33,6 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <GlobalAnimatedBackground />
       <div className="global-bg-wrapper relative z-10">
         <Challenge />
         <Difference blogs={latestBlogs} />
