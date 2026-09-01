@@ -63,28 +63,41 @@ export default function SmartGrowing() {
           </div>
         </div>
 
-        {/* Bottom Statement (Plain Text, Not a Box) */}
-        <div className="text-center max-w-4xl mx-auto mt-24">
-          <h4 className="text-3xl md:text-4xl font-bold text-content mb-8">
-            SOIL ISN'T ALWAYS REQUIRED.
-          </h4>
+        {/* Bottom Statement (Premium Glass Card) */}
+        <div className="max-w-5xl mx-auto mt-24 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-nabtura-green/20 via-nabtura-blue/20 to-nabtura-green/20 blur-2xl rounded-[3rem] pointer-events-none" />
           
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8 text-lg md:text-xl font-light text-nabtura-light-green tracking-widest uppercase mb-8">
-            <span>Hydroponics</span>
-            <span className="text-content/20">•</span>
-            <span>Aeroponics</span>
-            <span className="text-content/20">•</span>
-            <span>Aquaponics</span>
+          <div className="relative bg-[#050A08]/60 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-[3rem] text-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+            <h4 className="text-3xl md:text-5xl font-black text-white mb-10 tracking-tight">
+              SOIL ISN'T ALWAYS <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">REQUIRED.</span>
+            </h4>
+            
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-10">
+              <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-nabtura-light-green font-bold tracking-widest text-xs md:text-sm shadow-inner">
+                HYDROPONICS
+              </div>
+              <div className="hidden md:block w-4 h-[2px] bg-white/10" />
+              <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-nabtura-blue font-bold tracking-widest text-xs md:text-sm shadow-inner">
+                AEROPONICS
+              </div>
+              <div className="hidden md:block w-4 h-[2px] bg-white/10" />
+              <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-teal-400 font-bold tracking-widest text-xs md:text-sm shadow-inner">
+                AQUAPONICS
+              </div>
+            </div>
+
+            <p className="text-gray-300 text-lg md:text-xl font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+              We select the perfect growing approach tailored exactly to your <strong className="text-white font-medium">crop</strong>, <strong className="text-white font-medium">location</strong>, <strong className="text-white font-medium">scale</strong>, and <strong className="text-white font-medium">project objective</strong>.
+            </p>
+
+            <Link 
+              href="/solutions/smart-greenhouses" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nabtura-green to-emerald-500 text-black font-extrabold tracking-widest text-sm rounded-full hover:shadow-[0_0_30px_rgba(0,255,157,0.4)] transition-all uppercase group"
+            >
+              DISCOVER SMART GROWING
+              <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-5 h-5 text-black" />
+            </Link>
           </div>
-
-          <p className="text-content-muted text-lg md:text-xl font-light mb-12 max-w-3xl mx-auto leading-relaxed">
-            We select the perfect growing approach—whether it's <em className="text-white font-normal not-italic relative inline-block px-1">hydroponics, aeroponics, or aquaponics<span className="absolute bottom-1 left-0 w-full h-[3px] bg-nabtura-light-green/30 -z-10 rounded-sm"></span></em>—tailored exactly to your <strong className="text-nabtura-light-green font-medium">crop</strong>, <strong className="text-nabtura-light-green font-medium">location</strong>, <strong className="text-nabtura-light-green font-medium">scale</strong>, and <strong className="text-nabtura-light-green font-medium">project objective</strong>.
-          </p>
-
-          <Link href="/solutions/smart-greenhouses" className="group inline-flex items-center text-content font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-green pb-1 transition-all">
-            DISCOVER SMART GROWING
-            <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4 text-nabtura-light-green" />
-          </Link>
         </div>
 
       </div>
