@@ -189,8 +189,8 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                   <p className="text-gray-400 font-medium text-sm mb-3">{pillar.subtitle}</p>
                   <ul className="flex flex-wrap gap-x-4 gap-y-2">
                     {pillar.features.map((feature) => (
-                      <li key={feature} className="flex items-center text-xs text-gray-300">
-                        <span className={`w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0 ${pillar.bulletColor}`} />
+                      <li key={feature} className="flex items-center text-sm md:text-base text-gray-300">
+                        <span className={`w-2 h-2 rounded-full mr-3 flex-shrink-0 ${pillar.bulletColor}`} />
                         {feature}
                       </li>
                     ))}

@@ -37,7 +37,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#050A08] text-content pt-32 pb-16 px-6">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#050A08] text-content pt-20 pb-4 px-6">
       {/* Cinematic Background Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence>
@@ -56,17 +56,15 @@ export default function Hero() {
       </div>
 
       <div className="relative z-20 text-center max-w-5xl mx-auto w-full flex flex-col items-center">
-        
+
         {/* Top Section - Eyebrow */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mb-10"
+          className="mb-4"
         >
           <p className="text-xs md:text-sm tracking-[0.3em] uppercase font-semibold flex items-center justify-center gap-3 flex-wrap">
-            <span className="text-white font-bold text-sm md:text-base">NABTURA</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-nabtura-green"></span>
             <span className="text-nabtura-green">SMART AGRICULTURE & INTELLIGENT GREEN SOLUTIONS</span>
           </p>
         </motion.div>
@@ -76,7 +74,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-tight drop-shadow-2xl flex flex-col gap-2 items-center mb-10"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl font-black tracking-tighter text-white leading-tight drop-shadow-2xl flex flex-col gap-1 items-center mb-4"
         >
           <span>GROW FOOD</span>
           <span className="text-gray-300">MANAGE WATER</span>
@@ -88,7 +86,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="mb-8 w-full flex justify-center"
+          className="mb-4 w-full flex justify-center"
         >
           <div className="flex items-center gap-4">
             <span className="w-12 h-[1px] bg-gradient-to-l from-nabtura-green to-transparent hidden md:block"></span>
@@ -104,7 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="text-gray-300 max-w-2xl mx-auto mb-12 text-base sm:text-lg font-light leading-relaxed text-balance"
+          className="text-gray-300 max-w-2xl mx-auto mb-6 text-base sm:text-lg font-light leading-relaxed text-balance"
         >
           Based in the UAE. Designed for challenging environments. Built for wider markets.
         </motion.p>
@@ -114,7 +112,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full mb-8"
         >
           <motion.div whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Link
@@ -136,13 +134,13 @@ export default function Hero() {
 
         {/* Small Investor Link */}
         <motion.div
-           initial={{ opacity: 0 }}
-           animate={{ opacity: 1 }}
-           transition={{ delay: 1.1, duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1, duration: 1 }}
         >
           <motion.div whileTap={{ scale: 0.95 }} className="inline-block">
             <Link href="#invest" className="text-xs sm:text-sm text-gray-400 hover:text-white flex items-center justify-center gap-3 transition-colors py-2 font-medium tracking-widest uppercase group">
-              Looking to invest? 
+              Looking to invest?
               <span className="text-nabtura-green group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </motion.div>
