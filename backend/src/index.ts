@@ -1,5 +1,3 @@
-// import type { Core } from '@strapi/strapi';
-
 export default {
   /**
    * An asynchronous register function that runs before
@@ -18,3 +16,4 @@ export default {
    */
   bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
 };
+

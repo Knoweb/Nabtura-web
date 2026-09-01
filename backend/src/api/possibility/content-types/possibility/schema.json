@@ -16,7 +16,19 @@
       "type": "string",
       "required": true
     },
-    "desc": {
+    "situation": {
+      "type": "text",
+      "required": true
+    },
+    "idea": {
+      "type": "text",
+      "required": true
+    },
+    "solutions": {
+      "type": "text",
+      "required": true
+    },
+    "benefits": {
       "type": "text",
       "required": true
     },
