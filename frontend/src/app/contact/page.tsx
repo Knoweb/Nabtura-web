@@ -25,6 +25,11 @@ export default function ContactPage() {
       await submitEnquiry({ ...formData, enquiryType: selectedType || "general" });
       setStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
+      
+      setTimeout(() => {
+        setStatus("idle");
+        setSelectedType(null);
+      }, 3000);
     } catch (err) {
       console.error(err);
       setStatus("error");
