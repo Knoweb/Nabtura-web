@@ -53,6 +53,9 @@ const pillars = [
     icon: Zap,
     title: "SMART",
     subtitle: "Better visibility, decisions & operation.",
+    iconColor: "text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]",
+    iconBg: "bg-cyan-400/10 border-cyan-400/20 group-hover:bg-cyan-400/20 group-hover:border-cyan-400/50",
+    bulletColor: "bg-cyan-400",
     features: [
       "Sensors & Data",
       "Monitoring & Alerts",
@@ -65,6 +68,9 @@ const pillars = [
     icon: SlidersHorizontal,
     title: "CONTROLLED",
     subtitle: "Conditions for better performance.",
+    iconColor: "text-purple-400 drop-shadow-[0_0_8px_rgba(192,132,252,0.5)]",
+    iconBg: "bg-purple-400/10 border-purple-400/20 group-hover:bg-purple-400/20 group-hover:border-purple-400/50",
+    bulletColor: "bg-purple-400",
     features: [
       "Climate & Water",
       "Nutrients",
@@ -77,6 +83,9 @@ const pillars = [
     icon: MapPin,
     title: "ADAPTED",
     subtitle: "Designed around your need.",
+    iconColor: "text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]",
+    iconBg: "bg-amber-400/10 border-amber-400/20 group-hover:bg-amber-400/20 group-hover:border-amber-400/50",
+    bulletColor: "bg-amber-400",
     features: [
       "Location & Climate",
       "Water & Crop/Plant",
@@ -172,8 +181,8 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                 transition={{ delay: idx * 0.2 }}
                 className="group flex flex-col sm:flex-row items-start sm:items-center bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors gap-6"
               >
-                <div className="w-16 h-16 flex-shrink-0 rounded-full bg-nabtura-green/20 flex items-center justify-center group-hover:bg-nabtura-green/40 transition-colors">
-                  <pillar.icon className="text-nabtura-green w-8 h-8" />
+                <div className={`w-16 h-16 flex-shrink-0 rounded-full flex items-center justify-center transition-all border border-transparent ${pillar.iconBg}`}>
+                  <pillar.icon className={`w-8 h-8 transition-colors ${pillar.iconColor}`} />
                 </div>
                 <div className="flex-grow">
                   <h3 className="text-xl font-bold tracking-widest mb-1">{pillar.title}</h3>
@@ -181,7 +190,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                   <ul className="flex flex-wrap gap-x-4 gap-y-2">
                     {pillar.features.map((feature) => (
                       <li key={feature} className="flex items-center text-xs text-gray-300">
-                        <span className="w-1 h-1 rounded-full bg-nabtura-green mr-2 flex-shrink-0" />
+                        <span className={`w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0 ${pillar.bulletColor}`} />
                         {feature}
                       </li>
                     ))}
