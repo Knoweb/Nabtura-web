@@ -47,7 +47,7 @@ export default async function BlogIndexPage() {
   }
 
   return (
-    <main className="min-h-screen bg-nabtura-slate text-white pt-32 pb-20">
+    <main className="min-h-screen bg-transparent text-white pt-32 pb-20 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">LATEST INSIGHTS</h1>
@@ -129,7 +129,7 @@ export default async function BlogIndexPage() {
                     <Link 
                       key={blog.id} 
                       href={`/blog/${blog.slug || blog.documentId}`}
-                      className="group flex flex-col bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all hover:border-nabtura-green/50"
+                      className="group flex flex-col h-[420px] bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all hover:border-nabtura-green/50 shadow-lg"
                     >
                       <div className="relative w-full h-56 overflow-hidden bg-black/50">
                         {imageUrl ? (

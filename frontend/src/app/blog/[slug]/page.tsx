@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     : null;
 
   return (
-    <main className="min-h-screen bg-nabtura-slate text-white pt-32 pb-20">
+    <main className="min-h-screen bg-transparent text-white pt-32 pb-20 relative z-10">
       <div className="max-w-4xl mx-auto px-4">
         {/* Breadcrumb or Back Button */}
         <Link href="/blog" className="inline-block mb-8 text-nabtura-green hover:text-white transition-colors">

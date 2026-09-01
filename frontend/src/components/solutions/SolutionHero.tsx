@@ -20,13 +20,13 @@ export default function SolutionHero({
   return (
     <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-transparent pt-32 pb-20 border-b border-divider">
       
-      {/* Background Image & Blend */}
+      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-screen scale-105"
+          className="absolute inset-0 bg-cover bg-center opacity-70 scale-105"
           style={{ backgroundImage: `url('${bgImageUrl}')` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#020504]/90 via-[#020504]/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/60 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">

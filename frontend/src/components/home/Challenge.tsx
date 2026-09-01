@@ -52,18 +52,19 @@ export default function Challenge() {
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, scale: 1 }}
-            animate={{ opacity: 0.5, scale: 1.1 }}
+            animate={{ opacity: 0.8, scale: 1.05 }}
             exit={{ opacity: 0 }}
             transition={{ 
-              opacity: { duration: 0.4, ease: "easeInOut" },
-              scale: { duration: 20, ease: "linear" } 
+              opacity: { duration: 0.5, ease: "easeInOut" },
+              scale: { duration: 25, ease: "linear" } 
             }}
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center mix-blend-screen"
             style={{ backgroundImage: `url('${activeChallenge?.image}')` }}
           />
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black pointer-events-none" />
+        {/* Softened Gradient Overlays to keep it bright but readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020504]/90 via-[#020504]/60 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#020504]/50 pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
