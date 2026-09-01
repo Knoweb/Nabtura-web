@@ -1,11 +1,27 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import Image from "next/image";
 
+const IMAGES = [
+  { src: "/images/uae_green_city.jpg", label: "Sustainable Urban Oasis", location: "DUBAI, UAE" },
+  { src: "/images/uae_smart_greenhouse.jpg", label: "Smart Food Production", location: "ABU DHABI, UAE" },
+  { src: "/images/uae_water_tech.jpg", label: "Advanced Water Tech", location: "SHARJAH, UAE" },
+];
+
 export default function UAECredibility() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="bg-transparent text-white relative py-16 md:py-24 border-b border-white/5 overflow-hidden">
       
@@ -48,40 +64,74 @@ export default function UAECredibility() {
             </Link>
           </div>
 
-          {/* Photo Content */}
+          {/* Photo Content Carousel */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-end w-full"
           >
             {/* Decorative elements behind the image */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[550px] md:h-[550px] bg-nabtura-sand/20 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-nabtura-sand/10 blur-[120px] rounded-full pointer-events-none" />
             
-            <div className="relative w-80 h-80 md:w-[480px] md:h-[480px] rounded-full p-2 border border-nabtura-sand/30 bg-black/40 backdrop-blur-md shadow-[0_0_50px_rgba(212,175,55,0.15)]">
-              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#020504]">
-                {/* Scale added to zoom in and crop out any screenshot borders */}
-                <Image 
-                  src="/images/founder_new.png" 
-                  alt="Founder" 
-                  fill 
-                  className="object-cover scale-[1.35] origin-center"
-                  sizes="(max-width: 768px) 320px, 480px"
-                  priority
-                />
+            <div className="relative w-full max-w-md aspect-[4/5] rounded-[2.5rem] p-2 border border-white/10 bg-white/5 backdrop-blur-md shadow-2xl group">
+              <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, scale: 1.05 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image 
+                      src={IMAGES[currentIndex].src} 
+                      alt={IMAGES[currentIndex].location} 
+                      fill 
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 500px"
+                      priority
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                
+                {/* Gradient Overlay for premium feel */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none z-10" />
+              </div>
+              
+              {/* Subtle floating badge */}
+              <div className="absolute bottom-8 left-8 right-8 z-20">
+                <AnimatePresence mode="wait">
+                  <motion.div 
+                    key={currentIndex}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-4 rounded-2xl shadow-xl flex items-center justify-between mb-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-2.5 h-2.5 rounded-full bg-nabtura-light-green animate-pulse shadow-[0_0_10px_rgba(21,184,118,0.8)]" />
+                      <span className="text-sm font-bold tracking-widest text-white uppercase">{IMAGES[currentIndex].location}</span>
+                    </div>
+                    <div className="text-xs tracking-widest text-white/50 uppercase">{IMAGES[currentIndex].label}</div>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Carousel Indicators */}
+                <div className="flex justify-center gap-2">
+                  {IMAGES.map((_, i) => (
+                    <div 
+                      key={i} 
+                      className={`h-1 rounded-full transition-all duration-500 ${i === currentIndex ? 'w-8 bg-nabtura-sand' : 'w-2 bg-white/20'}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
             
-            {/* Subtle floating badge */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute bottom-6 right-6 md:bottom-12 md:right-12 bg-[#020504]/90 backdrop-blur-xl border border-nabtura-sand/30 px-6 py-4 rounded-2xl shadow-xl flex items-center gap-3 z-20"
-            >
-              <div className="w-2.5 h-2.5 rounded-full bg-nabtura-light-green animate-pulse shadow-[0_0_10px_rgba(21,184,118,0.8)]" />
-              <span className="text-sm md:text-base font-bold tracking-widest text-white uppercase">Leadership</span>
-            </motion.div>
           </motion.div>
 
         </div>
