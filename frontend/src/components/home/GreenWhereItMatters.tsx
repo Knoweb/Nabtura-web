@@ -41,11 +41,20 @@ export default function GreenWhereItMatters() {
         </h3>
 
         {/* Action Words */}
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-16 text-lg md:text-2xl font-light tracking-widest text-content-muted">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mb-16 text-lg md:text-2xl font-light tracking-widest text-content-muted items-center">
           {actionWords.map((word, i) => (
             <div key={word} className="flex items-center">
               <span>{word}</span>
-              {i < actionWords.length - 1 && <span className="text-nabtura-green mx-4 md:mx-8 opacity-50">•</span>}
+              {i < actionWords.length - 1 && (
+                <div className="mx-4 md:mx-8 flex items-center justify-center relative w-2 h-2">
+                  <motion.div
+                    animate={{ scale: [1, 2, 1], opacity: [0.2, 0.8, 0.2] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
+                    className="absolute w-3 h-3 bg-nabtura-green rounded-full blur-[3px]"
+                  />
+                  <div className="w-1.5 h-1.5 bg-nabtura-light-green rounded-full relative z-10" />
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -150,7 +150,18 @@ export default function ContactPage() {
 
             <div className="pt-8 border-t border-divider">
               <p className="text-content-muted text-sm font-bold tracking-widest uppercase mb-2">Corporate Entity</p>
-              <p className="text-content-muted font-light">INFORGRID FZC<br/>United Arab Emirates</p>
+              <p className="text-content-muted font-light mb-6">INFORGRID FZC<br/>Sharjah Publishing City, United Arab Emirates</p>
+              
+              {/* Map Embed Tile */}
+              <div className="w-full h-[220px] rounded-2xl overflow-hidden border border-divider group relative">
+                 <iframe 
+                   src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City%20Free%20Zone&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                   className="w-full h-full absolute inset-0"
+                   style={{ border: 0 }} 
+                   allowFullScreen 
+                   loading="lazy">
+                 </iframe>
+              </div>
             </div>
           </div>
 
