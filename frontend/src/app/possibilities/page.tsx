@@ -21,7 +21,7 @@ export default function PossibilitiesPage() {
     <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="POSSIBILITIES"
-        headline="IMAGINE WHAT YOUR SPACE COULD BECOME."
+        headline="IMAGINE WHAT YOUR SPACE COULD BECOME"
         tagline="The NABTURA Possibility Gallery."
         bgImageUrl="/possibility_urban_oasis_1788160434157.jpg"
         accentColor="text-nabtura-sand"

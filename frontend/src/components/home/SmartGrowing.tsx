@@ -28,7 +28,7 @@ export default function SmartGrowing() {
             SMART AGRICULTURE
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-            KNOW HOW YOUR FOOD IS <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">GROWN.</span>
+            KNOW HOW YOUR FOOD IS <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">GROWN</span>
           </h3>
           <p className="text-xl md:text-2xl text-content-muted font-light leading-relaxed">
             Smart growing gives greater visibility and control over the conditions in which food is produced.
@@ -69,7 +69,7 @@ export default function SmartGrowing() {
           
           <div className="relative bg-[#050A08]/60 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-[3rem] text-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <h4 className="text-3xl md:text-5xl font-black text-white mb-10 tracking-tight">
-              SOIL ISN'T ALWAYS <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">REQUIRED.</span>
+              SOIL ISN'T ALWAYS <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">REQUIRED</span>
             </h4>
             
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-10">

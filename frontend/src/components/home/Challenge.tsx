@@ -74,7 +74,7 @@ export default function Challenge() {
           viewport={{ once: true }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-16 text-center md:text-left"
         >
-          THE WAY WE GROW<br />HAS TO CHANGE.
+          THE WAY WE GROW<br />HAS TO CHANGE
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start mt-20">

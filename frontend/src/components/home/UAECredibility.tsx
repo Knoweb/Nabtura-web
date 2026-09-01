@@ -26,8 +26,8 @@ export default function UAECredibility() {
             </h2>
             
             <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-white leading-tight">
-              BASED IN THE UAE.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-yellow-600">BUILT TO THINK BEYOND IT.</span>
+              BASED IN THE UAE<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-yellow-600">BUILT TO THINK BEYOND IT</span>
             </h3>
 
             <div className="bg-nabtura-sand/10 border-l-4 border-nabtura-sand p-6 mb-10 rounded-r-2xl">

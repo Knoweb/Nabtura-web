@@ -36,8 +36,8 @@ export default function HowWeWork() {
             FLEXIBLE WAYS TO WORK WITH NABTURA
           </h2>
           <h3 className="text-3xl md:text-5xl font-bold tracking-tight mb-2 text-white">
-            YOUR LOCATION.<br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400 md:ml-4">OUR GREEN SOLUTION.</span>
+            YOUR LOCATION<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400 md:ml-4">OUR GREEN SOLUTION</span>
           </h3>
         </div>
 

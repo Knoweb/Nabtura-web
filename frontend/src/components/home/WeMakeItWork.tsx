@@ -31,7 +31,7 @@ export default function WeMakeItWork() {
             BEYOND INSTALLATION
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">
-            WE MAKE IT <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-nabtura-green">WORK.</span>
+            WE MAKE IT <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-nabtura-green">WORK</span>
           </h3>
           <p className="text-xl md:text-2xl text-content-muted font-light leading-relaxed">
             From an idea or available location to an operating green solution, NABTURA can stay involved for as much of the journey as you need.

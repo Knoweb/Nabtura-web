@@ -57,7 +57,7 @@ export default function SolutionsDirectoryPage() {
     <main className="min-h-screen bg-transparent pt-20">
       <SolutionHero 
         eyebrow="ALL SOLUTIONS"
-        headline="OUR CAPABILITIES."
+        headline="OUR CAPABILITIES"
         tagline="Explore how we grow food, manage water, and create green spaces."
         bgImageUrl="/images/dubai-landscapes.jpg"
         accentColor="text-nabtura-green"

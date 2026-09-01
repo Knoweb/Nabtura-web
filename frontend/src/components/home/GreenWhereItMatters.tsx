@@ -38,7 +38,7 @@ export default function GreenWhereItMatters() {
           PURPOSE-BUILT GREEN
         </h2>
         <h3 className="text-5xl md:text-7xl font-bold tracking-tight mb-12">
-          GREEN CAN <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">DO MORE.</span>
+          GREEN CAN <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">DO MORE</span>
         </h3>
 
         {/* Action Words */}
