@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronRight, ClipboardList, PenTool, Cog, Hammer, CheckCircle2, Settings, Activity, Wrench } from "lucide-react";
+import Link from "next/link";
 
 const lifecycle = [
   { name: "ASSESS", icon: ClipboardList },
@@ -128,7 +129,7 @@ export default function WeMakeItWork() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-overlay backdrop-blur-xl border border-divider rounded-2xl p-8 hover:border-nabtura-green/50 hover:bg-overlay transition-all group"
+              className="bg-overlay backdrop-blur-xl border border-divider rounded-2xl p-8 hover:border-nabtura-green/50 hover:bg-white/5 transition-all duration-300 group cursor-pointer hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_15px_40px_-15px_rgba(21,184,118,0.3)] active:scale-95"
             >
               <h4 className="text-lg font-bold text-content mb-3 tracking-widest uppercase">
                 {cap.name}
@@ -141,14 +142,22 @@ export default function WeMakeItWork() {
         </div>
 
         <div className="text-center">
-          <button className="group inline-flex items-center text-content font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-green pb-1 transition-all">
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }} className="inline-block">
+            <Link href="/#who-we-serve" className="group inline-flex items-center text-content font-bold tracking-widest uppercase text-sm border-b-2 border-transparent hover:border-nabtura-green pb-1 transition-all duration-300 hover:-translate-y-2 hover:scale-110 active:scale-90 hover:text-nabtura-light-green">
             HOW WE DELIVER
             <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4 text-nabtura-light-green" />
-          </button>
+          </Link>
+            </motion.div>
         </div>
 
       </div>
     </section>
   );
 }
+
+
+
+
+
+
 
