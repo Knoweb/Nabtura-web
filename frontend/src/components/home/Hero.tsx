@@ -52,7 +52,7 @@ export default function Hero() {
           />
         </AnimatePresence>
         {/* Soft gradient to keep text readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050A08]/90 via-[#050A08]/60 to-[#050A08]/90 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050A08]/90 via-[#050A08]/60 to-[#09110E] z-10" />
       </div>
 
       <div className="relative z-20 text-center max-w-5xl mx-auto w-full flex flex-col items-center">
@@ -150,4 +150,5 @@ export default function Hero() {
     </section>
   );
 }
+
 

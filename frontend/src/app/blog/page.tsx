@@ -16,35 +16,7 @@ export default async function BlogIndexPage() {
     console.warn("Failed to fetch blogs", error);
   }
 
-  // Fallback to sample data if no blogs were fetched (for UI preview)
-  if (blogs.length === 0) {
-    blogs = [
-      {
-        id: 1,
-        documentId: "sample-1",
-        title: "NABTURA Wins Global Innovation Award for Smart Agriculture",
-        content: "We are thrilled to announce that NABTURA has been recognized globally for our pioneering work in AI-driven microgreens and intelligent water management systems. This achievement marks a significant milestone in our journey towards sustainable urban farming...",
-        slug: "nabtura-wins-global-innovation-award",
-        coverImage: { url: "https://images.unsplash.com/photo-1585320806297-9794b3e4ce11?w=800&q=80" },
-      },
-      {
-        id: 2,
-        documentId: "sample-2",
-        title: "New Vertical Farming Facility Opens in Dubai",
-        content: "Our latest state-of-the-art vertical farming facility is now operational in the heart of Dubai. Capable of producing over 10 tons of fresh, organic microgreens monthly with 95% less water than traditional agriculture, this facility represents the future of food security in the region...",
-        slug: "new-vertical-farming-facility-dubai",
-        coverImage: { url: "https://images.unsplash.com/photo-1530836369250-ef71a3f5e481?w=800&q=80" },
-      },
-      {
-        id: 3,
-        documentId: "sample-3",
-        title: "Strategic Partnership Announced for Desert Greening",
-        content: "NABTURA has officially partnered with leading environmental agencies to deploy our proprietary soil-regeneration and smart irrigation technology across arid regions, transforming unused desert spaces into thriving green ecosystems...",
-        slug: "strategic-partnership-desert-greening",
-        coverImage: { url: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&q=80" },
-      }
-    ];
-  }
+  
 
   return (
     <main className="min-h-screen bg-transparent text-white pt-32 pb-20 relative z-10">
@@ -171,3 +143,4 @@ export default async function BlogIndexPage() {
     </main>
   );
 }
+

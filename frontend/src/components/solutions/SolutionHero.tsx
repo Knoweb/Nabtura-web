@@ -18,7 +18,7 @@ export default function SolutionHero({
   accentColor = "text-nabtura-green"
 }: SolutionHeroProps) {
   return (
-    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-transparent pt-32 pb-20 border-b border-divider">
+    <section className="relative min-h-[25vh] flex items-center justify-center overflow-hidden bg-transparent pt-16 pb-12 border-b border-divider">
       
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -36,14 +36,14 @@ export default function SolutionHero({
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className={`text-sm tracking-[0.3em] ${accentColor} font-bold mb-6 uppercase`}>
+          <h1 className={`text-sm tracking-[0.3em] ${accentColor} font-bold mb-4 uppercase`}>
             {eyebrow}
           </h1>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-content mb-8 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tight text-content mb-6 leading-tight">
             {headline}
           </h2>
-          <div className="bg-overlay backdrop-blur-md border border-divider p-6 rounded-2xl inline-block">
-            <p className="text-xl md:text-2xl text-content-muted font-light tracking-wide uppercase">
+          <div className="bg-overlay backdrop-blur-md border border-divider p-5 md:p-6 rounded-2xl inline-block">
+            <p className="text-lg md:text-xl text-content-muted font-light tracking-wide uppercase">
               {tagline}
             </p>
           </div>
@@ -52,4 +52,8 @@ export default function SolutionHero({
     </section>
   );
 }
+
+
+
+
 

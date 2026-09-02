@@ -64,7 +64,7 @@ export default function Challenge() {
         </AnimatePresence>
         {/* Softened Gradient Overlays to keep it bright but readable */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#020504]/90 via-[#020504]/60 to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#020504]/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#09110E] via-transparent to-[#09110E] pointer-events-none" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -130,4 +130,5 @@ export default function Challenge() {
     </section>
   );
 }
+
 

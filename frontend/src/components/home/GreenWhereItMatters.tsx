@@ -30,7 +30,7 @@ export default function GreenWhereItMatters() {
     <section className="bg-transparent text-content py-16 md:py-12 md:py-16 relative overflow-hidden">
       {/* Static subtle background for the section */}
       <div className="absolute inset-0 z-0 bg-transparent">
-        <div className="absolute inset-0 bg-gradient-to-b from-nabtura-slate via-nabtura-slate/50 to-nabtura-slate pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-nabtura-slate/80 to-transparent pointer-events-none" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -73,14 +73,14 @@ export default function GreenWhereItMatters() {
               <motion.div
                 key={activeConcept}
                 initial={{ opacity: 0, x: 50, scale: 1.05 }}
-                animate={{ opacity: 0.4, x: 0, scale: 1 }}
+                animate={{ opacity: 0.7, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: -50, scale: 1.05 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ backgroundImage: `url('${concepts[activeConcept].image}')` }}
               />
             </AnimatePresence>
-            <div className="absolute inset-0 bg-gradient-to-t from-nabtura-slate via-nabtura-slate/60 to-nabtura-slate/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-nabtura-slate/90 via-nabtura-slate/40 to-nabtura-slate/10" />
           </div>
 
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-nabtura-green text-black px-6 py-2 rounded-full text-sm font-bold tracking-widest uppercase z-20">
@@ -146,4 +146,6 @@ export default function GreenWhereItMatters() {
     </section>
   );
 }
+
+
 

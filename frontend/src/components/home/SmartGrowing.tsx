@@ -64,15 +64,15 @@ export default function SmartGrowing() {
         </div>
 
         {/* Bottom Statement (Premium Glass Card) */}
-        <div className="max-w-5xl mx-auto mt-24 relative">
+        <div className="max-w-4xl mx-auto mt-16 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-nabtura-green/20 via-nabtura-blue/20 to-nabtura-green/20 blur-2xl rounded-[3rem] pointer-events-none" />
           
-          <div className="relative bg-[#050A08]/60 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-[3rem] text-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-            <h4 className="text-3xl md:text-5xl font-black text-white mb-10 tracking-tight">
-              SOIL ISN'T ALWAYS <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">REQUIRED</span>
+          <div className="relative bg-[#050A08]/60 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2rem] text-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+            <h4 className="text-2xl md:text-4xl font-black text-white mb-8 tracking-normal">
+              SOIL&nbsp;&nbsp;ISN'T ALWAYS <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">REQUIRED</span>
             </h4>
             
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-10">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mb-8">
               <div className="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-nabtura-light-green font-bold tracking-widest text-xs md:text-sm shadow-inner">
                 HYDROPONICS
               </div>
@@ -86,7 +86,7 @@ export default function SmartGrowing() {
               </div>
             </div>
 
-            <p className="text-gray-300 text-lg md:text-xl font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-300 text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto leading-relaxed">
               We select the perfect growing approach tailored exactly to your <strong className="text-white font-medium">crop</strong>, <strong className="text-white font-medium">location</strong>, <strong className="text-white font-medium">scale</strong>, and <strong className="text-white font-medium">project objective</strong>.
             </p>
 
@@ -104,4 +104,9 @@ export default function SmartGrowing() {
     </section>
   );
 }
+
+
+
+
+
 
