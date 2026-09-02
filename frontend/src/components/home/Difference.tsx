@@ -176,10 +176,11 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
               <motion.div
                 key={pillar.title}
                 initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+            animate={{ y: [0, -10, 0] }}
+            whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="group flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-center bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors gap-6"
+                className="group flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-center bg-nabtura-green/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors gap-6"
               >
                 <div className={`w-16 h-16 flex-shrink-0 rounded-full flex items-center justify-center transition-all border border-transparent ${pillar.iconBg}`}>
                   <pillar.icon className={`w-8 h-8 transition-colors ${pillar.iconColor}`} />
@@ -203,10 +204,11 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
           {/* Right Side: News & Blogs Slider */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
+            animate={{ y: [0, -10, 0] }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ y: { repeat: Infinity, duration: 4, ease: "easeInOut" }, opacity: { delay: 0.4, duration: 0.8 }, x: { delay: 0.4, duration: 0.8 } }}
             viewport={{ once: true }}
-            className="h-full flex flex-col bg-white/5 border border-white/10 rounded-3xl p-6 xl:p-8 relative overflow-hidden"
+            className="h-full flex flex-col bg-nabtura-green/5 border border-nabtura-green/60 rounded-3xl p-6 xl:p-8 relative overflow-hidden shadow-[0_0_60px_rgba(34,197,94,0.5),0_0_120px_rgba(34,197,94,0.3)]"
           >
             {/* Soft Glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/10 blur-[80px] rounded-full pointer-events-none" />
@@ -231,7 +233,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
               >
                 {displayBlogs.map((blog) => (
                   <div key={blog.id} className="min-w-full px-1 flex flex-col h-full">
-                    <div className="flex flex-col flex-grow bg-black/40 border border-white/5 rounded-2xl overflow-hidden hover:border-nabtura-green/30 transition-colors group">
+                    <div className="flex flex-col flex-grow bg-black/40 border border-white/5 rounded-2xl overflow-hidden hover:border-nabtura-green/60 transition-colors group">
                       <div className="h-48 xl:h-56 w-full overflow-hidden relative flex-shrink-0">
                         <img 
                           src={getImageUrl(blog.coverImage?.url)} 
@@ -378,3 +380,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
     </section>
   );
 }
+
+
+
+
