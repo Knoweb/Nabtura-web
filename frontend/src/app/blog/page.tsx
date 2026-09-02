@@ -38,6 +38,7 @@ export default async function BlogIndexPage() {
             {blogs.length > 0 && (() => {
               const featured = blogs[0];
               const title = featured.title || featured.Title || "Untitled Post";
+              const description = featured.description || featured.Description;
               const content = featured.content || featured.Content;
               const coverImage = featured.coverImage || featured.coverimage || featured.CoverImage;
               const imageUrl = coverImage 
@@ -90,6 +91,7 @@ export default async function BlogIndexPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8 border-t border-white/10">
                 {blogs.slice(1).map((blog) => {
                   const title = blog.title || blog.Title || "Untitled Post";
+                  const description = blog.description || blog.Description;
                   const content = blog.content || blog.Content;
                   const coverImage = blog.coverImage || blog.coverimage || blog.CoverImage;
                   
@@ -143,4 +145,5 @@ export default async function BlogIndexPage() {
     </main>
   );
 }
+
 
