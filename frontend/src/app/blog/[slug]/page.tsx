@@ -1,7 +1,8 @@
-import { notFound } from "next/navigation";
+﻿import { notFound } from "next/navigation";
 import { fetchAPI } from "@/lib/api";
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+import BlogContent from '@/components/blog/BlogContent';
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -90,17 +91,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         )}
 
-        {/* Content - Strapi v5 rich text or basic text */}
-        <div className="prose prose-lg prose-invert max-w-none">
-          {typeof content === 'string' ? (
-            <div dangerouslySetInnerHTML={{ __html: content }} />
-          ) : (
-            <p className="text-gray-300 whitespace-pre-wrap">
-              {/* Fallback if it's JSON blocks */}
-              {content ? JSON.stringify(content, null, 2) : "No content available for this post."}
-            </p>
-          )}
-        </div>
+        {/* Content */}
+        <BlogContent content={content} />
       </div>
     </main>
   );
