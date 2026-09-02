@@ -9,7 +9,7 @@ export default function SmartMicrogreensPage() {
         eyebrow="GROW FOOD"
         headline="SMART MICROGREENS"
         tagline="Small spaces. Smart growing. Fresh possibilities."
-        bgImageUrl="/smart_microgreens_mockup_1788109487031.jpg"
+        bgImageUrl="/smart_microgreens_mockup_1788109487031.webp"
         accentColor="text-nabtura-light-green"
       />
 

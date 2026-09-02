@@ -8,31 +8,31 @@ const challenges = [
     id: "food",
     title: "FOOD",
     description: "Grow selected fresh produce closer to where it is needed.",
-    image: "/possibility_microgreen_restaurant_1788160519287.jpg",
+    image: "/possibility_microgreen_restaurant_1788160519287.webp",
   },
   {
     id: "water",
     title: "WATER",
     description: "Use one of our most valuable resources more intelligently.",
-    image: "/possibility_water_smart_resort_1788160534313.jpg",
+    image: "/possibility_water_smart_resort_1788160534313.webp",
   },
   {
     id: "climate",
     title: "CLIMATE",
     description: "Create solutions for demanding growing environments.",
-    image: "/possibility_smart_greenhouse_1788160454551.jpg",
+    image: "/possibility_smart_greenhouse_1788160454551.webp",
   },
   {
     id: "space",
     title: "SPACE",
     description: "Turn available spaces into productive or purposeful green environments.",
-    image: "/possibility_productive_rooftop_1788160358894.jpg",
+    image: "/possibility_productive_rooftop_1788160358894.webp",
   },
   {
     id: "green",
     title: "GREEN",
     description: "Bring purposeful greenery into increasingly built environments.",
-    image: "/possibility_urban_oasis_1788160434157.jpg",
+    image: "/possibility_urban_oasis_1788160434157.webp",
   },
 ];
 

@@ -9,7 +9,7 @@ export default function LandscapesPage() {
         eyebrow="CREATE GREEN"
         headline="LANDSCAPES"
         tagline="Green spaces designed to perform."
-        bgImageUrl="/smart_landscapes_mockup_1788109519811.jpg"
+        bgImageUrl="/smart_landscapes_mockup_1788109519811.webp"
         accentColor="text-nabtura-green"
       />
 

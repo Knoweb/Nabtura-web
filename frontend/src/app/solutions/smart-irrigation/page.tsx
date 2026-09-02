@@ -9,7 +9,7 @@ export default function SmartIrrigationPage() {
         eyebrow="MANAGE WATER"
         headline="SMART IRRIGATION"
         tagline="Every drop has a job."
-        bgImageUrl="/smart_greenhouse_mockup_1788109457162.jpg"
+        bgImageUrl="/smart_greenhouse_mockup_1788109457162.webp"
         accentColor="text-nabtura-blue"
       />
 

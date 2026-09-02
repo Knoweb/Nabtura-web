@@ -12,10 +12,10 @@ const options = [
 
 export default function Investment() {
   const optionsWithImages = [
-    { title: "OWN A PROJECT", desc: "Create a NABTURA solution around your location.", icon: Building2, image: "/invest_own_project_1788238892931.jpg" },
-    { title: "PARTICIPATE", desc: "Explore opportunities within selected managed projects.", icon: TrendingUp, image: "/invest_participate_1788238910343.jpg" },
-    { title: "BRING A LOCATION", desc: "Have suitable space or land? Let's explore its potential.", icon: MapPin, image: "/invest_bring_location_1788238925083.jpg" },
-    { title: "PARTNER", desc: "Explore commercial, development or strategic collaboration.", icon: Handshake, image: "/invest_partner_1788238938333.jpg" },
+    { title: "OWN A PROJECT", desc: "Create a NABTURA solution around your location.", icon: Building2, image: "/invest_own_project_1788238892931.webp" },
+    { title: "PARTICIPATE", desc: "Explore opportunities within selected managed projects.", icon: TrendingUp, image: "/invest_participate_1788238910343.webp" },
+    { title: "BRING A LOCATION", desc: "Have suitable space or land? Let's explore its potential.", icon: MapPin, image: "/invest_bring_location_1788238925083.webp" },
+    { title: "PARTNER", desc: "Explore commercial, development or strategic collaboration.", icon: Handshake, image: "/invest_partner_1788238938333.webp" },
   ];
 
   return (

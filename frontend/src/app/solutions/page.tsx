@@ -9,7 +9,7 @@ const solutionCategories = [
     color: "text-nabtura-light-green",
     borderColor: "hover:border-nabtura-light-green",
     description: "Intelligent solutions for fresh food production in any environment.",
-    imageSrc: "/images/greenhouse.jpg",
+    imageSrc: "/images/greenhouse.webp",
     links: [
       { name: "Smart Greenhouses", href: "/solutions/smart-greenhouses", desc: "Climate-controlled growing spaces." },
       { name: "Smart Microgreens", href: "/solutions/smart-microgreens", desc: "Compact indoor nutrient-dense farming." }
@@ -21,7 +21,7 @@ const solutionCategories = [
     color: "text-nabtura-blue",
     borderColor: "hover:border-nabtura-blue",
     description: "Every drop has value. Smart water management and irrigation.",
-    imageSrc: "/images/landscapes.jpg",
+    imageSrc: "/images/landscapes.webp",
     links: [
       { name: "Smart Irrigation", href: "/solutions/smart-irrigation", desc: "Precision water delivery systems." }
     ]
@@ -32,7 +32,7 @@ const solutionCategories = [
     color: "text-nabtura-green",
     borderColor: "hover:border-nabtura-green",
     description: "Bring purposeful greenery into increasingly built environments.",
-    imageSrc: "/images/dubai-landscapes.jpg",
+    imageSrc: "/images/dubai-landscapes.webp",
     links: [
       { name: "Landscapes", href: "/solutions/landscapes", desc: "Beautiful, productive outdoor spaces." },
       { name: "Urban Forests", href: "/solutions/urban-forests", desc: "Dense green spaces in the city." },
@@ -45,7 +45,7 @@ const solutionCategories = [
     color: "text-nabtura-sand",
     borderColor: "hover:border-nabtura-sand",
     description: "Large scale environmental impact and restoration projects.",
-    imageSrc: "/images/microgreens.jpg",
+    imageSrc: "/images/microgreens.webp",
     links: [
       { name: "Environmental Projects", href: "/solutions/environmental-projects", desc: "Strategic natural transformations." }
     ]
@@ -59,7 +59,7 @@ export default function SolutionsDirectoryPage() {
         eyebrow="ALL SOLUTIONS"
         headline="OUR CAPABILITIES"
         tagline="Explore how we grow food, manage water, and create green spaces."
-        bgImageUrl="/images/dubai-landscapes.jpg"
+        bgImageUrl="/images/dubai-landscapes.webp"
         accentColor="text-nabtura-green"
       />
 

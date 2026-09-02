@@ -7,9 +7,9 @@ import { ArrowRight, MapPin } from "lucide-react";
 import Image from "next/image";
 
 const IMAGES = [
-  { src: "/images/uae_green_city.jpg", label: "Sustainable Urban Oasis", location: "DUBAI, UAE" },
-  { src: "/images/uae_smart_greenhouse.jpg", label: "Smart Food Production", location: "ABU DHABI, UAE" },
-  { src: "/images/uae_water_tech.jpg", label: "Advanced Water Tech", location: "SHARJAH, UAE" },
+  { src: "/images/uae_green_city.webp", label: "Sustainable Urban Oasis", location: "DUBAI, UAE" },
+  { src: "/images/uae_smart_greenhouse.webp", label: "Smart Food Production", location: "ABU DHABI, UAE" },
+  { src: "/images/uae_water_tech.webp", label: "Advanced Water Tech", location: "SHARJAH, UAE" },
 ];
 
 export default function UAECredibility() {
@@ -27,7 +27,7 @@ export default function UAECredibility() {
       
       {/* UAE Background */}
       <div className="absolute inset-0 z-0 mix-blend-screen opacity-30">
-        <div className="absolute inset-0 bg-[url('/smart_landscapes_mockup_1788109519811.jpg')] bg-cover bg-center grayscale sepia-[0.3]" />
+        <div className="absolute inset-0 bg-[url('/smart_landscapes_mockup_1788109519811.webp')] bg-cover bg-center grayscale sepia-[0.3]" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-r from-[#020504]/90 via-[#020504]/80 to-transparent z-0" />
 

@@ -6,11 +6,11 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 const concepts = [
-  { id: "dining", title: "Dining Forest", desc: "Dine within nature.", image: "/possibility_forest_restaurant_1788160295877.jpg" },
-  { id: "learning", title: "Learning Garden", desc: "Turn nature into a classroom.", image: "/possibility_green_school_1788160313277.jpg" },
-  { id: "oasis", title: "Urban Oasis", desc: "Create a place to pause.", image: "/possibility_urban_oasis_1788160434157.jpg" },
-  { id: "edible", title: "Edible Landscape", desc: "Beauty that can also produce.", image: "/possibility_edible_corporate_campus_1788160553884.jpg" },
-  { id: "rooftop", title: "Productive Rooftop", desc: "Put unused space to work.", image: "/possibility_productive_rooftop_1788160358894.jpg" },
+  { id: "dining", title: "Dining Forest", desc: "Dine within nature.", image: "/possibility_forest_restaurant_1788160295877.webp" },
+  { id: "learning", title: "Learning Garden", desc: "Turn nature into a classroom.", image: "/possibility_green_school_1788160313277.webp" },
+  { id: "oasis", title: "Urban Oasis", desc: "Create a place to pause.", image: "/possibility_urban_oasis_1788160434157.webp" },
+  { id: "edible", title: "Edible Landscape", desc: "Beauty that can also produce.", image: "/possibility_edible_corporate_campus_1788160553884.webp" },
+  { id: "rooftop", title: "Productive Rooftop", desc: "Put unused space to work.", image: "/possibility_productive_rooftop_1788160358894.webp" },
 ];
 
 const actionWords = ["GROW", "FEED", "TEACH", "RELAX", "GATHER", "BEAUTIFY", "RESTORE", "EXPERIENCE"];

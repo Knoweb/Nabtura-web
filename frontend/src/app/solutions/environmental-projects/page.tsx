@@ -9,7 +9,7 @@ export default function EnvironmentalProjectsPage() {
         eyebrow="TRANSFORM ENVIRONMENTS"
         headline="ENVIRONMENTAL PROJECTS"
         tagline="Environmental challenges need purpose-built solutions."
-        bgImageUrl="/smart_landscapes_mockup_1788109519811.jpg"
+        bgImageUrl="/smart_landscapes_mockup_1788109519811.webp"
         accentColor="text-nabtura-light-green"
       />
 

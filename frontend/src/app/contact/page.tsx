@@ -90,7 +90,7 @@ export default function ContactPage() {
         eyebrow="CONTACT NABTURA"
         headline="START A CONVERSATION"
         tagline="How can we help you grow?"
-        bgImageUrl="/possibility_smart_greenhouse_1788160454551.jpg"
+        bgImageUrl="/possibility_smart_greenhouse_1788160454551.webp"
         accentColor="text-content"
       />
 

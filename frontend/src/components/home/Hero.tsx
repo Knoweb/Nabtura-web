@@ -13,20 +13,20 @@ const words = [
 ];
 
 const bgImages = [
-  "/images/dubai-landscapes.jpg",
-  "/images/dubai-greenhouse.jpg",
-  "/images/dubai-water.jpg",
+  "/images/dubai-landscapes.webp",
+  "/images/dubai-greenhouse.webp",
+  "/images/dubai-water.webp",
 ];
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
 
   const bgImages = [
-    "/images/greenhouse.jpg",
-    "/images/microgreens.jpg",
-    "/images/dubai-water.jpg",
-    "/images/dubai-landscapes.jpg",
-    "/images/dubai-greenhouse.jpg",
+    "/images/greenhouse.webp",
+    "/images/microgreens.webp",
+    "/images/dubai-water.webp",
+    "/images/dubai-landscapes.webp",
+    "/images/dubai-greenhouse.webp",
   ];
 
   useEffect(() => {

@@ -13,7 +13,7 @@ const ecosystem = [
     icon: Sprout,
     color: "text-nabtura-light-green",
     bgColor: "bg-nabtura-light-green",
-    image: "/images/greenhouse.jpg",
+    image: "/images/greenhouse.webp",
     solutions: [
       { name: "Smart Greenhouses", desc: "Controlled environments for smarter food production." },
       { name: "Smart Microgreens", desc: "Small spaces. Smart growing. Fresh possibilities." }
@@ -25,7 +25,7 @@ const ecosystem = [
     icon: Droplets,
     color: "text-nabtura-blue",
     bgColor: "bg-nabtura-blue",
-    image: "/images/dubai-water.jpg",
+    image: "/images/dubai-water.webp",
     solutions: [
       { name: "Smart Irrigation", desc: "Precision water management and recirculation." }
     ]
@@ -36,7 +36,7 @@ const ecosystem = [
     icon: TreePine,
     color: "text-nabtura-green",
     bgColor: "bg-nabtura-green",
-    image: "/images/dubai-landscapes.jpg",
+    image: "/images/dubai-landscapes.webp",
     solutions: [
       { name: "Landscapes", desc: "Beautiful green spaces designed to perform." },
       { name: "Urban Forests", desc: "Bring nature into the built environment." },
@@ -49,7 +49,7 @@ const ecosystem = [
     icon: Globe2,
     color: "text-nabtura-sand",
     bgColor: "bg-nabtura-sand",
-    image: "/images/models/operate.jpg",
+    image: "/images/models/operate.webp",
     solutions: [
       { name: "Environmental Projects", desc: "Purpose-built solutions for complex challenges." }
     ]

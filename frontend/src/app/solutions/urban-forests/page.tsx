@@ -9,7 +9,7 @@ export default function UrbanForestsPage() {
         eyebrow="CREATE GREEN"
         headline="URBAN FORESTS"
         tagline="Bring nature into the built environment."
-        bgImageUrl="/smart_landscapes_mockup_1788109519811.jpg"
+        bgImageUrl="/smart_landscapes_mockup_1788109519811.webp"
         accentColor="text-nabtura-green"
       />
 

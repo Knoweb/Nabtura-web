@@ -11,21 +11,21 @@ const featured = [
     description: "Controlled environments. Smarter production.",
     details: "Our smart greenhouses use cutting-edge climate control and IoT sensors to maximize crop yields while minimizing resource usage. From automated nutrient delivery to precise temperature regulation, we provide turnkey solutions for scalable commercial agriculture. Whether you are growing leafy greens, vine crops, or specialty plants, our environments are tailored for optimal performance.",
     tags: ["Commercial", "Investment", "Managed"],
-    imageSrc: "/images/greenhouse.jpg",
+    imageSrc: "/images/greenhouse.webp",
   },
   {
     title: "SMART MICROGREENS",
     description: "Small space. Smart growing. Fresh possibilities.",
     details: "Maximize your yield in minimal space with our smart microgreens vertical farming solutions. Designed specifically for urban environments, hospitality sectors, and local businesses, these systems offer rapid growth cycles with automated lighting and irrigation, ensuring fresh, nutrient-dense produce year-round right where it's consumed.",
     tags: ["Hospitality", "Business", "Education"],
-    imageSrc: "/images/microgreens.jpg",
+    imageSrc: "/images/microgreens.webp",
   },
   {
     title: "LANDSCAPES",
     description: "Green spaces designed to perform.",
     details: "Transform any outdoor or indoor space into a thriving, sustainable ecosystem. Our landscaping solutions integrate smart irrigation, drought-resistant plant selection, and modern aesthetic design. We specialize in creating high-performance green spaces for luxury hospitality, commercial real estate, and premium residential properties that look stunning while conserving water.",
     tags: ["Hospitality", "Commercial", "Residential"],
-    imageSrc: "/images/dubai-landscapes.jpg",
+    imageSrc: "/images/dubai-landscapes.webp",
   },
 ];
 

@@ -35,7 +35,7 @@ export default function GrowingGreen() {
             transition={{ duration: 0.6 }}
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-[url('/possibility_smart_greenhouse_1788160454551.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-[url('/possibility_smart_greenhouse_1788160454551.webp')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
@@ -51,7 +51,7 @@ export default function GrowingGreen() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-[url('/possibility_urban_oasis_1788160434157.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
+            <div className="absolute inset-0 bg-[url('/possibility_urban_oasis_1788160434157.webp')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">

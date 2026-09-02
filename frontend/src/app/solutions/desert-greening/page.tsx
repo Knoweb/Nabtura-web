@@ -9,7 +9,7 @@ export default function DesertGreeningPage() {
         eyebrow="CREATE GREEN"
         headline="DESERT GREENING"
         tagline="Where others see arid land, we see possibility."
-        bgImageUrl="/smart_landscapes_mockup_1788109519811.jpg"
+        bgImageUrl="/smart_landscapes_mockup_1788109519811.webp"
         accentColor="text-nabtura-sand"
       />
 

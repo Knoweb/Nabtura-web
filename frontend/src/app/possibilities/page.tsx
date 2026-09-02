@@ -13,7 +13,7 @@ const fallbackPossibilities = [
     idea: "A glowing, futuristic green tech garden.",
     solutions: "Automated hydroponics, mood-lit vertical farming, water reclamation.",
     benefits: "Luxury aesthetics, fresh home produce, increased property value.", 
-    image: "/images/possibilities/possibility_villa_garden_1788259031083.jpg" 
+    image: "/images/possibilities/possibility_villa_garden_1788259031083.webp" 
   },
   { 
     name: "Forest Restaurant", 
@@ -21,7 +21,7 @@ const fallbackPossibilities = [
     idea: "Dine surrounded by dense indoor tropical trees and glowing moss.",
     solutions: "Living walls, indoor climate control, botanical ambient lighting.",
     benefits: "Unique dining experience, natural air purification, premium branding.", 
-    image: "/images/possibilities/possibility_forest_restaurant_1788259046486.jpg" 
+    image: "/images/possibilities/possibility_forest_restaurant_1788259046486.webp" 
   },
   { 
     name: "Green School", 
@@ -29,7 +29,7 @@ const fallbackPossibilities = [
     idea: "Educate the next generation with indoor vertical farming.",
     solutions: "Educational hydroponic systems, interactive grow panels.",
     benefits: "Hands-on learning, fresh cafeteria food, eco-awareness.", 
-    image: "/images/possibilities/possibility_green_school_1788259063374.jpg" 
+    image: "/images/possibilities/possibility_green_school_1788259063374.webp" 
   },
   { 
     name: "Productive Rooftop", 
@@ -37,7 +37,7 @@ const fallbackPossibilities = [
     idea: "Advanced aeroponic growing towers overlooking the city.",
     solutions: "Wind-resistant aeroponics, smart irrigation, lightweight infrastructure.",
     benefits: "Localized food supply, urban cooling, profitable space utilization.", 
-    image: "/images/possibilities/possibility_productive_rooftop_1788259076379.jpg" 
+    image: "/images/possibilities/possibility_productive_rooftop_1788259076379.webp" 
   },
   { 
     name: "Urban Oasis", 
@@ -45,7 +45,7 @@ const fallbackPossibilities = [
     idea: "A lush, towering green oasis with cooling water features.",
     solutions: "Vertical forests, misting systems, bio-filtration.",
     benefits: "Reduced heat island effect, community well-being, striking architecture.", 
-    image: "/images/possibilities/possibility_urban_oasis_1788259090378.jpg" 
+    image: "/images/possibilities/possibility_urban_oasis_1788259090378.webp" 
   },
   { 
     name: "Smart Greenhouse Investment", 
@@ -53,7 +53,7 @@ const fallbackPossibilities = [
     idea: "High-tech facilities with glowing crops and robotics.",
     solutions: "AI-driven climate control, robotic harvesting, precision agriculture.",
     benefits: "High ROI, year-round yields, minimal resource waste.", 
-    image: "/images/possibilities/possibility_smart_greenhouse_1788259107781.jpg" 
+    image: "/images/possibilities/possibility_smart_greenhouse_1788259107781.webp" 
   },
   { 
     name: "Microgreen Restaurant", 
@@ -61,7 +61,7 @@ const fallbackPossibilities = [
     idea: "Chefs harvest microgreens directly from glowing dining walls.",
     solutions: "In-restaurant micro-farms, harvest-on-demand tech.",
     benefits: "Ultimate freshness, zero transport emissions, visual appeal.", 
-    image: "/images/possibilities/possibility_microgreen_restaurant_1788259126207.jpg" 
+    image: "/images/possibilities/possibility_microgreen_restaurant_1788259126207.webp" 
   },
   { 
     name: "Water-Smart Resort", 
@@ -69,7 +69,7 @@ const fallbackPossibilities = [
     idea: "Bioluminescent pools and advanced purification displays.",
     solutions: "Closed-loop water recycling, aesthetic bio-filters.",
     benefits: "Eco-tourism appeal, massive water savings, mesmerizing aesthetics.", 
-    image: "/images/possibilities/possibility_water_resort_1788259143543.jpg" 
+    image: "/images/possibilities/possibility_water_resort_1788259143543.webp" 
   },
   { 
     name: "Edible Corporate Campus", 
@@ -77,7 +77,7 @@ const fallbackPossibilities = [
     idea: "Courtyards surrounded by fruit-bearing vertical gardens.",
     solutions: "Corporate farming, relaxing biophilic design, employee harvest programs.",
     benefits: "Improved mental health, talent retention, corporate sustainability.", 
-    image: "/images/possibilities/possibility_corporate_campus_1788259157723.jpg" 
+    image: "/images/possibilities/possibility_corporate_campus_1788259157723.webp" 
   },
   { 
     name: "Desert-to-Green Transformation", 
@@ -85,7 +85,7 @@ const fallbackPossibilities = [
     idea: "A thriving green ecosystem turning sand into life.",
     solutions: "Sub-surface smart irrigation, drought-resistant soil tech, solar desalination.",
     benefits: "Land reclamation, food security in extreme climates, eco-restoration.", 
-    image: "/images/possibilities/possibility_desert_transformation_1788259170943.jpg" 
+    image: "/images/possibilities/possibility_desert_transformation_1788259170943.webp" 
   },
 ];
 
@@ -109,7 +109,7 @@ export default async function PossibilitiesPage() {
         eyebrow="POSSIBILITIES"
         headline="IMAGINE WHAT YOUR SPACE COULD BECOME"
         tagline="The NABTURA Possibility Gallery."
-        bgImageUrl="/possibility_urban_oasis_1788160434157.jpg"
+        bgImageUrl="/possibility_urban_oasis_1788160434157.webp"
         accentColor="text-nabtura-sand"
       />
 

@@ -8,38 +8,38 @@ const transformations = [
   { 
     before: "EMPTY LAND", 
     after: "SMART GREENHOUSE", 
-    imgBefore: "/images/before_greenhouse.jpg",
-    imgAfter: "/images/greenhouse.jpg"
+    imgBefore: "/images/before_greenhouse.webp",
+    imgAfter: "/images/greenhouse.webp"
   },
   { 
     before: "UNUSED ROOM", 
     after: "SMART MICROGREENS", 
-    imgBefore: "/images/before_microgreens.jpg",
-    imgAfter: "/images/microgreens.jpg"
+    imgBefore: "/images/before_microgreens.webp",
+    imgAfter: "/images/microgreens.webp"
   },
   { 
     before: "RESTAURANT TERRACE", 
     after: "DINING FOREST", 
-    imgBefore: "/images/before_landscapes.jpg",
-    imgAfter: "/images/dubai-landscapes.jpg"
+    imgBefore: "/images/before_landscapes.webp",
+    imgAfter: "/images/dubai-landscapes.webp"
   },
   { 
     before: "SCHOOL COURTYARD", 
     after: "LEARNING GARDEN", 
-    imgBefore: "/images/before_courtyard.jpg",
-    imgAfter: "/images/landscapes.jpg"
+    imgBefore: "/images/before_courtyard.webp",
+    imgAfter: "/images/landscapes.webp"
   },
   { 
     before: "VILLA GARDEN", 
     after: "FRESH FOOD + GREEN LIVING", 
-    imgBefore: "/images/before_villa.jpg",
-    imgAfter: "/images/dubai-greenhouse.jpg"
+    imgBefore: "/images/before_villa.webp",
+    imgAfter: "/images/dubai-greenhouse.webp"
   },
   { 
     before: "ARID SPACE", 
     after: "PURPOSEFUL GREEN", 
-    imgBefore: "/images/before_arid.jpg",
-    imgAfter: "/images/dubai-water.jpg"
+    imgBefore: "/images/before_arid.webp",
+    imgAfter: "/images/dubai-water.webp"
   },
 ];
 

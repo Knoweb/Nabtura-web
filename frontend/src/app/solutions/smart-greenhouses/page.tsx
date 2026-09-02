@@ -9,7 +9,7 @@ export default function SmartGreenhousesPage() {
         eyebrow="GROW FOOD"
         headline="SMART GREENHOUSES"
         tagline="Controlled environments for smarter food production."
-        bgImageUrl="/smart_greenhouse_mockup_1788109457162.jpg"
+        bgImageUrl="/smart_greenhouse_mockup_1788109457162.webp"
         accentColor="text-nabtura-light-green"
       />
 

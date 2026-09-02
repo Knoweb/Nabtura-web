@@ -10,19 +10,19 @@ const models = [
     title: "WE CREATE. YOU OPERATE.",
     desc: "We assess, design, build and commission. You take it forward.",
     icon: Wrench,
-    image: "/images/models/operate.jpg"
+    image: "/images/models/operate.webp"
   },
   {
     title: "WE CREATE. WE MANAGE.",
     desc: "From concept to ongoing operation and support.",
     icon: Sprout,
-    image: "/images/models/manage.jpg"
+    image: "/images/models/manage.webp"
   },
   {
     title: "WE ADVISE. YOU DEVELOP.",
     desc: "Our expertise. Your execution.",
     icon: Briefcase,
-    image: "/images/models/advise.jpg"
+    image: "/images/models/advise.webp"
   }
 ];
 
