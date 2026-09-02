@@ -1,3 +1,8 @@
+"use client";
+
+import { useState } from "react";
+import { submitEnquiry, submitSubscriber } from "@/lib/api";
+import { Loader2, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone, Mail } from "lucide-react";
 
@@ -14,6 +19,26 @@ const TwitterIcon = () => (
 );
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || status === "loading") return;
+    
+    setStatus("loading");
+    try {
+      await submitSubscriber({ email });
+      setStatus("success");
+      setEmail("");
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
+
   return (
     <footer className="bg-[#020504] text-gray-400 relative border-t border-white/5 overflow-hidden">
       {/* Background Glows */}
@@ -34,16 +59,10 @@ export default function Footer() {
           </div>
           <div className="w-full lg:w-auto">
             <h4 className="text-sm font-bold tracking-widest uppercase text-white mb-4">STAY UPDATED</h4>
-            <div className="flex items-center bg-white/5 border border-white/10 rounded-full pl-6 pr-2 py-1.5 focus-within:border-nabtura-green focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-nabtura-green/50 transition-all shadow-[0_0_15px_rgba(46,204,113,0.15)] group">
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className="bg-transparent border-none outline-none text-white placeholder-gray-500 flex-grow py-2 min-w-[220px] text-sm tracking-wide"
-              />
-              <button className="text-black bg-nabtura-green hover:bg-nabtura-light-green transition-colors p-2.5 rounded-full shadow-[0_0_10px_rgba(46,204,113,0.3)] group-hover:scale-105">
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
+            <form onSubmit={handleSubscribe} className="flex items-center bg-white/5 border border-white/10 rounded-full pl-6 pr-2 py-1.5 focus-within:border-nabtura-green focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-nabtura-green/50 transition-all shadow-[0_0_15px_rgba(46,204,113,0.15)] group relative">
+              <input type="email" placeholder="Enter your email address" value={email} onChange={(e) => setEmail(e.target.value)} required disabled={status === "loading" || status === "success"} className="bg-transparent border-none outline-none text-white placeholder-gray-500 flex-grow py-2 min-w-[220px] text-sm tracking-wide disabled:opacity-50" />
+              <button type="submit" disabled={status === "loading" || status === "success"} className="text-black bg-nabtura-green hover:bg-nabtura-light-green transition-colors p-2.5 rounded-full shadow-[0_0_10px_rgba(46,204,113,0.3)] group-hover:scale-105 disabled:opacity-50 flex items-center justify-center min-w-[36px]">
+                {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : status === "success" ? <CheckCircle2 className="w-4 h-4 text-black" /> : <ArrowRight className="w-4 h-4" />}</button>{status === "error" && <div className="absolute -bottom-6 text-red-400 text-xs w-full text-center">Failed to subscribe</div>}</form>
           </div>
         </div>
 
@@ -143,3 +162,7 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+
+

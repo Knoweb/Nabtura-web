@@ -39,3 +39,10 @@ export async function submitEnquiry(data: {
     body: JSON.stringify({ data }),
   });
 }
+
+export async function submitSubscriber(data: { email: string }) {
+  return fetchAPI("/subscribers", {
+    method: "POST",
+    body: JSON.stringify({ data }),
+  });
+}
