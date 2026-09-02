@@ -1,8 +1,7 @@
 "use client";
-
 import { useState } from "react";
 import SolutionHero from "@/components/solutions/SolutionHero";
-import { ArrowRight, MapPin, TrendingUp, Lightbulb, Globe2, MessageSquare, Phone, Mail, MessageCircle, X } from "lucide-react";
+import { ArrowRight, MessageSquare, MapPin, TrendingUp, Lightbulb, Globe2, X, MessageCircle, Phone, Mail } from "lucide-react";
 import { submitEnquiry } from "@/lib/api";
 
 const enquiryTypes = [
@@ -16,10 +15,59 @@ const enquiryTypes = [
 export default function ContactPage() {
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [errors, setErrors] = useState<{name?: string, email?: string, phone?: string, message?: string}>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    
+    const newErrors = { ...errors };
+    
+    if (field === "name") {
+      if (!value.trim()) newErrors.name = "Name is required";
+      else delete newErrors.name;
+    }
+    
+    if (field === "email") {
+      if (!value.trim()) newErrors.email = "Email is required";
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) newErrors.email = "Please enter a valid email address";
+      else delete newErrors.email;
+    }
+    
+    if (field === "phone") {
+      if (value && !/^\+?[0-9\s\-\(\)]+$/.test(value)) newErrors.phone = "Please enter a valid phone number";
+      else delete newErrors.phone;
+    }
+    
+    if (field === "message") {
+      if (!value.trim()) newErrors.message = "Message is required";
+      else delete newErrors.message;
+    }
+    
+    setErrors(newErrors);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const newErrors: {name?: string, email?: string, phone?: string, message?: string} = {};
+    if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+    if (formData.phone && !/^\+?[0-9\s\-\(\)]+$/.test(formData.phone)) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
+    if (!formData.message.trim()) newErrors.message = "Message is required";
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
     setStatus("loading");
     try {
       await submitEnquiry({ ...formData, enquiryType: selectedType || "general" });
@@ -101,19 +149,23 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Name</label>
-                      <input required type="text" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input type="text" value={formData.name} onChange={e => handleChange("name", e.target.value)} className={`w-full bg-overlay backdrop-blur-xl border ${errors.name ? 'border-red-500' : 'border-divider'} rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors`} />
+                      {errors.name && <p className="text-red-500 text-xs mt-1 font-bold">{errors.name}</p>}
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Email</label>
-                      <input required type="email" value={formData.email} onChange={e => setFormData({ ...formData, email: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input type="email" value={formData.email} onChange={e => handleChange("email", e.target.value)} className={`w-full bg-overlay backdrop-blur-xl border ${errors.email ? 'border-red-500' : 'border-divider'} rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors`} />
+                      {errors.email && <p className="text-red-500 text-xs mt-1 font-bold">{errors.email}</p>}
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Phone</label>
-                      <input type="tel" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors" />
+                      <input type="tel" value={formData.phone} onChange={e => handleChange("phone", e.target.value)} className={`w-full bg-overlay backdrop-blur-xl border ${errors.phone ? 'border-red-500' : 'border-divider'} rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors`} />
+                      {errors.phone && <p className="text-red-500 text-xs mt-1 font-bold">{errors.phone}</p>}
                     </div>
                     <div>
                       <label className="block text-sm font-bold tracking-widest uppercase text-content-muted mb-2">Message</label>
-                      <textarea required rows={4} value={formData.message} onChange={e => setFormData({ ...formData, message: e.target.value })} className="w-full bg-overlay backdrop-blur-xl border border-divider rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors"></textarea>
+                      <textarea rows={4} value={formData.message} onChange={e => handleChange("message", e.target.value)} className={`w-full bg-overlay backdrop-blur-xl border ${errors.message ? 'border-red-500' : 'border-divider'} rounded-xl p-4 text-content focus:outline-none focus:border-nabtura-green transition-colors`}></textarea>
+                      {errors.message && <p className="text-red-500 text-xs mt-1 font-bold">{errors.message}</p>}
                     </div>
 
                     {status === "error" && <p className="text-red-500 text-sm font-bold">Failed to send message. Please try again.</p>}
@@ -132,7 +184,7 @@ export default function ContactPage() {
             <div>
               <h3 className="text-2xl font-bold text-content mb-8">Direct Contact</h3>
               <div className="space-y-6 mb-12">
-                <a href="#" className="flex items-center gap-4 text-content-muted hover:text-nabtura-green transition-colors group">
+                <a href="https://wa.me/971569300075" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-content-muted hover:text-nabtura-green transition-colors group">
                   <div className="w-12 h-12 rounded-full bg-overlay backdrop-blur-xl border border-divider flex items-center justify-center group-hover:border-nabtura-green transition-colors">
                     <MessageCircle className="w-5 h-5 text-nabtura-green" />
                   </div>
@@ -152,28 +204,14 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
-
-            <div className="pt-8 border-t border-divider">
-              <p className="text-content-muted text-sm font-bold tracking-widest uppercase mb-2">Corporate Entity</p>
-              <p className="text-content-muted font-light mb-6">INFORGRID FZC<br />Sharjah Publishing City, United Arab Emirates</p>
-
-              {/* Map Embed Tile */}
-              <div className="w-full h-[220px] rounded-2xl overflow-hidden border border-divider group relative">
-                <iframe
-                  src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City%20Free%20Zone&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                  className="w-full h-full absolute inset-0"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy">
-                </iframe>
-              </div>
+            
+            <div className="text-sm text-content-muted">
+              <p>Operating in Dubai & The UAE</p>
             </div>
           </div>
 
         </div>
       </section>
-
     </main>
   );
 }
-
