@@ -1,4 +1,4 @@
-﻿import { notFound } from "next/navigation";
+import { notFound } from "next/navigation";
 import { fetchAPI } from "@/lib/api";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const coverImage = blog.coverImage || blog.coverimage || blog.CoverImage;
 
   const imageUrl = coverImage 
-    ? (coverImage.url.startsWith('http') ? coverImage.url : `http://localhost:1337${coverImage.url}`)
+    ? (coverImage.url.startsWith('http') ? coverImage.url : `http://178.128.112.232${coverImage.url}`)
     : null;
 
   return (
