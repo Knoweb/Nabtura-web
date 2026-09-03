@@ -5,8 +5,45 @@ on:
     branches:
       - main
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME_FRONTEND: knoweb/nabtura-web-frontend
+  IMAGE_NAME_BACKEND: knoweb/nabtura-web-backend
+
 jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Backend
+        uses: docker/build-push-action@v4
+        with:
+          context: ./backend
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_BACKEND }}:latest
+
+      - name: Build and push Frontend
+        uses: docker/build-push-action@v4
+        with:
+          context: ./frontend
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_FRONTEND }}:latest
+
   deploy:
+    needs: build-and-push
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to DigitalOcean Droplet
@@ -17,17 +54,22 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           command_timeout: 30m
           script: |
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+            
             if [ ! -d "/opt/nabtura-web" ]; then
               echo "Cloning repository..."
               git clone https://github.com/Knoweb/Nabtura-web.git /opt/nabtura-web
             fi
+            
             cd /opt/nabtura-web
             git stash
             git checkout main
             git pull origin main
             
+            # Pull new images
+            docker pull ghcr.io/knoweb/nabtura-web-backend:latest
+            docker pull ghcr.io/knoweb/nabtura-web-frontend:latest
+            
             # Restart containers with new code
             docker compose down
-            docker compose build backend
-            docker compose build frontend
             docker compose up -d

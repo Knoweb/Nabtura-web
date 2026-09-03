@@ -1,8 +1,6 @@
-version: '3'
 services:
   frontend:
-    build:
-      context: ./frontend
+    image: ghcr.io/knoweb/nabtura-web-frontend:latest
     container_name: nabtura_frontend
     restart: always
     environment:
@@ -13,8 +11,7 @@ services:
       - nabtura-network
 
   backend:
-    build:
-      context: ./backend
+    image: ghcr.io/knoweb/nabtura-web-backend:latest
     container_name: nabtura_backend
     restart: always
     env_file: ./backend/.env
