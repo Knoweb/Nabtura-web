@@ -159,7 +159,7 @@ export default function Header() {
 
           {/* CTA (Right) */}
           <div className="hidden xl:flex justify-end lg:w-[250px]">
-            <Link href="/contact">
+            <a href="https://wa.me/971569300075" target="_blank" rel="noopener noreferrer">
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -167,7 +167,7 @@ export default function Header() {
               >
                 START A CONVERSATION
               </motion.span>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -208,13 +208,15 @@ export default function Header() {
                 );
               })}
               
-              <Link
-                href="/contact"
+              <a
+                href="https://wa.me/971569300075"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="bg-nabtura-green text-black text-center px-8 py-4 rounded-full text-sm font-bold tracking-widest hover:bg-nabtura-light-green transition-all uppercase mt-8"
               >
                 START A CONVERSATION
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
@@ -222,3 +224,4 @@ export default function Header() {
     </header>
   );
 }
+
