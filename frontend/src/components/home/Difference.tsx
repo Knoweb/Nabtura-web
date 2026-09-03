@@ -45,7 +45,7 @@ interface Blog {
 const getImageUrl = (url?: string) => {
   if (!url) return "https://picsum.photos/seed/placeholder/800/600";
   if (url.startsWith("http")) return url;
-  return `http://localhost:1337${url}`; // Or process.env.NEXT_PUBLIC_STRAPI_URL
+  return `http://178.128.112.232${url}`; // Or process.env.NEXT_PUBLIC_STRAPI_URL
 };
 
 const pillars = [

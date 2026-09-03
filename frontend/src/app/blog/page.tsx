@@ -42,7 +42,7 @@ export default async function BlogIndexPage() {
               const content = featured.content || featured.Content;
               const coverImage = featured.coverImage || featured.coverimage || featured.CoverImage;
               const imageUrl = coverImage 
-                ? (coverImage.url.startsWith('http') ? coverImage.url : `http://localhost:1337${coverImage.url}`)
+                ? (coverImage.url.startsWith('http') ? coverImage.url : `http://178.128.112.232${coverImage.url}`)
                 : null;
 
               return (
@@ -96,7 +96,7 @@ export default async function BlogIndexPage() {
                   const coverImage = blog.coverImage || blog.coverimage || blog.CoverImage;
                   
                   const imageUrl = coverImage 
-                    ? (coverImage.url.startsWith('http') ? coverImage.url : `http://localhost:1337${coverImage.url}`)
+                    ? (coverImage.url.startsWith('http') ? coverImage.url : `http://178.128.112.232${coverImage.url}`)
                     : null;
 
                   return (

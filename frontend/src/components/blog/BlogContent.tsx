@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -36,7 +36,7 @@ export default function BlogContent({ content }: { content: string }) {
               return <p {...props}>{children}</p>;
             },
             img: ({node, ...props}) => {
-              const src = props.src?.startsWith('http') ? props.src : `http://localhost:1337${props.src}`;
+              const src = props.src?.startsWith('http') ? props.src : `http://178.128.112.232${props.src}`;
               return (
                 <div 
                   className="relative cursor-pointer overflow-hidden rounded-xl shadow-lg hover:shadow-nabtura-green/30 hover:shadow-2xl transition-all duration-300 group m-0 flex-shrink-0"

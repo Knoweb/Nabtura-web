@@ -27,7 +27,7 @@ export default function PossibilitiesGallery({ items }: { items: any[] }) {
           if (isDynamic) {
             const imageObj = item.image || item.Image;
             if (imageObj && imageObj.url) {
-              imageUrl = imageObj.url.startsWith('http') ? imageObj.url : `http://localhost:1337${imageObj.url}`;
+              imageUrl = imageObj.url.startsWith('http') ? imageObj.url : `http://178.128.112.232${imageObj.url}`;
             }
           }
 
