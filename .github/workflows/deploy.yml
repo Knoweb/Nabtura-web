@@ -28,4 +28,6 @@ jobs:
             
             # Restart containers with new code
             docker compose down
-            docker compose up --build -d
+            docker compose build backend
+            docker compose build frontend
+            docker compose up -d
