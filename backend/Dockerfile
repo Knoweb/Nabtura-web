@@ -11,6 +11,7 @@ RUN npm config set fetch-retry-maxtimeout 600000 -g && npm install --only=produc
 ENV PATH=/opt/node_modules/.bin:$PATH
 WORKDIR /opt/app
 COPY . .
+ENV NODE_OPTIONS="--max-old-space-size=2048"
 RUN npm run build
 
 FROM node:20-alpine
