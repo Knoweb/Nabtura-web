@@ -6,6 +6,7 @@ interface SolutionHeroProps {
   eyebrow: string;
   headline: React.ReactNode;
   tagline: string;
+  description?: string;
   bgImageUrl: string;
   accentColor?: string;
 }
@@ -14,6 +15,7 @@ export default function SolutionHero({
   eyebrow,
   headline,
   tagline,
+  description,
   bgImageUrl,
   accentColor = "text-nabtura-green"
 }: SolutionHeroProps) {
@@ -42,7 +44,7 @@ export default function SolutionHero({
           <h1 className={`text-xs md:text-sm tracking-[0.4em] ${accentColor} font-bold mb-6 uppercase drop-shadow-md`}>
             {eyebrow}
           </h1>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-5 leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-normal mb-5 leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
             {headline}
           </h2>
           <div className="relative group inline-block mx-4">
@@ -58,6 +60,17 @@ export default function SolutionHero({
               </p>
             </div>
           </div>
+
+          {description && (
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="mt-3 text-gray-400 text-sm md:text-lg font-light max-w-3xl mx-auto leading-relaxed"
+            >
+              {description}
+            </motion.p>
+          )}
         </motion.div>
       </div>
     </section>
