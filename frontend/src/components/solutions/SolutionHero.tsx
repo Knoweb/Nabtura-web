@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 interface SolutionHeroProps {
   eyebrow: string;
-  headline: string;
+  headline: React.ReactNode;
   tagline: string;
   bgImageUrl: string;
   accentColor?: string;
@@ -18,14 +18,17 @@ export default function SolutionHero({
   accentColor = "text-nabtura-green"
 }: SolutionHeroProps) {
   return (
-    <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden bg-transparent pt-32 pb-20 border-b border-divider">
-      
-      {/* Background Image */}
+    <section className="relative flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-4 border-b border-white/5">
+
+      {/* Background Image & Overlays */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-70 scale-105"
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-50 scale-105"
           style={{ backgroundImage: `url('${bgImageUrl}')` }}
         />
+        {/* Radial vignette for focus */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#09110E_100%)] opacity-80" />
+        {/* Bottom fade into the page background */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/60 to-transparent" />
       </div>
 
@@ -36,16 +39,24 @@ export default function SolutionHero({
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className={`text-sm tracking-[0.3em] ${accentColor} font-bold mb-6 uppercase`}>
+          <h1 className={`text-xs md:text-sm tracking-[0.4em] ${accentColor} font-bold mb-6 uppercase drop-shadow-md`}>
             {eyebrow}
           </h1>
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tight text-content mb-8 leading-tight">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter mb-5 leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
             {headline}
           </h2>
-          <div className="bg-overlay backdrop-blur-md border border-divider p-6 rounded-2xl inline-block">
-            <p className="text-xl md:text-2xl text-content-muted font-light tracking-wide uppercase">
-              {tagline}
-            </p>
+          <div className="relative group inline-block mx-4">
+            {/* Ambient glow behind the box */}
+            <div className="absolute inset-0 bg-white/5 rounded-3xl blur-xl group-hover:bg-white/10 transition-colors duration-700"></div>
+
+            <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 group-hover:border-white/20 p-6 md:p-5 rounded-3xl shadow-2xl transition-all duration-700 overflow-hidden">
+              {/* Shine effect on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+              <p className="text-lg md:text-lg text-gray-300 font-light tracking-wide uppercase leading-relaxed max-w-3xl mx-auto">
+                {tagline}
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

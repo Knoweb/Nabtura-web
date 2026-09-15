@@ -20,27 +20,27 @@ export default function Footer() {
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-nabtura-green/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-nabtura-blue/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 relative z-10">
         
-        {/* Top Section: Giant Brand & Newsletter */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-24 border-b border-white/10 pb-16">
-          <div className="max-w-2xl">
-            <h2 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-6">
+        {/* Top Section: Brand & Newsletter */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12 border-b border-white/10 pb-10">
+          <div className="max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-gray-500">
               NABTURA
             </h2>
-            <p className="text-xl md:text-2xl font-light text-content-muted leading-relaxed">
+            <p className="text-base md:text-lg font-light text-content-muted leading-relaxed">
               Purpose-built green environments. Smart agriculture, water intelligence, and sustainable landscapes for the future.
             </p>
           </div>
           <div className="w-full lg:w-auto">
             <h4 className="text-sm font-bold tracking-widest uppercase text-white mb-4">STAY UPDATED</h4>
-            <div className="flex items-center bg-white/5 border border-white/10 rounded-full pl-6 pr-2 py-1.5 focus-within:border-nabtura-green focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-nabtura-green/50 transition-all shadow-[0_0_15px_rgba(46,204,113,0.15)] group">
+            <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-full pl-6 pr-1.5 py-1.5 focus-within:border-nabtura-green focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-nabtura-green/50 transition-all shadow-[0_0_15px_rgba(46,204,113,0.15)] group w-full sm:w-auto">
               <input 
                 type="email" 
                 placeholder="Enter your email address" 
-                className="bg-transparent border-none outline-none text-white placeholder-gray-500 flex-grow py-2 min-w-[220px] text-sm tracking-wide"
+                className="bg-transparent border-none outline-none text-white placeholder-gray-500 flex-grow py-2 min-w-[220px] text-sm tracking-wide focus:ring-0"
               />
-              <button className="text-black bg-nabtura-green hover:bg-nabtura-light-green transition-colors p-2.5 rounded-full shadow-[0_0_10px_rgba(46,204,113,0.3)] group-hover:scale-105">
+              <button className="flex items-center justify-center shrink-0 w-10 h-10 text-black bg-nabtura-green hover:bg-nabtura-light-green transition-colors rounded-full shadow-[0_0_10px_rgba(46,204,113,0.3)] group-hover:scale-105">
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
