@@ -69,11 +69,6 @@ export default function DesertGreeningPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
                 {/* Left Column */}
                 <div className="flex flex-col justify-center lg:col-span-5">
-                  <div className="inline-flex items-center space-x-2 bg-[#050D14] border border-yellow-500/30 px-4 py-1.5 rounded-full w-fit mb-6 shadow-[0_0_15px_rgba(250,204,21,0.2)]">
-                    <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-                    <span className="text-yellow-400 font-bold tracking-widest uppercase text-[10px] md:text-xs">START WITH THE ENVIRONMENT</span>
-                  </div>
-
                   <h2 className="text-4xl md:text-5xl font-black text-white uppercase leading-[1.1] tracking-tighter">
                     ADAPT BEFORE <br />YOU GREEN.
                   </h2>
@@ -122,7 +117,6 @@ export default function DesertGreeningPage() {
       {/* 3. THE GREENING STRATEGY */}
       <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative border-b border-white/10">
         <div className="text-center mb-16 relative">
-          <p className="text-yellow-400 font-bold tracking-widest uppercase text-xs mb-4">THE GREENING STRATEGY</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase mb-4">
             FROM LAND <br />TO LIVING GREEN.
           </h2>
@@ -205,10 +199,6 @@ export default function DesertGreeningPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 relative z-10">
               <div className="lg:col-span-5 flex flex-col justify-center">
-                <div className="inline-flex items-center space-x-2 bg-[#02080D] border border-yellow-500/30 px-4 py-1.5 rounded-full w-fit mb-6 shadow-[0_0_15px_rgba(250,204,21,0.15)]">
-                  <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-                  <span className="text-yellow-400 font-bold tracking-widest uppercase text-[10px] md:text-xs">WATER FIRST</span>
-                </div>
                 <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1]">
                   EVERY DROP <br />HAS VALUE.
                 </h2>
@@ -246,7 +236,6 @@ export default function DesertGreeningPage() {
       <section className="py-8 relative overflow-hidden bg-[#02080D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <p className="text-yellow-400 font-bold tracking-widest uppercase text-xs mb-4">PLANT FOR THE PLACE</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight mb-6">
               RIGHT PLANT. <br />RIGHT PLACE.
             </h2>
@@ -301,7 +290,6 @@ export default function DesertGreeningPage() {
       <section className="py-8 relative overflow-hidden bg-[#0A1215]">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 px-4">
-            <p className="text-yellow-400 font-bold tracking-widest uppercase text-xs mb-4">WHAT COULD THE LAND BECOME?</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
               FROM ARID LAND <br />TO GREEN POSSIBILITY.
             </h2>
@@ -377,7 +365,6 @@ export default function DesertGreeningPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 relative z-10">
-            <p className="text-yellow-400 font-bold tracking-widest uppercase text-xs mb-4">FROM STRATEGY TO ESTABLISHMENT</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-10 uppercase leading-tight">
               WE DON'T JUST PLANT. <br className="hidden md:block" />WE ESTABLISH GREEN.
             </h2>
@@ -472,7 +459,6 @@ export default function DesertGreeningPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-yellow-500/10 blur-[150px] z-0 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <p className="text-yellow-400 font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]">FINAL CONVERSION</p>
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
             WHAT COULD <br />YOUR LAND BECOME?
           </h2>

@@ -33,7 +33,6 @@ export default function LandscapesPage() {
       {/* 2. MORE THAN LANDSCAPING */}
       <section className="pt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative border-b border-white/10">
         <div className="text-center max-w-4xl mx-auto">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4">MORE THAN LANDSCAPING</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight mb-4">
             NOT JUST GREEN. <br />INTELLIGENTLY GREEN.
           </h2>
@@ -71,9 +70,9 @@ export default function LandscapesPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-64 bg-nabtura-green/5 blur-[120px] -z-10 pointer-events-none"></div>
 
         <div className="text-center mb-10 relative z-10">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4">DESIGN WITH PURPOSE</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase leading-tight">
-            GREEN CAN <br className="hidden md:block" />DO MORE.
+          <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight mb-4 drop-shadow-lg">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">GREEN CAN</span> <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 drop-shadow-[0_0_25px_rgba(34,197,94,0.5)]">DO MORE.</span>
           </h2>
           <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
             What should your landscape do?
@@ -116,7 +115,6 @@ export default function LandscapesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center z-10 relative">
             <div className="lg:col-span-5">
-              <p className="text-nabtura-light-green font-bold tracking-widest uppercase text-xs mb-4">PRODUCTIVE LANDSCAPES</p>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight leading-tight mb-6">
                 BEAUTY CAN <br />BE PRODUCTIVE.
               </h2>
@@ -179,7 +177,6 @@ export default function LandscapesPage() {
               </div>
 
               <div className="space-y-6">
-                <p className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-extrabold tracking-[0.2em] uppercase text-[10px] shadow-[0_0_20px_rgba(6,182,212,0.15)]">WATER-SMART LANDSCAPES</p>
                 <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-cyan-500 uppercase leading-[1.1] tracking-tighter drop-shadow-sm">
                   EVERY DROP <br />HAS A JOB.
                 </h2>
@@ -243,7 +240,6 @@ export default function LandscapesPage() {
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             className="text-center mb-16"
           >
-            <p className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 font-bold tracking-widest uppercase text-[10px] mb-6 shadow-[0_0_15px_rgba(245,158,11,0.1)]">TRANSFORM YOUR SPACE</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
               WHAT COULD <br />YOUR SPACE BECOME?
             </h2>
@@ -306,7 +302,6 @@ export default function LandscapesPage() {
       {/* 7. FROM CONCEPT TO GREEN */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-8 pb-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10 mt-16">
         <div className="text-center mb-16 relative">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4">FROM CONCEPT TO GREEN</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase">
             FROM SPACE <br />TO LANDSCAPE.
           </h2>
@@ -404,7 +399,6 @@ export default function LandscapesPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-nabtura-green/10 blur-[150px] z-0 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]">FINAL CONVERSION</p>
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
             LET'S GREEN <br />YOUR SPACE.
           </h2>

@@ -38,10 +38,6 @@ export default function SmartMicrogreensPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center z-10 relative">
             <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-nabtura-light-green/10 border border-nabtura-light-green/20 text-nabtura-light-green font-bold tracking-widest text-[10px] uppercase mb-6">
-                <span className="w-2 h-2 rounded-full bg-nabtura-light-green animate-pulse"></span>
-                THE OPPORTUNITY
-              </div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase leading-tight mb-4">
                 GROW CLOSER <br className="hidden xl:block" />TO WHERE FOOD IS USED.
               </h2>
@@ -83,7 +79,6 @@ export default function SmartMicrogreensPage() {
           <div className="lg:w-3/5 p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
             <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-blue/5 rounded-full blur-[80px] -z-10 group-hover:bg-nabtura-blue/10 transition-colors duration-700"></div>
 
-            <p className="text-nabtura-light-green font-bold tracking-widest uppercase text-xs mb-3">THE SYSTEM</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase leading-tight">
               MORE THAN <br className="hidden md:block" />GROWING RACKS.
             </h2>
@@ -106,7 +101,6 @@ export default function SmartMicrogreensPage() {
       {/* 4. WHAT CAN YOU GROW? */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-16 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative border-b border-white/10">
         <div className="text-center mb-16 relative z-10">
-          <p className="text-nabtura-light-green font-bold tracking-widest uppercase text-xs mb-4">WHAT CAN YOU GROW?</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 uppercase leading-tight">
             WHAT WOULD YOU <br className="hidden md:block" />LIKE TO HARVEST?
           </h2>
@@ -152,9 +146,9 @@ export default function SmartMicrogreensPage() {
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             className="text-center mb-16"
           >
-            <p className="inline-block px-4 py-1.5 rounded-full bg-nabtura-light-green/10 border border-nabtura-light-green/20 text-nabtura-light-green font-bold tracking-widest uppercase text-[10px] mb-6 shadow-[0_0_15px_rgba(134,239,172,0.1)]">APPLICATIONS</p>
-            <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
-              YOUR SPACE.<br />WHAT COULD IT GROW?
+            <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight drop-shadow-lg">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">YOUR SPACE.</span><br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 drop-shadow-[0_0_25px_rgba(34,197,94,0.5)]">WHAT COULD IT GROW?</span>
             </h2>
           </motion.div>
 
@@ -223,9 +217,9 @@ export default function SmartMicrogreensPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
             <div className="pr-4">
-              <p className="inline-block px-4 py-1.5 rounded-full bg-nabtura-sand/10 border border-nabtura-sand/20 text-nabtura-sand font-bold tracking-widest uppercase text-[10px] mb-8 shadow-[0_0_15px_rgba(250,204,21,0.1)]">HOSPITALITY + COMMERCIAL</p>
-              <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white uppercase leading-tight mb-6 tracking-tight">
-                GROW FOR <br className="hidden lg:block" />YOUR PURPOSE.
+              <h2 className="text-4xl md:text-5xl lg:text-5xl font-black uppercase leading-tight mb-6 tracking-tight drop-shadow-lg">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-100 to-white">GROW FOR</span> <br className="hidden lg:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 drop-shadow-[0_0_25px_rgba(250,204,21,0.5)]">YOUR PURPOSE.</span>
               </h2>
             </div>
 
@@ -263,7 +257,6 @@ export default function SmartMicrogreensPage() {
       {/* 7. DELIVERY (FROM SPACE TO HARVEST) */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10">
         <div className="text-center mb-16 relative">
-          <p className="text-nabtura-light-green font-bold tracking-widest uppercase text-xs mb-4">DELIVERY</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase">
             FROM SPACE TO HARVEST.
           </h2>
@@ -345,7 +338,6 @@ export default function SmartMicrogreensPage() {
         <div className="absolute inset-0 bg-nabtura-light-green/5 mix-blend-overlay"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <p className="text-nabtura-light-green font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-md">FINAL CONVERSION</p>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 uppercase text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
             WHAT COULD <br className="hidden sm:block" />YOUR SPACE GROW?
           </h2>

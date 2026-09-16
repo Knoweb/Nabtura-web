@@ -82,11 +82,6 @@ export default function UrbanForestsPage() {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 relative z-10">
                 {/* Left Column */}
                 <div className="flex flex-col justify-center lg:col-span-5">
-                  <div className="inline-flex items-center space-x-2 bg-[#050D14] border border-emerald-500/30 px-4 py-1.5 rounded-full w-fit mb-6 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    <span className="text-emerald-400 font-bold tracking-widest uppercase text-[10px] md:text-xs">GREEN WITH PURPOSE</span>
-                  </div>
-
                   <h2 className="text-4xl md:text-5xl font-black text-white uppercase leading-[1.1] tracking-tighter">
                     GREEN CAN <br />DO MORE.
                   </h2>
@@ -149,7 +144,6 @@ export default function UrbanForestsPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 relative z-10">
-            <p className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]">FORESTS WITH A PURPOSE</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-10 uppercase leading-tight drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
               WHAT COULD <br className="hidden md:block" />YOUR FOREST BECOME?
             </h2>
@@ -221,7 +215,6 @@ export default function UrbanForestsPage() {
       <section className="py-8 relative overflow-hidden bg-[#02080D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <p className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4">DESIGNED AROUND THE PLACE</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight mb-6">
               NOT JUST TREES. <br />A GREEN ENVIRONMENT.
             </h2>
@@ -286,12 +279,9 @@ export default function UrbanForestsPage() {
 
               {/* Left Column - Topic */}
               <div className="lg:col-span-5 flex flex-col justify-center">
-                <div className="inline-flex items-center space-x-2 bg-[#02080D] border border-blue-500/30 px-4 py-1.5 rounded-full w-fit mb-6 shadow-[0_0_15px_rgba(59,130,246,0.15)]">
-                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-                  <span className="text-blue-400 font-bold tracking-widest uppercase text-[10px] md:text-xs">GREEN NEEDS WATER</span>
-                </div>
-                <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1]">
-                  ESTABLISH. <br />GROW. SUSTAIN.
+                <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[1.1] drop-shadow-lg">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white">ESTABLISH.</span> <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 drop-shadow-[0_0_20px_rgba(56,189,248,0.4)]">GROW. SUSTAIN.</span>
                 </h2>
               </div>
 
@@ -325,7 +315,6 @@ export default function UrbanForestsPage() {
       <section className="py-8 relative overflow-hidden bg-[#0A1215]">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 px-4">
-            <p className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4">TRANSFORM THE SPACE</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
               WHAT COULD <br />THIS SPACE BECOME?
             </h2>
@@ -400,7 +389,6 @@ export default function UrbanForestsPage() {
       {/* 7. FROM SPACE TO FOREST */}
       <section className="py-15 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative border-b border-white/10">
         <div className="text-center mb-16 relative">
-          <p className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-4">FROM SPACE TO FOREST</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase mb-4">
             CREATE. <br />ESTABLISH. GROW.
           </h2>
@@ -508,7 +496,6 @@ export default function UrbanForestsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-green-500/10 blur-[150px] z-0 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <p className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]">FINAL CONVERSION</p>
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
             WHAT COULD <br />YOUR SPACE BECOME?
           </h2>

@@ -43,12 +43,6 @@ export default function SmartIrrigationPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8 }} className="text-center max-w-5xl mx-auto">
               
-              <div className="inline-flex items-center justify-center space-x-2 mb-6">
-                <div className="w-12 h-px bg-gradient-to-r from-transparent to-blue-500"></div>
-                <p className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-bold tracking-[0.2em] uppercase text-xs drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">SMARTER WATER MANAGEMENT</p>
-                <div className="w-12 h-px bg-gradient-to-l from-transparent to-blue-500"></div>
-              </div>
-
               <h2 className="text-4xl md:text-5xl font-black uppercase leading-[1.1] mb-6 tracking-tighter">
                 <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">DON'T JUST WATER.</span><br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-b from-cyan-200 to-cyan-500 drop-shadow-[0_0_30px_rgba(34,211,238,0.2)]">WATER INTELLIGENTLY.</span>
@@ -112,7 +106,6 @@ export default function SmartIrrigationPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 relative z-10">
-          <p className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-4">HOW SMART IRRIGATION WORKS</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 uppercase leading-tight">
             FROM INFORMATION <br className="hidden md:block" />TO IRRIGATION.
           </h2>
@@ -201,7 +194,6 @@ export default function SmartIrrigationPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <p className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-4">WATER WHERE IT MATTERS</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight mb-6">
                 DIFFERENT GREEN. <br />DIFFERENT WATER.
             </h2>
@@ -253,7 +245,6 @@ export default function SmartIrrigationPage() {
       {/* 5. FROM WATER SOURCE TO PLANT */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative border-b border-white/10">
         <div className="text-center mb-16">
-          <p className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-4">FROM WATER SOURCE TO PLANT</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight mb-6">
             THINK BEYOND <br />THE IRRIGATION LINE.
           </h2>
@@ -300,7 +291,6 @@ export default function SmartIrrigationPage() {
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
             className="text-center mb-16"
           >
-            <p className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 font-bold tracking-widest uppercase text-[10px] mb-6 shadow-[0_0_15px_rgba(34,211,238,0.1)]">WHERE SMART WATER WORKS</p>
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
               ONE INTELLIGENT SYSTEM.<br />MANY POSSIBILITIES.
             </h2>
@@ -360,9 +350,9 @@ export default function SmartIrrigationPage() {
       <section className="py-16 relative bg-[#02080D] border-y border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-                <p className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-4">NEW OR EXISTING</p>
-                <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
-                  START SMART. <br />OR MAKE IT SMARTER.
+                <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight drop-shadow-lg">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-100 to-white">START SMART.</span> <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 drop-shadow-[0_0_25px_rgba(34,211,238,0.5)]">OR MAKE IT SMARTER.</span>
                 </h2>
             </div>
             
@@ -392,7 +382,6 @@ export default function SmartIrrigationPage() {
       {/* 8. FROM SITE TO SMART WATER */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-16 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative border-b border-white/10">
         <div className="text-center mb-16 relative">
-          <p className="text-cyan-400 font-bold tracking-widest uppercase text-xs mb-4">FROM SITE TO SMART WATER</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase">
             WE MAKE WATER <br />WORK SMARTER.
           </h2>

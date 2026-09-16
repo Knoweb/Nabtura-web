@@ -37,12 +37,9 @@ export default function SmartGreenhousesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center z-10 relative">
             <div className="lg:col-span-5">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-nabtura-green/10 border border-nabtura-green/20 text-nabtura-green font-bold tracking-widest text-[10px] uppercase mb-6">
-                <span className="w-2 h-2 rounded-full bg-nabtura-green animate-pulse"></span>
-                MORE THAN A GREENHOUSE
-              </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase leading-tight mb-4">
-                CREATE THE ENVIRONMENT <br className="hidden xl:block" />YOUR CROP NEEDS.
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight mb-4 drop-shadow-lg">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">CREATE THE ENVIRONMENT</span> <br className="hidden xl:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 drop-shadow-[0_0_25px_rgba(21,184,118,0.5)]">YOUR CROP NEEDS.</span>
               </h2>
             </div>
 
@@ -84,7 +81,6 @@ export default function SmartGreenhousesPage() {
           <div className="lg:w-3/5 p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
             <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-blue/5 rounded-full blur-[80px] -z-10 group-hover:bg-nabtura-blue/10 transition-colors duration-700"></div>
 
-            <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-3">CONTROL WHAT MATTERS</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase leading-tight">
               GROW WITH <br className="hidden md:block" />GREATER CONTROL.
             </h2>
@@ -116,10 +112,8 @@ export default function SmartGreenhousesPage() {
       </motion.section>
 
       {/* 4. CHOOSE HOW YOU GROW */}
-      {/* 4. CHOOSE HOW YOU GROW */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-16 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center mb-16 relative z-10">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4">CHOOSE HOW YOU GROW</p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 uppercase leading-tight">
             THE SYSTEM FOLLOWS <br className="hidden md:block" />THE CROP.
           </h2>
@@ -190,7 +184,6 @@ export default function SmartGreenhousesPage() {
             <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden flex flex-col justify-between group shadow-2xl hover:border-nabtura-green/30 transition-all duration-500">
               <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/5 rounded-full blur-[80px] -z-10 group-hover:bg-nabtura-green/15 transition-colors duration-700"></div>
               <div>
-                <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4">WHAT COULD YOU GROW?</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-500">
                   FROM LEAF <br />TO HARVEST.
                 </h2>
@@ -218,7 +211,6 @@ export default function SmartGreenhousesPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/80 to-[#09110E]/40"></div>
 
               <div className="relative p-10 lg:p-14 h-full flex flex-col justify-end z-10">
-                <p className="text-nabtura-sand font-bold tracking-widest uppercase text-xs mb-4">HOME GROWING</p>
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase leading-tight">
                   GROW FRESH. <br />AT HOME.
                 </h2>
@@ -249,7 +241,6 @@ export default function SmartGreenhousesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center z-10 relative">
             <div className="lg:col-span-5">
-              <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4">BUILT AROUND YOUR PURPOSE</p>
               <div className="space-y-1 mb-6">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight">YOUR LOCATION.</h2>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white uppercase tracking-tight">YOUR OBJECTIVE.</h2>
@@ -287,7 +278,6 @@ export default function SmartGreenhousesPage() {
       {/* 9. FROM IDEA TO GROWING */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10">
         <div className="text-center mb-16 relative">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4">FROM IDEA TO GROWING</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white uppercase">
             WE MAKE IT WORK.
           </h2>
@@ -364,7 +354,6 @@ export default function SmartGreenhousesPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-nabtura-green/10 blur-[150px] z-0 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]">FINAL CONVERSION</p>
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
             WHAT DO YOU <br />WANT TO GROW?
           </h2>
