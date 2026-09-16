@@ -116,22 +116,22 @@ export default function SmartMicrogreensPage() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-3 relative z-10 max-w-4xl mx-auto mb-16 px-2">
-            {['Radish', 'Broccoli', 'Pea Shoots', 'Sunflower', 'Mustard', 'Basil', 'Coriander', 'Red Amaranth', 'Shiso', 'Sorrel', '+ More'].map((crop, index) => (
-                <div key={crop} className="relative group/crop">
-                    {/* Slow pulsing light around the tag */}
-                    <div 
-                        className="absolute -inset-0.5 rounded-xl border border-nabtura-light-green/50 shadow-[0_0_15px_rgba(134,239,172,0.4)] animate-[pulse_3s_ease-in-out_infinite]"
-                        style={{ animationDelay: `${index * 0.3}s` }}
-                    ></div>
-                    
-                    {/* Stronger hover glow */}
-                    <div className="absolute inset-0 bg-nabtura-light-green/20 rounded-xl blur-md opacity-0 group-hover/crop:opacity-100 transition-opacity duration-500"></div>
-                    
-                    <span className="relative inline-block bg-[#0F1C17] border border-white/5 px-5 py-3 rounded-xl text-gray-300 text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-[#152720] hover:text-white transition-all duration-300 cursor-default group-hover/crop:-translate-y-1">
-                        {crop}
-                    </span>
-                </div>
-            ))}
+          {['Radish', 'Broccoli', 'Pea Shoots', 'Sunflower', 'Mustard', 'Basil', 'Coriander', 'Red Amaranth', 'Shiso', 'Sorrel', '+ More'].map((crop, index) => (
+            <div key={crop} className="relative group/crop">
+              {/* Slow pulsing light around the tag */}
+              <div
+                className="absolute -inset-0.5 rounded-xl border border-nabtura-light-green/50 shadow-[0_0_15px_rgba(134,239,172,0.4)] animate-[pulse_3s_ease-in-out_infinite]"
+                style={{ animationDelay: `${index * 0.3}s` }}
+              ></div>
+
+              {/* Stronger hover glow */}
+              <div className="absolute inset-0 bg-nabtura-light-green/20 rounded-xl blur-md opacity-0 group-hover/crop:opacity-100 transition-opacity duration-500"></div>
+
+              <span className="relative inline-block bg-[#0F1C17] border border-white/5 px-5 py-3 rounded-xl text-gray-300 text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-[#152720] hover:text-white transition-all duration-300 cursor-default group-hover/crop:-translate-y-1">
+                {crop}
+              </span>
+            </div>
+          ))}
         </div>
 
         <div className="text-center relative z-10 pb-8">
@@ -148,114 +148,115 @@ export default function SmartMicrogreensPage() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-nabtura-blue/10 rounded-full blur-[150px] pointer-events-none animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite]" style={{ animationDelay: '2s' }}></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <motion.div 
-                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-                className="text-center mb-16"
-            >
-                <p className="inline-block px-4 py-1.5 rounded-full bg-nabtura-light-green/10 border border-nabtura-light-green/20 text-nabtura-light-green font-bold tracking-widest uppercase text-[10px] mb-6 shadow-[0_0_15px_rgba(134,239,172,0.1)]">APPLICATIONS</p>
-                <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
-                    YOUR SPACE.<br />WHAT COULD IT GROW?
-                </h2>
-            </motion.div>
-            
+          <motion.div
+            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
+            className="text-center mb-16"
+          >
+            <p className="inline-block px-4 py-1.5 rounded-full bg-nabtura-light-green/10 border border-nabtura-light-green/20 text-nabtura-light-green font-bold tracking-widest uppercase text-[10px] mb-6 shadow-[0_0_15px_rgba(134,239,172,0.1)]">APPLICATIONS</p>
+            <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
+              YOUR SPACE.<br />WHAT COULD IT GROW?
+            </h2>
+          </motion.div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {[
-                { space: 'Restaurant', grow: 'Fresh Microgreens', icon: ChefHat },
-                { space: 'Hotel', grow: 'Chef Growing System', icon: Building2 },
-                { space: 'Unused Room', grow: 'Smart Microgreen Room', icon: MapPin },
-                { space: 'Commercial Unit', grow: 'Microgreens Business', icon: Store },
-                { space: 'School', grow: 'Smart Growing Lab', icon: Sprout },
-                { space: 'Home', grow: 'Compact Grow-at-Home System', icon: Leaf }
+              { space: 'Restaurant', grow: 'Fresh Microgreens', icon: ChefHat },
+              { space: 'Hotel', grow: 'Chef Growing System', icon: Building2 },
+              { space: 'Unused Room', grow: 'Smart Microgreen Room', icon: MapPin },
+              { space: 'Commercial Unit', grow: 'Microgreens Business', icon: Store },
+              { space: 'School', grow: 'Smart Growing Lab', icon: Sprout },
+              { space: 'Home', grow: 'Compact Grow-at-Home System', icon: Leaf }
             ].map((app, i) => {
-                const Icon = app.icon;
-                return (
-                <motion.div 
-                    key={i} 
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className="relative group/card h-full"
+              const Icon = app.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="relative group/card h-full"
                 >
-                    {/* Glowing border effect on hover */}
-                    <div className="absolute -inset-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2.2rem] opacity-50 group-hover/card:from-nabtura-light-green/50 group-hover/card:to-nabtura-light-green/10 group-hover/card:opacity-100 transition-all duration-700 blur-[1px]"></div>
-                    
-                    <div className="relative h-full overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#111A16] to-[#0A110E] border border-white/5 py-5 px-6 flex flex-col items-center justify-center text-center transition-transform duration-700 hover:-translate-y-2 group-hover/card:shadow-[0_20px_40px_rgba(134,239,172,0.05)]">
-                        {/* Radial gradient inside card */}
-                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-nabtura-light-green/5 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700"></div>
-                        
-                        <div className="w-12 h-12 rounded-full bg-nabtura-light-green/5 border border-nabtura-light-green/10 flex items-center justify-center mb-3 group-hover/card:bg-nabtura-light-green/15 group-hover/card:border-nabtura-light-green/30 transition-colors duration-500 relative z-10">
-                            <Icon className="w-5 h-5 text-nabtura-light-green/60 group-hover/card:text-nabtura-light-green transition-colors duration-500" />
-                        </div>
+                  {/* Glowing border effect on hover */}
+                  <div className="absolute -inset-[1px] bg-gradient-to-b from-white/10 to-transparent rounded-[2.2rem] opacity-50 group-hover/card:from-nabtura-light-green/50 group-hover/card:to-nabtura-light-green/10 group-hover/card:opacity-100 transition-all duration-700 blur-[1px]"></div>
 
-                        <span className="text-nabtura-light-green/80 font-bold tracking-widest text-[10px] uppercase mb-1 relative z-10 group-hover/card:text-white transition-colors duration-500">{app.space}</span>
-                        
-                        <div className="w-px h-6 bg-gradient-to-b from-nabtura-light-green/30 to-transparent my-1 relative z-10 group-hover/card:from-nabtura-light-green/60 transition-colors duration-500"></div>
-                        <ArrowRight className="w-4 h-4 text-nabtura-light-green/40 mb-3 group-hover/card:text-nabtura-light-green group-hover/card:translate-y-2 transition-all rotate-90 relative z-10" />
-                        
-                        <h3 className="text-white font-extrabold text-[15px] md:text-base uppercase tracking-wide relative z-10 group-hover/card:text-transparent group-hover/card:bg-clip-text group-hover/card:bg-gradient-to-r group-hover/card:from-white group-hover/card:to-nabtura-light-green transition-all duration-500 leading-tight">{app.grow}</h3>
+                  <div className="relative h-full overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#111A16] to-[#0A110E] border border-white/5 py-5 px-6 flex flex-col items-center justify-center text-center transition-transform duration-700 hover:-translate-y-2 group-hover/card:shadow-[0_20px_40px_rgba(134,239,172,0.05)]">
+                    {/* Radial gradient inside card */}
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-nabtura-light-green/5 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-700"></div>
+
+                    <div className="w-12 h-12 rounded-full bg-nabtura-light-green/5 border border-nabtura-light-green/10 flex items-center justify-center mb-3 group-hover/card:bg-nabtura-light-green/15 group-hover/card:border-nabtura-light-green/30 transition-colors duration-500 relative z-10">
+                      <Icon className="w-5 h-5 text-nabtura-light-green/60 group-hover/card:text-nabtura-light-green transition-colors duration-500" />
                     </div>
+
+                    <span className="text-nabtura-light-green/80 font-bold tracking-widest text-[10px] uppercase mb-1 relative z-10 group-hover/card:text-white transition-colors duration-500">{app.space}</span>
+
+                    <div className="w-px h-6 bg-gradient-to-b from-nabtura-light-green/30 to-transparent my-1 relative z-10 group-hover/card:from-nabtura-light-green/60 transition-colors duration-500"></div>
+                    <ArrowRight className="w-4 h-4 text-nabtura-light-green/40 mb-3 group-hover/card:text-nabtura-light-green group-hover/card:translate-y-2 transition-all rotate-90 relative z-10" />
+
+                    <h3 className="text-white font-extrabold text-[15px] md:text-base uppercase tracking-wide relative z-10 group-hover/card:text-transparent group-hover/card:bg-clip-text group-hover/card:bg-gradient-to-r group-hover/card:from-white group-hover/card:to-nabtura-light-green transition-all duration-500 leading-tight">{app.grow}</h3>
+                  </div>
                 </motion.div>
-            )})}
+              )
+            })}
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.6 }}
             className="text-center"
           >
-                <Link href="/contact" className="inline-flex items-center text-nabtura-light-green font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group/link">
-                  SHOW US YOUR SPACE <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                </Link>
+            <Link href="/contact" className="inline-flex items-center text-nabtura-light-green font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group/link">
+              SHOW US YOUR SPACE <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </section>
 
       {/* 6. HOSPITALITY + COMMERCIAL */}
       <section className="py-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <motion.div 
-            initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}
-            className="relative overflow-hidden bg-gradient-to-br from-[#121b16] to-[#080d0a] border border-white/10 rounded-[2.5rem] px-8 py-8 md:px-16 md:py-10 lg:px-20 lg:py-12 shadow-2xl"
+        <motion.div
+          initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.8 }}
+          className="relative overflow-hidden bg-gradient-to-br from-[#121b16] to-[#080d0a] border border-white/10 rounded-[2.5rem] px-8 py-8 md:px-16 md:py-10 lg:px-20 lg:py-12 shadow-2xl"
         >
-            {/* Inner Glows */}
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_rgba(250,204,21,0.03),_transparent_50%)]"></div>
-            <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_rgba(134,239,172,0.03),_transparent_50%)]"></div>
+          {/* Inner Glows */}
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,_rgba(250,204,21,0.03),_transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_rgba(134,239,172,0.03),_transparent_50%)]"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
-                <div className="pr-4">
-                    <p className="inline-block px-4 py-1.5 rounded-full bg-nabtura-sand/10 border border-nabtura-sand/20 text-nabtura-sand font-bold tracking-widest uppercase text-[10px] mb-8 shadow-[0_0_15px_rgba(250,204,21,0.1)]">HOSPITALITY + COMMERCIAL</p>
-                    <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white uppercase leading-tight mb-6 tracking-tight">
-                        GROW FOR <br className="hidden lg:block" />YOUR PURPOSE.
-                    </h2>
-                </div>
-
-                <div className="space-y-4">
-                    {[
-                        { title: 'RESTAURANTS & F&B', desc: 'Fresh growing closer to the kitchen.', link: 'CREATE A RESTAURANT GROWING CONCEPT' },
-                        { title: 'HOTELS & RESORTS', desc: 'Bring fresh growing into the hospitality experience.', link: 'EXPLORE HOSPITALITY POSSIBILITIES' },
-                        { title: 'ENTREPRENEURS', desc: 'Turn compact growing into a commercial opportunity.', link: 'START SOMETHING THAT GROWS' }
-                    ].map((item, i) => (
-                        <motion.div 
-                            key={i} 
-                            initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 + 0.3 }}
-                            className="group relative p-6 md:p-8 rounded-2xl transition-all duration-500 hover:bg-white/5 border border-transparent hover:border-white/10 overflow-hidden cursor-pointer backdrop-blur-sm"
-                        >
-                            {/* Animated indicator line */}
-                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-0 bg-gradient-to-b from-nabtura-sand to-amber-600 group-hover:h-3/4 rounded-r-full transition-all duration-500 shadow-[0_0_15px_rgba(250,204,21,0.5)] opacity-0 group-hover:opacity-100"></div>
-                            
-                            {/* Static subtle indicator */}
-                            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-1/2 bg-white/10 group-hover:opacity-0 transition-opacity duration-300"></div>
-                            
-                            <h3 className="text-white font-extrabold text-xl uppercase tracking-wide mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-sand transition-all duration-500 pl-4">{item.title}</h3>
-                            <p className="text-gray-400 font-light mb-5 pl-4 group-hover:text-gray-300 transition-colors">{item.desc}</p>
-                            <div className="pl-4">
-                                <Link href="/contact" className="inline-flex items-center text-nabtura-sand/80 font-bold tracking-widest uppercase text-[10px] group-hover:text-nabtura-sand transition-colors">
-                                    {item.link} <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-                                </Link>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
+            <div className="pr-4">
+              <p className="inline-block px-4 py-1.5 rounded-full bg-nabtura-sand/10 border border-nabtura-sand/20 text-nabtura-sand font-bold tracking-widest uppercase text-[10px] mb-8 shadow-[0_0_15px_rgba(250,204,21,0.1)]">HOSPITALITY + COMMERCIAL</p>
+              <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white uppercase leading-tight mb-6 tracking-tight">
+                GROW FOR <br className="hidden lg:block" />YOUR PURPOSE.
+              </h2>
             </div>
+
+            <div className="space-y-4">
+              {[
+                { title: 'RESTAURANTS & F&B', desc: 'Fresh growing closer to the kitchen.', link: 'CREATE A RESTAURANT GROWING CONCEPT' },
+                { title: 'HOTELS & RESORTS', desc: 'Bring fresh growing into the hospitality experience.', link: 'EXPLORE HOSPITALITY POSSIBILITIES' },
+                { title: 'ENTREPRENEURS', desc: 'Turn compact growing into a commercial opportunity.', link: 'START SOMETHING THAT GROWS' }
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 + 0.3 }}
+                  className="group relative p-6 md:p-8 rounded-2xl transition-all duration-500 hover:bg-white/5 border border-transparent hover:border-white/10 overflow-hidden cursor-pointer backdrop-blur-sm"
+                >
+                  {/* Animated indicator line */}
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-0 bg-gradient-to-b from-nabtura-sand to-amber-600 group-hover:h-3/4 rounded-r-full transition-all duration-500 shadow-[0_0_15px_rgba(250,204,21,0.5)] opacity-0 group-hover:opacity-100"></div>
+
+                  {/* Static subtle indicator */}
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 h-1/2 bg-white/10 group-hover:opacity-0 transition-opacity duration-300"></div>
+
+                  <h3 className="text-white font-extrabold text-xl uppercase tracking-wide mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-sand transition-all duration-500 pl-4">{item.title}</h3>
+                  <p className="text-gray-400 font-light mb-5 pl-4 group-hover:text-gray-300 transition-colors">{item.desc}</p>
+                  <div className="pl-4">
+                    <Link href="/contact" className="inline-flex items-center text-nabtura-sand/80 font-bold tracking-widest uppercase text-[10px] group-hover:text-nabtura-sand transition-colors">
+                      {item.link} <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -273,7 +274,7 @@ export default function SmartMicrogreensPage() {
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center relative z-10 mb-12">
             <div className="hidden md:block absolute top-8 left-[8%] right-[8%] h-[2px] bg-white/5 z-0 overflow-hidden">
-              <motion.div 
+              <motion.div
                 initial={{ x: "-100%" }}
                 whileInView={{ x: "0%" }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -284,7 +285,7 @@ export default function SmartMicrogreensPage() {
 
             {['ASSESS', 'DESIGN', 'INSTALL', 'COMMISSION', 'GROW', 'SUPPORT'].map((step, index) => (
               <div key={step} className="flex flex-col items-center z-10 cursor-default relative">
-                <motion.div 
+                <motion.div
                   initial={{ borderColor: "rgba(255,255,255,0.1)", color: "#9ca3af", boxShadow: "0 0 0px rgba(134,239,172,0)" }}
                   whileInView={{ borderColor: "#86efac", color: "#ffffff", boxShadow: "0 0 20px rgba(134,239,172,0.4)" }}
                   whileHover={{ y: -5, boxShadow: "0 0 30px rgba(134,239,172,0.6)" }}
@@ -292,7 +293,7 @@ export default function SmartMicrogreensPage() {
                   transition={{ duration: 0.4, delay: index * 0.4 + 0.2 }}
                   className="w-16 h-16 rounded-full bg-[#09110E] border-2 flex items-center justify-center font-bold mb-4 relative"
                 >
-                  <motion.div 
+                  <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1.5, opacity: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -301,7 +302,7 @@ export default function SmartMicrogreensPage() {
                   ></motion.div>
                   {index + 1}
                 </motion.div>
-                <motion.p 
+                <motion.p
                   initial={{ color: "#9ca3af" }}
                   whileInView={{ color: "#86efac" }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -316,14 +317,14 @@ export default function SmartMicrogreensPage() {
 
           <div className="text-center border-t border-white/5 pt-8">
             <p className="text-gray-400 text-base md:text-lg font-light leading-relaxed mb-6">
-                NABTURA develops the system around the available space, intended production and operating model.
+              NABTURA develops the system around the available space, intended production and operating model.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                {['WE BUILD. YOU GROW.', 'WE BUILD. WE MANAGE.', 'WE GROW. YOU HARVEST.'].map((model) => (
-                    <span key={model} className="bg-white/5 border border-white/10 px-5 py-3 rounded-xl text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase shadow-md">
-                        {model}
-                    </span>
-                ))}
+              {['WE BUILD. YOU GROW.', 'WE BUILD. WE MANAGE.', 'WE GROW. YOU HARVEST.'].map((model) => (
+                <span key={model} className="bg-white/5 border border-white/10 px-5 py-3 rounded-xl text-white text-[10px] sm:text-xs font-bold tracking-widest uppercase shadow-md">
+                  {model}
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -338,11 +339,11 @@ export default function SmartMicrogreensPage() {
       {/* 8. FINAL CONVERSION */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-24 pb-12 relative overflow-hidden border-t border-white/10">
         <div className="absolute inset-0 bg-[#09110E]"></div>
-        <div className="absolute inset-0 bg-[url('/images/microgreens.jpg')] bg-cover bg-center opacity-30 grayscale-[50%]"></div>
+        <div className="absolute inset-0 bg-[url('/images/microgreens.jpg')] bg-cover bg-center opacity-40 grayscale-[50%]"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/70 to-[#09110E]/30"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#09110E]/80 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-nabtura-light-green/5 mix-blend-overlay"></div>
-        
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <p className="text-nabtura-light-green font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-md">FINAL CONVERSION</p>
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 uppercase text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
@@ -365,10 +366,10 @@ export default function SmartMicrogreensPage() {
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
             </Link>
             <Link href="/contact" className="inline-flex items-center text-gray-400 font-bold tracking-widest uppercase text-[10px] hover:text-white transition-colors group/link">
-                SHOW US YOUR SPACE <ArrowRight className="ml-2 w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
+              SHOW US YOUR SPACE <ArrowRight className="ml-2 w-3 h-3 group-hover/link:translate-x-1 transition-transform" />
             </Link>
           </div>
-          
+
           <div className="mt-12 text-gray-500 text-xs font-medium tracking-wider">
             WhatsApp | +971 56 9300075 | info@nabtura.com
           </div>

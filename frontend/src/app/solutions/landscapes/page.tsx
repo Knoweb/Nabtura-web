@@ -393,15 +393,22 @@ export default function LandscapesPage() {
       </motion.section>
 
       {/* 8. LET'S GREEN YOUR SPACE (Interactive Call to Action) */}
-      <section className="pt-12 pb-12 relative overflow-hidden bg-[#0A120E]">
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-nabtura-green/30 to-transparent"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-nabtura-green/5 blur-[120px] -z-10 pointer-events-none"></div>
+      <section className="py-12 relative overflow-hidden bg-[#0A120E]">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/dubai-landscapes.jpg')] bg-cover bg-center bg-fixed opacity-40"></div>
+          <div className="absolute inset-0 bg-[#0A120E]/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-transparent to-[#0A120E]"></div>
+        </div>
+
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-nabtura-green/30 to-transparent z-10"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-nabtura-green/10 blur-[150px] z-0 pointer-events-none"></div>
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6">
+          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]">FINAL CONVERSION</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
             LET'S GREEN <br />YOUR SPACE.
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl font-light mb-10">
+          <p className="text-gray-200 text-lg md:text-xl font-medium mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Choose where you want to start:
           </p>
 
@@ -412,16 +419,26 @@ export default function LandscapesPage() {
               'I WANT TO TRANSFORM AN EXISTING LANDSCAPE',
               'I\'M EXPLORING GREEN POSSIBILITIES'
             ].map((option, index) => (
-              <div key={index} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-nabtura-green/30 transition-all duration-300 cursor-pointer group flex justify-between items-center">
+              <div key={index} className="bg-[#09110E]/70 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-[#09110E]/90 hover:border-nabtura-green/50 transition-all duration-300 cursor-pointer group flex justify-between items-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(34,197,94,0.2)]">
                 <span className="text-white font-bold tracking-widest text-xs uppercase pr-4 group-hover:text-nabtura-green transition-colors">{option}</span>
                 <CheckCircle2 className="w-5 h-5 text-gray-500 group-hover:text-nabtura-green transition-colors shrink-0" />
               </div>
             ))}
           </div>
 
-          <Link href="/contact" className="inline-flex items-center text-black bg-nabtura-green px-10 py-4 rounded-full font-black tracking-widest uppercase text-sm hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:shadow-[0_0_50px_rgba(34,197,94,0.5)]">
-            GET IN TOUCH <ArrowRight className="ml-3 w-5 h-5" />
-          </Link>
+          <div className="flex flex-col items-center gap-6">
+            <Link href="/contact" className="inline-flex items-center text-black bg-nabtura-green px-10 py-3 rounded-full font-black tracking-widest uppercase text-sm hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:shadow-[0_0_50px_rgba(34,197,94,0.5)]">
+              SHOW US YOUR SPACE <ArrowRight className="ml-3 w-5 h-5" />
+            </Link>
+
+            <Link href="/contact" className="inline-flex items-center text-nabtura-green font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group/link">
+              DISCUSS MY LANDSCAPE PROJECT <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+            </Link>
+
+            <div className="mt-6 flex justify-center text-xs font-light text-gray-500 tracking-widest">
+              WhatsApp | +971 56 9300075 | info@nabtura.com
+            </div>
+          </div>
         </div>
       </section>
 

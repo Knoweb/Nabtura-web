@@ -446,7 +446,7 @@ export default function SmartIrrigationPage() {
       <section className="py-24 relative overflow-hidden bg-[#0A1215]">
         {/* Background Image with Parallax & Overlays */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/images/uae_smart_greenhouse.jpg')] bg-cover bg-center bg-fixed opacity-30 mix-blend-luminosity"></div>
+          <div className="absolute inset-0 bg-[url('/images/uae_smart_greenhouse.jpg')] bg-cover bg-center bg-fixed opacity-40 mix-blend-luminosity"></div>
           <div className="absolute inset-0 bg-[#0A1215]/60"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#02080D] via-transparent to-[#0A1215]"></div>
         </div>
@@ -486,10 +486,8 @@ export default function SmartIrrigationPage() {
               SHOW US YOUR SITE <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
             </Link>
 
-            <div className="mt-6 flex items-center gap-4 text-xs font-light text-gray-500 tracking-widest uppercase">
-                <span>WhatsApp | +971 56 9300075</span>
-                <span>•</span>
-                <span>info@nabtura.com</span>
+            <div className="mt-6 flex justify-center text-xs font-light text-gray-500 tracking-widest">
+              WhatsApp | +971 56 9300075 | info@nabtura.com
             </div>
           </div>
         </div>

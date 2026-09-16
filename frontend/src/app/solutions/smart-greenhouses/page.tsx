@@ -353,40 +353,55 @@ export default function SmartGreenhousesPage() {
       </motion.section>
 
       {/* 10. FINAL CONVERSION */}
-      <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-24 pb-12 relative overflow-hidden border-t border-white/10">
-        <div className="absolute inset-0 bg-[#09110E]"></div>
-        {/* Visible Background Image */}
-        <div className="absolute inset-0 bg-[url('/images/dubai-greenhouse.jpg')] bg-cover bg-center opacity-40 grayscale-[30%]"></div>
-        {/* Smooth fading overlays for text readability and premium look */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/70 to-[#09110E]/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#09110E]/80 via-transparent to-transparent"></div>
-        {/* Subtle green tint */}
-        <div className="absolute inset-0 bg-nabtura-green/5 mix-blend-overlay"></div>
-        
+      <section id="final-conversion" className="py-12 relative overflow-hidden bg-[#0A120E]">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-[url('/images/dubai-greenhouse.jpg')] bg-cover bg-center bg-fixed opacity-40"></div>
+          <div className="absolute inset-0 bg-[#0A120E]/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-transparent to-[#0A120E]"></div>
+        </div>
+
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-nabtura-green/30 to-transparent z-10"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-64 bg-nabtura-green/10 blur-[150px] z-0 pointer-events-none"></div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-md">FINAL CONVERSION</p>
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-12 uppercase text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-            WHAT DO YOU <br className="hidden sm:block" />WANT TO GROW?
+          <p className="text-nabtura-green font-bold tracking-widest uppercase text-xs mb-4 drop-shadow-[0_2px_5px_rgba(0,0,0,0.8)]">FINAL CONVERSION</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
+            WHAT DO YOU <br />WANT TO GROW?
           </h2>
+          <p className="text-gray-200 text-lg md:text-xl font-medium mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            Choose your starting point:
+          </p>
 
-          <p className="font-bold tracking-widest uppercase text-xs mb-8 text-gray-400">Choose your starting point:</p>
-
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-16">
-            {['I WANT TO GROW AT HOME', 'I HAVE A CROP / GROWING IDEA', 'I WANT A COMMERCIAL GREENHOUSE', 'I HAVE A LOCATION', "I'M EXPLORING AN INVESTMENT"].map(point => (
-              <Link key={point} href="/contact" className="bg-white/5 hover:bg-white/10 backdrop-blur-md border border-white/10 hover:border-nabtura-green/50 text-gray-300 hover:text-white px-6 py-4 rounded-full font-bold tracking-widest text-xs uppercase transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(21,184,118,0.3)] hover:-translate-y-1">
-                {point}
-              </Link>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+            {[
+              'I WANT TO GROW AT HOME',
+              'I HAVE A CROP / GROWING IDEA',
+              'I WANT A COMMERCIAL GREENHOUSE',
+              'I HAVE A LOCATION',
+              'I\'M EXPLORING AN INVESTMENT'
+            ].map((option, index) => (
+              <div key={index} className={`bg-[#09110E]/70 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:bg-[#09110E]/90 hover:border-nabtura-green/50 transition-all duration-300 cursor-pointer group flex justify-between items-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(34,197,94,0.2)] ${index === 4 ? 'md:col-span-2 md:max-w-md md:mx-auto w-full' : ''}`}>
+                <span className="text-white font-bold tracking-widest text-xs uppercase pr-4 group-hover:text-nabtura-green transition-colors">{option}</span>
+                <CheckCircle2 className="w-5 h-5 text-gray-500 group-hover:text-nabtura-green transition-colors shrink-0" />
+              </div>
             ))}
           </div>
 
-          <div className="space-y-10">
-            <Link href="/contact" className="inline-flex items-center justify-center bg-nabtura-green text-black hover:bg-nabtura-light-green px-8 sm:px-9 py-4 rounded-full font-extrabold tracking-widest text-sm uppercase shadow-[0_0_30px_rgba(21,184,118,0.4)] hover:shadow-[0_0_50px_rgba(21,184,118,0.6)] transition-all duration-300 hover:scale-105 group">
-              DISCUSS MY SMART GREENHOUSE
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+          <div className="flex flex-col items-center gap-6">
+            <Link href="/contact" className="inline-flex items-center text-black bg-nabtura-green px-10 py-3 rounded-full font-black tracking-widest uppercase text-sm hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:shadow-[0_0_50px_rgba(34,197,94,0.5)]">
+              DISCUSS MY SMART GREENHOUSE <ArrowRight className="ml-3 w-5 h-5" />
             </Link>
+
+            <Link href="/contact" className="inline-flex items-center text-nabtura-green font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group/link">
+              SHOW US YOUR LOCATION <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+            </Link>
+
+            <div className="mt-6 flex justify-center text-xs font-light text-gray-500 tracking-widest">
+              WhatsApp | +971 56 9300075 | info@nabtura.com
+            </div>
           </div>
         </div>
-      </motion.section>
+      </section>
 
     </main>
   );

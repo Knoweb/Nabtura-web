@@ -540,10 +540,8 @@ export default function UrbanForestsPage() {
               SHOW US YOUR SPACE <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
             </Link>
 
-            <div className="mt-6 flex items-center gap-4 text-xs font-light text-gray-500 tracking-widest uppercase">
-              <span>WhatsApp | +971 56 9300075</span>
-              <span className="w-1 h-1 rounded-full bg-gray-600"></span>
-              <span>info@nabtura.com</span>
+            <div className="mt-6 flex justify-center text-xs font-light text-gray-500 tracking-widest">
+              WhatsApp | +971 56 9300075 | info@nabtura.com
             </div>
           </div>
         </div>
