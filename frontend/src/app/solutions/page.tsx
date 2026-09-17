@@ -340,7 +340,7 @@ export default function SolutionsOverviewPage() {
                 </span>
               </div>
             </Link>
-          </div>
+          </div> 
         </motion.section>
       </div>
 
