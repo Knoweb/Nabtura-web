@@ -71,6 +71,9 @@ jobs:
             git fetch origin main
             git reset --hard origin/main
             
+            # Clean up old unused docker images to free disk space
+            docker system prune -af
+            
             # Pull new images
             docker pull ghcr.io/knoweb/nabtura-web-backend:latest
             docker pull ghcr.io/knoweb/nabtura-web-frontend:latest
