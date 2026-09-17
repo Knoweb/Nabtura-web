@@ -8,19 +8,19 @@ import { ArrowRight, Wrench, Sprout, Briefcase } from "lucide-react";
 const models = [
   {
     title: "WE CREATE. YOU OPERATE.",
-    desc: "We assess, design, build and commission. You take it forward.",
+    desc: "We assess, design, build and commission. You manage the completed solution.",
     icon: Wrench,
     image: "/images/models/operate.jpg"
   },
   {
     title: "WE CREATE. WE MANAGE.",
-    desc: "From concept to ongoing operation and support.",
+    desc: "We create the solution and stay involved in its operation, monitoring and care.",
     icon: Sprout,
     image: "/images/models/manage.jpg"
   },
   {
     title: "WE ADVISE. YOU DEVELOP.",
-    desc: "Our expertise. Your execution.",
+    desc: "Our expertise supports your team from concept through implementation.",
     icon: Briefcase,
     image: "/images/models/advise.jpg"
   }
@@ -52,7 +52,7 @@ export default function HowWeWork() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
-                className="bg-gradient-to-b from-white/5 to-transparent backdrop-blur-xl rounded-[2rem] hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(21,184,118,0.15)] hover:-translate-y-2 transition-all duration-500 group overflow-hidden flex flex-col border border-white/5"
+                className="bg-gradient-to-b from-white/5 to-transparent backdrop-blur-xl rounded-[2rem] hover:bg-white/10 hover:shadow-[0_10px_40px_rgba(21,184,118,0.15)] hover:-translate-y-2 transition-all duration-500 group overflow-hidden flex flex-col border border-white/5 relative"
               >
                 {/* Image Section */}
                 <div className="relative w-full h-48 md:h-56 overflow-hidden">
@@ -62,7 +62,7 @@ export default function HowWeWork() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-transparent to-transparent opacity-90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-[#050A08]/50 to-transparent opacity-90" />
                   
                   {/* Icon floating on the image */}
                   <div className="absolute bottom-4 left-6 w-12 h-12 rounded-xl bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:border-nabtura-green/50 group-hover:bg-nabtura-green/20 group-hover:shadow-[0_0_20px_rgba(21,184,118,0.3)] transition-all duration-300">
@@ -75,9 +75,12 @@ export default function HowWeWork() {
                   <h4 className="text-lg font-bold text-white mb-3 leading-tight tracking-wide">
                     {model.title}
                   </h4>
-                  <p className="text-gray-400 font-light text-sm md:text-base leading-relaxed">
+                  <p className="text-gray-400 font-light text-sm md:text-base leading-relaxed flex-grow">
                     {model.desc}
                   </p>
+                  <div className="mt-6 flex items-center text-nabtura-green text-xs tracking-widest font-bold uppercase group-hover:text-white transition-colors">
+                    EXPLORE <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </motion.div>
             );
@@ -90,10 +93,10 @@ export default function HowWeWork() {
           <div className="absolute left-0 right-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           
           <p className="text-gray-300 text-sm md:text-base text-left max-w-2xl leading-relaxed">
-            <strong className="text-white font-medium">Need the location prepared too?</strong> Site preparation, infrastructure and supporting civil works can be considered.
+            <strong className="text-white font-medium block md:inline mb-1 md:mb-0">Need the location prepared too? Talk to us.</strong> <br className="hidden md:block"/>Site preparation, infrastructure and supporting civil works can be considered as part of the project requirement.
           </p>
           <Link href="/solutions" className="shrink-0 z-10">
-            <button className="group inline-flex items-center px-8 py-4 bg-white text-black font-extrabold tracking-widest uppercase text-xs rounded-full hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all">
+            <button className="group inline-flex items-center px-8 py-4 bg-nabtura-green text-black font-extrabold tracking-widest uppercase text-xs rounded-full hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all">
               FIND THE RIGHT MODEL
               <ArrowRight className="ml-3 group-hover:translate-x-1 transition-transform w-4 h-4" />
             </button>

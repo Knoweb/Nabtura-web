@@ -52,45 +52,43 @@ const pillars = [
   {
     icon: Zap,
     title: "SMART",
-    subtitle: "Better visibility, decisions & operation.",
+    subtitle: "Know what's happening.",
     iconColor: "text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]",
     iconBg: "bg-cyan-400/10 border-cyan-400/20 group-hover:bg-cyan-400/20 group-hover:border-cyan-400/50",
     bulletColor: "bg-cyan-400",
     features: [
-      "Sensors & Data",
-      "Monitoring & Alerts",
-      "Automation",
-      "Cloud Connectivity",
-      "Remote Management",
+      "Sense",
+      "Monitor",
+      "Connect",
+      "Automate",
     ],
   },
   {
     icon: SlidersHorizontal,
     title: "CONTROLLED",
-    subtitle: "Conditions for better performance.",
+    subtitle: "Manage what matters.",
     iconColor: "text-purple-400 drop-shadow-[0_0_8px_rgba(192,132,252,0.5)]",
     iconBg: "bg-purple-400/10 border-purple-400/20 group-hover:bg-purple-400/20 group-hover:border-purple-400/50",
     bulletColor: "bg-purple-400",
     features: [
-      "Climate & Water",
+      "Water",
       "Nutrients",
-      "Irrigation",
-      "Lighting & Ventilation",
+      "Climate",
       "Growing Conditions",
     ],
   },
   {
     icon: MapPin,
     title: "ADAPTED",
-    subtitle: "Designed around your need.",
+    subtitle: "Designed for where you are.",
     iconColor: "text-amber-400 drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]",
     iconBg: "bg-amber-400/10 border-amber-400/20 group-hover:bg-amber-400/20 group-hover:border-amber-400/50",
     bulletColor: "bg-amber-400",
     features: [
-      "Location & Climate",
-      "Water & Crop/Plant",
-      "Purpose & Scale",
-      "User & Commercial Objective",
+      "Location",
+      "Climate",
+      "Purpose",
+      "Scale",
     ],
   },
 ];
@@ -160,10 +158,13 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
+          <p className="text-xs md:text-sm tracking-[0.3em] uppercase font-semibold text-nabtura-green mb-4">
+            THE NABTURA APPROACH
+          </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            NOT JUST GREEN
+            NOT JUST GREEN.
             <br />
-            <span className="text-nabtura-green">INTELLIGENTLY GREEN</span>
+            <span className="text-nabtura-green">INTELLIGENTLY GREEN.</span>
           </h2>
         </motion.div>
 
@@ -373,6 +374,18 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
               ))}
             </div>
           </div>
+        </motion.div>
+
+        {/* Closing Statement */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <p className="text-lg md:text-xl font-light text-gray-300">
+            Technology where it adds value. Control where it matters. Solutions adapted to the environment.
+          </p>
         </motion.div>
       </div>
     </section>

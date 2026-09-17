@@ -45,7 +45,7 @@ const ecosystem = [
   },
   {
     id: "transform",
-    title: "TRANSFORM",
+    title: "TRANSFORM ENVIRONMENTS",
     icon: Globe2,
     color: "text-nabtura-sand",
     bgColor: "bg-nabtura-sand",
@@ -69,13 +69,10 @@ export default function Ecosystem() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-8">
           <h2 className="text-[10px] md:text-xs tracking-[0.3em] text-content-muted font-bold mb-2 uppercase">
-            THE COMPLETE NABTURA ECOSYSTEM
+            ONE VISION. SEVEN SOLUTIONS.
           </h2>
           <h3 className="text-2xl md:text-4xl font-bold tracking-tight text-white">
-            ONE VISION<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">
-              SEVEN SOLUTIONS
-            </span>
+            GROW. MANAGE. GREEN. TRANSFORM.
           </h3>
         </div>
 
@@ -176,6 +173,16 @@ export default function Ecosystem() {
               </motion.div>
             </AnimatePresence>
           </div>
+        </div>
+
+        {/* Closing CTA */}
+        <div className="mt-12 text-center flex flex-col items-center">
+          <p className="text-gray-300 text-lg md:text-xl font-medium mb-6 max-w-3xl">
+            Individual solutions when that's what you need. Integrated solutions when the project demands more.
+          </p>
+          <Link href="/solutions" className="inline-flex items-center text-lg md:text-xl font-bold tracking-widest text-nabtura-light-green hover:text-white transition-colors uppercase group">
+            EXPLORE ALL SOLUTIONS <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
       </div>

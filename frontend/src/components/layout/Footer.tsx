@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-nabtura-blue/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12 relative z-10">
-        
+
         {/* Top Section: Brand & Newsletter */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12 border-b border-white/10 pb-10">
           <div className="max-w-xl">
@@ -35,9 +35,9 @@ export default function Footer() {
           <div className="w-full lg:w-auto">
             <h4 className="text-sm font-bold tracking-widest uppercase text-white mb-4">STAY UPDATED</h4>
             <div className="flex items-center justify-between bg-white/5 border border-white/10 rounded-full pl-6 pr-1.5 py-1.5 focus-within:border-nabtura-green focus-within:bg-white/10 focus-within:ring-1 focus-within:ring-nabtura-green/50 transition-all shadow-[0_0_15px_rgba(46,204,113,0.15)] group w-full sm:w-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
+              <input
+                type="email"
+                placeholder="Enter your email address"
                 className="bg-transparent border-none outline-none text-white placeholder-gray-500 flex-grow py-2 min-w-[220px] text-sm tracking-wide focus:ring-0"
               />
               <button className="flex items-center justify-center shrink-0 w-10 h-10 text-black bg-nabtura-green hover:bg-nabtura-light-green transition-colors rounded-full shadow-[0_0_10px_rgba(46,204,113,0.3)] group-hover:scale-105">
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* Middle Section: Links & Contact */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-24">
-          
+
           {/* Column 1: Solutions */}
           <div className="lg:col-span-2">
             <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-white mb-8">SOLUTIONS</h4>
@@ -81,7 +81,7 @@ export default function Footer() {
               <ul className="space-y-6 font-light text-sm">
                 <li className="flex items-start gap-4">
                   <MapPin className="w-5 h-5 text-nabtura-green shrink-0 mt-0.5" />
-                  <span className="leading-relaxed">INFORGRID FZC<br/>Sharjah Publishing City<br/>United Arab Emirates</span>
+                  <span className="leading-relaxed">INFORGRID FZC<br />Sharjah Publishing City<br />United Arab Emirates</span>
                 </li>
                 <li className="flex items-center gap-4">
                   <Phone className="w-5 h-5 text-nabtura-green shrink-0" />
@@ -93,7 +93,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-white mb-8">FOLLOW US</h4>
               <div className="flex gap-3">
@@ -107,25 +107,25 @@ export default function Footer() {
                   <TwitterIcon />
                 </a>
               </div>
-              
+
               <div className="mt-8">
-                 <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-white mb-4">CORPORATE</h4>
-                 <p className="text-xs font-light text-content-muted">
-                   NABTURA is a brand of<br/><strong className="text-white font-medium">INFORGRID FZC</strong>.
-                 </p>
+                <h4 className="text-xs font-bold tracking-[0.2em] uppercase text-white mb-4">CORPORATE</h4>
+                <p className="text-xs font-light text-content-muted">
+                  NABTURA is a brand of<br /><strong className="text-white font-medium">INFORGRID FZC</strong>.
+                </p>
               </div>
             </div>
           </div>
 
           {/* Column 4: Map Embed */}
           <div className="lg:col-span-4 h-[250px] lg:h-full relative rounded-2xl overflow-hidden border border-white/10 group">
-             <iframe 
-               src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City%20Free%20Zone&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-               className="w-full h-full absolute inset-0"
-               style={{ border: 0 }} 
-               allowFullScreen 
-               loading="lazy">
-             </iframe>
+            <iframe
+              src="https://maps.google.com/maps?q=Sharjah%20Publishing%20City%20Free%20Zone&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-full absolute inset-0"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy">
+            </iframe>
           </div>
 
         </div>

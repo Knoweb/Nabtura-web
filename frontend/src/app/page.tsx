@@ -19,6 +19,8 @@ import UAECredibility from "@/components/home/UAECredibility";
 import FinalCTA from "@/components/home/FinalCTA";
 import { fetchAPI } from "@/lib/api";
 
+import WhatNabturaDoes from "@/components/home/WhatNabturaDoes";
+
 export default async function Home() {
   let latestBlogs = [];
   try {
@@ -33,6 +35,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <WhatNabturaDoes />
       <div className="global-bg-wrapper relative z-10">
         <Challenge />
         <Difference blogs={latestBlogs} />
