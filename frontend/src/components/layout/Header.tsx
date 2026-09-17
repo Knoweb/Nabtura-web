@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isSolutionsHovered, setIsSolutionsHovered] = useState(false);
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState("");
 
@@ -46,6 +47,44 @@ export default function Header() {
       observer.disconnect();
     };
   }, [pathname]);
+
+  const solutionsMegaMenu = [
+    {
+      category: "GROW FOOD",
+      icon: Sprout,
+      color: "text-nabtura-light-green",
+      links: [
+        { name: "Smart Greenhouses", href: "/solutions/smart-greenhouses" },
+        { name: "Smart Microgreens", href: "/solutions/smart-microgreens" }
+      ]
+    },
+    {
+      category: "MANAGE WATER",
+      icon: Droplets,
+      color: "text-nabtura-blue",
+      links: [
+        { name: "Smart Irrigation", href: "/solutions/smart-irrigation" }
+      ]
+    },
+    {
+      category: "CREATE GREEN",
+      icon: TreePine,
+      color: "text-nabtura-green",
+      links: [
+        { name: "Landscapes", href: "/solutions/landscapes" },
+        { name: "Urban Forests", href: "/solutions/urban-forests" },
+        { name: "Desert Greening", href: "/solutions/desert-greening" }
+      ]
+    },
+    {
+      category: "TRANSFORM",
+      icon: Globe2,
+      color: "text-nabtura-sand",
+      links: [
+        { name: "Environmental Projects", href: "/solutions/environmental-projects" }
+      ]
+    }
+  ];
 
   const navLinks = [
     { name: "HOME", href: "/" },
@@ -126,6 +165,82 @@ export default function Header() {
             <nav className="flex items-center gap-5 2xl:gap-8">
               {navLinks.map((link) => {
                 const isActive = checkIsActive(link.href);
+
+                if (link.name === "SOLUTIONS") {
+                  return (
+                    <div 
+                      key={link.name} 
+                      className="relative"
+                      onMouseEnter={() => setIsSolutionsHovered(true)}
+                      onMouseLeave={() => setIsSolutionsHovered(false)}
+                    >
+                      <Link 
+                        href={link.href} 
+                        onClick={(e) => handleNavClick(e, link.href)}
+                      >
+                        <motion.span
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className={`inline-flex items-center relative text-[12px] 2xl:text-[13px] font-bold tracking-widest uppercase whitespace-nowrap transition-colors py-2 cursor-pointer ${
+                            isActive ? "text-nabtura-green" : "text-gray-300 hover:text-white"
+                          }`}
+                        >
+                          {link.name}
+                          <ChevronDown className={`w-3.5 h-3.5 ml-1 transition-transform duration-300 ${isSolutionsHovered ? 'rotate-180 text-nabtura-green' : ''}`} />
+                          {/* Active Indicator Underline Animation */}
+                          {isActive && (
+                            <motion.div
+                              layoutId="activeNavTab"
+                              className="absolute -bottom-1 left-0 right-0 h-0.5 bg-nabtura-green"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            />
+                          )}
+                        </motion.span>
+                      </Link>
+                      
+                      <AnimatePresence>
+                        {isSolutionsHovered && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[700px] z-50"
+                          >
+                            <div className="bg-[#050a08]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-nabtura-green/5 grid grid-cols-2 gap-x-12 gap-y-8">
+                              {solutionsMegaMenu.map((section, idx) => {
+                                const Icon = section.icon;
+                                return (
+                                  <div key={idx} className="flex flex-col">
+                                    <div className={`flex items-center gap-2 mb-4 border-b border-white/5 pb-2`}>
+                                      <Icon className={`w-4 h-4 ${section.color}`} />
+                                      <span className="text-[10px] font-bold tracking-widest text-white uppercase">{section.category}</span>
+                                    </div>
+                                    <div className="flex flex-col gap-2">
+                                      {section.links.map(sublink => (
+                                        <Link 
+                                          key={sublink.name} 
+                                          href={sublink.href}
+                                          onClick={() => setIsSolutionsHovered(false)}
+                                          className={`text-sm text-gray-400 hover:${section.color} hover:translate-x-1 transition-all flex items-center`}
+                                        >
+                                          {sublink.name}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )
+                              })}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
                 return (
                   <Link 
                     href={link.href} 
