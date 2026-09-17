@@ -89,7 +89,7 @@ export default function Header() {
   const navLinks = [
     { name: "HOME", href: "/" },
     { name: "SOLUTIONS", href: "/solutions" },
-    { name: "WHO WE SERVE", href: "/#who-we-serve" },
+    { name: "WHO WE SERVE", href: "/who-we-serve" },
     { name: "WORK WITH NABTURA", href: "/#how-we-work" },
     { name: "POSSIBILITIES", href: "/possibilities" },
     { name: "NEWS / BLOGS", href: "/blog" },
