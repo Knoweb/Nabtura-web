@@ -90,7 +90,7 @@ export default function Header() {
     { name: "HOME", href: "/" },
     { name: "SOLUTIONS", href: "/solutions" },
     { name: "WHO WE SERVE", href: "/who-we-serve" },
-    { name: "WORK WITH NABTURA", href: "/#how-we-work" },
+    { name: "WORK WITH NABTURA", href: "/work-with-nabtura" },
     { name: "POSSIBILITIES", href: "/possibilities" },
     { name: "NEWS / BLOGS", href: "/blog" },
     { name: "ABOUT", href: "/about" },
