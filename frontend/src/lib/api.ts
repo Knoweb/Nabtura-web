@@ -28,14 +28,32 @@ export async function fetchAPI(path: string, options = {}) {
 }
 
 export async function submitEnquiry(data: {
+  enquiryType: string;
+  adaptiveAnswer?: string;
+  location?: string;
+  size?: string;
+  description?: string;
   name: string;
   email: string;
   phone: string;
-  enquiryType: string;
-  message: string;
-}) {
-  return fetchAPI("/enquiries", {
+  company?: string;
+  preferredContact?: string;
+}, file?: File) {
+  const formData = new FormData();
+  formData.append("data", JSON.stringify(data));
+  if (file) {
+    formData.append("attachment", file);
+  }
+
+  const response = await fetch("/api/enquiry", {
     method: "POST",
-    body: JSON.stringify({ data }),
+    body: formData,
   });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => null);
+    throw new Error(errorData?.error || "Failed to submit enquiry");
+  }
+
+  return response.json();
 }
