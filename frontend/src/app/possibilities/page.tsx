@@ -202,11 +202,7 @@ export default function PossibilitiesPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">CREATE A PLACE</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 drop-shadow-[0_0_25px_rgba(21,184,118,0.5)]">THAT GROWS.</span>
             </h3>
-            <div className="bg-white/5 p-6 md:p-2 rounded-3xl border border-white/5 backdrop-blur-md relative overflow-hidden max-w-2xl mx-auto mb-8">
-              <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed relative z-10">
-                <span className="text-white font-medium">Turn space into production.</span> From small microgreen rooms to massive productive rooftops.
-              </p>
-            </div>
+
             <Link href="/solutions" className="inline-flex items-center text-xs font-bold text-nabtura-light-green tracking-widest uppercase hover:text-white transition-colors group bg-nabtura-light-green/10 border border-nabtura-light-green/20 px-8 py-4 rounded-full hover:bg-nabtura-light-green/20 shadow-[0_0_15px_rgba(74,222,128,0.1)]">
               EXPLORE GROWING POSSIBILITIES <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -249,11 +245,7 @@ export default function PossibilitiesPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-white">CREATE GREEN</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 drop-shadow-[0_0_25px_rgba(251,191,36,0.5)]">PEOPLE REMEMBER.</span>
             </h3>
-            <div className="bg-white/5 p-6 md:p-2 rounded-3xl border border-white/5 backdrop-blur-md relative overflow-hidden max-w-2xl mx-auto mb-8">
-              <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed relative z-10">
-                <span className="text-white font-medium">Design experiences around nature.</span> From dining forests to wellness gardens.
-              </p>
-            </div>
+
             <Link href="/solutions" className="inline-flex items-center text-xs font-bold text-amber-400 tracking-widest uppercase hover:text-white transition-colors group bg-amber-400/10 border border-amber-400/20 px-8 py-4 rounded-full hover:bg-amber-400/20 shadow-[0_0_15px_rgba(251,191,36,0.1)]">
               EXPLORE GREEN EXPERIENCES <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -309,11 +301,7 @@ export default function PossibilitiesPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white">LET GREEN</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]">BRING PEOPLE TOGETHER.</span>
             </h3>
-            <div className="bg-white/5 p-6 md:p-2 rounded-3xl border border-white/5 backdrop-blur-md relative overflow-hidden max-w-2xl mx-auto mb-8">
-              <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed relative z-10">
-                <span className="text-white font-medium">Connect communities through nature.</span> Educational and shared green spaces.
-              </p>
-            </div>
+
             <Link href="/solutions" className="inline-flex items-center text-xs font-bold text-blue-400 tracking-widest uppercase hover:text-white transition-colors group bg-blue-400/10 border border-blue-400/20 px-8 py-4 rounded-full hover:bg-blue-400/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]">
               EXPLORE COMMUNITY POSSIBILITIES <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -357,11 +345,7 @@ export default function PossibilitiesPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">BRING GREEN</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 drop-shadow-[0_0_25px_rgba(52,211,153,0.5)]">INTO EVERYDAY LIFE.</span>
             </h3>
-            <div className="bg-white/5 p-6 md:p-2 rounded-3xl border border-white/5 backdrop-blur-md relative overflow-hidden max-w-2xl mx-auto mb-8">
-              <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed relative z-10">
-                <span className="text-white font-medium">Beauty you can harvest.</span> Enhance your daily living and working environments.
-              </p>
-            </div>
+
             <Link href="/solutions" className="inline-flex items-center text-xs font-bold text-emerald-400 tracking-widest uppercase hover:text-white transition-colors group bg-emerald-400/10 border border-emerald-400/20 px-8 py-4 rounded-full hover:bg-emerald-400/20 shadow-[0_0_15px_rgba(52,211,153,0.1)]">
               EXPLORE LIVING & WORKING GREEN <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -405,11 +389,7 @@ export default function PossibilitiesPage() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-100 to-white">SEE MORE</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-yellow-600 drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">THAN WHAT IS THERE TODAY.</span>
             </h3>
-            <div className="bg-white/5 p-6 md:p-2 rounded-3xl border border-white/5 backdrop-blur-md relative overflow-hidden max-w-2xl mx-auto mb-8">
-              <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed relative z-10">
-                <span className="text-white font-medium">Turn challenging land into green possibility.</span>
-              </p>
-            </div>
+
             <Link href="/solutions/environmental-projects" className="inline-flex items-center text-xs font-bold text-nabtura-sand tracking-widest uppercase hover:text-white transition-colors group bg-nabtura-sand/10 border border-nabtura-sand/20 px-8 py-4 rounded-full hover:bg-nabtura-sand/20 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
               SHOW US WHAT TO TRANSFORM <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
