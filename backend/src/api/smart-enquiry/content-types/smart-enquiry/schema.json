@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "enquiries",
+  "collectionName": "smart_enquiries",
   "info": {
-    "singularName": "enquiry",
-    "pluralName": "enquiries",
-    "displayName": "Enquiry",
-    "description": "Contact form submissions"
+    "singularName": "smart-enquiry",
+    "pluralName": "smart-enquiries",
+    "displayName": "Smart Enquiry",
+    "description": "Submissions from the Smart Enquiry Router"
   },
   "options": {
     "draftAndPublish": false

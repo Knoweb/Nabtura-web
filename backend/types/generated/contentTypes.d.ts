@@ -573,21 +573,30 @@ export interface ApiEnquiryEnquiry extends Struct.CollectionTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
+    adaptiveAnswer: Schema.Attribute.String;
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     email: Schema.Attribute.Email & Schema.Attribute.Required;
-    enquiryType: Schema.Attribute.String;
+    enquiryType: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::enquiry.enquiry'
     > &
       Schema.Attribute.Private;
-    message: Schema.Attribute.Text & Schema.Attribute.Required;
+    location: Schema.Attribute.String;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    phone: Schema.Attribute.String;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    preferredContact: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Email'>;
     publishedAt: Schema.Attribute.DateTime;
+    size: Schema.Attribute.String;
     status: Schema.Attribute.Enumeration<['New', 'Reviewed', 'Responded']> &
       Schema.Attribute.DefaultTo<'New'>;
     updatedAt: Schema.Attribute.DateTime;
@@ -682,6 +691,51 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSmartEnquirySmartEnquiry
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'smart_enquiries';
+  info: {
+    description: 'Submissions from the Smart Enquiry Router';
+    displayName: 'Smart Enquiry';
+    pluralName: 'smart-enquiries';
+    singularName: 'smart-enquiry';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    adaptiveAnswer: Schema.Attribute.String;
+    attachment: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    company: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    enquiryType: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::smart-enquiry.smart-enquiry'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    preferredContact: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Email'>;
+    publishedAt: Schema.Attribute.DateTime;
+    size: Schema.Attribute.String;
+    status: Schema.Attribute.Enumeration<['New', 'Reviewed', 'Responded']> &
+      Schema.Attribute.DefaultTo<'New'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1237,6 +1291,7 @@ declare module '@strapi/strapi' {
       'api::opportunity.opportunity': ApiOpportunityOpportunity;
       'api::possibility.possibility': ApiPossibilityPossibility;
       'api::project.project': ApiProjectProject;
+      'api::smart-enquiry.smart-enquiry': ApiSmartEnquirySmartEnquiry;
       'api::solution.solution': ApiSolutionSolution;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
