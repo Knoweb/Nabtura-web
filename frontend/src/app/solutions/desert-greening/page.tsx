@@ -436,7 +436,7 @@ export default function DesertGreeningPage() {
 
                   <div className="flex items-center gap-3 bg-[#050D14] border border-white/5 pl-5 pr-1.5 py-1.5 rounded-full hover:border-yellow-500/30 hover:shadow-[0_0_15px_rgba(250,204,21,0.15)] transition-all duration-300 w-full md:w-auto justify-between">
                     <span className="text-gray-500 text-[10px] md:text-xs font-bold tracking-widest uppercase">ESTABLISHMENT</span>
-                    <Link href="/services" className="flex items-center justify-center bg-yellow-500/10 text-yellow-400 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-yellow-400 hover:text-black transition-colors">
+                    <Link href="/capabilities/smartcare" className="flex items-center justify-center bg-yellow-500/10 text-yellow-400 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-yellow-400 hover:text-black transition-colors">
                       NABTURA SMARTCARE <ArrowRight className="ml-2 w-3 h-3" />
                     </Link>
                   </div>

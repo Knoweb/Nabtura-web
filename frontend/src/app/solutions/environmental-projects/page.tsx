@@ -496,7 +496,7 @@ export default function EnvironmentalProjectsPage() {
                   { name: 'Desert Greening', link: '/solutions/desert-greening' },
                   { name: 'Smart Growing', link: '/solutions/smart-greenhouses' },
                   { name: 'Nursery Solutions', link: '/solutions/nursery' },
-                  { name: 'SmartCare', link: '/services' }
+                  { name: 'SmartCare', link: '/capabilities/smartcare' }
                 ].map((service, i) => (
                   <motion.div
                     key={service.name}

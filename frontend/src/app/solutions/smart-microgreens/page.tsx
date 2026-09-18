@@ -266,7 +266,7 @@ export default function SmartMicrogreensPage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-32 bg-nabtura-light-green/5 blur-[100px] -z-10 group-hover:bg-nabtura-light-green/10 transition-colors duration-1000"></div>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 text-center relative z-10 mb-12">
-            <div className="hidden md:block absolute top-8 left-[8%] right-[8%] h-[2px] bg-white/5 z-0 overflow-hidden">
+            <div className="hidden md:block absolute top-6 left-6 right-6 h-[2px] bg-white/5 z-0 overflow-hidden">
               <motion.div
                 initial={{ x: "-100%" }}
                 whileInView={{ x: "0%" }}
@@ -284,7 +284,7 @@ export default function SmartMicrogreensPage() {
                   whileHover={{ y: -5, boxShadow: "0 0 30px rgba(134,239,172,0.6)" }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.4, delay: index * 0.4 + 0.2 }}
-                  className="w-16 h-16 rounded-full bg-[#09110E] border-2 flex items-center justify-center font-bold mb-4 relative"
+                  className="w-12 h-12 rounded-full bg-[#09110E] border-2 flex items-center justify-center font-bold text-sm mb-4 relative"
                 >
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
@@ -323,9 +323,15 @@ export default function SmartMicrogreensPage() {
         </div>
 
         <div className="text-center max-w-2xl mx-auto">
-          <Link href="/contact" className="inline-flex items-center text-nabtura-light-green font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group">
-            Need ongoing support? <ArrowRight className="mx-2 w-4 h-4 group-hover:translate-x-1 transition-transform" /> Explore NABTURA SmartCare
-          </Link>
+          <div className="flex flex-col items-center gap-3">
+            <span className="text-gray-400 font-light text-xs italic opacity-80">Need ongoing support?</span>
+            <Link href="/capabilities/smartcare" className="inline-flex items-center text-xs font-bold text-nabtura-light-green tracking-[0.2em] uppercase hover:text-black hover:bg-nabtura-light-green transition-all duration-300 group bg-nabtura-light-green/10 border border-nabtura-light-green/30 px-8 py-3.5 rounded-full shadow-[0_0_15px_rgba(21,184,118,0.1)] hover:shadow-[0_0_30px_rgba(21,184,118,0.4)] backdrop-blur-md relative overflow-hidden">
+               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+               <span className="relative z-10 flex items-center">
+                 EXPLORE NABTURA SMARTCARE <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+               </span>
+            </Link>
+          </div>
         </div>
       </motion.section>
 

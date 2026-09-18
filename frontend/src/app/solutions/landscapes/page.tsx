@@ -379,7 +379,7 @@ export default function LandscapesPage() {
               <Link href="/solutions/environmental-projects" className="inline-flex items-center justify-center bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-gray-300 text-xs font-bold tracking-widest uppercase hover:bg-white/10 hover:border-nabtura-green/30 hover:text-white transition-all group/btn">
                 Explore Nursery Solutions <ArrowRight className="ml-2 w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/services" className="inline-flex items-center justify-center bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-gray-300 text-xs font-bold tracking-widest uppercase hover:bg-white/10 hover:border-nabtura-green/30 hover:text-white transition-all group/btn">
+              <Link href="/capabilities/smartcare" className="inline-flex items-center justify-center bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-gray-300 text-xs font-bold tracking-widest uppercase hover:bg-white/10 hover:border-nabtura-green/30 hover:text-white transition-all group/btn">
                 Explore SmartCare <ArrowRight className="ml-2 w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
               </Link>
             </div>
