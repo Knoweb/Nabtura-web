@@ -279,7 +279,7 @@ export default function DesertGreeningPage() {
               ADAPT FIRST. GREEN SECOND.
             </p>
 
-            <Link href="/solutions/nursery" className="inline-flex items-center text-black bg-yellow-500 px-8 py-3 rounded-full font-bold tracking-widest uppercase text-xs hover:bg-yellow-400 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)]">
+            <Link href="/capabilities/nursery-solutions" className="inline-flex items-center text-black bg-yellow-500 px-8 py-3 rounded-full font-bold tracking-widest uppercase text-xs hover:bg-yellow-400 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:shadow-[0_0_40px_rgba(234,179,8,0.5)]">
               EXPLORE NABTURA NURSERY <ArrowRight className="ml-3 w-4 h-4" />
             </Link>
           </div>
@@ -427,7 +427,7 @@ export default function DesertGreeningPage() {
                 <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 w-full relative z-10">
                   <div className="flex items-center gap-3 bg-[#050D14] border border-white/5 pl-5 pr-1.5 py-1.5 rounded-full hover:border-yellow-500/30 hover:shadow-[0_0_15px_rgba(250,204,21,0.15)] transition-all duration-300 w-full md:w-auto justify-between">
                     <span className="text-gray-500 text-[10px] md:text-xs font-bold tracking-widest uppercase">PLANT SELECTION</span>
-                    <Link href="/solutions/nursery" className="flex items-center justify-center bg-yellow-500/10 text-yellow-400 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-yellow-400 hover:text-black transition-colors">
+                    <Link href="/capabilities/nursery-solutions" className="flex items-center justify-center bg-yellow-500/10 text-yellow-400 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-yellow-400 hover:text-black transition-colors">
                       NURSERY SOLUTIONS <ArrowRight className="ml-2 w-3 h-3" />
                     </Link>
                   </div>

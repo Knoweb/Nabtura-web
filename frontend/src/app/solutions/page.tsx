@@ -318,7 +318,7 @@ export default function SolutionsOverviewPage() {
               </div>
             </Link>
 
-            <Link href="/contact" className="group block rounded-[2rem] p-8 md:p-10 hover:border-white/50 transition-all duration-500 shadow-2xl relative overflow-hidden border border-white/10 bg-[#050a08]">
+            <Link href="/capabilities/nursery-solutions" className="group block rounded-[2rem] p-8 md:p-10 hover:border-white/50 transition-all duration-500 shadow-2xl relative overflow-hidden border border-white/10 bg-[#050a08]">
               <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-all duration-700 group-hover:scale-105"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
               

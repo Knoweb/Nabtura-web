@@ -495,7 +495,7 @@ export default function EnvironmentalProjectsPage() {
                   { name: 'Urban Forests', link: '/solutions/urban-forests' },
                   { name: 'Desert Greening', link: '/solutions/desert-greening' },
                   { name: 'Smart Growing', link: '/solutions/smart-greenhouses' },
-                  { name: 'Nursery Solutions', link: '/solutions/nursery' },
+                  { name: 'Nursery Solutions', link: '/capabilities/nursery-solutions' },
                   { name: 'SmartCare', link: '/capabilities/smartcare' }
                 ].map((service, i) => (
                   <motion.div

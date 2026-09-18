@@ -468,7 +468,7 @@ export default function UrbanForestsPage() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-6">
               <div className="flex flex-col items-center gap-2">
                 <span className="text-gray-400 font-light text-xs italic">Project planting requirements</span>
-                <Link href="/solutions/nursery" className="inline-flex items-center justify-center bg-white/5 border border-white/10 px-5 py-2.5 rounded-xl text-gray-300 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-white/10 hover:border-cyan-400/30 hover:text-white transition-all group/btn">
+                <Link href="/capabilities/nursery-solutions" className="inline-flex items-center justify-center bg-white/5 border border-white/10 px-5 py-2.5 rounded-xl text-gray-300 text-[10px] md:text-xs font-bold tracking-widest uppercase hover:bg-white/10 hover:border-cyan-400/30 hover:text-white transition-all group/btn">
                   Explore NABTURA Nursery <ArrowRight className="ml-2 w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
               </div>
