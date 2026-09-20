@@ -4,6 +4,7 @@ import SolutionHero from "@/components/solutions/SolutionHero";
 import { ArrowRight, CheckCircle2, Leaf, Droplets, Wind, Sprout, Store, ChefHat, Building2, MapPin } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import MicrogreensExplorer from "@/components/tools/MicrogreensExplorer";
 
 export default function SmartMicrogreensPage() {
   return (
@@ -99,41 +100,9 @@ export default function SmartMicrogreensPage() {
       </motion.section>
 
       {/* 4. WHAT CAN YOU GROW? */}
-      <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-16 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative border-b border-white/10">
-        <div className="text-center mb-16 relative z-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 uppercase leading-tight">
-            WHAT WOULD YOU <br className="hidden md:block" />LIKE TO HARVEST?
-          </h2>
-          <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
-            Explore microgreens including:
-          </p>
-        </div>
-
-        <div className="flex flex-wrap justify-center gap-3 relative z-10 max-w-4xl mx-auto mb-16 px-2">
-          {['Radish', 'Broccoli', 'Pea Shoots', 'Sunflower', 'Mustard', 'Basil', 'Coriander', 'Red Amaranth', 'Shiso', 'Sorrel', '+ More'].map((crop, index) => (
-            <div key={crop} className="relative group/crop">
-              {/* Slow pulsing light around the tag */}
-              <div
-                className="absolute -inset-0.5 rounded-xl border border-nabtura-light-green/50 shadow-[0_0_15px_rgba(134,239,172,0.4)] animate-[pulse_3s_ease-in-out_infinite]"
-                style={{ animationDelay: `${index * 0.3}s` }}
-              ></div>
-
-              {/* Stronger hover glow */}
-              <div className="absolute inset-0 bg-nabtura-light-green/20 rounded-xl blur-md opacity-0 group-hover/crop:opacity-100 transition-opacity duration-500"></div>
-
-              <span className="relative inline-block bg-[#0F1C17] border border-white/5 px-5 py-3 rounded-xl text-gray-300 text-xs sm:text-sm font-bold tracking-widest uppercase hover:bg-[#152720] hover:text-white transition-all duration-300 cursor-default group-hover/crop:-translate-y-1">
-                {crop}
-              </span>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center relative z-10 pb-8">
-          <Link href="/contact" className="inline-flex items-center text-black bg-nabtura-light-green px-8 py-4 rounded-full font-bold tracking-widest uppercase text-xs hover:bg-white transition-colors shadow-[0_0_20px_rgba(134,239,172,0.2)] hover:shadow-[0_0_40px_rgba(134,239,172,0.5)]">
-            EXPLORE WHAT YOU CAN GROW <ArrowRight className="ml-2 w-4 h-4" />
-          </Link>
-        </div>
-      </motion.section>
+      <section className="pt-16 pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <MicrogreensExplorer />
+      </section>
 
       {/* 5. APPLICATIONS */}
       <section className="pt-24 pb-10 relative overflow-hidden bg-[#09110E]">

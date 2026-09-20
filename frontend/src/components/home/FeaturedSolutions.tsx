@@ -37,7 +37,7 @@ const featured = [
 
 export default function FeaturedSolutions() {
   return (
-    <section className="bg-[#020504] text-white pt-20 pb-10 md:pt-32 md:pb-16 border-t border-white/5 relative">
+    <section className="bg-nabtura-slate text-white pt-20 pb-10 md:pt-32 md:pb-16 border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -49,9 +49,9 @@ export default function FeaturedSolutions() {
             START WITH WHAT YOU WANT TO CREATE
           </p>
           <h2 className="text-4xl md:text-6xl font-black tracking-tight">
-            SMART SOLUTIONS.
+            SMART SOLUTIONS
             <br />
-            <span className="text-gray-400">REAL POSSIBILITIES.</span>
+            <span className="text-gray-400">REAL POSSIBILITIES</span>
           </h2>
         </motion.div>
 

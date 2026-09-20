@@ -4,6 +4,7 @@ import SolutionHero from "@/components/solutions/SolutionHero";
 import { ArrowRight, CheckCircle2, Leaf, Droplets, Wind, Sun, Activity, CheckCircle, Target, MapPin } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import WhatCanIGrow from "@/components/tools/WhatCanIGrow";
 
 export default function SmartGreenhousesPage() {
   return (
@@ -174,65 +175,10 @@ export default function SmartGreenhousesPage() {
           </Link>
         </div>
       </motion.section>
-
-      {/* 5. WHAT COULD YOU GROW? & 6. HOME GROWING */}
-      <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-8 pb-8 bg-[#09110E]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-            {/* What could you grow card */}
-            <div className="bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-[2.5rem] p-10 lg:p-14 relative overflow-hidden flex flex-col justify-between group shadow-2xl hover:border-nabtura-green/30 transition-all duration-500">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/5 rounded-full blur-[80px] -z-10 group-hover:bg-nabtura-green/15 transition-colors duration-700"></div>
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all duration-500">
-                  FROM LEAF <br />TO HARVEST.
-                </h2>
-                <div className="flex flex-wrap gap-2.5 mb-8">
-                  {['Leafy Greens', 'Herbs', 'Fruiting Crops', 'Specialty Crops'].map(crop => (
-                    <span key={crop} className="bg-nabtura-green/10 px-4 py-2 rounded-lg text-xs font-bold tracking-widest uppercase text-nabtura-green border border-nabtura-green/20 hover:bg-nabtura-green/20 hover:border-nabtura-green/40 transition-colors shadow-sm cursor-default">
-                      {crop}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-gray-400 text-base font-light leading-relaxed mb-8">
-                  The right crop strategy depends on the market, environment, growing method, scale and commercial objective.
-                </p>
-              </div>
-              <div>
-                <Link href="/contact" className="inline-flex items-center text-nabtura-green font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group/link">
-                  EXPLORE WHAT YOU CAN GROW <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Home Growing card */}
-            <div className="bg-gradient-to-bl from-white/5 to-transparent border border-white/10 rounded-[2.5rem] overflow-hidden relative group shadow-2xl hover:border-nabtura-sand/30 transition-all duration-500">
-              <div className="absolute inset-0 bg-[url('/images/dubai-landscapes.jpg')] bg-cover bg-center opacity-40 mix-blend-overlay group-hover:opacity-60 group-hover:scale-105 transition-all duration-700"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/80 to-[#09110E]/40"></div>
-
-              <div className="relative p-10 lg:p-14 h-full flex flex-col justify-end z-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase leading-tight">
-                  GROW FRESH. <br />AT HOME.
-                </h2>
-                <p className="text-gray-300 text-base font-light leading-relaxed mb-6 max-w-sm">
-                  Your home can become a place to grow fresh food too. NABTURA can create compact growing solutions designed around your space.
-                </p>
-                <div className="flex flex-wrap gap-2 text-[10px] sm:text-xs font-bold tracking-widest uppercase text-nabtura-sand mb-8">
-                  <span className="bg-nabtura-sand/10 px-3 py-1.5 rounded-md border border-nabtura-sand/20 backdrop-blur-sm shadow-sm">SMART HOME GREENHOUSE</span>
-                  <span className="bg-nabtura-sand/10 px-3 py-1.5 rounded-md border border-nabtura-sand/20 backdrop-blur-sm shadow-sm">HYDROPONICS</span>
-                  <span className="bg-nabtura-sand/10 px-3 py-1.5 rounded-md border border-nabtura-sand/20 backdrop-blur-sm shadow-sm">FRESH PRODUCE</span>
-                </div>
-                <div>
-                  <Link href="/possibilities" className="inline-flex items-center text-nabtura-sand font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group/link">
-                    EXPLORE HOME GROWING <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </motion.section>
+      {/* 5. WHAT CAN YOU GROW? */}
+      <section className="pt-16 pb-24 bg-nabtura-slate border-y border-white/10">
+        <WhatCanIGrow />
+      </section>
 
       {/* 7. BUILT AROUND YOUR PURPOSE */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut" }} className="pt-8 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/10">
