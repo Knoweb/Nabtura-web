@@ -18,7 +18,7 @@ export default function NurserySolutionsPage() {
 
   return (
     <div className="bg-[#020504] min-h-screen pt-24 font-sans selection:bg-yellow-500/30 selection:text-white overflow-hidden">
-      
+
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center py-20 px-6 border-b border-white/5 overflow-hidden">
         {/* Animated Background */}
@@ -26,13 +26,13 @@ export default function NurserySolutionsPage() {
           <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center opacity-20 z-0 scale-105 transition-transform duration-[20s] hover:scale-110"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/50 via-[#0a0a0a]/80 to-[#050A08] z-10 pointer-events-none"></div>
         </div>
-        
+
         {/* Glowing Orbs */}
         <div className="absolute top-1/4 right-1/4 w-[800px] h-[800px] bg-yellow-500/10 blur-[150px] rounded-full pointer-events-none z-10"></div>
         <div className="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-emerald-500/10 blur-[120px] rounded-full pointer-events-none z-10"></div>
 
         <div className="max-w-6xl mx-auto w-full relative z-20 text-center flex flex-col items-center">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -40,8 +40,8 @@ export default function NurserySolutionsPage() {
           >
             NABTURA NURSERY SOLUTIONS
           </motion.p>
-          
-          <motion.h1 
+
+          <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -53,7 +53,7 @@ export default function NurserySolutionsPage() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.4)]">PROJECT.</span>
           </motion.h1>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -61,13 +61,13 @@ export default function NurserySolutionsPage() {
           >
             {/* Glowing Vertical Divider for Desktop */}
             <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-yellow-500/50 to-transparent hidden md:block"></div>
-            
+
             <div className="flex-1 text-center md:text-right pr-0 md:pr-8">
               <p className="text-white text-lg md:text-xl font-light leading-relaxed">
                 Project-focused plant sourcing, nursery coordination, <span className="text-yellow-400 font-bold drop-shadow-[0_0_10px_rgba(250,204,21,0.3)]">preparation and supply.</span>
               </p>
             </div>
-            
+
             {/* Horizontal divider for mobile */}
             <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent block md:hidden my-2"></div>
 
@@ -78,7 +78,7 @@ export default function NurserySolutionsPage() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
@@ -90,12 +90,12 @@ export default function NurserySolutionsPage() {
                 EXPLORE NURSERY SOLUTIONS <ArrowDown className="ml-3 w-4 h-4 text-yellow-500 group-hover:translate-y-1 transition-transform" />
               </span>
             </a>
-            
+
             <Link href="/contact" className="group w-full sm:w-auto relative px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-400 text-black font-black tracking-[0.2em] text-xs md:text-sm rounded-full hover:shadow-[0_0_40px_rgba(250,204,21,0.5)] hover:scale-105 transition-all duration-300 flex items-center justify-center overflow-hidden">
-               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-               <span className="relative z-10 flex items-center">
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+              <span className="relative z-10 flex items-center">
                 DISCUSS YOUR PLANT REQUIREMENTS <ArrowRight className="ml-3 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-               </span>
+              </span>
             </Link>
           </motion.div>
         </div>
@@ -104,10 +104,10 @@ export default function NurserySolutionsPage() {
       {/* 2. START WITH THE PROJECT */}
       <section id="explore-nursery" className="py-10 md:py-15 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mb-10 md:mb-12">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -115,17 +115,17 @@ export default function NurserySolutionsPage() {
             >
               START WITH THE PROJECT
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight text-white mb-6"
+              className="text-4xl md:text-5xl lg:text-5xl font-black uppercase leading-tight text-white mb-6"
             >
               NOT JUST PLANTS. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.2)]">THE RIGHT PLANT STRATEGY.</span>
             </motion.h3>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -135,8 +135,8 @@ export default function NurserySolutionsPage() {
               Plant requirements should begin with the environment and purpose of the project. <br className="hidden md:block" />
               NABTURA considers:
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -154,8 +154,8 @@ export default function NurserySolutionsPage() {
                 { name: 'QUANTITY', icon: Box },
                 { name: 'ESTABLISHMENT', icon: Sprout }
               ].map((item, idx) => (
-                <motion.span 
-                  key={idx} 
+                <motion.span
+                  key={idx}
                   variants={{
                     hidden: { opacity: 0, scale: 0.9 },
                     visible: { opacity: 1, scale: 1 }
@@ -185,12 +185,12 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 3. PROJECT-SPECIFIC SOLUTIONS */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#09100c]">
+      <section className="py-10 lg:py-10 relative z-10 bg-[#03180D]">
         <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -198,7 +198,7 @@ export default function NurserySolutionsPage() {
             >
               PROJECT-SPECIFIC SOLUTIONS
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -208,7 +208,7 @@ export default function NurserySolutionsPage() {
               WHAT DOES <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]">YOUR PROJECT NEED?</span>
             </motion.h3>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -228,7 +228,7 @@ export default function NurserySolutionsPage() {
               { title: "DELIVERY COORDINATION", desc: "Coordinate plant supply with the wider project programme.", icon: Truck },
               { title: "ESTABLISHMENT SUPPORT", desc: "Connect plant supply with planting, irrigation and establishment requirements.", icon: ShieldCheck }
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -237,8 +237,8 @@ export default function NurserySolutionsPage() {
                 className="group bg-[#050A08] border border-white/5 rounded-2xl p-6 hover:border-yellow-500/30 hover:bg-[#0a120e] transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/0 blur-[40px] rounded-full group-hover:bg-yellow-500/10 transition-colors duration-500"></div>
-                <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-5 group-hover:bg-yellow-500/20 group-hover:scale-110 transition-all duration-300 border border-white/10 group-hover:border-yellow-500/30">
-                  <item.icon className="w-5 h-5 text-gray-400 group-hover:text-yellow-400 transition-colors" />
+                <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-5 group-hover:bg-yellow-500/20 group-hover:scale-110 transition-all duration-300 border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.15)] group-hover:border-yellow-500/40 group-hover:shadow-[0_0_20px_rgba(250,204,21,0.3)]">
+                  <item.icon className="w-5 h-5 text-orange-400 group-hover:text-yellow-400 transition-colors drop-shadow-[0_0_5px_rgba(251,146,60,0.5)] group-hover:drop-shadow-[0_0_8px_rgba(250,204,21,0.6)]" />
                 </div>
                 <h4 className="text-sm font-bold tracking-widest text-white mb-2 uppercase group-hover:text-yellow-400 transition-colors">{item.title}</h4>
                 <p className="text-gray-400 text-sm font-light leading-relaxed">{item.desc}</p>
@@ -249,12 +249,27 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 4. BUILT AROUND THE ENVIRONMENT */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10 lg:py-12 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
+        {/* Parallax Background Image */}
+        <motion.div
+          className="absolute inset-0 z-0 opacity-20"
+          initial={{ scale: 1.1 }}
+          whileInView={{ scale: 1 }}
+          transition={{ duration: 2, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-10%" }}
+        >
+          <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center grayscale mix-blend-luminosity"></div>
+        </motion.div>
+
+        {/* Gradients to blend text properly */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#050A08] via-[#050A08]/90 to-transparent"></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050A08] via-transparent to-[#050A08]"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-            
+
             <div className="w-full lg:w-1/2 text-center lg:text-left">
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -262,7 +277,7 @@ export default function NurserySolutionsPage() {
               >
                 BUILT AROUND THE ENVIRONMENT
               </motion.h2>
-              <motion.h3 
+              <motion.h3
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -272,7 +287,7 @@ export default function NurserySolutionsPage() {
                 PLANTS NEED <br className="hidden lg:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-[0_0_15px_rgba(52,211,153,0.2)]">THE RIGHT CONDITIONS.</span>
               </motion.h3>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -281,7 +296,7 @@ export default function NurserySolutionsPage() {
               >
                 Plant selection and supply should consider more than appearance. NABTURA works to align planting requirements with the conditions in which the plants are expected to establish and grow.
               </motion.p>
-              <motion.p 
+              <motion.p
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -295,15 +310,15 @@ export default function NurserySolutionsPage() {
             <div className="w-full lg:w-1/2">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-yellow-500/20 rounded-[2.5rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-                
-                <motion.div 
+
+                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   className="bg-[#050A08]/90 border border-white/10 rounded-[2rem] p-8 relative overflow-hidden backdrop-blur-xl shadow-2xl"
                 >
                   <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-                  
+
                   <div className="grid grid-cols-2 gap-4 relative z-10">
                     {[
                       { label: "CLIMATE", icon: Sun },
@@ -328,12 +343,12 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 5. WHERE NURSERY SOLUTIONS FIT */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#09100c] border-t border-white/5 overflow-hidden">
-        <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-yellow-500/5 to-transparent pointer-events-none -z-10"></div>
-        
+      <section className="py-10 lg:py-10 relative z-10 bg-[#03180D] border-t border-white/5 overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-emerald-500/5 to-transparent pointer-events-none -z-10"></div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-12">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -341,7 +356,7 @@ export default function NurserySolutionsPage() {
             >
               WHERE NURSERY SOLUTIONS FIT
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -351,7 +366,7 @@ export default function NurserySolutionsPage() {
               SUPPORTING <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.3)]">WHAT WE CREATE.</span>
             </motion.h3>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -371,7 +386,7 @@ export default function NurserySolutionsPage() {
               { title: "DEVELOPMENTS & LARGE-SCALE", desc: "Coordinated plant requirements across larger project environments.", link: "/solutions/environmental-projects" },
             ].map((item, idx) => (
               <Link href={item.link} key={idx} className="block group">
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -392,10 +407,10 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 6. FROM REQUIREMENT TO SITE */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
+      <section className="py-10 lg:py-10 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -403,7 +418,7 @@ export default function NurserySolutionsPage() {
             >
               FROM REQUIREMENT TO SITE
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, y: -15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -413,7 +428,7 @@ export default function NurserySolutionsPage() {
               PLAN THE PLANTS <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-[0_0_15px_rgba(52,211,153,0.2)]">WITH THE PROJECT.</span>
             </motion.h3>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -424,7 +439,7 @@ export default function NurserySolutionsPage() {
             </motion.p>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -432,10 +447,10 @@ export default function NurserySolutionsPage() {
             className="max-w-5xl mx-auto"
           >
             {/* The Pipeline */}
-            <div className="relative z-10 max-w-5xl mx-auto mb-10 md:mb-12 overflow-x-auto pb-6 md:pb-0 hide-scrollbar">
+            <div className="relative z-10 max-w-5xl mx-auto mb-10 md:mb-12 overflow-x-auto pt-8 pb-6 md:pb-8 hide-scrollbar">
               {/* Connecting Line (Desktop) */}
-              <div className="hidden md:block absolute top-6 left-6 right-6 h-[2px] bg-white/5 z-0 overflow-hidden">
-                <motion.div 
+              <div className="hidden md:block absolute top-14 left-6 right-6 h-[2px] bg-white/5 z-0 overflow-hidden">
+                <motion.div
                   initial={{ x: "-100%" }}
                   whileInView={{ x: "0%" }}
                   viewport={{ once: true, margin: "-100px" }}
@@ -447,7 +462,7 @@ export default function NurserySolutionsPage() {
               <div className="flex flex-row items-center justify-between min-w-[800px] md:min-w-0">
                 {['UNDERSTAND', 'SPECIFY', 'SOURCE', 'PREPARE', 'COORDINATE', 'DELIVER', 'ESTABLISH'].map((step, index) => (
                   <div key={step} className="flex flex-col items-center z-10 cursor-default relative flex-1">
-                    <motion.div 
+                    <motion.div
                       initial={{ borderColor: "rgba(255,255,255,0.1)", color: "#9ca3af", boxShadow: "0 0 0px rgba(16,185,129,0)" }}
                       whileInView={{ borderColor: "#10b981", color: "#ffffff", boxShadow: "0 0 20px rgba(16,185,129,0.4)" }}
                       whileHover={{ y: -5, boxShadow: "0 0 30px rgba(16,185,129,0.6)" }}
@@ -455,7 +470,7 @@ export default function NurserySolutionsPage() {
                       transition={{ duration: 0.4, delay: index * 0.3 + 0.2 }}
                       className="w-12 h-12 rounded-full bg-[#09110E] border-2 flex items-center justify-center font-bold text-sm mb-4 relative"
                     >
-                      <motion.div 
+                      <motion.div
                         initial={{ scale: 0, opacity: 0 }}
                         whileInView={{ scale: 1.5, opacity: 1 }}
                         viewport={{ once: true, margin: "-100px" }}
@@ -464,7 +479,7 @@ export default function NurserySolutionsPage() {
                       ></motion.div>
                       {index + 1}
                     </motion.div>
-                    <motion.p 
+                    <motion.p
                       initial={{ color: "#9ca3af" }}
                       whileInView={{ color: "#34d399" }}
                       viewport={{ once: true, margin: "-100px" }}
@@ -482,12 +497,12 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 7. CONNECTED CARE */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#09100c] border-t border-white/5 overflow-hidden">
+      <section className="py-10 lg:py-10 relative z-10 bg-[#03180D] border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-10 md:mb-12 max-w-3xl mx-auto">
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -495,7 +510,7 @@ export default function NurserySolutionsPage() {
             >
               CONNECTED CARE
             </motion.h2>
-            <motion.h3 
+            <motion.h3
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -505,7 +520,7 @@ export default function NurserySolutionsPage() {
               SUPPLY IS <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.2)]">NOT THE END.</span>
             </motion.h3>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -518,7 +533,7 @@ export default function NurserySolutionsPage() {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-12">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -534,7 +549,7 @@ export default function NurserySolutionsPage() {
                 </Link>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -574,21 +589,21 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 8. FINAL CONVERSION (INTERACTIVE SELECTOR) */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#050A08] overflow-hidden">
+      <section className="py-12 lg:py-12 relative z-10 bg-[#050A08] overflow-hidden">
         {/* Animated Background Image */}
-        <motion.div 
-          className="absolute inset-0 z-0 opacity-10"
+        <motion.div
+          className="absolute inset-0 z-0 opacity-30"
           animate={{ scale: [1, 1.15, 1] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         >
           <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center"></div>
         </motion.div>
-        
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050A08] via-[#050A08]/80 to-[#050A08]"></div>
+
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050A08] via-[#050A08]/70 to-[#050A08]"></div>
         <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
         {/* Pulsing Glowing Orbs */}
-        <motion.div 
+        <motion.div
           animate={{ opacity: [0.1, 0.4, 0.1], scale: [0.7, 1.2, 0.7] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/20 blur-[120px] rounded-full pointer-events-none z-0"
@@ -603,81 +618,32 @@ export default function NurserySolutionsPage() {
             <p className="text-gray-300 text-base md:text-lg font-light tracking-wide">Tell us about your planting requirement.</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
-            {/* Options List */}
-            <div className="space-y-2">
-              {selectorItems.map((item, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedSelectorItem(selectedSelectorItem === idx ? null : idx)}
-                  className={`w-full text-left px-5 py-3 md:py-3.5 rounded-xl border transition-all duration-300 flex justify-between items-center group ${selectedSelectorItem === idx
-                      ? 'bg-yellow-500/10 border-yellow-500 shadow-[0_0_20px_rgba(250,204,21,0.2)]'
-                      : 'bg-white/5 border-white/10 hover:border-yellow-500/50 hover:bg-white/10 hover:shadow-[0_0_15px_rgba(250,204,21,0.1)]'
-                    }`}
-                >
-                  <span className={`font-bold tracking-widest text-[10px] sm:text-xs md:text-sm ${selectedSelectorItem === idx ? 'text-yellow-400' : 'text-gray-300 group-hover:text-white transition-colors'}`}>
+          <div className="max-w-4xl mx-auto mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+            {selectorItems.map((item, idx) => (
+              <div
+                key={idx}
+                className="w-full text-left px-5 py-3 md:py-4 rounded-xl border border-white/10 bg-white/5 flex items-center group shadow-sm hover:border-yellow-500/50 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] transition-all duration-500 cursor-default"
+              >
+                <div className="flex items-center gap-4 relative w-full">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 text-gray-400 group-hover:bg-yellow-500/20 group-hover:text-yellow-400 group-hover:shadow-[0_0_15px_rgba(250,204,21,0.5)] transition-all duration-300 relative z-10 border border-transparent group-hover:border-yellow-500/40">
+                    <item.icon className="w-4 h-4 group-hover:drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]" />
+                  </div>
+                  <span className="font-bold tracking-widest text-[10px] sm:text-xs md:text-sm text-gray-300 group-hover:text-white transition-colors z-10 relative">
                     {item.title}
                   </span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors shrink-0 ml-3 ${selectedSelectorItem === idx ? 'bg-yellow-500 text-black shadow-[0_0_15px_rgba(250,204,21,0.5)]' : 'bg-white/10 text-white'}`}>
-                    <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${selectedSelectorItem === idx ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            {/* Dynamic Response Box */}
-            <div className="h-full min-h-[300px] flex items-center justify-center">
-              <AnimatePresence mode="wait">
-                {selectedSelectorItem !== null ? (
-                  <motion.div
-                    key={selectedSelectorItem}
-                    initial={{ opacity: 0, scale: 0.9, x: 20 }}
-                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                    exit={{ opacity: 0, scale: 0.9, x: -20 }}
-                    transition={{ type: "spring", duration: 0.5 }}
-                    className="w-full bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-8 lg:p-12 text-center shadow-2xl relative overflow-hidden h-full flex flex-col justify-center"
-                  >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/20 blur-[50px] rounded-full"></div>
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/20 blur-[50px] rounded-full"></div>
-
-                    <div className="relative z-10 flex flex-col items-center">
-                      <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 shadow-lg">
-                        {(() => {
-                          const Icon = selectorItems[selectedSelectorItem].icon;
-                          return <Icon className="w-8 h-8 text-yellow-400" />;
-                        })()}
-                      </div>
-                      <h4 className="text-lg md:text-xl font-light text-gray-200 mb-8 leading-relaxed text-center max-w-sm mx-auto">
-                        {selectorItems[selectedSelectorItem].response}
-                      </h4>
-                      <Link href="/contact" className="mt-2 px-8 py-3 bg-white text-black font-bold tracking-widest text-[10px] md:text-xs rounded-full hover:bg-yellow-400 transition-colors shadow-lg uppercase">
-                        DISCUSS MY PLANT REQUIREMENTS
-                      </Link>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="empty"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="w-full h-full border-2 border-dashed border-white/10 rounded-3xl flex flex-col items-center justify-center text-center p-12"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6">
-                      <ArrowDown className="w-6 h-6 text-gray-500 animate-bounce" />
-                    </div>
-                    <p className="text-gray-500 font-light tracking-widest text-sm uppercase">Select an option from the list to see how we can help.</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                  
+                  {/* Subtle background glow that appears on hover */}
+                  <div className="absolute left-0 w-24 h-full bg-gradient-to-r from-yellow-500/0 to-transparent group-hover:from-yellow-500/10 transition-colors duration-500 blur-xl pointer-events-none rounded-l-xl"></div>
+                </div>
+              </div>
+            ))}
           </div>
 
           <div className="flex flex-col items-center border-t border-white/10 pt-12">
-            <Link href="/contact" className="px-10 py-3 bg-gradient-to-r from-yellow-500 to-orange-400 text-black font-black tracking-[0.2em] text-sm md:text-base rounded-full hover:shadow-[0_0_50px_rgba(250,204,21,0.5)] hover:scale-105 transition-all duration-300 flex items-center justify-center mb-6 w-full sm:w-auto">
+            <Link href="/contact" className="px-10 py-2 bg-gradient-to-r from-yellow-500 to-orange-400 text-black font-black tracking-[0.2em] text-sm md:text-base rounded-full hover:shadow-[0_0_50px_rgba(250,204,21,0.5)] hover:scale-105 transition-all duration-300 flex items-center justify-center mb-6 w-full sm:w-auto">
               DISCUSS MY PLANT REQUIREMENTS <ArrowRight className="ml-3 w-5 h-5" />
             </Link>
-            
+
             <Link href="/contact" className="text-yellow-500 hover:text-white text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-colors flex items-center group mb-8">
               TELL US ABOUT YOUR PROJECT <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
