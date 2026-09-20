@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function NurserySolutionsPage() {
-  const [selectedSelectorItem, setSelectedSelectorItem] = useState<number | null>(0);
 
   const selectorItems = [
     { title: "I HAVE A LANDSCAPE PROJECT", response: "We source and prepare the exact plant species needed for your design, ensuring they thrive in their new landscape.", icon: Leaf },
