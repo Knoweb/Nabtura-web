@@ -27,6 +27,14 @@ export default function CookieBanner() {
     if (!storedPreferences) {
       setIsVisible(true);
     }
+
+    const handleOpenPreferences = () => {
+      setIsVisible(true);
+      setShowPreferences(true);
+    };
+
+    window.addEventListener("openCookiePreferences", handleOpenPreferences);
+    return () => window.removeEventListener("openCookiePreferences", handleOpenPreferences);
   }, []);
 
   const handleAcceptAll = () => {
@@ -41,6 +49,18 @@ export default function CookieBanner() {
     setIsVisible(false);
   };
 
+  const handleRejectOptional = () => {
+    const allRejected = {
+      strictlyNecessary: true,
+      functional: false,
+      analytics: false,
+      marketing: false,
+    };
+    setPreferences(allRejected);
+    localStorage.setItem("nabtura_cookie_preferences", JSON.stringify(allRejected));
+    setIsVisible(false);
+  };
+
   const handleSavePreferences = () => {
     localStorage.setItem("nabtura_cookie_preferences", JSON.stringify(preferences));
     setIsVisible(false);
@@ -50,7 +70,7 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6 pointer-events-none flex justify-center">
-      <div className="bg-[#020504] border border-white/10 rounded-2xl shadow-2xl p-6 md:p-8 max-w-2xl w-full pointer-events-auto relative overflow-hidden">
+      <div className="bg-nabtura-slate border border-white/10 rounded-2xl shadow-2xl p-6 md:p-8 max-w-2xl w-full pointer-events-auto relative overflow-hidden">
         {/* Background Glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/10 blur-[80px] rounded-full pointer-events-none" />
 
@@ -66,7 +86,7 @@ export default function CookieBanner() {
               </button>
             </div>
             <p className="text-sm font-light text-gray-300 leading-relaxed mb-6 relative z-10">
-              We use cookies to operate this website safely, understand how you interact with it and, where permitted, support our marketing efforts. You can manage your preferences below.
+              We use essential technologies to keep the NABTURA website working. With your permission, we may also use optional cookies to improve functionality, understand website use and support relevant marketing.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
               <button
@@ -76,15 +96,25 @@ export default function CookieBanner() {
                 ACCEPT ALL
               </button>
               <button
+                onClick={handleRejectOptional}
+                className="w-full sm:w-auto border border-white/20 text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white/10 transition-colors text-center"
+              >
+                REJECT OPTIONAL
+              </button>
+              <button
                 onClick={() => setShowPreferences(true)}
                 className="w-full sm:w-auto border border-white/20 text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white/10 transition-colors text-center"
               >
                 MANAGE PREFERENCES
               </button>
             </div>
-            <div className="mt-6 text-center sm:text-left relative z-10">
+            <div className="mt-6 text-center sm:text-left relative z-10 flex items-center justify-center sm:justify-start gap-4">
+              <Link href="/legal/privacy-policy" className="text-xs text-nabtura-green hover:text-nabtura-light-green transition-colors font-bold uppercase tracking-widest">
+                Privacy Policy
+              </Link>
+              <span className="text-gray-500">&bull;</span>
               <Link href="/legal/cookie-policy" className="text-xs text-nabtura-green hover:text-nabtura-light-green transition-colors font-bold uppercase tracking-widest">
-                READ COOKIE POLICY
+                Cookie Policy
               </Link>
             </div>
           </div>
@@ -160,19 +190,27 @@ export default function CookieBanner() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-white/10">
               <button
                 onClick={handleSavePreferences}
                 className="w-full sm:w-auto bg-nabtura-green text-black px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-colors text-center"
               >
                 SAVE PREFERENCES
               </button>
-              <button
-                onClick={handleAcceptAll}
-                className="w-full sm:w-auto border border-white/20 text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white/10 transition-colors text-center"
-              >
-                ACCEPT ALL
-              </button>
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <button
+                  onClick={handleRejectOptional}
+                  className="w-full sm:w-auto border border-white/20 text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white/10 transition-colors text-center"
+                >
+                  REJECT OPTIONAL
+                </button>
+                <button
+                  onClick={handleAcceptAll}
+                  className="w-full sm:w-auto border border-white/20 text-white px-6 py-3 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-white/10 transition-colors text-center"
+                >
+                  ACCEPT ALL
+                </button>
+              </div>
             </div>
           </div>
         )}

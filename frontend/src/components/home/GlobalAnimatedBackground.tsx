@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function GlobalAnimatedBackground() {
   return (
-    <div className="fixed inset-0 -z-20 pointer-events-none overflow-hidden bg-[#020504]">
+    <div className="fixed inset-0 -z-20 pointer-events-none overflow-hidden bg-nabtura-slate">
       {/* Dynamic Gradient Base */}
       <motion.div
         className="absolute inset-0 opacity-80"

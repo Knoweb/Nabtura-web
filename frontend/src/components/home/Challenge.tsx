@@ -82,7 +82,7 @@ export default function Challenge() {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-8 leading-tight text-white max-w-4xl uppercase"
         >
-          THE CHALLENGES ARE CONNECTED.
+          THE CHALLENGES ARE CONNECTED
         </motion.h2>
 
         {/* Copy */}

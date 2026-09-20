@@ -259,7 +259,7 @@ export default function WhoWeServe() {
           </div>
 
           {/* Bottom Section: Dynamic Content Panel with Background Image */}
-          <div className="relative border border-white/10 rounded-[2rem] min-h-[700px] lg:min-h-[750px] flex flex-col shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden group bg-[#020504]">
+          <div className="relative border border-white/10 rounded-[2rem] min-h-[700px] lg:min-h-[750px] flex flex-col shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden group bg-nabtura-slate">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeContent.id}

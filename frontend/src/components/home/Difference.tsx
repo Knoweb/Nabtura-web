@@ -162,9 +162,9 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
             THE NABTURA APPROACH
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            NOT JUST GREEN.
+            NOT JUST GREEN
             <br />
-            <span className="text-nabtura-green">INTELLIGENTLY GREEN.</span>
+            <span className="text-nabtura-green">INTELLIGENTLY GREEN</span>
           </h2>
         </motion.div>
 

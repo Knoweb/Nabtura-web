@@ -6,7 +6,7 @@ export default function FluidWaves() {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
       {/* Background overlay to ensure text remains readable */}
-      <div className="absolute inset-0 bg-[#020504]/60 z-10"></div>
+      <div className="absolute inset-0 bg-nabtura-slate/60 z-10"></div>
       
       {/* Wave 1 - Green */}
       <motion.svg

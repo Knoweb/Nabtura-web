@@ -63,9 +63,9 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tighter text-white leading-tight drop-shadow-2xl flex flex-col gap-1 items-center mb-4"
         >
-          <span>GROW FOOD.</span>
-          <span className="text-gray-300">MANAGE WATER.</span>
-          <span className="text-nabtura-green">CREATE GREEN.</span>
+          <span>GROW FOOD</span>
+          <span className="text-gray-300">MANAGE WATER</span>
+          <span className="text-nabtura-green">CREATE GREEN</span>
         </motion.h1>
 
         {/* Supporting Line with dual elegant lines */}
