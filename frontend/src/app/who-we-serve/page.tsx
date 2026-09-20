@@ -57,6 +57,7 @@ export default function WhoWeServePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-light-green/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(74,222,128,0.15)] hover:-translate-y-2"
             >
+              <Link href="/who-we-serve/growers-farms" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View GROWERS & FARMS</span></Link>
               <div className="absolute inset-0 bg-[url('/images/uae_smart_greenhouse.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-light-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
 
@@ -86,6 +87,7 @@ export default function WhoWeServePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-light-green/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(74,222,128,0.15)] hover:-translate-y-2"
             >
+              <Link href="/who-we-serve/landowners" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View LANDOWNERS</span></Link>
               <div className="absolute inset-0 bg-[url('/images/dubai-landscapes.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-light-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
 
@@ -115,6 +117,7 @@ export default function WhoWeServePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-light-green/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(74,222,128,0.15)] hover:-translate-y-2"
             >
+              <Link href="/who-we-serve/investors-partners" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View ENTREPRENEURS</span></Link>
               <div className="absolute inset-0 bg-[url('/images/microgreens.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-light-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
 
@@ -183,6 +186,7 @@ export default function WhoWeServePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-white/[0.03] border border-white/10 p-10 rounded-[2rem] hover:border-nabtura-green/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(16,185,129,0.15)] hover:-translate-y-2"
             >
+              <Link href="/who-we-serve/hotels-resorts" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View HOTELS & RESORTS</span></Link>
               <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -202,6 +206,7 @@ export default function WhoWeServePage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-white/[0.03] border border-white/10 p-10 rounded-[2rem] hover:border-nabtura-green/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(16,185,129,0.15)] hover:-translate-y-2"
             >
+              <Link href="/who-we-serve/restaurants-fb" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View RESTAURANTS & F&B</span></Link>
               <div className="absolute inset-0 bg-[url('/images/before_microgreens.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -221,6 +226,7 @@ export default function WhoWeServePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-white/[0.03] border border-white/10 p-10 rounded-[2rem] hover:border-nabtura-green/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(16,185,129,0.15)] hover:-translate-y-2"
             >
+              <Link href="/who-we-serve/investors-partners" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View BUSINESSES & CORPORATE</span></Link>
               <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -290,6 +296,7 @@ export default function WhoWeServePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-sand/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(251,146,60,0.15)] hover:-translate-y-2">
+              <Link href="/who-we-serve/developers" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View PROPERTY DEVELOPERS</span></Link>
               <div className="absolute inset-0 bg-[url('/images/uae_green_city.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -302,6 +309,7 @@ export default function WhoWeServePage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-sand/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(251,146,60,0.15)] hover:-translate-y-2">
+              <Link href="/who-we-serve/developers" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View SCHOOLS & UNIVERSITIES</span></Link>
               <div className="absolute inset-0 bg-[url('/images/before_courtyard.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -314,6 +322,7 @@ export default function WhoWeServePage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-sand/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(251,146,60,0.15)] hover:-translate-y-2">
+              <Link href="/who-we-serve/developers" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View GOVERNMENT & INSTITUTIONS</span></Link>
               <div className="absolute inset-0 bg-[url('/images/uae_water_tech.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -326,6 +335,7 @@ export default function WhoWeServePage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-sand/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(251,146,60,0.15)] hover:-translate-y-2">
+              <Link href="/who-we-serve/developers" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View COMMUNITIES</span></Link>
               <div className="absolute inset-0 bg-[url('/images/before_arid.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -394,6 +404,7 @@ export default function WhoWeServePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-blue/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] hover:-translate-y-2">
+              <Link href="/who-we-serve/homes-villas" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View SMART HOME GREENHOUSE</span></Link>
               <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-blue/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
@@ -406,6 +417,7 @@ export default function WhoWeServePage() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="bg-white/[0.03] border border-white/10 p-8 rounded-[2rem] hover:border-nabtura-blue/40 transition-all duration-500 shadow-2xl group backdrop-blur-xl relative overflow-hidden flex flex-col justify-between hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] hover:-translate-y-2">
+              <Link href="/who-we-serve/homes-villas" className="absolute inset-0 z-50 rounded-[2rem] outline-none cursor-pointer"><span className="sr-only">View KITCHEN & EDIBLE GARDENS</span></Link>
               <div className="absolute inset-0 bg-[url('/images/before_microgreens.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-blue/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
