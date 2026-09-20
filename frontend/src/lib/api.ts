@@ -38,6 +38,8 @@ export async function submitEnquiry(data: {
   phone: string;
   company?: string;
   preferredContact?: string;
+  marketingConsent?: boolean;
+  privacyConsent?: boolean;
 }, file?: File) {
   const formData = new FormData();
   formData.append("data", JSON.stringify(data));

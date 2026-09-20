@@ -16,7 +16,7 @@ export type EnquiryType =
 
 interface EnquiryState {
   type: EnquiryType | null;
-  adaptiveAnswer: string;
+  adaptiveAnswer: Record<string, string>;
   projectDescription: string;
 }
 
@@ -28,7 +28,7 @@ interface EnquiryContextProps {
 
 const defaultState: EnquiryState = {
   type: null,
-  adaptiveAnswer: "",
+  adaptiveAnswer: {},
   projectDescription: "",
 };
 
