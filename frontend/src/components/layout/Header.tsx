@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight } from "lucide-react";
+import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight, Activity } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -82,6 +82,15 @@ export default function Header() {
       color: "text-nabtura-sand",
       links: [
         { name: "Environmental Projects", href: "/solutions/environmental-projects" }
+      ]
+    },
+    {
+      category: "SUPPORTING CAPABILITIES",
+      icon: Activity,
+      color: "text-yellow-500",
+      links: [
+        { name: "NABTURA SmartCare", href: "/capabilities/smartcare" },
+        { name: "NABTURA Nursery Solutions", href: "/capabilities/nursery-solutions" }
       ]
     }
   ];
@@ -207,25 +216,26 @@ export default function Header() {
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.95 }}
                             transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[700px] z-50"
+                            className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[260px] z-50"
                           >
-                            <div className="bg-[#050a08]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-nabtura-green/5 grid grid-cols-2 gap-x-12 gap-y-8">
+                            <div className="bg-[#050a08]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-nabtura-green/5 flex flex-col gap-4">
                               {solutionsMegaMenu.map((section, idx) => {
                                 const Icon = section.icon;
                                 return (
                                   <div key={idx} className="flex flex-col">
-                                    <div className={`flex items-center gap-2 mb-4 border-b border-white/5 pb-2`}>
+                                    <div className={`flex items-center gap-2 mb-2 border-b border-white/5 pb-1`}>
                                       <Icon className={`w-4 h-4 ${section.color}`} />
                                       <span className="text-[10px] font-bold tracking-widest text-white uppercase">{section.category}</span>
                                     </div>
-                                    <div className="flex flex-col gap-2">
+                                    <div className="flex flex-col gap-1">
                                       {section.links.map(sublink => (
                                         <Link 
                                           key={sublink.name} 
                                           href={sublink.href}
                                           onClick={() => setIsSolutionsHovered(false)}
-                                          className={`text-sm text-gray-400 hover:${section.color} hover:translate-x-1 transition-all flex items-center`}
+                                          className={`text-sm text-gray-300 hover:${section.color} hover:translate-x-1 transition-all flex items-center group py-1`}
                                         >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 group-hover:bg-current transition-colors shrink-0"></span>
                                           {sublink.name}
                                         </Link>
                                       ))}

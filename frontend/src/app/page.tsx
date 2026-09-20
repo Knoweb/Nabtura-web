@@ -20,6 +20,7 @@ import FinalCTA from "@/components/home/FinalCTA";
 import { fetchAPI } from "@/lib/api";
 
 import WhatNabturaDoes from "@/components/home/WhatNabturaDoes";
+import NurserySolutionsBanner from "@/components/home/NurserySolutionsBanner";
 
 export default async function Home() {
   let latestBlogs = [];
@@ -40,6 +41,7 @@ export default async function Home() {
         <Challenge />
         <Difference blogs={latestBlogs} />
         <FeaturedSolutions />
+        <NurserySolutionsBanner />
         <Ecosystem />
         <WhoWeServe />
         <GreenWhereItMatters />

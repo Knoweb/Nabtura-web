@@ -37,7 +37,7 @@ const featured = [
 
 export default function FeaturedSolutions() {
   return (
-    <section className="bg-[#020504] text-white py-20 md:py-32 border-t border-white/5 relative">
+    <section className="bg-[#020504] text-white pt-20 pb-10 md:pt-32 md:pb-16 border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
