@@ -31,7 +31,8 @@ export default function Footer() {
               NABTURA
             </h2>
             <p className="text-sm font-light text-content-muted leading-relaxed">
-              Intelligent Agriculture. <br/>Sustainable Futures.
+              <Link href="/capabilities/smartcare" className="hover:text-white transition-colors">NABTURA SmartCare</Link> <br/>
+              <Link href="/capabilities/nursery-solutions" className="hover:text-white transition-colors">NABTURA Nursery Solutions</Link>
             </p>
             <div className="space-y-3 font-light text-sm">
               <div className="flex items-center gap-3">
