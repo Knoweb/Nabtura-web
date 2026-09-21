@@ -6,7 +6,8 @@ import MiniSelector, { SelectorOption } from "@/components/audience/MiniSelector
 import FeatureGrid from "@/components/audience/FeatureGrid";
 import ProcessFlow from "@/components/audience/ProcessFlow";
 import HighlightSection from "@/components/audience/HighlightSection";
-import { Leaf, Utensils, Sprout, Trees, Droplets, Heart, Sparkles } from "lucide-react";
+import GlobalAnimatedBackground from "@/components/home/GlobalAnimatedBackground";
+import { Leaf, Utensils, Sprout, Trees, Droplets, Heart, Sparkles, ArrowRight } from "lucide-react";
 
 export default function HotelsResortsPage() {
   const options: SelectorOption[] = [
@@ -19,7 +20,7 @@ export default function HotelsResortsPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-nabtura-slate pt-20 overflow-hidden font-sans">
+    <main className="min-h-screen pt-20 overflow-hidden font-sans">
       <SolutionHero
         eyebrow="NABTURA FOR HOTELS & RESORTS"
         headline={<>TURN GREEN <br className="hidden sm:block" />INTO AN EXPERIENCE.</>}
@@ -27,36 +28,57 @@ export default function HotelsResortsPage() {
         description="NABTURA helps hotels and resorts create green environments that can enhance the guest experience, food experience, landscape and use of water."
         bgImageUrl="/images/landscapes.jpg"
         accentColor="text-nabtura-green"
-      />
+      >
+        <button 
+          onClick={() => {
+            window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+          }}
+          className="inline-flex items-center gap-2 bg-nabtura-green text-black px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-all shadow-[0_0_20px_rgba(46,204,113,0.3)] hover:shadow-[0_0_30px_rgba(46,204,113,0.5)]"
+        >
+          EXPLORE THE POSSIBILITIES <ArrowRight className="w-4 h-4 rotate-90" />
+        </button>
+      </SolutionHero>
+
+      {/* Ambient background for the whole page (Static blurred ones removed, using Animated Background) */}
+      <GlobalAnimatedBackground />
 
       {/* 2. WHAT COULD YOU CREATE? */}
-      <FeatureGrid
-        eyebrow="WHAT COULD YOU CREATE?"
-        headline={<>GREEN CAN BECOME <br className="hidden md:block"/>PART OF THE EXPERIENCE.</>}
-        features={[
-          { title: "RESORT LANDSCAPES", description: "Create distinctive green environments.", icon: <Trees className="w-8 h-8" /> },
-          { title: "CHEF GARDENS", description: "Grow herbs, vegetables and selected produce closer to the kitchen.", icon: <Utensils className="w-8 h-8" /> },
-          { title: "SMART MICROGREENS", description: "Fresh microgreens grown close to where they are served.", icon: <Sprout className="w-8 h-8" /> },
-          { title: "EDIBLE LANDSCAPES", description: "Bring productive planting into the guest environment.", icon: <Leaf className="w-8 h-8" /> },
-          { title: "DINING FORESTS", description: "Create dining experiences surrounded by nature.", icon: <Sparkles className="w-8 h-8" /> },
-          { title: "WELLNESS GARDENS", description: "Green spaces designed around relaxation and wellbeing.", icon: <Heart className="w-8 h-8" /> },
-          { title: "URBAN OASES", description: "Transform suitable spaces into immersive green environments.", icon: <Trees className="w-8 h-8" /> }
-        ]}
-        accentColor="text-nabtura-green"
-      />
+      <div className="-mt-10 relative z-20">
+        <FeatureGrid
+          eyebrow="WHAT COULD YOU CREATE?"
+          headline={<>GREEN CAN BECOME <br className="hidden md:block"/>PART OF THE EXPERIENCE.</>}
+          features={[
+            { title: "RESORT LANDSCAPES", description: "Create distinctive green environments.", icon: <Trees className="w-8 h-8" /> },
+            { title: "CHEF GARDENS", description: "Grow herbs, vegetables and selected produce closer to the kitchen.", icon: <Utensils className="w-8 h-8" /> },
+            { title: "SMART MICROGREENS", description: "Fresh microgreens grown close to where they are served.", icon: <Sprout className="w-8 h-8" /> },
+            { title: "EDIBLE LANDSCAPES", description: "Bring productive planting into the guest environment.", icon: <Leaf className="w-8 h-8" /> },
+            { title: "DINING FORESTS", description: "Create dining experiences surrounded by nature.", icon: <Sparkles className="w-8 h-8" /> },
+            { title: "WELLNESS GARDENS", description: "Green spaces designed around relaxation and wellbeing.", icon: <Heart className="w-8 h-8" /> },
+            { title: "URBAN OASES", description: "Transform suitable spaces into immersive green environments.", icon: <Trees className="w-8 h-8" /> }
+          ]}
+          accentColor="text-nabtura-green"
+        />
+      </div>
 
       {/* 3. FROM GROWING TO THE GUEST */}
-      <div className="border-t border-white/5 bg-gradient-to-b from-transparent to-nabtura-green/5">
+      <div className="relative z-10 -mt-8">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-nabtura-green/5 to-transparent pointer-events-none -z-10" />
         <ProcessFlow
           headline={<>GROW.<br/>SERVE.<br/>EXPERIENCE.</>}
           description="Growing can become part of the hospitality story. Bring food closer. Bring nature closer."
-          steps={["GROW", "HARVEST", "KITCHEN", "PLATE", "EXPERIENCE"]}
+          steps={[
+            { title: "GROW", icon: <Sprout /> },
+            { title: "HARVEST", icon: <Leaf /> },
+            { title: "KITCHEN", icon: <Utensils /> },
+            { title: "PLATE", icon: <Heart /> },
+            { title: "EXPERIENCE", icon: <Sparkles /> }
+          ]}
           accentColor="text-nabtura-green"
         />
       </div>
 
       {/* 4. WATER + GREEN */}
-      <div className="border-t border-white/5">
+      <div className="relative z-20 -mt-8">
         <HighlightSection
           headline={<>BEAUTIFUL GREEN <br className="hidden md:block"/>NEEDS SMARTER WATER.</>}
           description={<>NABTURA Smart Irrigation can connect landscape requirements with more intelligent water delivery, monitoring and management.<br/><br/><span className="text-white font-bold tracking-widest uppercase">EVERY DROP HAS VALUE.</span></>}
@@ -67,12 +89,25 @@ export default function HotelsResortsPage() {
       </div>
 
       {/* 5. SUPPORTING THE PROJECT */}
-      <div className="border-t border-white/5 bg-gradient-to-b from-nabtura-green/5 to-transparent">
+      <div className="relative z-10 -mt-8">
+        <div className="absolute inset-0 bg-gradient-to-t from-transparent via-nabtura-green/5 to-transparent pointer-events-none -z-10" />
         <FeatureGrid
           headline={<>FROM PLANTS <br className="hidden md:block"/>TO PERFORMANCE.</>}
           features={[
-            { title: "NABTURA NURSERY SOLUTIONS", description: "Project-specific plant sourcing, nursery coordination, preparation and supply." },
-            { title: "NABTURA SMARTCARE", description: "Ongoing care, monitoring, management and optimization." }
+            { 
+              title: "NABTURA NURSERY SOLUTIONS", 
+              description: "Project-specific plant sourcing, nursery coordination, preparation and supply.",
+              image: "/images/dubai-greenhouse.jpg",
+              ctaText: "EXPLORE NURSERY SOLUTIONS",
+              ctaLink: "/capabilities/nursery-solutions" 
+            },
+            { 
+              title: "NABTURA SMARTCARE", 
+              description: "Ongoing care, monitoring, management and optimization.",
+              image: "/images/uae_smart_greenhouse.jpg",
+              ctaText: "EXPLORE SMARTCARE",
+              ctaLink: "/capabilities/smartcare" 
+            }
           ]}
           accentColor="text-nabtura-green"
         />
@@ -85,7 +120,7 @@ export default function HotelsResortsPage() {
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-nabtura-green/10"
-        submitButtonText="CREATE MY HOSPITALITY GREEN CONCEPT →"
+        submitButtonText="CREATE MY HOSPITALITY GREEN CONCEPT"
       />
     </main>
   );

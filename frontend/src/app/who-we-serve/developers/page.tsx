@@ -99,7 +99,7 @@ export default function DevelopersPage() {
         options={options}
         accentColor="text-nabtura-yellow"
         bgGradient="from-nabtura-yellow/10"
-        submitButtonText="DISCUSS MY DEVELOPMENT →"
+        submitButtonText="DISCUSS MY DEVELOPMENT"
       />
     </main>
   );

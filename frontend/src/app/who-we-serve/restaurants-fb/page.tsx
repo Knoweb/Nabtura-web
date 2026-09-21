@@ -4,8 +4,11 @@ import React from "react";
 import SolutionHero from "@/components/solutions/SolutionHero";
 import MiniSelector, { SelectorOption } from "@/components/audience/MiniSelector";
 import FeatureGrid from "@/components/audience/FeatureGrid";
+import CircularFeatureGrid from "@/components/audience/CircularFeatureGrid";
 import HighlightSection from "@/components/audience/HighlightSection";
 import { Sprout, Utensils, Leaf, Sparkles, Trees, Droplets, Lightbulb } from "lucide-react";
+
+import FloatingLines from "@/components/home/FloatingLines";
 
 export default function RestaurantsFBPage() {
   const options: SelectorOption[] = [
@@ -17,7 +20,23 @@ export default function RestaurantsFBPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-nabtura-slate pt-20 overflow-hidden font-sans">
+    <main className="min-h-screen pt-20 overflow-hidden font-sans relative">
+      <div className="fixed inset-0 -z-20 bg-[#050B08]">
+        <FloatingLines 
+          enabledWaves={["top","middle","bottom"]}
+          lineCount={8}
+          lineDistance={8}
+          bendRadius={8}
+          bendStrength={-2}
+          interactive={true}
+          parallax={true}
+          animationSpeed={1}
+          linesGradient={['#2ecc71', '#061a12', '#145a32']}
+        />
+        {/* Dark overlay to dim the lines and make text readable */}
+        <div className="absolute inset-0 bg-[#050B08]/70 pointer-events-none" />
+      </div>
+
       <SolutionHero
         eyebrow="NABTURA FOR RESTAURANTS & F&B"
         headline={<>GROW.<br className="hidden sm:block" />SERVE.<br className="hidden sm:block" />EXPERIENCE.</>}
@@ -25,7 +44,11 @@ export default function RestaurantsFBPage() {
         description="NABTURA creates smart growing and green concepts for restaurants, cafés and food businesses."
         bgImageUrl="/images/landscapes.jpg"
         accentColor="text-nabtura-green"
-      />
+      >
+        <button onClick={() => window.scrollTo({ top: 800, behavior: 'smooth' })} className="px-8 py-4 bg-nabtura-green text-black font-bold text-xs tracking-[0.2em] uppercase rounded-full hover:bg-white hover:scale-105 transition-all shadow-[0_0_20px_rgba(46,204,113,0.4)]">
+          EXPLORE THE POSSIBILITIES &darr;
+        </button>
+      </SolutionHero>
 
       {/* 2. GROW CLOSER */}
       <FeatureGrid
@@ -41,16 +64,15 @@ export default function RestaurantsFBPage() {
       />
 
       {/* 3. CREATE AN EXPERIENCE */}
-      <div className="border-t border-white/5 bg-gradient-to-b from-transparent to-nabtura-green/5">
-        <FeatureGrid
-          eyebrow="CREATE AN EXPERIENCE"
+      <div className="relative z-10 -mt-8">
+        <CircularFeatureGrid
           headline={<>GREEN CAN BECOME <br className="hidden md:block"/>PART OF DINING.</>}
           description="Don't just add green. Give it a purpose."
           features={[
-            { title: "EDIBLE LANDSCAPE", description: "Combine visual planting with selected productive plants.", icon: <Leaf className="w-8 h-8" /> },
-            { title: "DINING FOREST", description: "Create a dining environment immersed in green.", icon: <Sparkles className="w-8 h-8" /> },
-            { title: "GREEN COURTYARD", description: "Transform outdoor or semi-outdoor spaces.", icon: <Trees className="w-8 h-8" /> },
-            { title: "CUSTOM GREEN CONCEPT", description: "Develop something around the restaurant, location and experience.", icon: <Utensils className="w-8 h-8" /> }
+            { title: "EDIBLE LANDSCAPE", description: "Combine visual planting with selected productive plants.", icon: <Leaf />, bgImage: "/images/dubai-greenhouse.jpg" },
+            { title: "DINING FOREST", description: "Create a dining environment immersed in green.", icon: <Sparkles />, bgImage: "/images/landscapes.jpg" },
+            { title: "GREEN COURTYARD", description: "Transform outdoor or semi-outdoor spaces.", icon: <Trees />, bgImage: "/images/dubai-water.jpg" },
+            { title: "CUSTOM GREEN CONCEPT", description: "Develop something around the restaurant, location and experience.", icon: <Utensils />, bgImage: "/images/microgreens.jpg" }
           ]}
           accentColor="text-nabtura-green"
         />
@@ -74,7 +96,7 @@ export default function RestaurantsFBPage() {
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-nabtura-green/10"
-        submitButtonText="CREATE MY RESTAURANT CONCEPT →"
+        submitButtonText="CREATE MY RESTAURANT CONCEPT"
       />
     </main>
   );

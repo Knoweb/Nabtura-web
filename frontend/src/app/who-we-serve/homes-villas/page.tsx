@@ -103,7 +103,7 @@ export default function HomesVillasPage() {
         options={options}
         accentColor="text-nabtura-blue"
         bgGradient="from-nabtura-blue/10"
-        submitButtonText="CREATE MY HOME GREEN CONCEPT →"
+        submitButtonText="CREATE MY HOME GREEN CONCEPT"
       />
     </main>
   );

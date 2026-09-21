@@ -36,7 +36,7 @@ export default function InvestorsPartnersPage() {
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-transparent"
-        submitButtonText="EXPLORE INVESTMENT & PARTNERSHIPS →"
+        submitButtonText="EXPLORE INVESTMENT & PARTNERSHIPS"
         submitHref="/investors-partners" // Or wherever the real investment page is
       />
 

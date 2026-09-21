@@ -84,7 +84,7 @@ export default function GrowersFarmsPage() {
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-nabtura-green/10"
-        submitButtonText="DISCUSS MY GROWING PROJECT →"
+        submitButtonText="DISCUSS MY GROWING PROJECT"
       />
     </main>
   );
