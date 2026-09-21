@@ -156,7 +156,16 @@ export default function ContactPage() {
         tagline="Have a project, space, land, idea or opportunity? Tell us what you're looking to achieve and we'll help identify the right NABTURA path."
         bgImageUrl="/possibility_smart_greenhouse_1788160454551.jpg"
         accentColor="text-white"
-      />
+      >
+        <button 
+          onClick={() => {
+            document.getElementById('router')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+          className="inline-flex items-center gap-2 bg-nabtura-green text-black px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-all shadow-[0_0_20px_rgba(46,204,113,0.3)] hover:shadow-[0_0_30px_rgba(46,204,113,0.5)]"
+        >
+          START BELOW <ArrowRight className="w-4 h-4 rotate-90" />
+        </button>
+      </SolutionHero>
 
       <section id="router" className="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -171,20 +180,24 @@ export default function ContactPage() {
             </p>
           </div>
         ) : (
-          <div className="bg-nabtura-slate p-8 md:p-12 rounded-[2rem] border border-white/10 shadow-2xl relative overflow-hidden">
-            {/* Ambient Background */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-nabtura-green/5 blur-[100px] rounded-full pointer-events-none" />
+          <div className="bg-[#061A12]/80 backdrop-blur-3xl p-8 md:p-14 rounded-[2.5rem] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+            {/* Ambient Backgrounds inside form */}
+            <div className="absolute -top-40 -right-40 w-96 h-96 bg-nabtura-green/10 blur-[120px] rounded-full pointer-events-none" />
+            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-nabtura-blue/10 blur-[120px] rounded-full pointer-events-none" />
 
             {/* Progress Header */}
-            <div className="flex items-center justify-between mb-12 relative z-10 border-b border-white/10 pb-6">
-              {step > 1 && (
-                <button onClick={handlePrevStep} className="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-gray-400 hover:text-white transition-colors">
-                  <ChevronLeft className="w-4 h-4" /> BACK
-                </button>
-              )}
-              <div className="flex gap-2 ml-auto">
+            <div className="flex items-center justify-between mb-12 relative z-10 border-b border-white/5 pb-8">
+              <div className="flex-1">
+                {step > 1 && (
+                  <button onClick={handlePrevStep} className="group flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-gray-400 hover:text-white transition-all">
+                    <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> BACK
+                  </button>
+                )}
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-500 mr-2 hidden sm:block">STEP {step} OF 4</span>
                 {[1, 2, 3, 4].map(s => (
-                  <div key={s} className={`w-12 h-1 rounded-full transition-colors ${s <= step ? 'bg-nabtura-green' : 'bg-white/10'}`} />
+                  <div key={s} className={`h-1.5 rounded-full transition-all duration-500 ${s === step ? 'w-12 bg-nabtura-green shadow-[0_0_10px_rgba(46,204,113,0.5)]' : s < step ? 'w-6 bg-nabtura-green/50' : 'w-6 bg-white/10'}`} />
                 ))}
               </div>
             </div>
@@ -193,36 +206,40 @@ export default function ContactPage() {
               
               {/* STEP 1: ENQUIRY TYPE */}
               {step === 1 && (
-                <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-8">WHAT WOULD YOU<br/>LIKE TO DO?</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight">WHAT WOULD YOU<br/><span className="text-gray-400">LIKE TO DO?</span></h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {ENQUIRY_OPTIONS.map((option) => (
                       <button
                         key={option.id}
                         type="button"
                         onClick={() => {
                           setEnquiryType(option.id as EnquiryType);
-                          setAdaptiveAnswer({}); // reset answer when changing type
+                          setAdaptiveAnswer({});
                         }}
-                        className={`text-left p-6 rounded-2xl border transition-all ${enquiryType === option.id ? 'border-nabtura-green bg-nabtura-green/10 shadow-[0_0_20px_rgba(46,204,113,0.1)]' : 'border-white/10 bg-white/5 hover:border-white/30 hover:bg-white/10'}`}
+                        className={`group relative text-left p-6 md:p-8 rounded-2xl border transition-all duration-500 overflow-hidden ${enquiryType === option.id ? 'border-nabtura-green bg-nabtura-green/10 shadow-[0_0_30px_rgba(46,204,113,0.15)] scale-[1.02]' : 'border-white/5 bg-white/5 hover:border-white/20 hover:bg-white/10 hover:-translate-y-1'}`}
                       >
-                        <h3 className={`text-sm font-bold tracking-widest uppercase mb-2 ${enquiryType === option.id ? 'text-nabtura-green' : 'text-white'}`}>
+                        <div className={`absolute -right-10 -bottom-10 w-40 h-40 bg-nabtura-green/20 rounded-full blur-3xl transition-opacity duration-700 ${enquiryType === option.id ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'}`} />
+                        
+                        <h3 className={`relative z-10 text-sm font-black tracking-widest uppercase mb-3 transition-colors duration-300 ${enquiryType === option.id ? 'text-nabtura-green drop-shadow-[0_0_10px_rgba(46,204,113,0.5)]' : 'text-white group-hover:text-nabtura-green'}`}>
                           {option.title}
                         </h3>
-                        <p className="text-xs text-gray-400 font-light leading-relaxed">
+                        <p className="relative z-10 text-xs text-gray-400 font-light leading-relaxed">
                           {option.subtitle}
                         </p>
                       </button>
                     ))}
                   </div>
-                  <div className="mt-12 flex justify-end">
+                  <div className="mt-14 flex justify-end">
                     <button 
                       type="button" 
                       onClick={handleNextStep}
                       disabled={!enquiryType}
-                      className="bg-nabtura-green text-black px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                      className="group relative overflow-hidden bg-nabtura-green text-black px-10 py-5 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-all shadow-[0_0_20px_rgba(46,204,113,0.3)] hover:shadow-[0_0_30px_rgba(46,204,113,0.5)] disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-3"
                     >
-                      CONTINUE <ArrowRight className="w-4 h-4" />
+                      <span className="relative z-10">CONTINUE</span>
+                      <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                     </button>
                   </div>
                 </div>
@@ -230,22 +247,23 @@ export default function ContactPage() {
 
               {/* STEP 2: ADAPTIVE QUESTIONS */}
               {step === 2 && adaptiveQuestions && (
-                <div className="animate-in fade-in slide-in-from-right-8 duration-500">
-                  <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-8">TELL US<br/>A LITTLE MORE.</h2>
+                <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight">TELL US<br/><span className="text-gray-400">A LITTLE MORE.</span></h2>
                   
-                  <div className="space-y-8">
+                  <div className="space-y-10">
                     {adaptiveQuestions.map((q) => (
                       <div key={q.key}>
-                        <label className="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-4">{q.label}</label>
-                        <div className="flex flex-wrap gap-3">
+                        <label className="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-5">{q.label}</label>
+                        <div className="flex flex-wrap gap-4">
                           {q.options.map(opt => (
                             <button
                               key={opt}
                               type="button"
                               onClick={() => setAdaptiveAnswer({ ...adaptiveAnswer, [q.key]: opt })}
-                              className={`px-5 py-3 rounded-xl border text-xs font-bold tracking-widest uppercase transition-all ${adaptiveAnswer[q.key] === opt ? 'border-nabtura-green bg-nabtura-green/10 text-nabtura-green' : 'border-white/10 bg-white/5 text-white hover:border-white/30 hover:bg-white/10'}`}
+                              className={`group relative overflow-hidden px-6 py-4 rounded-xl border text-xs font-bold tracking-widest uppercase transition-all duration-500 ${adaptiveAnswer[q.key] === opt ? 'border-nabtura-green bg-nabtura-green/10 text-nabtura-green shadow-[0_0_20px_rgba(46,204,113,0.15)] scale-[1.02]' : 'border-white/5 bg-white/5 text-white hover:border-white/20 hover:bg-white/10 hover:-translate-y-1'}`}
                             >
-                              {opt}
+                              <div className={`absolute -right-5 -bottom-5 w-20 h-20 bg-nabtura-green/20 rounded-full blur-2xl transition-opacity duration-700 ${adaptiveAnswer[q.key] === opt ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'}`} />
+                              <span className="relative z-10">{opt}</span>
                             </button>
                           ))}
                         </div>
@@ -253,14 +271,16 @@ export default function ContactPage() {
                     ))}
                   </div>
                   
-                  <div className="mt-12 flex justify-end">
+                  <div className="mt-14 flex justify-end">
                     <button 
                       type="button" 
                       onClick={handleNextStep}
                       disabled={!isStep2Valid()}
-                      className="bg-nabtura-green text-black px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                      className="group relative overflow-hidden bg-nabtura-green text-black px-10 py-5 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-all shadow-[0_0_20px_rgba(46,204,113,0.3)] hover:shadow-[0_0_30px_rgba(46,204,113,0.5)] disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-3"
                     >
-                      CONTINUE <ArrowRight className="w-4 h-4" />
+                      <span className="relative z-10">CONTINUE</span>
+                      <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                     </button>
                   </div>
                 </div>
@@ -268,17 +288,17 @@ export default function ContactPage() {
 
               {/* STEP 3: PROJECT INFORMATION */}
               {step === 3 && (
-                <div className="animate-in fade-in slide-in-from-right-8 duration-500 space-y-8">
-                  <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-2">SHOW US<br/>WHAT YOU HAVE.</h2>
+                <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 space-y-10">
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-2 leading-tight">SHOW US<br/><span className="text-gray-400">WHAT YOU HAVE.</span></h2>
                   
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                     <div>
                       <label className="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Project Location</label>
                       <input 
                         type="text" 
                         value={projectInfo.location} 
                         onChange={e => setProjectInfo({ ...projectInfo, location: e.target.value })} 
-                        className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder-gray-600 focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-colors" 
+                        className="w-full bg-[#030d09]/50 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-600 focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-all duration-300 shadow-inner" 
                         placeholder="Country / City"
                       />
                     </div>
@@ -287,13 +307,13 @@ export default function ContactPage() {
                       <select
                         value={projectInfo.stage}
                         onChange={e => setProjectInfo({ ...projectInfo, stage: e.target.value })}
-                        className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder-gray-600 focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-colors appearance-none"
+                        className="w-full bg-[#030d09]/50 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-600 focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-all duration-300 appearance-none shadow-inner"
                       >
-                        <option value="" disabled>Select Stage</option>
-                        <option value="Exploring an Idea">Exploring an Idea</option>
-                        <option value="Planning">Planning</option>
-                        <option value="Ready to Develop">Ready to Develop</option>
-                        <option value="Existing Project / System">Existing Project / System</option>
+                        <option className="bg-[#061A12] text-gray-400" value="" disabled>Select Stage</option>
+                        <option className="bg-[#061A12] text-white" value="Exploring an Idea">Exploring an Idea</option>
+                        <option className="bg-[#061A12] text-white" value="Planning">Planning</option>
+                        <option className="bg-[#061A12] text-white" value="Ready to Develop">Ready to Develop</option>
+                        <option className="bg-[#061A12] text-white" value="Existing Project / System">Existing Project / System</option>
                       </select>
                     </div>
                   </div>
@@ -302,43 +322,46 @@ export default function ContactPage() {
                     <label className="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">WHAT ARE YOU LOOKING TO ACHIEVE? *</label>
                     <textarea 
                       required 
-                      rows={4} 
+                      rows={5} 
                       value={projectInfo.description} 
                       onChange={e => setProjectInfo({ ...projectInfo, description: e.target.value })} 
-                      className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white placeholder-gray-600 focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-colors"
-                      placeholder="Short description..."
+                      className="w-full bg-[#030d09]/50 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-600 focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-all duration-300 shadow-inner resize-none"
+                      placeholder="Short description of your vision, space, or requirements..."
                     ></textarea>
                   </div>
 
-                  <div className="pt-4 border-t border-white/10">
-                    <h3 className="text-xl font-bold text-white mb-2">SOMETIMES A PHOTO SAYS MORE.</h3>
-                    <p className="text-sm font-light text-gray-400 mb-6">Have a site, rooftop, garden, land parcel, existing system or space you want to transform? Send us a photo, drawing, plan or project brief with your enquiry.</p>
-                    <label className="block border-2 border-dashed border-white/10 rounded-xl p-8 text-center hover:border-nabtura-green/50 hover:bg-nabtura-green/5 transition-colors group cursor-pointer">
+                  <div className="pt-8 border-t border-white/5">
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-3 tracking-tight">SOMETIMES A PHOTO SAYS MORE.</h3>
+                    <p className="text-sm font-light text-gray-400 mb-6 max-w-2xl">Have a site, rooftop, garden, land parcel, existing system or space you want to transform? Send us a photo, drawing, plan or project brief with your enquiry.</p>
+                    <label className="relative block border-2 border-dashed border-white/10 rounded-[2rem] p-12 text-center hover:border-nabtura-green/50 bg-[#030d09]/30 hover:bg-nabtura-green/5 transition-all duration-500 group cursor-pointer overflow-hidden">
+                      <div className="absolute inset-0 bg-nabtura-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                       <input 
                         type="file" 
                         className="hidden" 
                         onChange={(e) => setAttachment(e.target.files?.[0] || null)}
                       />
-                      <Upload className="w-8 h-8 text-gray-500 mx-auto mb-4 group-hover:text-nabtura-green transition-colors" />
+                      <Upload className="w-10 h-10 text-gray-500 mx-auto mb-5 group-hover:text-nabtura-green group-hover:-translate-y-2 transition-all duration-500 relative z-10" />
                       {attachment ? (
-                        <p className="text-sm font-bold text-nabtura-green">{attachment.name}</p>
+                        <p className="text-sm font-bold tracking-wider text-nabtura-green relative z-10">{attachment.name}</p>
                       ) : (
-                        <p className="text-sm font-light text-gray-400">UPLOAD & START A CONVERSATION &rarr;</p>
+                        <p className="text-sm font-bold tracking-widest text-gray-400 group-hover:text-white transition-colors relative z-10 uppercase">UPLOAD & START A CONVERSATION &rarr;</p>
                       )}
                     </label>
-                    <p className="mt-3 text-xs font-light text-gray-500 leading-relaxed text-center">
+                    <p className="mt-4 text-xs font-light text-gray-500 leading-relaxed text-center">
                       Please only upload materials you are authorized to share. Avoid including unnecessary personal or sensitive information.
                     </p>
                   </div>
 
-                  <div className="mt-12 flex justify-end">
+                  <div className="mt-14 flex justify-end">
                     <button 
                       type="button" 
                       onClick={handleNextStep}
                       disabled={!projectInfo.description}
-                      className="bg-nabtura-green text-black px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                      className="group relative overflow-hidden bg-nabtura-green text-black px-10 py-5 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-all shadow-[0_0_20px_rgba(46,204,113,0.3)] hover:shadow-[0_0_30px_rgba(46,204,113,0.5)] disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-3"
                     >
-                      CONTINUE <ArrowRight className="w-4 h-4" />
+                      <span className="relative z-10">CONTINUE</span>
+                      <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                     </button>
                   </div>
                 </div>
@@ -346,8 +369,8 @@ export default function ContactPage() {
 
               {/* STEP 4: CONTACT DETAILS */}
               {step === 4 && (
-                <div className="animate-in fade-in slide-in-from-right-8 duration-500 space-y-8">
-                  <h2 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-8">HOW SHOULD<br/>WE REACH YOU?</h2>
+                <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 space-y-10">
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight">HOW SHOULD<br/><span className="text-gray-400">WE REACH YOU?</span></h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
@@ -357,7 +380,7 @@ export default function ContactPage() {
                         type="text" 
                         value={contactDetails.name} 
                         onChange={e => setContactDetails({ ...contactDetails, name: e.target.value })} 
-                        className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-colors" 
+                        className="w-full bg-[#030d09]/50 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-all duration-300 shadow-inner" 
                       />
                     </div>
                     <div>
@@ -366,7 +389,7 @@ export default function ContactPage() {
                         type="text" 
                         value={contactDetails.company} 
                         onChange={e => setContactDetails({ ...contactDetails, company: e.target.value })} 
-                        className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-colors" 
+                        className="w-full bg-[#030d09]/50 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-all duration-300 shadow-inner" 
                       />
                     </div>
                     <div>
@@ -376,7 +399,7 @@ export default function ContactPage() {
                         type="email" 
                         value={contactDetails.email} 
                         onChange={e => setContactDetails({ ...contactDetails, email: e.target.value })} 
-                        className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-colors" 
+                        className="w-full bg-[#030d09]/50 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-all duration-300 shadow-inner" 
                       />
                     </div>
                     <div>
@@ -386,35 +409,36 @@ export default function ContactPage() {
                         type="tel" 
                         value={contactDetails.phone} 
                         onChange={e => setContactDetails({ ...contactDetails, phone: e.target.value })} 
-                        className="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-colors" 
+                        className="w-full bg-[#030d09]/50 border border-white/10 rounded-2xl p-5 text-white focus:outline-none focus:border-nabtura-green focus:bg-white/10 transition-all duration-300 shadow-inner" 
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-3">Preferred Contact Method</label>
-                    <div className="grid grid-cols-3 gap-4">
+                    <label className="block text-xs font-bold tracking-widest uppercase text-gray-400 mb-4">Preferred Contact Method</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {["Email", "Phone", "WhatsApp"].map(method => (
                         <button
                           key={method}
                           type="button"
                           onClick={() => setContactDetails({ ...contactDetails, preferredContact: method })}
-                          className={`p-4 rounded-xl border text-xs font-bold tracking-widest uppercase transition-colors ${contactDetails.preferredContact === method ? 'border-nabtura-green bg-nabtura-green/10 text-nabtura-green' : 'border-white/10 bg-white/5 hover:bg-white/10 text-white'}`}
+                          className={`group relative overflow-hidden p-5 rounded-2xl border text-xs font-bold tracking-widest uppercase transition-all duration-500 ${contactDetails.preferredContact === method ? 'border-nabtura-green bg-nabtura-green/10 text-nabtura-green shadow-[0_0_15px_rgba(46,204,113,0.15)] scale-[1.02]' : 'border-white/5 bg-white/5 hover:border-white/20 hover:bg-white/10 text-white hover:-translate-y-1'}`}
                         >
-                          {method}
+                          <div className={`absolute -right-5 -bottom-5 w-16 h-16 bg-nabtura-green/20 rounded-full blur-xl transition-opacity duration-700 ${contactDetails.preferredContact === method ? 'opacity-100' : 'opacity-0 group-hover:opacity-60'}`} />
+                          <span className="relative z-10">{method}</span>
                         </button>
                       ))}
                     </div>
                     {contactDetails.preferredContact === "WhatsApp" && (
-                      <p className="mt-3 text-xs font-light text-gray-500 leading-relaxed">
+                      <div className="mt-4 p-4 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-light leading-relaxed animate-in fade-in slide-in-from-top-2">
                         Prefer WhatsApp? By choosing WhatsApp, you will continue through a third-party communication service subject to its own terms and privacy practices.
-                      </p>
+                      </div>
                     )}
                   </div>
 
-                  <div className="pt-6 border-t border-white/10 space-y-4">
-                    <label className="flex items-start gap-4 cursor-pointer group">
-                      <div className="relative flex items-center justify-center mt-1">
+                  <div className="pt-8 border-t border-white/5 space-y-5">
+                    <label className="flex items-start gap-5 cursor-pointer group p-4 rounded-2xl hover:bg-white/5 transition-colors">
+                      <div className="relative flex items-center justify-center mt-0.5">
                         <input 
                           type="checkbox" 
                           required
@@ -422,51 +446,52 @@ export default function ContactPage() {
                           onChange={e => setPrivacyConsent(e.target.checked)}
                           className="sr-only"
                         />
-                        <div className={`w-6 h-6 rounded border transition-colors flex items-center justify-center ${privacyConsent ? 'bg-nabtura-green border-nabtura-green' : 'border-gray-500 group-hover:border-nabtura-green bg-white/5'}`}>
-                          {privacyConsent && <Check className="w-4 h-4 text-black" />}
+                        <div className={`w-6 h-6 rounded border transition-all duration-300 flex items-center justify-center ${privacyConsent ? 'bg-nabtura-green border-nabtura-green shadow-[0_0_10px_rgba(46,204,113,0.4)]' : 'border-gray-500 group-hover:border-nabtura-green bg-white/5'}`}>
+                          {privacyConsent && <Check className="w-4 h-4 text-black scale-100 animate-in zoom-in duration-200" />}
                         </div>
                       </div>
-                      <p className="text-xs font-light text-gray-400 leading-relaxed">
+                      <p className="text-xs font-light text-gray-400 leading-relaxed pt-0.5">
                         By submitting this form, you agree that NABTURA / INFORGRID FZC may use the information you provide to respond to your enquiry and manage related communications in accordance with our <Link href="/legal/privacy-policy" className="text-nabtura-green hover:underline">Privacy Policy</Link>.
                       </p>
                     </label>
                     
-                    <label className="flex items-start gap-4 cursor-pointer group">
-                      <div className="relative flex items-center justify-center mt-1">
+                    <label className="flex items-start gap-5 cursor-pointer group p-4 rounded-2xl hover:bg-white/5 transition-colors">
+                      <div className="relative flex items-center justify-center mt-0.5">
                         <input 
                           type="checkbox"
                           checked={marketingConsent}
                           onChange={e => setMarketingConsent(e.target.checked)}
                           className="sr-only"
                         />
-                        <div className={`w-6 h-6 rounded border transition-colors flex items-center justify-center ${marketingConsent ? 'bg-nabtura-green border-nabtura-green' : 'border-gray-500 group-hover:border-nabtura-green bg-white/5'}`}>
-                          {marketingConsent && <Check className="w-4 h-4 text-black" />}
+                        <div className={`w-6 h-6 rounded border transition-all duration-300 flex items-center justify-center ${marketingConsent ? 'bg-nabtura-green border-nabtura-green shadow-[0_0_10px_rgba(46,204,113,0.4)]' : 'border-gray-500 group-hover:border-nabtura-green bg-white/5'}`}>
+                          {marketingConsent && <Check className="w-4 h-4 text-black scale-100 animate-in zoom-in duration-200" />}
                         </div>
                       </div>
-                      <p className="text-xs font-light text-gray-400 leading-relaxed">
+                      <p className="text-xs font-light text-gray-400 leading-relaxed pt-0.5">
                         I would also like to receive occasional NABTURA news, insights and opportunities.
                       </p>
                     </label>
                   </div>
 
                   {status === "error" && (
-                    <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-xl text-red-400 text-sm font-bold text-center">
+                    <div className="bg-red-500/10 border border-red-500/20 p-5 rounded-2xl text-red-400 text-sm font-bold text-center animate-in fade-in slide-in-from-bottom-2">
                       Failed to submit enquiry. Please try again or contact us directly.
                     </div>
                   )}
 
-                  <div className="mt-12 flex justify-end">
+                  <div className="mt-14 flex justify-end">
                     <button 
                       type="submit" 
                       disabled={!contactDetails.name || !contactDetails.email || !contactDetails.phone || !privacyConsent || status === "loading"}
-                      className="w-full md:w-auto bg-nabtura-green text-black px-12 py-4 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(46,204,113,0.2)] hover:shadow-[0_0_30px_rgba(46,204,113,0.4)]"
+                      className="group relative overflow-hidden w-full md:w-auto bg-nabtura-green text-black px-14 py-5 rounded-full text-sm font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center gap-3 shadow-[0_0_20px_rgba(46,204,113,0.3)] hover:shadow-[0_0_30px_rgba(46,204,113,0.5)]"
                     >
-                      {status === "loading" ? "SUBMITTING..." : "SUBMIT MY ENQUIRY"}
+                      <span className="relative z-10">{status === "loading" ? "SUBMITTING..." : "SUBMIT ENQUIRY"}</span>
+                      {status !== "loading" && <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform" />}
+                      <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
                     </button>
                   </div>
                 </div>
               )}
-
             </form>
           </div>
         )}

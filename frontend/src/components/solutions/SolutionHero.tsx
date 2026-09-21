@@ -9,6 +9,7 @@ interface SolutionHeroProps {
   description?: string;
   bgImageUrl: string;
   accentColor?: string;
+  children?: React.ReactNode;
 }
 
 export default function SolutionHero({
@@ -17,7 +18,8 @@ export default function SolutionHero({
   tagline,
   description,
   bgImageUrl,
-  accentColor = "text-nabtura-green"
+  accentColor = "text-nabtura-green",
+  children
 }: SolutionHeroProps) {
   return (
     <section className="relative flex items-center justify-center overflow-hidden bg-transparent pt-20 pb-4 border-b border-white/5">
@@ -70,6 +72,17 @@ export default function SolutionHero({
             >
               {description}
             </motion.p>
+          )}
+
+          {children && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-8"
+            >
+              {children}
+            </motion.div>
           )}
         </motion.div>
       </div>
