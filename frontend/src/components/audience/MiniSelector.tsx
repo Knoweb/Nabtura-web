@@ -63,8 +63,9 @@ export default function MiniSelector({
   };
 
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden bg-[#020504] border-t border-white/5">
       {/* Background Effects */}
+      <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-15"></div>
       <div className={`absolute inset-0 bg-gradient-to-b ${bgGradient} via-transparent to-transparent opacity-50`}></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-white/5 blur-[100px] rounded-full -z-10"></div>
       

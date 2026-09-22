@@ -41,16 +41,22 @@ export default function WorkWithNabturaPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#020A05] pt-20 overflow-hidden text-white font-sans selection:bg-emerald-500 selection:text-black">
+    <main className="min-h-screen bg-transparent pt-20 overflow-hidden text-white font-sans selection:bg-emerald-500 selection:text-black">
+
+      {/* Global Fixed Animated Waves Background */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30 bg-transparent">
+        <motion.svg animate={{ x: ["0%", "-50%"] }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[250px] md:h-[400px] fill-emerald-900/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" /></motion.svg>
+        <motion.svg animate={{ x: ["-50%", "0%"] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" /></motion.svg>
+      </div>
 
       {/* 1. HERO SECTION */}
       <section className="relative flex flex-col justify-center items-center text-center px-4 pt-20 pb-12 border-b border-white/5 overflow-hidden">
         <motion.div 
-          className="absolute inset-0 z-0 opacity-40 mix-blend-overlay"
+          className="absolute inset-0 z-0 opacity-30"
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         >
-          <motion.div style={{ y: y1 }} className="absolute inset-0 bg-[url('/images/uae_green_city.jpg')] bg-cover bg-center h-[120%] -top-[10%]"></motion.div>
+          <motion.div style={{ y: y1 }} className="absolute inset-0 bg-[url('/images/dubai-greenhouse.jpg')] bg-cover bg-center h-[120%] -top-[10%]"></motion.div>
         </motion.div>
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#020A05] via-[#020A05]/70 to-[#020A05]/40"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-900/40 via-transparent to-transparent z-0 pointer-events-none" />
@@ -97,7 +103,7 @@ export default function WorkWithNabturaPage() {
       </section>
 
       {/* 2. THE OPPORTUNITY */}
-      <section id="explore" className="py-12 md:py-20 relative bg-[#04160A] overflow-hidden">
+      <section id="explore" className="py-12 md:py-20 relative bg-transparent overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
@@ -147,7 +153,7 @@ export default function WorkWithNabturaPage() {
                       scale: 1.02,
                       transition: { type: "spring", stiffness: 400, damping: 10 } 
                     }}
-                    className="relative w-full sm:w-[45%] lg:w-[28%] flex flex-col items-center text-center p-6 md:p-8 rounded-[2rem] bg-[#0A2213]/30 border border-emerald-500/20 hover:border-emerald-500/60 backdrop-blur-xl overflow-hidden group shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_40px_rgba(52,211,153,0.15)] z-10 transition-all duration-300"
+                    className="relative w-full sm:w-[45%] lg:w-[28%] flex flex-col items-center text-center p-6 md:p-8 rounded-[2rem] bg-[#051A0D] border border-emerald-500/20 hover:border-emerald-500/60 backdrop-blur-xl overflow-hidden group shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_40px_rgba(52,211,153,0.15)] z-10 transition-all duration-300"
                   >
                     {/* Hover Gradient Background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -186,7 +192,7 @@ export default function WorkWithNabturaPage() {
       </section>
 
       {/* 3. INVEST WITH NABTURA */}
-      <section className="py-12 md:py-20 relative bg-[#020A05] border-t border-white/5 overflow-hidden">
+      <section className="py-12 md:py-20 relative bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -232,7 +238,7 @@ export default function WorkWithNabturaPage() {
                       scale: 1.02,
                       transition: { type: "spring", stiffness: 400, damping: 10 } 
                     }}
-                    className="relative p-6 rounded-[1.5rem] bg-gradient-to-br from-white/[0.04] to-transparent border border-white/[0.08] hover:border-blue-500/40 backdrop-blur-lg overflow-hidden group shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(59,130,246,0.15)] transition-all duration-300 flex flex-col justify-center z-10"
+                    className="relative p-6 rounded-[1.5rem] bg-[#051A0D] border border-white/[0.08] hover:border-blue-500/40 backdrop-blur-lg overflow-hidden group shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(59,130,246,0.15)] transition-all duration-300 flex flex-col justify-center z-10"
                   >
                     {/* Hover Glow Background */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -276,7 +282,7 @@ export default function WorkWithNabturaPage() {
       </section>
 
       {/* 4. BRING LAND OR SPACE */}
-      <section className="py-12 md:py-20 relative bg-[#04160A] border-t border-white/5 overflow-hidden">
+      <section className="py-12 md:py-20 relative bg-transparent border-t border-white/5 overflow-hidden">
         <motion.div 
           className="absolute inset-0 z-0 opacity-40 mix-blend-overlay"
         >
@@ -335,7 +341,7 @@ export default function WorkWithNabturaPage() {
       </section>
 
       {/* 5. PARTNER WITH NABTURA */}
-      <section className="py-12 md:py-20 relative bg-[#020A05] border-t border-white/5 overflow-hidden">
+      <section className="py-12 md:py-20 relative bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-purple-500/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -371,7 +377,7 @@ export default function WorkWithNabturaPage() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
                 whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 10 } }}
-                className="relative p-8 rounded-[2rem] bg-gradient-to-br from-white/[0.04] to-transparent border border-white/[0.08] hover:border-purple-500/40 backdrop-blur-lg overflow-hidden group shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(168,85,247,0.15)] transition-all duration-300 flex flex-col z-10"
+                className="relative p-8 rounded-[2rem] bg-[#051A0D] border border-white/[0.08] hover:border-purple-500/40 backdrop-blur-lg overflow-hidden group shadow-[0_4px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_30px_rgba(168,85,247,0.15)] transition-all duration-300 flex flex-col z-10"
               >
                 {/* Hover Glow Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -393,7 +399,7 @@ export default function WorkWithNabturaPage() {
       </section>
 
       {/* 6. HOW OPPORTUNITIES DEVELOP */}
-      <section className="py-12 md:py-20 relative bg-[#04160A] border-t border-white/5 overflow-hidden">
+      <section className="py-12 md:py-20 relative bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
@@ -448,7 +454,7 @@ export default function WorkWithNabturaPage() {
       </section>
 
       {/* 7. WHAT DO YOU BRING? (INTERACTIVE SELECTOR) */}
-      <section className="py-12 md:py-20 relative z-10 bg-[#020A05] border-t border-white/5 overflow-hidden">
+      <section className="py-12 md:py-20 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-emerald-500/5 border border-emerald-500/20 mb-6 shadow-[0_0_15px_rgba(52,211,153,0.1)] backdrop-blur-md">
@@ -531,9 +537,9 @@ export default function WorkWithNabturaPage() {
                     className="w-full h-full border-2 border-dashed border-white/10 rounded-[2.5rem] flex flex-col items-center justify-center text-center p-12 bg-[#04160A]/30"
                   >
                     <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6">
-                      <ArrowDown className="w-6 h-6 text-gray-500 animate-bounce" />
+                      <ArrowDown className="w-6 h-6 text-gray-400 animate-bounce" />
                     </div>
-                    <p className="text-gray-500 font-bold tracking-widest text-sm uppercase max-w-xs leading-relaxed">Select an option from the list to see how we can help.</p>
+                    <p className="text-gray-400 font-bold tracking-widest text-sm uppercase max-w-xs leading-relaxed">Select an option from the list to see how we can help.</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -543,7 +549,7 @@ export default function WorkWithNabturaPage() {
       </section>
 
       {/* 8. FINAL CONVERSION */}
-      <section className="py-12 md:py-20 relative bg-[#04160A] border-t border-white/5 overflow-hidden text-center">
+      <section className="py-12 md:py-20 relative bg-transparent border-t border-white/5 overflow-hidden text-center">
         <motion.div 
           className="absolute inset-0 z-0 opacity-40 mix-blend-overlay"
           animate={{ scale: [1, 1.15, 1] }}

@@ -26,11 +26,17 @@ export default function AboutPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#020A05] text-white overflow-hidden font-sans pt-20">
+    <main className="min-h-screen bg-transparent text-white overflow-hidden font-sans pt-20">
+      {/* Global Fixed Animated Waves Background */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30 bg-transparent">
+        <motion.svg animate={{ x: ["0%", "-50%"] }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[250px] md:h-[400px] fill-emerald-900/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" /></motion.svg>
+        <motion.svg animate={{ x: ["-50%", "0%"] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" /></motion.svg>
+      </div>
+
 
       {/* 1. HERO SECTION */}
       <section className="relative flex flex-col justify-center items-center text-center px-4 pt-20 pb-12 border-b border-white/5 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute inset-0 z-0 opacity-40"
           animate={{ scale: [1, 1.05, 1] }}
           transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
@@ -76,7 +82,8 @@ export default function AboutPage() {
       </section>
 
       {/* 2. WHO WE ARE */}
-      <section id="who-we-are" className="py-16 md:py-24 relative border-b border-white/5 overflow-hidden">
+      <section id="who-we-are" className="py-16 md:py-24 relative border-b border-white/5 overflow-hidden bg-transparent">
+
         {/* Subtle Background Glows */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none z-0"></div>
@@ -127,29 +134,36 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="relative w-full max-w-lg ml-auto aspect-video md:aspect-[4/3] rounded-3xl overflow-hidden group shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+              className="relative w-full max-w-lg ml-auto group"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-green-500/20 to-transparent mix-blend-overlay z-10 pointer-events-none" />
-              <div className="absolute inset-0 border border-white/10 rounded-3xl z-20 group-hover:border-green-500/30 transition-colors duration-500 pointer-events-none" />
-              <Image
-                src="/possibility_urban_oasis_1788160434157.jpg"
-                alt="Green Smart Environment"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-1000"
-              />
+              {/* Decorative Background Glow */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 blur-2xl rounded-[3rem] z-0 opacity-50 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+              {/* Glass Frame */}
+              <div className="relative z-10 p-2 md:p-3 rounded-[2.5rem] bg-[#020A05]/60 backdrop-blur-md border border-white/10 shadow-[0_20px_40px_rgba(0,0,0,0.6)] group-hover:border-emerald-500/30 transition-colors duration-500">
+                
+                {/* Image Container */}
+                <div className="relative aspect-video md:aspect-[4/3] rounded-[2rem] overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#020A05]/90 via-[#020A05]/20 to-transparent z-10 pointer-events-none" />
+                  <div className="absolute inset-0 border border-white/10 rounded-[2rem] z-20 group-hover:border-emerald-500/20 transition-colors duration-500 pointer-events-none" />
+                  <Image
+                    src="/possibility_urban_oasis_1788160434157.jpg"
+                    alt="Green Smart Environment"
+                    fill
+                    className="object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-1000"
+                  />
+                </div>
+
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
       {/* 3. OUR APPROACH */}
-      <section className="py-6 md:py-10 relative bg-green-950/30 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-overlay">
-          <div className="absolute inset-0 bg-[url('/images/microgreens.jpg')] bg-cover bg-center"></div>
-        </div>
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#020A05] via-[#020A05]/80 to-[#020A05]/40"></div>
+      <section className="py-12 md:py-16 relative bg-transparent overflow-hidden">
+
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-green-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
-        <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -202,7 +216,8 @@ export default function AboutPage() {
       </section>
 
       {/* 4. TECHNOLOGY + NATURE */}
-      <section className="py-6 md:py-10 relative border-y border-white/5 overflow-hidden">
+      <section className="py-12 md:py-16 relative border-y border-white/5 overflow-hidden">
+
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-emerald-500/5 blur-[150px] rounded-full pointer-events-none z-0" />
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
@@ -252,11 +267,11 @@ export default function AboutPage() {
                       {/* Glowing dot on the pipeline */}
                       <div className="absolute left-[20px] w-2 h-2 rounded-full bg-emerald-500 opacity-0 group-hover/item:opacity-100 group-hover/item:shadow-[0_0_10px_rgba(52,211,153,1)] transition-opacity duration-300 z-20"></div>
 
-                      <div className="w-12 h-12 bg-[#020A05] border border-white/10 rounded-xl flex items-center justify-center group-hover/item:bg-emerald-500/10 group-hover/item:border-emerald-500/50 group-hover/item:shadow-[0_0_30px_rgba(52,211,153,0.3)] transition-all duration-500 shadow-xl relative z-10">
-                        <step.icon className="w-5 h-5 text-gray-500 group-hover/item:text-emerald-400 transition-colors duration-500" />
+                      <div className="w-12 h-12 bg-transparent border border-white/10 rounded-xl flex items-center justify-center group-hover/item:bg-emerald-500/10 group-hover/item:border-emerald-500/50 group-hover/item:shadow-[0_0_30px_rgba(52,211,153,0.3)] transition-all duration-500 shadow-xl relative z-10">
+                        <step.icon className="w-5 h-5 text-gray-400 group-hover/item:text-emerald-400 transition-colors duration-500" />
                       </div>
 
-                      <span className="ml-8 text-lg font-black tracking-[0.2em] text-gray-500 group-hover/item:text-white group-hover/item:translate-x-3 transition-all duration-500 uppercase">
+                      <span className="ml-8 text-lg font-black tracking-[0.2em] text-gray-400 group-hover/item:text-white group-hover/item:translate-x-3 transition-all duration-500 uppercase">
                         {step.text}
                       </span>
                     </div>
@@ -269,8 +284,9 @@ export default function AboutPage() {
       </section>
 
       {/* 5. WHAT WE CREATE */}
-      <section className="py-6 md:py-10 relative bg-[#020A05]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 md:py-16 relative bg-transparent overflow-hidden">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="mb-20 text-center">
             <motion.p variants={fadeUp} className="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">What We Create</motion.p>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight uppercase">
@@ -359,22 +375,22 @@ export default function AboutPage() {
           {/* Support Services */}
           <motion.div
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="bg-[#020A05]/80 backdrop-blur-2xl border border-white/5 rounded-[2.5rem] p-10 md:p-14 mb-16 relative overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] group hover:border-emerald-500/30 transition-colors duration-500"
+            className="bg-transparent/80 backdrop-blur-2xl border border-white/5 rounded-[2.5rem] p-10 md:p-14 mb-16 relative overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] group hover:border-emerald-500/30 transition-colors duration-500"
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-emerald-500/20 transition-colors duration-500" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full pointer-events-none group-hover:bg-blue-500/20 transition-colors duration-500" />
 
-            <h3 className="text-xs font-bold tracking-[0.4em] text-gray-500 uppercase mb-12 text-center relative z-10 flex items-center justify-center">
+            <h3 className="text-xs font-bold tracking-[0.4em] text-gray-400 uppercase mb-12 text-center relative z-10 flex items-center justify-center">
               <span className="w-12 h-px bg-white/10 mr-4"></span>
               SUPPORTED BY
               <span className="w-12 h-px bg-white/10 ml-4"></span>
             </h3>
 
             <div className="grid md:grid-cols-2 gap-6 relative z-10 max-w-5xl mx-auto">
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -5, transition: { type: "spring", stiffness: 300, damping: 15 } }}
-                className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#04160A]/50 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all duration-300 group/support"
+                className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#051A0D] border border-white/5 hover:border-emerald-500/30 hover:bg-[#082914] transition-all duration-300 group/support shadow-lg"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-transparent border border-emerald-500/30 flex items-center justify-center mb-6 group-hover/support:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(52,211,153,0.1)]">
                   <Activity className="w-7 h-7 text-emerald-400 group-hover/support:text-emerald-300 transition-colors" />
@@ -383,9 +399,9 @@ export default function AboutPage() {
                 <p className="text-gray-400 leading-relaxed font-light">Ongoing care, monitoring, management and optimization to ensure long-term success.</p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -5, transition: { type: "spring", stiffness: 300, damping: 15 } }}
-                className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#04160A]/50 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all duration-300 group/support"
+                className="flex flex-col items-center text-center p-8 rounded-3xl bg-[#051A0D] border border-white/5 hover:border-emerald-500/30 hover:bg-[#082914] transition-all duration-300 group/support shadow-lg"
               >
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-transparent border border-emerald-500/30 flex items-center justify-center mb-6 group-hover/support:scale-110 transition-transform duration-500 shadow-[0_0_30px_rgba(52,211,153,0.1)]">
                   <Building2 className="w-7 h-7 text-emerald-400 group-hover/support:text-emerald-300 transition-colors" />
@@ -405,11 +421,8 @@ export default function AboutPage() {
       </section>
 
       {/* 6. BUILT FOR CHALLENGING ENVIRONMENTS */}
-      <section className="pt-6 md:pt-5 pb-6 md:pb-6 relative bg-[#020A05] border-t border-white/5 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-50 mix-blend-overlay">
-          <div className="absolute inset-0 bg-[url('/images/dubai-landscapes.jpg')] bg-cover bg-center"></div>
-        </div>
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#020A05] via-[#020A05]/80 to-[#020A05]/40"></div>
+      <section className="pt-16 md:pt-20 pb-16 md:pb-20 relative bg-transparent border-t border-white/5 overflow-hidden">
+
         <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#04160A] to-transparent pointer-events-none z-0" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
 
@@ -451,8 +464,9 @@ export default function AboutPage() {
       </section>
 
       {/* 7. INFORGRID FZC & 8. OUR DIRECTION */}
-      <section className="pt-10 md:pt-12 pb-10 md:pb-12 relative border-t border-white/5 bg-[#020A05] overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+      <section className="pt-16 md:pt-20 pb-16 md:pb-20 relative border-t border-white/5 bg-transparent overflow-hidden">
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
 
@@ -468,7 +482,7 @@ export default function AboutPage() {
                 <div className="w-14 h-14 bg-yellow-500/10 border border-yellow-500/20 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(234,179,8,0.15)] group-hover:scale-110 transition-transform duration-500">
                   <Building2 className="w-7 h-7 text-yellow-500" />
                 </div>
-                <p className="text-gray-500 font-bold uppercase tracking-[0.3em] text-xs mb-3">INFORGRID FZC</p>
+                <p className="text-gray-400 font-bold uppercase tracking-[0.3em] text-xs mb-3">INFORGRID FZC</p>
                 <h3 className="text-2xl lg:text-3xl font-black mb-6 leading-tight uppercase">
                   <span className="text-white">NABTURA IS A BUSINESS OF</span><br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 drop-shadow-md">INFORGRID FZC</span>
@@ -524,17 +538,15 @@ export default function AboutPage() {
       </section>
 
       {/* 9. FINAL CONVERSION */}
-      <section className="py-6 md:py-10 relative bg-[#04160A] border-t border-white/5 overflow-hidden text-center">
-        <motion.div 
-          className="absolute inset-0 z-0 opacity-40 mix-blend-overlay"
-          animate={{ scale: [1, 1.15, 1] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+      <section className="py-16 md:py-24 relative bg-[#020A05] border-t border-white/5 overflow-hidden text-center">
+        <motion.div
+          className="absolute inset-0 z-0"
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
         >
-          <div className="absolute inset-0 bg-[url('/images/uae_water_tech.jpg')] bg-cover bg-center"></div>
+          <div className="absolute inset-0 bg-[url('/images/uae_water_tech.jpg')] bg-cover bg-center opacity-40"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </motion.div>
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#04160A] via-[#04160A]/80 to-[#04160A]/40"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none z-0" />
-        <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <motion.h2
             initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
@@ -565,7 +577,7 @@ export default function AboutPage() {
 
           <motion.div
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.8 }}
-            className="mt-12 flex flex-col sm:flex-row justify-center gap-10 text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-gray-500"
+            className="mt-12 flex flex-col sm:flex-row justify-center gap-10 text-xs md:text-sm font-bold tracking-[0.2em] uppercase text-gray-400"
           >
             <Link href="/solutions" className="hover:text-white transition-colors flex items-center justify-center group">
               Explore Our Solutions <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

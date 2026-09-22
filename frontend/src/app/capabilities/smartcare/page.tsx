@@ -16,8 +16,14 @@ export default function SmartCarePage() {
   ];
 
   return (
-    <div className="bg-[#020504] min-h-screen pt-24 font-sans selection:bg-nabtura-green/30 selection:text-white overflow-hidden">
+    <div className="bg-transparent min-h-screen pt-24 font-sans selection:bg-nabtura-green/30 selection:text-white overflow-hidden">
       
+      {/* Global Fixed Animated Waves Background */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30 bg-transparent">
+        <motion.svg animate={{ x: ["0%", "-50%"] }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[250px] md:h-[400px] fill-emerald-900/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" /></motion.svg>
+        <motion.svg animate={{ x: ["-50%", "0%"] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" /></motion.svg>
+      </div>
+
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center py-20 px-6 border-b border-white/5 overflow-hidden">
         {/* Animated Background */}
@@ -84,7 +90,7 @@ export default function SmartCarePage() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-30"
           >
-            <a href="#explore-smartcare" className="group w-full sm:w-auto relative px-8 py-3 bg-[#0a120e]/80 backdrop-blur-md border border-nabtura-green/30 text-white font-bold tracking-[0.2em] text-xs md:text-sm rounded-full hover:border-nabtura-green hover:bg-[#0a120e] transition-all duration-500 overflow-hidden flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+            <a href="#explore-smartcare" className="group w-full sm:w-auto relative px-8 py-3 bg-[#051A0D] backdrop-blur-md border border-nabtura-green/30 text-white font-bold tracking-[0.2em] text-xs md:text-sm rounded-full hover:border-nabtura-green hover:bg-[#062413] transition-all duration-500 overflow-hidden flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)]">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-nabtura-green/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               <span className="relative z-10 flex items-center">
                 EXPLORE SMARTCARE <ArrowDown className="ml-3 w-4 h-4 text-nabtura-green group-hover:translate-y-1 transition-transform" />
@@ -102,7 +108,7 @@ export default function SmartCarePage() {
       </section>
 
       {/* 2. BEYOND DELIVERY */}
-      <section id="explore-smartcare" className="py-10 md:py-12 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
+      <section id="explore-smartcare" className="py-10 md:py-12 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-nabtura-green/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,7 +158,7 @@ export default function SmartCarePage() {
                     hidden: { opacity: 0, scale: 0.9 },
                     visible: { opacity: 1, scale: 1 }
                   }}
-                  className="px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-xs md:text-sm font-bold tracking-widest text-gray-300 hover:text-white hover:border-nabtura-green hover:bg-nabtura-green/10 transition-colors cursor-default shadow-[0_0_10px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(21,184,118,0.3)]"
+                  className="px-5 py-2.5 rounded-full border border-white/10 bg-[#051A0D] text-xs md:text-sm font-bold tracking-widest text-gray-300 hover:text-white hover:border-nabtura-green hover:bg-[#082b15] transition-colors cursor-default shadow-[0_0_10px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(21,184,118,0.3)]"
                 >
                   {tag}
                 </motion.span>
@@ -166,16 +172,16 @@ export default function SmartCarePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-            className="max-w-4xl mx-auto bg-gradient-to-br from-white/5 via-white/5 to-transparent border border-white/10 rounded-[2rem] p-6 md:p-10 relative overflow-hidden shadow-2xl backdrop-blur-sm"
+            className="max-w-4xl mx-auto bg-[#051A0D] border border-white/10 rounded-[2rem] p-6 md:p-10 relative overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-5 mix-blend-overlay"></div>
+            <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-20"></div>
             
             <div className="text-center mb-6 relative z-10">
               <h4 className="text-[10px] md:text-xs tracking-[0.2em] md:tracking-[0.3em] font-bold text-nabtura-green uppercase">FROM PLANT SUPPLY TO ONGOING CARE</h4>
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 relative z-10">
-              <motion.div whileHover={{ scale: 1.02 }} className="flex-1 w-full bg-[#0a120e] border border-white/10 rounded-xl p-4 md:py-4 md:px-2 text-center shadow-lg hover:border-white/20 transition-all duration-300">
+              <motion.div whileHover={{ scale: 1.02 }} className="flex-1 w-full bg-[#051A0D] border border-white/10 rounded-xl p-4 md:py-4 md:px-2 text-center shadow-lg hover:border-white/20 transition-all duration-300">
                 <span className="text-gray-400 text-xs md:text-sm font-bold tracking-widest uppercase">Nursery Solutions</span>
               </motion.div>
               
@@ -184,7 +190,7 @@ export default function SmartCarePage() {
                 <ArrowDown className="w-5 h-5 text-gray-600 md:hidden" />
               </div>
               
-              <motion.div whileHover={{ scale: 1.02 }} className="flex-1 w-full bg-[#0a120e] border border-white/10 rounded-xl p-4 md:py-4 md:px-2 text-center shadow-lg hover:border-white/20 transition-all duration-300">
+              <motion.div whileHover={{ scale: 1.02 }} className="flex-1 w-full bg-[#051A0D] border border-white/10 rounded-xl p-4 md:py-4 md:px-2 text-center shadow-lg hover:border-white/20 transition-all duration-300">
                 <span className="text-gray-300 text-xs md:text-sm font-bold tracking-widest uppercase">Establishment</span>
               </motion.div>
               
@@ -207,7 +213,7 @@ export default function SmartCarePage() {
       </section>
 
       {/* 3. ONE CARE PLATFORM */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#09100c]">
+      <section className="py-10 md:py-15 relative z-10 bg-transparent">
         <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -249,7 +255,7 @@ export default function SmartCarePage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="group bg-[#050A08] border border-white/10 rounded-[1.5rem] p-6 hover:border-nabtura-green/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(21,184,118,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
+              className="group bg-[#051A0D] border border-white/10 rounded-[1.5rem] p-6 hover:border-nabtura-green/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(21,184,118,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
             >
               <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-0 group-hover:opacity-10 mix-blend-overlay transition-opacity duration-700 scale-110 group-hover:scale-100"></div>
               <div className="absolute top-0 right-0 w-48 h-48 bg-nabtura-green/0 blur-[60px] rounded-full group-hover:bg-nabtura-green/20 transition-colors duration-500"></div>
@@ -276,7 +282,7 @@ export default function SmartCarePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-              className="group bg-[#050A08] border border-white/10 rounded-[1.5rem] p-6 hover:border-blue-400/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(96,165,250,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
+              className="group bg-[#051A0D] border border-white/10 rounded-[1.5rem] p-6 hover:border-blue-400/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(96,165,250,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
             >
               <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-0 group-hover:opacity-10 mix-blend-overlay grayscale transition-opacity duration-700 scale-110 group-hover:scale-100"></div>
               <div className="absolute top-0 right-0 w-48 h-48 bg-blue-500/0 blur-[60px] rounded-full group-hover:bg-blue-500/20 transition-colors duration-500"></div>
@@ -303,7 +309,7 @@ export default function SmartCarePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="group bg-[#050A08] border border-white/10 rounded-[1.5rem] p-6 hover:border-emerald-400/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(52,211,153,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
+              className="group bg-[#051A0D] border border-white/10 rounded-[1.5rem] p-6 hover:border-emerald-400/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(52,211,153,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
             >
               <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-0 group-hover:opacity-10 mix-blend-overlay transition-opacity duration-700 scale-110 group-hover:scale-100"></div>
               <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/0 blur-[60px] rounded-full group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
@@ -330,7 +336,7 @@ export default function SmartCarePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-              className="group bg-[#050A08] border border-white/10 rounded-[1.5rem] p-6 hover:border-purple-400/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(192,132,252,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
+              className="group bg-[#051A0D] border border-white/10 rounded-[1.5rem] p-6 hover:border-purple-400/50 transition-all duration-500 relative overflow-hidden shadow-lg hover:shadow-[0_0_40px_rgba(192,132,252,0.2)] hover:-translate-y-2 flex flex-col h-full cursor-pointer"
             >
               <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-0 group-hover:opacity-10 mix-blend-overlay grayscale transition-opacity duration-700 scale-110 group-hover:scale-100"></div>
               <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/0 blur-[60px] rounded-full group-hover:bg-purple-500/20 transition-colors duration-500"></div>
@@ -355,7 +361,7 @@ export default function SmartCarePage() {
       </section>
 
       {/* 4. SMARTCARE + TECHNOLOGY */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
+      <section className="py-10 md:py-15 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
             
@@ -407,7 +413,7 @@ export default function SmartCarePage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="bg-[#050A08]/90 border border-white/10 rounded-[2rem] p-8 md:p-12 relative overflow-hidden backdrop-blur-xl shadow-2xl"
+                  className="bg-[#051A0D] border border-white/10 rounded-[2rem] p-8 md:p-12 relative overflow-hidden backdrop-blur-xl shadow-2xl"
                 >
                   {/* Internal grid pattern */}
                   <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
@@ -455,7 +461,7 @@ export default function SmartCarePage() {
       </section>
 
       {/* 5. CARE THAT FITS THE PROJECT */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#09100c] border-t border-white/5 overflow-hidden">
+      <section className="py-10 md:py-15 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-nabtura-green/5 to-transparent pointer-events-none -z-10"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -515,7 +521,7 @@ export default function SmartCarePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.1 }}
-                className={`bg-[#050A08] border border-white/10 rounded-[2rem] p-8 hover:bg-[#070d0a] shadow-lg transition-all duration-300 group overflow-hidden relative ${item.colors.border} ${item.colors.shadow}`}
+                className={`bg-[#051A0D] border border-white/10 rounded-[2rem] p-8 hover:bg-[#062413] shadow-lg transition-all duration-300 group overflow-hidden relative ${item.colors.border} ${item.colors.shadow}`}
               >
                 <div className={`absolute top-0 right-0 w-24 h-24 bg-white/0 blur-[30px] rounded-full transition-colors duration-500 ${item.colors.glow}`}></div>
                 <div className={`w-14 h-14 rounded-full bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 relative z-10 ${item.colors.glow} ${item.colors.iconText}`}>
@@ -530,7 +536,7 @@ export default function SmartCarePage() {
       </section>
 
       {/* 6. FROM HANDOVER TO LONG-TERM PERFORMANCE */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
+      <section className="py-10 md:py-15 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-12">
             <motion.h2 
@@ -605,7 +611,7 @@ export default function SmartCarePage() {
       </section>
 
       {/* 7. SMARTCARE ACROSS NABTURA */}
-      <section className="py-10 md:py-15 relative z-10 bg-[#09100c] border-t border-white/5 overflow-hidden">
+      <section className="py-10 md:py-15 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

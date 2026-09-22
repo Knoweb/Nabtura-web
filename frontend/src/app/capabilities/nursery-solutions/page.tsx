@@ -18,7 +18,12 @@ export default function NurserySolutionsPage() {
   ];
 
   return (
-    <div className="bg-[#020504] min-h-screen pt-24 font-sans selection:bg-yellow-500/30 selection:text-white overflow-hidden">
+    <div className="bg-transparent min-h-screen pt-24 font-sans selection:bg-yellow-500/30 selection:text-white overflow-hidden">
+      {/* Global Fixed Animated Waves Background */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30 bg-transparent">
+        <motion.svg animate={{ x: ["0%", "-50%"] }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[250px] md:h-[400px] fill-emerald-900/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" /></motion.svg>
+        <motion.svg animate={{ x: ["-50%", "0%"] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" /></motion.svg>
+      </div>
 
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center py-20 px-6 border-b border-white/5 overflow-hidden">
@@ -85,7 +90,7 @@ export default function NurserySolutionsPage() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-6 relative z-30"
           >
-            <a href="#explore-nursery" className="group w-full sm:w-auto relative px-8 py-3 bg-[#0a120e]/80 backdrop-blur-md border border-yellow-500/30 text-white font-bold tracking-[0.2em] text-xs md:text-sm rounded-full hover:border-yellow-400 hover:bg-[#0a120e] transition-all duration-500 overflow-hidden flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+            <a href="#explore-nursery" className="group w-full sm:w-auto relative px-8 py-3 bg-transparent/80 backdrop-blur-md border border-yellow-500/30 text-white font-bold tracking-[0.2em] text-xs md:text-sm rounded-full hover:border-yellow-400 hover:bg-[#062413] transition-all duration-500 overflow-hidden flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)]">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               <span className="relative z-10 flex items-center">
                 EXPLORE NURSERY SOLUTIONS <ArrowDown className="ml-3 w-4 h-4 text-yellow-500 group-hover:translate-y-1 transition-transform" />
@@ -103,7 +108,7 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 2. START WITH THE PROJECT */}
-      <section id="explore-nursery" className="py-10 md:py-15 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
+      <section id="explore-nursery" className="py-10 md:py-15 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,7 +166,7 @@ export default function NurserySolutionsPage() {
                     hidden: { opacity: 0, scale: 0.9 },
                     visible: { opacity: 1, scale: 1 }
                   }}
-                  className="px-5 py-2.5 rounded-full border border-white/10 bg-white/5 text-[10px] md:text-xs font-bold tracking-widest text-gray-300 hover:text-white hover:border-yellow-500 hover:bg-yellow-500/10 transition-colors cursor-default shadow-[0_0_10px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(250,204,21,0.3)] flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-full border border-white/10 bg-[#051A0D] text-[10px] md:text-xs font-bold tracking-widest text-gray-300 hover:text-white hover:border-yellow-500 hover:bg-[#082b15] transition-colors cursor-default shadow-[0_0_10px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(250,204,21,0.3)] flex items-center gap-2"
                 >
                   <item.icon className="w-3.5 h-3.5 text-yellow-500/70" />
                   {item.name}
@@ -186,7 +191,7 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 3. PROJECT-SPECIFIC SOLUTIONS */}
-      <section className="py-10 lg:py-10 relative z-10 bg-[#03180D]">
+      <section className="py-10 lg:py-10 relative z-10 bg-transparent">
         <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -235,7 +240,7 @@ export default function NurserySolutionsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="group bg-[#050A08] border border-white/5 rounded-2xl p-6 hover:border-yellow-500/30 hover:bg-[#0a120e] transition-all duration-300 relative overflow-hidden"
+                className="group bg-[#051A0D] border border-white/5 rounded-2xl p-6 hover:border-yellow-500/30 hover:bg-[#062413] transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/0 blur-[40px] rounded-full group-hover:bg-yellow-500/10 transition-colors duration-500"></div>
                 <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-5 group-hover:bg-yellow-500/20 group-hover:scale-110 transition-all duration-300 border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.15)] group-hover:border-yellow-500/40 group-hover:shadow-[0_0_20px_rgba(250,204,21,0.3)]">
@@ -316,7 +321,7 @@ export default function NurserySolutionsPage() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  className="bg-[#050A08]/90 border border-white/10 rounded-[2rem] p-8 relative overflow-hidden backdrop-blur-xl shadow-2xl"
+                  className="bg-transparent/90 border border-white/10 rounded-[2rem] p-8 relative overflow-hidden backdrop-blur-xl shadow-2xl"
                 >
                   <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
 
@@ -344,7 +349,7 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 5. WHERE NURSERY SOLUTIONS FIT */}
-      <section className="py-10 lg:py-10 relative z-10 bg-[#03180D] border-t border-white/5 overflow-hidden">
+      <section className="py-10 lg:py-10 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-emerald-500/5 to-transparent pointer-events-none -z-10"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -378,7 +383,7 @@ export default function NurserySolutionsPage() {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {[
               { title: "LANDSCAPES", desc: "Planting for residential, hospitality, commercial and development environments.", link: "/solutions/landscapes" },
               { title: "URBAN FORESTS", desc: "Plant requirements for immersive and purpose-built green environments.", link: "/solutions/urban-forests" },
@@ -386,13 +391,13 @@ export default function NurserySolutionsPage() {
               { title: "ENVIRONMENTAL PROJECTS", desc: "Project-specific planting requirements where appropriate.", link: "/solutions/environmental-projects" },
               { title: "DEVELOPMENTS & LARGE-SCALE", desc: "Coordinated plant requirements across larger project environments.", link: "/solutions/environmental-projects" },
             ].map((item, idx) => (
-              <Link href={item.link} key={idx} className="block group">
+              <Link href={item.link} key={idx} className="block group w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.1 }}
-                  className="bg-[#050A08] border border-white/10 rounded-2xl p-8 hover:bg-[#070d0a] hover:border-yellow-500/40 shadow-lg transition-all duration-300 overflow-hidden relative h-full flex flex-col hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(250,204,21,0.15)]"
+                  className="bg-[#051A0D] border border-white/10 rounded-2xl p-8 hover:bg-[#062413] hover:border-yellow-500/40 shadow-lg transition-all duration-300 overflow-hidden relative h-full flex flex-col hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(250,204,21,0.15)]"
                 >
                   <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-500/0 blur-[30px] rounded-full transition-colors duration-500 group-hover:bg-yellow-500/10"></div>
                   <h4 className="text-sm font-bold tracking-widest text-white mb-3 uppercase transition-colors relative z-10 group-hover:text-yellow-400 flex items-center justify-between">
@@ -408,7 +413,7 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 6. FROM REQUIREMENT TO SITE */}
-      <section className="py-10 lg:py-10 relative z-10 bg-[#050A08] border-t border-white/5 overflow-hidden">
+      <section className="py-10 lg:py-10 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 md:mb-16 max-w-3xl mx-auto">
             <motion.h2
@@ -498,7 +503,7 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 7. CONNECTED CARE */}
-      <section className="py-10 lg:py-10 relative z-10 bg-[#03180D] border-t border-white/5 overflow-hidden">
+      <section className="py-10 lg:py-10 relative z-10 bg-transparent border-t border-white/5 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-[0.02]" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -538,7 +543,7 @@ export default function NurserySolutionsPage() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-blue-900/10 border border-blue-500/20 rounded-2xl p-6 hover:bg-blue-900/20 hover:border-blue-500/40 transition-all text-center"
+                className="bg-[#030f1a] border border-blue-500/20 rounded-2xl p-6 hover:bg-[#051a2d] hover:border-blue-500/40 transition-all text-center"
               >
                 <div className="w-12 h-12 mx-auto bg-blue-500/10 rounded-full flex items-center justify-center mb-4">
                   <Droplets className="w-5 h-5 text-blue-400" />
@@ -554,7 +559,7 @@ export default function NurserySolutionsPage() {
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-emerald-900/10 border border-emerald-500/20 rounded-2xl p-6 hover:bg-emerald-900/20 hover:border-emerald-500/40 transition-all text-center"
+                className="bg-[#051A0D] border border-emerald-500/20 rounded-2xl p-6 hover:bg-[#062413] hover:border-emerald-500/40 transition-all text-center"
               >
                 <div className="w-12 h-12 mx-auto bg-emerald-500/10 rounded-full flex items-center justify-center mb-4">
                   <Activity className="w-5 h-5 text-emerald-400" />
@@ -570,7 +575,7 @@ export default function NurserySolutionsPage() {
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
               {['PLANT', 'ESTABLISH', 'CARE', 'GROW'].map((step, idx, arr) => (
                 <div key={idx} className="flex items-center">
-                  <span className="bg-white/5 border border-white/10 px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest text-gray-300 uppercase shadow-md">
+                  <span className="bg-[#051A0D] border border-white/10 px-4 py-2 rounded-lg text-[10px] font-bold tracking-widest text-gray-300 uppercase shadow-md">
                     {step}
                   </span>
                   {idx < arr.length - 1 && (

@@ -7,7 +7,13 @@ import { motion } from "framer-motion";
 
 export default function SolutionsOverviewPage() {
   return (
-    <main className="min-h-screen bg-nabtura-slate pt-20 overflow-hidden">
+    <main className="min-h-screen bg-transparent pt-20 overflow-hidden">
+
+      {/* Global Fixed Animated Waves Background */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30 bg-transparent">
+        <motion.svg animate={{ x: ["0%", "-50%"] }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[250px] md:h-[400px] fill-emerald-900/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" /></motion.svg>
+        <motion.svg animate={{ x: ["-50%", "0%"] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" /></motion.svg>
+      </div>
       {/* 1. HERO */}
       <SolutionHero 
         eyebrow="NABTURA SOLUTIONS"
@@ -30,7 +36,7 @@ export default function SolutionsOverviewPage() {
         <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7 }} className="relative">
           <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-nabtura-light-green/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
           
-          <div className="mb-16 relative">
+          <div className="mb-12 relative">
             <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-light-green via-green-400 to-transparent rounded-full shadow-[0_0_15px_rgba(74,222,128,0.5)]"></div>
             <div className="pl-4 sm:pl-6">
               <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
@@ -39,7 +45,7 @@ export default function SolutionsOverviewPage() {
               <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-white font-black tracking-widest uppercase mb-6 drop-shadow-md">Create smarter environments for growing.</p>
               
               <div className="bg-gradient-to-r from-white/5 to-transparent p-6 rounded-3xl border border-white/5 backdrop-blur-md max-w-3xl relative overflow-hidden group">
-                <div className="absolute inset-0 bg-nabtura-light-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-nabtura-light-green/5 opacity-0 group-hover:opacity-40 group-hover:opacity-60 transition-opacity duration-700"></div>
                 <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed relative z-10">
                   <span className="text-white font-medium">Whether for commercial production, hospitality, institutions or home growing,</span> NABTURA develops growing solutions around the crop, space, environment and purpose.
                 </p>
@@ -48,18 +54,18 @@ export default function SolutionsOverviewPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Link href="/solutions/smart-greenhouses" className="group block rounded-[2rem] p-8 md:p-10 hover:border-nabtura-light-green/50 transition-all duration-500 shadow-2xl overflow-hidden relative border border-white/10 bg-[#050a08]">
-              <div className="absolute inset-0 bg-[url('/images/dubai-greenhouse.jpg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-all duration-700 group-hover:scale-105"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
+            <Link href="/solutions/smart-greenhouses" className="group block rounded-[1.5rem] p-6 md:p-8 hover:border-nabtura-light-green/50 transition-all duration-500 shadow-2xl overflow-hidden relative border border-white/10 bg-[#050a08]">
+              <div className="absolute inset-0 bg-[url('/images/dubai-greenhouse.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
               
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-nabtura-light-green/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(74,222,128,0.2)]">
+                  <div className="w-12 h-12 rounded-xl bg-nabtura-light-green/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(74,222,128,0.2)]">
                     <Sun className="w-6 h-6 text-nabtura-light-green" />
                   </div>
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART GREENHOUSES</h3>
+                  <h3 className="text-xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART GREENHOUSES</h3>
                   <p className="text-nabtura-light-green font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Grow beyond the climate.</p>
-                  <p className="text-gray-300 font-light mb-8 leading-relaxed">Smart growing environments designed around your crop, location and commercial objective.</p>
+                  <p className="text-gray-300 font-light mb-6 leading-snug">Smart growing environments designed around your crop, location and commercial objective.</p>
                 </div>
                 <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start mt-4">
                   EXPLORE SMART GREENHOUSES
@@ -70,18 +76,18 @@ export default function SolutionsOverviewPage() {
               </div>
             </Link>
 
-            <Link href="/solutions/smart-microgreens" className="group block rounded-[2rem] p-8 md:p-10 hover:border-nabtura-light-green/50 transition-all duration-500 shadow-2xl overflow-hidden relative border border-white/10 bg-[#050a08]">
-              <div className="absolute inset-0 bg-[url('/images/microgreens.jpg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-all duration-700 group-hover:scale-105"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
+            <Link href="/solutions/smart-microgreens" className="group block rounded-[1.5rem] p-6 md:p-8 hover:border-nabtura-light-green/50 transition-all duration-500 shadow-2xl overflow-hidden relative border border-white/10 bg-[#050a08]">
+              <div className="absolute inset-0 bg-[url('/images/microgreens.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
               
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-nabtura-light-green/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(74,222,128,0.2)]">
+                  <div className="w-12 h-12 rounded-xl bg-nabtura-light-green/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(74,222,128,0.2)]">
                     <Sprout className="w-6 h-6 text-nabtura-light-green" />
                   </div>
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART MICROGREENS</h3>
+                  <h3 className="text-xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART MICROGREENS</h3>
                   <p className="text-nabtura-light-green font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Small space. Smart growing.</p>
-                  <p className="text-gray-300 font-light mb-8 leading-relaxed">Controlled microgreen growing solutions for fresh production closer to where food is used.</p>
+                  <p className="text-gray-300 font-light mb-6 leading-snug">Controlled microgreen growing solutions for fresh production closer to where food is used.</p>
                 </div>
                 <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start mt-4">
                   EXPLORE SMART MICROGREENS
@@ -98,7 +104,7 @@ export default function SolutionsOverviewPage() {
               <div className="w-full border-t border-white/5"></div>
             </div>
             <Link href="/possibilities" className="group relative inline-flex items-center gap-4 bg-[#050a08] border border-white/10 rounded-full py-3 px-8 hover:border-nabtura-light-green/40 transition-all duration-500 overflow-hidden shadow-2xl backdrop-blur-md z-10 hover:shadow-[0_0_30px_rgba(74,222,128,0.15)]">
-              <div className="absolute inset-0 bg-nabtura-light-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-nabtura-light-green/5 opacity-0 group-hover:opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
               <span className="flex items-center text-nabtura-light-green font-bold tracking-widest uppercase text-xs sm:text-sm relative z-10">
                 EXPLORE HOME GROWING
                 <span className="ml-4 w-8 h-8 rounded-full bg-nabtura-light-green/10 flex items-center justify-center group-hover:bg-nabtura-light-green group-hover:text-black transition-colors shadow-inner">
@@ -126,16 +132,16 @@ export default function SolutionsOverviewPage() {
 
             <div className="lg:col-span-2">
               <Link href="/solutions/smart-irrigation" className="group block rounded-[2rem] p-8 md:p-12 hover:border-nabtura-blue/30 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] h-full">
-                <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-700 group-hover:scale-105"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
+                <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
                 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-nabtura-blue/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Droplets className="w-6 h-6 text-nabtura-blue" />
                   </div>
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART IRRIGATION</h3>
+                  <h3 className="text-xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART IRRIGATION</h3>
                   <p className="text-nabtura-blue font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Water where it matters. When it matters.</p>
-                  <p className="text-gray-300 font-light mb-8 leading-relaxed">Intelligent irrigation designed around the plants, landscape, crop, climate and actual water requirements of the project.</p>
+                  <p className="text-gray-300 font-light mb-6 leading-snug">Intelligent irrigation designed around the plants, landscape, crop, climate and actual water requirements of the project.</p>
                   
                   <div className="flex flex-wrap items-center gap-2 text-nabtura-blue text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-10">
                     <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">SENSE</span> <ArrowRight className="w-3 h-3 text-gray-600" />
@@ -161,7 +167,7 @@ export default function SolutionsOverviewPage() {
         <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7 }} className="relative">
           <div className="absolute top-1/2 right-0 w-[40rem] h-[40rem] bg-nabtura-green/5 rounded-full blur-[150px] -z-10 pointer-events-none -translate-y-1/2"></div>
           
-          <div className="mb-16 relative">
+          <div className="mb-12 relative">
             <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-green via-emerald-400 to-transparent rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]"></div>
             <div className="pl-4 sm:pl-6">
               <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
@@ -170,7 +176,7 @@ export default function SolutionsOverviewPage() {
               <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-green to-white font-black tracking-widest uppercase mb-6 drop-shadow-md">Turn spaces and land into purposeful green environments.</p>
               
               <div className="bg-gradient-to-r from-white/5 to-transparent p-6 rounded-3xl border border-white/5 backdrop-blur-md max-w-3xl relative overflow-hidden group">
-                <div className="absolute inset-0 bg-nabtura-green/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-nabtura-green/5 opacity-0 group-hover:opacity-40 group-hover:opacity-60 transition-opacity duration-700"></div>
                 <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed relative z-10">
                   <span className="text-white font-medium">Three different approaches for three different types of opportunity.</span>
                 </p>
@@ -199,15 +205,15 @@ export default function SolutionsOverviewPage() {
               const Icon = item.icon;
               return (
                 <Link key={idx} href={item.link} className="group block rounded-[2rem] p-8 hover:border-nabtura-green/50 transition-all duration-500 shadow-2xl flex flex-col justify-between h-full overflow-hidden relative border border-white/10 bg-[#050a08]">
-                  <div className="absolute inset-0 bg-cover bg-center opacity-30 group-hover:opacity-50 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
+                  <div className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
                   
                   <div className="relative z-10 flex flex-col justify-between h-full">
                     <div>
-                      <div className="w-14 h-14 rounded-2xl bg-nabtura-green/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                      <div className="w-12 h-12 rounded-xl bg-nabtura-green/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(16,185,129,0.2)]">
                         <Icon className="w-6 h-6 text-nabtura-green" />
                       </div>
-                      <h3 className="text-2xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">{item.title}</h3>
+                      <h3 className="text-xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">{item.title}</h3>
                       <p className="text-nabtura-green font-bold text-xs tracking-widest uppercase mb-4 drop-shadow-sm">{item.tag}</p>
                       <p className="text-gray-300 font-light mb-8 text-sm leading-relaxed">{item.desc}</p>
                     </div>
@@ -238,7 +244,7 @@ export default function SolutionsOverviewPage() {
                 <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-white font-black tracking-widest uppercase mb-6 drop-shadow-md">START WITH THE CHALLENGE.</p>
                 
                 <div className="bg-gradient-to-r from-white/5 to-transparent p-6 rounded-3xl border border-white/5 backdrop-blur-md relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-nabtura-sand/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-nabtura-sand/5 opacity-0 group-hover:opacity-40 group-hover:opacity-60 transition-opacity duration-700"></div>
                   <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed relative z-10">
                     <span className="text-white font-medium">Not every project fits a standard solution.</span>
                   </p>
@@ -248,14 +254,14 @@ export default function SolutionsOverviewPage() {
 
             <div className="lg:col-span-2">
               <Link href="/solutions/environmental-projects" className="group block rounded-[2rem] p-8 md:p-12 hover:border-nabtura-sand/30 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] h-full">
-                <div className="absolute inset-0 bg-[url('/images/before_arid.jpg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-opacity duration-700 group-hover:scale-105"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
+                <div className="absolute inset-0 bg-[url('/images/before_arid.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
                 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-nabtura-sand/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-xl bg-nabtura-sand/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                     <Globe2 className="w-6 h-6 text-nabtura-sand" />
                   </div>
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">ENVIRONMENTAL PROJECTS</h3>
+                  <h3 className="text-xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">ENVIRONMENTAL PROJECTS</h3>
                   <p className="text-nabtura-sand font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Purpose-built green and environmental solutions developed around the challenge, location and intended outcome.</p>
                   
                   <div className="mt-8 mb-8">
@@ -287,7 +293,7 @@ export default function SolutionsOverviewPage() {
 
         {/* 6. SUPPORTING CAPABILITIES */}
         <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7 }} className="pt-10 border-t border-white/10">
-          <div className="text-center mb-16 relative z-10">
+          <div className="text-center mb-12 relative z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-md">SUPPORTING CAPABILITIES</span>
             </h2>
@@ -295,9 +301,9 @@ export default function SolutionsOverviewPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Link href="/capabilities/smartcare" className="group block rounded-[2rem] p-8 md:p-10 hover:border-white/50 transition-all duration-500 shadow-2xl relative overflow-hidden border border-white/10 bg-[#050a08]">
-              <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-all duration-700 group-hover:scale-105"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
+            <Link href="/capabilities/smartcare" className="group block rounded-[1.5rem] p-6 md:p-8 hover:border-white/50 transition-all duration-500 shadow-2xl relative overflow-hidden border border-white/10 bg-[#050a08]">
+              <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
               
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
@@ -307,7 +313,7 @@ export default function SolutionsOverviewPage() {
                     </div>
                     <h3 className="text-xl font-bold text-white uppercase tracking-wider drop-shadow-md">NABTURA SMARTCARE</h3>
                   </div>
-                  <p className="text-gray-300 font-light mb-8 leading-relaxed">Ongoing care, monitoring, management and optimization.</p>
+                  <p className="text-gray-300 font-light mb-6 leading-snug">Ongoing care, monitoring, management and optimization.</p>
                 </div>
                 <span className="inline-flex items-center bg-white/10 border border-white/20 group-hover:border-white/50 group-hover:bg-white/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-white uppercase transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] backdrop-blur-md self-start mt-4">
                   EXPLORE SMARTCARE
@@ -318,9 +324,9 @@ export default function SolutionsOverviewPage() {
               </div>
             </Link>
 
-            <Link href="/capabilities/nursery-solutions" className="group block rounded-[2rem] p-8 md:p-10 hover:border-white/50 transition-all duration-500 shadow-2xl relative overflow-hidden border border-white/10 bg-[#050a08]">
-              <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center opacity-30 group-hover:opacity-50 transition-all duration-700 group-hover:scale-105"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/50"></div>
+            <Link href="/capabilities/nursery-solutions" className="group block rounded-[1.5rem] p-6 md:p-8 hover:border-white/50 transition-all duration-500 shadow-2xl relative overflow-hidden border border-white/10 bg-[#050a08]">
+              <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-all duration-700 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
               
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <div>
@@ -330,7 +336,7 @@ export default function SolutionsOverviewPage() {
                     </div>
                     <h3 className="text-xl font-bold text-white uppercase tracking-wider drop-shadow-md">NABTURA NURSERY SOLUTIONS</h3>
                   </div>
-                  <p className="text-gray-300 font-light mb-8 leading-relaxed">Project-focused plant sourcing, nursery coordination, preparation and supply.</p>
+                  <p className="text-gray-300 font-light mb-6 leading-snug">Project-focused plant sourcing, nursery coordination, preparation and supply.</p>
                 </div>
                 <span className="inline-flex items-center bg-white/10 border border-white/20 group-hover:border-white/50 group-hover:bg-white/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-white uppercase transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)] backdrop-blur-md self-start mt-4">
                   EXPLORE NURSERY SOLUTIONS
@@ -346,12 +352,7 @@ export default function SolutionsOverviewPage() {
 
       {/* 7. FIND YOUR SOLUTION */}
       <section className="py-20 relative overflow-hidden bg-[#0A120E] border-t border-white/10">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/images/dubai-landscapes.jpg')] bg-cover bg-center bg-fixed opacity-20 grayscale"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-transparent to-[#0A120E]"></div>
-        </div>
-
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-nabtura-green/5 blur-[150px] z-0 pointer-events-none"></div>
+        <div className="absolute inset-0 z-0"><div className="absolute inset-0 bg-[url('/images/dubai-landscapes.jpg')] bg-cover bg-center bg-fixed opacity-30 grayscale"></div><div className="absolute inset-0 bg-black/60"></div></div>
 
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
@@ -361,7 +362,7 @@ export default function SolutionsOverviewPage() {
             You don't need to know which NABTURA solution you need. Tell us what you have, what you want to create, or what challenge you are trying to solve.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-16">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
             {[
               'I WANT TO GROW FOOD',
               'I WANT TO GROW FOOD AT HOME',

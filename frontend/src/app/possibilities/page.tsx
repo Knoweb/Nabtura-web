@@ -65,7 +65,13 @@ export default function PossibilitiesPage() {
   }, [liveItems.length]);
 
   return (
-    <main className="min-h-screen bg-nabtura-slate pt-20 overflow-hidden text-white selection:bg-nabtura-green selection:text-black">
+    <main className="min-h-screen bg-transparent pt-20 overflow-hidden text-white selection:bg-nabtura-green selection:text-black">
+
+      {/* Global Fixed Animated Waves Background */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30 bg-transparent">
+        <motion.svg animate={{ x: ["0%", "-50%"] }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[250px] md:h-[400px] fill-emerald-900/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" /></motion.svg>
+        <motion.svg animate={{ x: ["-50%", "0%"] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" /></motion.svg>
+      </div>
       
       {/* 1. HERO SECTION */}
       <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden px-6 pt-20 pb-20 border-b border-white/5">
@@ -124,7 +130,7 @@ export default function PossibilitiesPage() {
       </section>
 
       {/* 2. START WITH WHAT YOU WANT TO CREATE */}
-      <section id="categories" className="py-5 border-y border-white/5 bg-[#050A08] relative z-10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+      <section id="categories" className="py-5 border-y border-white/5 bg-transparent relative z-10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)]">
         {/* Subtle background glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-nabtura-green/5 blur-[150px] rounded-full pointer-events-none mix-blend-screen"></div>
         {/* Subtle grid pattern */}
@@ -444,10 +450,10 @@ export default function PossibilitiesPage() {
       </div>
 
       {/* 8. CREATE YOUR OWN POSSIBILITY */}
-      <section className="py-16 md:py-24 relative z-10 bg-[#050A08] overflow-hidden border-t border-white/10">
+      <section className="py-12 md:py-16 relative z-10 bg-[#050A08] overflow-hidden border-t border-white/10">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-transparent to-[#050A08]"></div>
+          <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-30"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-nabtura-green/5 blur-[200px] rounded-full pointer-events-none"></div>
@@ -478,7 +484,7 @@ export default function PossibilitiesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-gray-300 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed mb-16"
+            className="text-gray-300 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed mb-10"
           >
             NABTURA Possibilities is not a catalogue of fixed packages. Tell us about your space, land, idea or objective, and let's explore what could be created.
           </motion.p>
@@ -488,7 +494,7 @@ export default function PossibilitiesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4 mb-20 max-w-4xl mx-auto"
+            className="flex flex-wrap justify-center gap-4 mb-12 max-w-4xl mx-auto"
           >
             {[
               "I HAVE A SPACE", 
