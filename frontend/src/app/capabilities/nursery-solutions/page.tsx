@@ -1,19 +1,20 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowDown, Leaf, Target, MapPin, Droplets, Sun, Sprout, Combine, Truck, BookOpen, Activity, Box, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowDown, Leaf, Target, MapPin, Droplets, Sun, Sprout, Combine, Truck, BookOpen, Activity, Box, ShieldCheck, Map, Search, Trees } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import MiniSelector, { SelectorOption } from "@/components/audience/MiniSelector";
 
 export default function NurserySolutionsPage() {
 
-  const selectorItems = [
-    { title: "I HAVE A LANDSCAPE PROJECT", response: "We source and prepare the exact plant species needed for your design, ensuring they thrive in their new landscape.", icon: Leaf },
-    { title: "I HAVE AN URBAN FOREST PROJECT", response: "We coordinate large quantities of trees and understory plants, managing supply chains for massive urban greening.", icon: Sprout },
-    { title: "I HAVE A DESERT GREENING PROJECT", response: "We supply hardy, drought-tolerant species acclimatized to extreme heat and arid conditions.", icon: Sun },
-    { title: "I HAVE A DEVELOPMENT / LARGE-SCALE PROJECT", response: "We handle bulk plant procurement and delivery scheduling aligned perfectly with your construction phases.", icon: Box },
-    { title: "I NEED PROJECT-SPECIFIC PLANT SUPPLY", response: "We find the rare, specific, or unique plants your project's architecture or environment demands.", icon: Target },
-    { title: "I'M NOT SURE WHAT PLANTS I NEED", response: "We can help you develop a plant strategy based on your site's climate, water availability, and design goals.", icon: BookOpen },
+  const options: SelectorOption[] = [
+    { id: "plant-sourcing", title: "Plant Sourcing", description: "Help sourcing appropriate plant material.", enquiryType: "plants", adaptiveAnswer: {}, icon: <Search className="w-5 h-5" /> },
+    { id: "project-supply", title: "Project Plant Supply", description: "Coordinate plants around project requirements.", enquiryType: "plants", adaptiveAnswer: {}, icon: <Box className="w-5 h-5" /> },
+    { id: "nursery-coordination", title: "Nursery Coordination", description: "Coordinate nursery and supply requirements.", enquiryType: "plants", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
+    { id: "plant-prep", title: "Plant Preparation", description: "Prepare planting requirements for delivery.", enquiryType: "plants", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "establishment-support", title: "Establishment Support", description: "Connect supply with planting and establishment.", enquiryType: "plants", adaptiveAnswer: {}, icon: <ShieldCheck className="w-5 h-5" /> },
+    { id: "not-sure", title: "I'm Not Sure", description: "", enquiryType: "not_sure", adaptiveAnswer: {}, icon: <Map className="w-5 h-5" /> },
   ];
 
   return (
@@ -589,75 +590,14 @@ export default function NurserySolutionsPage() {
       </section>
 
       {/* 8. FINAL CONVERSION (INTERACTIVE SELECTOR) */}
-      <section className="py-12 lg:py-12 relative z-10 bg-[#050A08] overflow-hidden">
-        {/* Animated Background Image */}
-        <motion.div
-          className="absolute inset-0 z-0 opacity-30"
-          animate={{ scale: [1, 1.15, 1] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center"></div>
-        </motion.div>
-
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#050A08] via-[#050A08]/70 to-[#050A08]"></div>
-        <div className="absolute inset-0 z-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-
-        {/* Pulsing Glowing Orbs */}
-        <motion.div
-          animate={{ opacity: [0.1, 0.4, 0.1], scale: [0.7, 1.2, 0.7] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/20 blur-[120px] rounded-full pointer-events-none z-0"
-        ></motion.div>
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          <div className="text-center mb-10 md:mb-12">
-            <h3 className="text-4xl md:text-5xl font-black uppercase leading-tight drop-shadow-lg mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-100 to-white">WHAT DOES</span> <br className="md:hidden" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 drop-shadow-[0_0_25px_rgba(250,204,21,0.4)]">YOUR PROJECT NEED?</span>
-            </h3>
-            <p className="text-gray-300 text-base md:text-lg font-light tracking-wide">Tell us about your planting requirement.</p>
-          </div>
-
-          <div className="max-w-4xl mx-auto mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            {selectorItems.map((item, idx) => (
-              <div
-                key={idx}
-                className="w-full text-left px-5 py-3 md:py-4 rounded-xl border border-white/10 bg-white/5 flex items-center group shadow-sm hover:border-yellow-500/50 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] transition-all duration-500 cursor-default"
-              >
-                <div className="flex items-center gap-4 relative w-full">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 text-gray-400 group-hover:bg-yellow-500/20 group-hover:text-yellow-400 group-hover:shadow-[0_0_15px_rgba(250,204,21,0.5)] transition-all duration-300 relative z-10 border border-transparent group-hover:border-yellow-500/40">
-                    <item.icon className="w-4 h-4 group-hover:drop-shadow-[0_0_8px_rgba(250,204,21,0.8)]" />
-                  </div>
-                  <span className="font-bold tracking-widest text-[10px] sm:text-xs md:text-sm text-gray-300 group-hover:text-white transition-colors z-10 relative">
-                    {item.title}
-                  </span>
-                  
-                  {/* Subtle background glow that appears on hover */}
-                  <div className="absolute left-0 w-24 h-full bg-gradient-to-r from-yellow-500/0 to-transparent group-hover:from-yellow-500/10 transition-colors duration-500 blur-xl pointer-events-none rounded-l-xl"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex flex-col items-center border-t border-white/10 pt-12">
-            <Link href="/contact" className="px-10 py-2 bg-gradient-to-r from-yellow-500 to-orange-400 text-black font-black tracking-[0.2em] text-sm md:text-base rounded-full hover:shadow-[0_0_50px_rgba(250,204,21,0.5)] hover:scale-105 transition-all duration-300 flex items-center justify-center mb-6 w-full sm:w-auto">
-              DISCUSS MY PLANT REQUIREMENTS <ArrowRight className="ml-3 w-5 h-5" />
-            </Link>
-
-            <Link href="/contact" className="text-yellow-500 hover:text-white text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-colors flex items-center group mb-8">
-              TELL US ABOUT YOUR PROJECT <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-
-            <div className="flex flex-wrap items-center justify-center gap-4 text-[10px] md:text-xs font-bold tracking-widest text-gray-400 uppercase">
-              <a href="https://wa.me/971569300075" className="hover:text-white transition-colors">WhatsApp</a>
-              <span className="text-white/20">|</span>
-              <a href="tel:+971569300075" className="hover:text-white transition-colors">+971 56 9300075</a>
-              <span className="text-white/20">|</span>
-              <a href="mailto:info@nabtura.com" className="hover:text-white transition-colors">info@nabtura.com</a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MiniSelector 
+        headline="WHAT DOES YOUR PROJECT NEED?"
+        subheadline="Tell us about your planting requirement."
+        options={options}
+        accentColor="text-yellow-400"
+        bgGradient="from-yellow-500/10"
+        submitButtonText="DISCUSS MY PLANT REQUIREMENTS →"
+      />
 
     </div>
   );

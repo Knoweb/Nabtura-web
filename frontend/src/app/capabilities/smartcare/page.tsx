@@ -4,19 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowDown, Activity, Droplets, Leaf, Settings, ShieldCheck, Clock, BarChart3, Radio } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import MiniSelector, { SelectorOption } from "@/components/audience/MiniSelector";
 
 export default function SmartCarePage() {
-  const [selectedSelectorItem, setSelectedSelectorItem] = useState<number | null>(0);
-
-  const selectorItems = [
-    { title: "MY GREENHOUSE / GROWING SYSTEM", response: "We can provide ongoing Grow Care to maintain environmental parameters and crop yields.", icon: Leaf },
-    { title: "MY MICROGREENS SYSTEM", response: "Consistent monitoring and care to ensure optimal harvest cycles.", icon: Activity },
-    { title: "MY IRRIGATION SYSTEM", response: "Water Care ensures efficient delivery, preventing waste and stress.", icon: Droplets },
-    { title: "MY LANDSCAPE", response: "Green Care for ongoing establishment, health, and visual impact.", icon: ShieldCheck },
-    { title: "MY URBAN FOREST / GREEN ENVIRONMENT", response: "Long-term management to protect and grow your green investment.", icon: Leaf },
-    { title: "MY DESERT GREENING PROJECT", response: "Specialized care for harsh environments to ensure survival and growth.", icon: ShieldCheck },
-    { title: "MY NABTURA TECHNOLOGY / MONITORING SYSTEM", response: "System Care to keep sensors, automation, and controls online.", icon: Settings },
-    { title: "I'M NOT SURE WHAT SUPPORT I NEED", response: "Let's review your environment and suggest the right level of care.", icon: Radio },
+  const options: SelectorOption[] = [
+    { id: "agronomy-support", title: "Agronomy Support", description: "Ongoing advice and support for growing systems.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "system-monitoring", title: "System Monitoring", description: "Remote or on-site monitoring of hardware.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Activity className="w-5 h-5" /> },
+    { id: "operations-guidance", title: "Operations Guidance", description: "Help with standard operating procedures.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Settings className="w-5 h-5" /> },
+    { id: "full-care", title: "Full Care", description: "Comprehensive support across growing and operations.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <ShieldCheck className="w-5 h-5" /> },
+    { id: "not-sure", title: "Not Sure What I Need", description: "", enquiryType: "not_sure", adaptiveAnswer: {}, icon: <Radio className="w-5 h-5" /> },
   ];
 
   return (
@@ -691,103 +687,14 @@ export default function SmartCarePage() {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[600px] md:h-[800px] bg-nabtura-green/20 blur-[120px] rounded-full pointer-events-none z-0"
         ></motion.div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-          <div className="text-center mb-10 md:mb-12">
-            <h3 className="text-4xl md:text-5xl font-black uppercase leading-tight drop-shadow-lg mb-4">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">WHAT NEEDS</span> <br className="md:hidden" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400 drop-shadow-[0_0_25px_rgba(21,184,118,0.5)]">SMARTCARE?</span>
-            </h3>
-            <p className="text-gray-300 text-base md:text-lg font-light tracking-wide">Choose where you want support:</p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
-            {/* Options List */}
-            <div className="space-y-2">
-              {selectorItems.map((item, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setSelectedSelectorItem(selectedSelectorItem === idx ? null : idx)}
-                  className={`w-full text-left px-5 py-3 md:py-3.5 rounded-xl border transition-all duration-300 flex justify-between items-center group ${selectedSelectorItem === idx
-                      ? 'bg-nabtura-green/10 border-nabtura-green shadow-[0_0_20px_rgba(21,184,118,0.2)]'
-                      : 'bg-white/5 border-white/10 hover:border-nabtura-light-green/50 hover:bg-white/10 hover:shadow-[0_0_15px_rgba(21,184,118,0.1)]'
-                    }`}
-                >
-                  <span className={`font-bold tracking-widest text-xs md:text-sm ${selectedSelectorItem === idx ? 'text-nabtura-green' : 'text-gray-300 group-hover:text-white transition-colors'}`}>
-                    {item.title}
-                  </span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors shrink-0 ml-3 ${selectedSelectorItem === idx ? 'bg-nabtura-green text-black shadow-[0_0_15px_rgba(21,184,118,0.5)]' : 'bg-white/10 text-white'}`}>
-                    <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${selectedSelectorItem === idx ? 'rotate-90' : 'group-hover:translate-x-1'}`} />
-                  </div>
-                </button>
-              ))}
-            </div>
-
-            {/* Dynamic Response Box */}
-            <div className="h-full min-h-[300px] flex items-center justify-center">
-              <AnimatePresence mode="wait">
-                {selectedSelectorItem !== null ? (
-                  <motion.div
-                    key={selectedSelectorItem}
-                    initial={{ opacity: 0, scale: 0.9, x: 20 }}
-                    animate={{ opacity: 1, scale: 1, x: 0 }}
-                    exit={{ opacity: 0, scale: 0.9, x: -20 }}
-                    transition={{ type: "spring", duration: 0.5 }}
-                    className="w-full bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-md rounded-3xl p-10 lg:p-12 text-center shadow-2xl relative overflow-hidden"
-                  >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-nabtura-green/20 blur-[50px] rounded-full"></div>
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/20 blur-[50px] rounded-full"></div>
-
-                    <div className="relative z-10 flex flex-col items-center">
-                      <div className="w-20 h-20 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 shadow-lg">
-                        {(() => {
-                          const Icon = selectorItems[selectedSelectorItem].icon;
-                          return <Icon className="w-10 h-10 text-nabtura-green" />;
-                        })()}
-                      </div>
-                      <h4 className="text-2xl md:text-2xl font-bold text-gray-200 mb-8 leading-relaxed text-center max-w-md mx-auto">
-                        {selectorItems[selectedSelectorItem].response}
-                      </h4>
-                      <Link href="/contact" className="mt-4 px-8 py-3 bg-white text-black font-bold tracking-widest text-xs rounded-full hover:bg-nabtura-light-green transition-colors shadow-lg">
-                        DISCUSS MY SMARTCARE NEEDS
-                      </Link>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="empty"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="w-full h-full border-2 border-dashed border-white/10 rounded-3xl flex flex-col items-center justify-center text-center p-12"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center mb-6">
-                      <ArrowDown className="w-6 h-6 text-gray-500 animate-bounce" />
-                    </div>
-                    <p className="text-gray-500 font-light tracking-widest text-sm uppercase">Select an option from the list to see how we can help.</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center border-t border-white/10 pt-12">
-            <Link href="/contact" className="px-10 py-2 bg-gradient-to-r from-nabtura-green to-emerald-400 text-black font-black tracking-[0.2em] text-sm md:text-base rounded-full hover:shadow-[0_0_50px_rgba(21,184,118,0.6)] hover:scale-105 transition-all duration-300 flex items-center mb-6">
-              DISCUSS MY SMARTCARE NEEDS <ArrowRight className="ml-3 w-5 h-5" />
-            </Link>
-            
-            <Link href="/contact" className="text-nabtura-light-green hover:text-white text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-colors flex items-center group mb-8">
-              REQUEST SMARTCARE SUPPORT <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
-
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold tracking-widest text-gray-400">
-              <a href="https://wa.me/971569300075" className="hover:text-white transition-colors">WhatsApp</a>
-              <span className="text-white/20">|</span>
-              <a href="tel:+971569300075" className="hover:text-white transition-colors">+971 56 9300075</a>
-              <span className="text-white/20">|</span>
-              <a href="mailto:info@nabtura.com" className="hover:text-white transition-colors">info@nabtura.com</a>
-            </div>
-          </div>
-        </div>
+        <MiniSelector 
+          headline="WHAT SUPPORT DO YOU NEED?"
+          subheadline="Tell us about your project or system."
+          options={options}
+          accentColor="text-nabtura-green"
+          bgGradient="from-nabtura-green/10"
+          submitButtonText="DISCUSS SMARTCARE →"
+        />
       </section>
 
     </div>

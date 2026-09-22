@@ -10,12 +10,15 @@ import { Sprout, Tractor, Leaf, Settings, Factory, Trees } from "lucide-react";
 
 export default function GrowersFarmsPage() {
   const options: SelectorOption[] = [
-    { id: "have-crop", title: "I Have A Crop", description: "I have a crop", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
-    { id: "have-farm", title: "I Have A Farm", description: "I have a farm", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Tractor className="w-5 h-5" /> },
-    { id: "have-land", title: "I Have Land", description: "I have land", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
-    { id: "want-greenhouse", title: "Want Greenhouse", description: "I want a greenhouse", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Factory className="w-5 h-5" /> },
-    { id: "upgrade-system", title: "Upgrade System", description: "I want to upgrade a growing system", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Settings className="w-5 h-5" /> },
-    { id: "explore-opportunity", title: "Explore Opportunity", description: "I'm exploring a growing opportunity", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "leafy-greens", title: "Leafy Greens", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "herbs", title: "Herbs", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "tomatoes", title: "Tomatoes", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "cucumbers", title: "Cucumbers", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "peppers", title: "Peppers", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "berries", title: "Berries", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "microgreens", title: "Microgreens", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "other", title: "Other", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
+    { id: "not-sure", title: "I'm Not Sure", description: "", enquiryType: "not_sure", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> }
   ];
 
   return (
@@ -84,7 +87,7 @@ export default function GrowersFarmsPage() {
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-nabtura-green/10"
-        submitButtonText="DISCUSS MY GROWING PROJECT"
+        submitButtonText="EXPLORE MY GROWING PROJECT →"
       />
     </main>
   );

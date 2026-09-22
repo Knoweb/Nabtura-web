@@ -10,10 +10,12 @@ import { Trees, Leaf, Sparkles, Sprout, Map, Sun } from "lucide-react";
 
 export default function LandownersPage() {
   const options: SelectorOption[] = [
-    { id: "want-grow", title: "Want To Grow", description: "I want to grow", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
-    { id: "green-land", title: "Green The Land", description: "I want to green the land", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
-    { id: "develop-opportunity", title: "Develop Opportunity", description: "I want to develop an opportunity", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sparkles className="w-5 h-5" /> },
-    { id: "not-sure", title: "Not Sure Yet", description: "I'm not sure yet", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Map className="w-5 h-5" /> },
+    { id: "grow", title: "Grow", description: "Explore smart agriculture.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "green", title: "Green", description: "Transform land into a green environment.", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
+    { id: "develop", title: "Develop", description: "Explore a project opportunity.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sparkles className="w-5 h-5" /> },
+    { id: "invest-collaborate", title: "Invest / Collaborate", description: "Explore an investment or partnership model.", enquiryType: "investment", adaptiveAnswer: {}, icon: <Map className="w-5 h-5" /> },
+    { id: "transform", title: "Transform", description: "Explore another environmental opportunity.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sun className="w-5 h-5" /> },
+    { id: "not-sure", title: "I'm Not Sure", description: "", enquiryType: "not_sure", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
   ];
 
   return (
@@ -82,12 +84,12 @@ export default function LandownersPage() {
 
       {/* 6. FINAL CONVERSION */}
       <MiniSelector 
-        headline="SHOW US YOUR LAND."
+        headline="WHAT COULD YOUR LAND BECOME?"
         subheadline="Tell us where it is, approximately how large it is and what you're considering. A photo, location plan or site information can help start the conversation."
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-nabtura-green/10"
-        submitButtonText="EXPLORE MY LAND"
+        submitButtonText="EXPLORE MY LAND →"
       />
     </main>
   );

@@ -12,11 +12,12 @@ import FloatingLines from "@/components/home/FloatingLines";
 
 export default function RestaurantsFBPage() {
   const options: SelectorOption[] = [
-    { id: "grow-microgreens", title: "Grow Microgreens", description: "I want to grow microgreens", enquiryType: "grow_food", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
-    { id: "chef-garden", title: "Chef Garden", description: "I want a chef garden", enquiryType: "grow_food", adaptiveAnswer: {}, icon: <Utensils className="w-5 h-5" /> },
-    { id: "edible-landscape", title: "Edible Landscape", description: "I want an edible landscape", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
-    { id: "dining-experience", title: "Green Dining", description: "I want a green dining experience", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Sparkles className="w-5 h-5" /> },
-    { id: "other-idea", title: "Other Idea", description: "I have another idea", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Lightbulb className="w-5 h-5" /> },
+    { id: "smart-microgreens", title: "Smart Microgreens", description: "Grow fresh closer to the kitchen.", enquiryType: "grow_food", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "chef-garden", title: "Chef Garden", description: "Grow selected ingredients.", enquiryType: "grow_food", adaptiveAnswer: {}, icon: <Utensils className="w-5 h-5" /> },
+    { id: "edible-landscape", title: "Edible Landscape", description: "Combine beauty with productive planting.", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "dining-experience", title: "Green Dining Experience", description: "Bring nature into the dining environment.", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Sparkles className="w-5 h-5" /> },
+    { id: "smart-irrigation", title: "Smart Irrigation", description: "Manage water intelligently.", enquiryType: "water", adaptiveAnswer: {}, icon: <Droplets className="w-5 h-5" /> },
+    { id: "other-idea", title: "I Have Another Idea", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Lightbulb className="w-5 h-5" /> },
   ];
 
   return (

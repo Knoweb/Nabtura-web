@@ -9,12 +9,12 @@ import { Trees, Droplets, Leaf, Sprout, Sparkles, Building, Briefcase } from "lu
 
 export default function DevelopersPage() {
   const options: SelectorOption[] = [
-    { id: "residential", title: "Residential", description: "Residential", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Building className="w-5 h-5" /> },
-    { id: "commercial", title: "Commercial", description: "Commercial", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Briefcase className="w-5 h-5" /> },
-    { id: "hospitality", title: "Hospitality", description: "Hospitality", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sparkles className="w-5 h-5" /> },
-    { id: "mixed-use", title: "Mixed-Use", description: "Mixed-Use", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Building className="w-5 h-5" /> },
-    { id: "community", title: "Community", description: "Community", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
-    { id: "other", title: "Other", description: "Other", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "residential", title: "Residential", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Building className="w-5 h-5" /> },
+    { id: "commercial", title: "Commercial", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Briefcase className="w-5 h-5" /> },
+    { id: "hospitality", title: "Hospitality", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Sparkles className="w-5 h-5" /> },
+    { id: "mixed-use", title: "Mixed-Use", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Building className="w-5 h-5" /> },
+    { id: "community", title: "Community", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
+    { id: "other", title: "Other", description: "", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
   ];
 
   return (
@@ -99,7 +99,7 @@ export default function DevelopersPage() {
         options={options}
         accentColor="text-nabtura-yellow"
         bgGradient="from-nabtura-yellow/10"
-        submitButtonText="DISCUSS MY DEVELOPMENT"
+        submitButtonText="EXPLORE MY DEVELOPMENT →"
       />
     </main>
   );

@@ -10,12 +10,13 @@ import { Leaf, Sprout, Trees, Droplets, Home, LayoutDashboard } from "lucide-rea
 
 export default function HomesVillasPage() {
   const options: SelectorOption[] = [
-    { id: "grow-food", title: "Grow Food", description: "I want to grow food", enquiryType: "grow_food", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
-    { id: "home-greenhouse", title: "Home Greenhouse", description: "I want a home greenhouse", enquiryType: "challenge", adaptiveAnswer: {}, icon: <LayoutDashboard className="w-5 h-5" /> },
-    { id: "landscape", title: "Landscape", description: "I want a landscape", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
-    { id: "smart-irrigation", title: "Smart Irrigation", description: "I want smart irrigation", enquiryType: "water", adaptiveAnswer: {}, icon: <Droplets className="w-5 h-5" /> },
-    { id: "edible-garden", title: "Edible Garden", description: "I want an edible garden", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
-    { id: "transform-outdoor", title: "Transform Outdoor", description: "I want to transform my outdoor space", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Home className="w-5 h-5" /> },
+    { id: "grow-food", title: "Grow Food", description: "Create a home growing space.", enquiryType: "grow_food", adaptiveAnswer: {}, icon: <Sprout className="w-5 h-5" /> },
+    { id: "home-greenhouse", title: "Home Greenhouse", description: "Explore a purpose-designed greenhouse.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <LayoutDashboard className="w-5 h-5" /> },
+    { id: "edible-garden", title: "Edible Garden", description: "Combine green with food growing.", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "landscape", title: "Landscape", description: "Create a greener outdoor environment.", enquiryType: "green_space", adaptiveAnswer: {}, icon: <Trees className="w-5 h-5" /> },
+    { id: "smart-irrigation", title: "Smart Irrigation", description: "Manage garden water intelligently.", enquiryType: "water", adaptiveAnswer: {}, icon: <Droplets className="w-5 h-5" /> },
+    { id: "complete-green", title: "Complete Green Concept", description: "Combine growing, landscape and water.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Home className="w-5 h-5" /> },
+    { id: "not-sure", title: "I'm Not Sure", description: "", enquiryType: "not_sure", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
   ];
 
   return (
@@ -103,7 +104,7 @@ export default function HomesVillasPage() {
         options={options}
         accentColor="text-nabtura-blue"
         bgGradient="from-nabtura-blue/10"
-        submitButtonText="CREATE MY HOME GREEN CONCEPT"
+        submitButtonText="CREATE MY HOME GREEN CONCEPT →"
       />
     </main>
   );

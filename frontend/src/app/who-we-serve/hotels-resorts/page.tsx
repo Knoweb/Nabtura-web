@@ -11,12 +11,12 @@ import { Leaf, Utensils, Sprout, Trees, Droplets, Heart, Sparkles, ArrowRight } 
 
 export default function HotelsResortsPage() {
   const options: SelectorOption[] = [
-    { id: "enhance-landscape", title: "Enhance Landscape", description: "I want to enhance the landscape", enquiryType: "green_space", adaptiveAnswer: { q1: "Resort/Hotel", q3: "Aesthetic Landscape" }, icon: <Trees className="w-5 h-5" /> },
-    { id: "grow-kitchen", title: "Grow For Kitchen", description: "I want to grow for the kitchen", enquiryType: "grow_food", adaptiveAnswer: { q2: "Grow for My Restaurant / Hotel", q3: "Restaurant" }, icon: <Utensils className="w-5 h-5" /> },
-    { id: "dining-experience", title: "Green Dining", description: "I want to create a green dining experience", enquiryType: "green_space", adaptiveAnswer: { q1: "Resort/Hotel", q3: "Other" }, icon: <Sparkles className="w-5 h-5" /> },
-    { id: "wellness-experience", title: "Wellness Experience", description: "I want to create a wellness / green experience", enquiryType: "plants", adaptiveAnswer: { q1: "Commercial" }, icon: <Heart className="w-5 h-5" /> },
-    { id: "manage-water", title: "Manage Water", description: "I want to manage water smarter", enquiryType: "water", adaptiveAnswer: { q1: "Commercial Property" }, icon: <Droplets className="w-5 h-5" /> },
-    { id: "transform-space", title: "Transform Space", description: "I have a space I want to transform", enquiryType: "general", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> },
+    { id: "grow", title: "Grow", description: "Grow closer to the kitchen.", enquiryType: "grow_food", adaptiveAnswer: { q2: "Grow for My Restaurant / Hotel", q3: "Restaurant" }, icon: <Sprout className="w-5 h-5" /> },
+    { id: "dine", title: "Dine", description: "Create a green dining experience.", enquiryType: "green_space", adaptiveAnswer: { q1: "Resort/Hotel", q3: "Other" }, icon: <Utensils className="w-5 h-5" /> },
+    { id: "relax", title: "Relax", description: "Create green for wellness and relaxation.", enquiryType: "green_space", adaptiveAnswer: { q1: "Commercial" }, icon: <Heart className="w-5 h-5" /> },
+    { id: "green", title: "Green", description: "Enhance the property and guest environment.", enquiryType: "green_space", adaptiveAnswer: { q1: "Resort/Hotel", q3: "Aesthetic Landscape" }, icon: <Trees className="w-5 h-5" /> },
+    { id: "transform", title: "Transform", description: "Turn a space into something new.", enquiryType: "general", adaptiveAnswer: {}, icon: <Sparkles className="w-5 h-5" /> },
+    { id: "not-sure", title: "I'm Not Sure", description: "", enquiryType: "not_sure", adaptiveAnswer: {}, icon: <Leaf className="w-5 h-5" /> }
   ];
 
   return (
@@ -115,12 +115,12 @@ export default function HotelsResortsPage() {
 
       {/* 6. CREATE YOUR CONCEPT */}
       <MiniSelector 
-        headline="WHAT COULD YOUR PROPERTY BECOME?"
-        subheadline="Create your hospitality green concept."
+        headline="WHAT WOULD YOU LIKE TO CREATE?"
+        subheadline="Start with the experience you want to create."
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-nabtura-green/10"
-        submitButtonText="CREATE MY HOSPITALITY GREEN CONCEPT"
+        submitButtonText="SHOW ME THE POSSIBILITIES →"
       />
     </main>
   );

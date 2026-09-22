@@ -8,14 +8,11 @@ import { Handshake, Map, Lightbulb, Briefcase, Users, LayoutDashboard, Compass, 
 
 export default function InvestorsPartnersPage() {
   const options: SelectorOption[] = [
-    { id: "invest", title: "Invest", description: "I want to invest", enquiryType: "investment", adaptiveAnswer: {}, icon: <Briefcase className="w-5 h-5" /> },
-    { id: "have-land", title: "Have Land", description: "I have land", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Map className="w-5 h-5" /> },
-    { id: "have-technology", title: "Have Technology", description: "I have technology", enquiryType: "investment", adaptiveAnswer: {}, icon: <Lightbulb className="w-5 h-5" /> },
-    { id: "have-product", title: "Have Product", description: "I have a product or solution", enquiryType: "investment", adaptiveAnswer: {}, icon: <LayoutDashboard className="w-5 h-5" /> },
-    { id: "specialist-capability", title: "Specialist Capability", description: "I have specialist capability", enquiryType: "investment", adaptiveAnswer: {}, icon: <Users className="w-5 h-5" /> },
-    { id: "market-access", title: "Market Access", description: "I have market access", enquiryType: "investment", adaptiveAnswer: {}, icon: <Compass className="w-5 h-5" /> },
-    { id: "project-opportunity", title: "Project Opportunity", description: "I have a project opportunity", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Rocket className="w-5 h-5" /> },
-    { id: "strategic-partner", title: "Strategic Partner", description: "I want to become a strategic partner", enquiryType: "investment", adaptiveAnswer: {}, icon: <Handshake className="w-5 h-5" /> },
+    { id: "invest-ag", title: "Invest in Agriculture", description: "Explore commercial growing investments.", enquiryType: "investment", adaptiveAnswer: {}, icon: <Briefcase className="w-5 h-5" /> },
+    { id: "invest-green", title: "Invest in Green Projects", description: "Explore large-scale environmental projects.", enquiryType: "investment", adaptiveAnswer: {}, icon: <Map className="w-5 h-5" /> },
+    { id: "strategic-partnership", title: "Strategic Partnership", description: "Explore a technology or capability partnership.", enquiryType: "investment", adaptiveAnswer: {}, icon: <Handshake className="w-5 h-5" /> },
+    { id: "project-collaboration", title: "Project Collaboration", description: "Collaborate on a specific development.", enquiryType: "challenge", adaptiveAnswer: {}, icon: <Users className="w-5 h-5" /> },
+    { id: "not-sure", title: "I'm Not Sure What I Need", description: "", enquiryType: "not_sure", adaptiveAnswer: {}, icon: <Lightbulb className="w-5 h-5" /> },
   ];
 
   return (
@@ -31,12 +28,12 @@ export default function InvestorsPartnersPage() {
 
       {/* 2. WHAT DO YOU BRING? (Using MiniSelector for grid selection) */}
       <MiniSelector 
-        headline="START WITH WHAT YOU HAVE."
+        headline="WHAT ARE YOU LOOKING TO DO?"
         subheadline="What do you bring?"
         options={options}
         accentColor="text-nabtura-green"
         bgGradient="from-transparent"
-        submitButtonText="EXPLORE INVESTMENT & PARTNERSHIPS"
+        submitButtonText="EXPLORE OPPORTUNITIES →"
         submitHref="/investors-partners" // Or wherever the real investment page is
       />
 
