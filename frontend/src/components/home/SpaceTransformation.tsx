@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ArrowRightCircle } from "lucide-react";
 
@@ -164,10 +165,12 @@ export default function SpaceTransformation() {
             </div>
 
             <div className="mt-12 flex justify-end">
-              <button className="group flex items-center text-white bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-4 rounded-full font-bold tracking-widest text-sm uppercase transition-all">
-                SHOW US YOUR LOCATION
-                <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4 text-nabtura-light-green" />
-              </button>
+              <Link href="/contact">
+                <button className="group flex items-center text-white bg-white/5 hover:bg-white/10 border border-white/10 px-8 py-4 rounded-full font-bold tracking-widest text-sm uppercase transition-all">
+                  SHOW US YOUR LOCATION
+                  <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform w-4 h-4 text-nabtura-light-green" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
