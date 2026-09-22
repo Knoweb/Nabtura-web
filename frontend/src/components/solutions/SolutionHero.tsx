@@ -31,9 +31,9 @@ export default function SolutionHero({
           style={{ backgroundImage: `url('${bgImageUrl}')` }}
         />
         {/* Radial vignette for focus */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#09110E_100%)] opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#0a1811_100%)] opacity-80" />
         {/* Bottom fade into the page background */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#09110E] via-[#09110E]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/60 to-transparent" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">

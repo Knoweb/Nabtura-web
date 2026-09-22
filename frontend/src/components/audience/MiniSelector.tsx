@@ -88,10 +88,10 @@ export default function MiniSelector({
                 onClick={() => handleSelect(option)}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] text-left relative p-7 rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col cursor-pointer group backdrop-blur-md ${
+                className={`w-full md:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] text-left relative p-7 rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col cursor-pointer group backdrop-blur-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] ${
                   isSelected 
-                    ? "bg-[#0a110e]/80 border-white/40 shadow-[0_0_40px_rgba(255,255,255,0.1)] ring-1 ring-white/20" 
-                    : "bg-[#050B08]/60 border-white/10 hover:border-white/30 hover:bg-[#0a110e]/70 hover:shadow-2xl"
+                    ? "bg-[#0c1f15]/80 border-white/40 shadow-[0_0_40px_rgba(255,255,255,0.1)] ring-1 ring-white/20" 
+                    : "bg-white/[0.03] border-white/10 hover:border-white/30 hover:bg-white/5 hover:shadow-2xl"
                 }`}
               >
                 {/* Radio Circle Indicator */}

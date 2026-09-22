@@ -176,7 +176,7 @@ export default function ContactPage() {
             </p>
           </div>
         ) : (
-          <div className="bg-[#061A12]/80 backdrop-blur-3xl p-8 md:p-14 rounded-[2.5rem] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+          <div className="bg-[#0a1811]/60 backdrop-blur-3xl p-8 md:p-14 rounded-[2.5rem] border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.6)] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] relative overflow-hidden">
             {/* Ambient Backgrounds inside form */}
             <div className="absolute -top-40 -right-40 w-96 h-96 bg-nabtura-green/10 blur-[120px] rounded-full pointer-events-none" />
             <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-nabtura-blue/10 blur-[120px] rounded-full pointer-events-none" />

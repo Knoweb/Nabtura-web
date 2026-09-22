@@ -84,7 +84,7 @@ export default function FeatureGrid({ eyebrow, headline, description, features, 
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
-            className={`w-full sm:w-[calc(50%-12px)] ${getColWidthClass(features.length)} border p-6 md:p-8 rounded-[2rem] hover:-translate-y-1 transition-all duration-300 flex flex-col backdrop-blur-md bg-[#050B08]/70 group ${getCardStyle(i)} ${getHoverGlow(i)}`}
+            className={`w-full sm:w-[calc(50%-12px)] ${getColWidthClass(features.length)} border p-6 md:p-8 rounded-[2rem] hover:-translate-y-1 transition-all duration-300 flex flex-col backdrop-blur-3xl bg-white/[0.03] shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] group ${getCardStyle(i)} ${getHoverGlow(i)}`}
           >
             {feature.icon && (
               <div className={`mb-6 w-14 h-14 rounded-full flex items-center justify-center bg-black/30 border border-white/10 group-hover:bg-white/10 transition-colors ${accentColor}`}>

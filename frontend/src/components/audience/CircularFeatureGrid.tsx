@@ -78,7 +78,7 @@ export default function CircularFeatureGrid({
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15, duration: 0.6, type: "spring", bounce: 0.4 }}
                   onClick={() => setActiveIndex(i)}
-                  className={`relative w-full max-w-[260px] aspect-square rounded-full flex flex-col items-center justify-center text-center p-6 overflow-hidden cursor-pointer group border bg-[#050B08] transition-all duration-700 ${
+                  className={`relative w-full max-w-[260px] aspect-square rounded-full flex flex-col items-center justify-center text-center p-6 overflow-hidden cursor-pointer group border bg-white/[0.03] backdrop-blur-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-700 ${
                     isActive 
                       ? "border-white/40 scale-[1.05] shadow-[0_0_30px_rgba(46,204,113,0.3)] z-20" 
                       : "border-white/10 scale-100 shadow-2xl hover:border-white/20 hover:scale-[1.02] z-10 opacity-70"
@@ -98,7 +98,7 @@ export default function CircularFeatureGrid({
                     <div className={`absolute inset-0 -z-10 transition-opacity duration-1000 ${isActive ? 'opacity-100' : 'opacity-20'}`}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={feature.bgImage} alt="" className={`w-full h-full object-cover rounded-full transition-transform duration-[10s] ease-linear ${isActive ? 'scale-110' : 'scale-100'}`} />
-                      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-[#050B08]/50 to-[#050B08]/90 rounded-full" />
+                      <div className="absolute inset-0 bg-gradient-to-b from-[#0a1811]/30 via-[#0a1811]/50 to-[#0a1811]/90 rounded-full" />
                     </div>
                   )}
                   {!feature.bgImage && (

@@ -70,7 +70,7 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 pointer-events-none flex flex-col justify-end">
-      <div className="bg-[#092b19]/95 backdrop-blur-md border-t border-nabtura-green/20 shadow-[0_-10px_40px_rgba(0,0,0,0.6)] w-full pointer-events-auto relative overflow-hidden">
+      <div className="bg-[#0c1f15]/90 backdrop-blur-3xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.6)] w-full pointer-events-auto relative overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
         {/* Background Glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-nabtura-green/5 blur-[100px] rounded-full pointer-events-none" />
 
