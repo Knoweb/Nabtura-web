@@ -51,8 +51,7 @@ export default function FinalCTA() {
             <Link href="/contact?type=location" className="block">
               <motion.div 
                 whileHover={{ scale: 1.03, y: -5 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative group bg-[#050A08]/60 backdrop-blur-xl border border-white/10 hover:border-nabtura-green p-6 lg:p-8 rounded-[1.5rem] overflow-hidden flex flex-col items-center gap-4 shadow-xl hover:shadow-[0_15px_40px_rgba(21,184,118,0.2)] transition-all duration-500 h-full"
+                className="relative group bg-white/[0.03] backdrop-blur-3xl border border-white/10 hover:border-nabtura-green p-6 lg:p-8 rounded-[1.5rem] overflow-hidden flex flex-col items-center gap-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] hover:shadow-[0_15px_40px_rgba(21,184,118,0.2)] transition-all duration-500 h-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-nabtura-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -74,8 +73,7 @@ export default function FinalCTA() {
             <Link href="/contact?type=invest" className="block">
               <motion.div 
                 whileHover={{ scale: 1.03, y: -5 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative group bg-[#050A08]/60 backdrop-blur-xl border border-white/10 hover:border-nabtura-sand p-6 lg:p-8 rounded-[1.5rem] overflow-hidden flex flex-col items-center gap-4 shadow-xl hover:shadow-[0_15px_40px_rgba(212,175,55,0.2)] transition-all duration-500 h-full"
+                className="relative group bg-white/[0.03] backdrop-blur-3xl border border-white/10 hover:border-nabtura-sand p-6 lg:p-8 rounded-[1.5rem] overflow-hidden flex flex-col items-center gap-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.2)] transition-all duration-500 h-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-nabtura-sand/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -97,8 +95,7 @@ export default function FinalCTA() {
             <Link href="/contact?type=project" className="block">
               <motion.div 
                 whileHover={{ scale: 1.03, y: -5 }}
-                whileTap={{ scale: 0.97 }}
-                className="relative group bg-[#050A08]/60 backdrop-blur-xl border border-white/10 hover:border-nabtura-blue p-6 lg:p-8 rounded-[1.5rem] overflow-hidden flex flex-col items-center gap-4 shadow-xl hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] transition-all duration-500 h-full"
+                className="relative group bg-white/[0.03] backdrop-blur-3xl border border-white/10 hover:border-nabtura-blue p-6 lg:p-8 rounded-[1.5rem] overflow-hidden flex flex-col items-center gap-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] hover:shadow-[0_15px_40px_rgba(59,130,246,0.2)] transition-all duration-500 h-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-nabtura-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 

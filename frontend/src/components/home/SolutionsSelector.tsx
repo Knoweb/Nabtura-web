@@ -24,27 +24,64 @@ export default function SolutionsSelector() {
 
   return (
     <section className="py-10 md:py-16 relative border-y border-white/5 z-20">
-      {/* Background Image & Gradient overlay */}
-      <div className="absolute inset-0 bg-[#020A05] z-0"></div>
+      {/* Background Base */}
+      <div className="absolute inset-0 bg-[#0a150f] z-0"></div>
       <div className="absolute inset-0 bg-[url('/images/uae_green_city.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay z-0"></div>
       
-      {/* Background elements wrapper with overflow hidden */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-emerald-500/20 blur-[120px] rounded-full"></div>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
+      {/* Animated Background Grid & Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center">
+        {/* Lighter, brighter animated orbs */}
+        <motion.div 
+          animate={{ 
+            x: [0, 100, 0, -100, 0],
+            y: [0, -50, 50, -50, 0],
+            scale: [1, 1.2, 0.9, 1.2, 1]
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[600px] h-[600px] bg-emerald-400/20 blur-[150px] rounded-full mix-blend-screen"
+        />
+        <motion.div 
+          animate={{ 
+            x: [0, -100, 0, 100, 0],
+            y: [0, 50, -50, 50, 0],
+            scale: [1, 1.3, 0.8, 1.3, 1]
+          }}
+          transition={{ duration: 25, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-[500px] h-[500px] bg-[#15B876]/20 blur-[150px] rounded-full mix-blend-screen"
+        />
+        
+        {/* Clean, organized animated grid */}
+        <motion.div 
+          animate={{ 
+            backgroundPosition: ["0px 0px", "0px 40px"],
+          }}
+          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 opacity-[0.05]" 
+          style={{ 
+            backgroundImage: `
+              linear-gradient(to right, #ffffff 1px, transparent 1px),
+              linear-gradient(to bottom, #ffffff 1px, transparent 1px)
+            `,
+            backgroundSize: '40px 40px' 
+          }}
+        />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         
         {/* Eyebrow */}
-        <motion.h2 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-xs md:text-sm tracking-[0.4em] text-emerald-400 font-bold mb-3 uppercase drop-shadow-md"
+          className="inline-flex items-center justify-center space-x-2 mb-4"
         >
-          WHAT ARE YOU LOOKING FOR?
-        </motion.h2>
+          <div className="w-8 h-[1px] bg-emerald-500/50"></div>
+          <h2 className="text-xs md:text-sm tracking-[0.4em] text-emerald-400 font-bold uppercase drop-shadow-md">
+            WHAT ARE YOU LOOKING FOR?
+          </h2>
+          <div className="w-8 h-[1px] bg-emerald-500/50"></div>
+        </motion.div>
 
         {/* Subheadline */}
         <motion.p 
@@ -52,18 +89,19 @@ export default function SolutionsSelector() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg md:text-xl text-white font-light mb-8 max-w-2xl mx-auto drop-shadow-sm"
+          className="text-lg md:text-xl text-white font-light mb-12 max-w-2xl mx-auto drop-shadow-sm"
         >
           Tell us what you're interested in and we'll take you to the right place.
         </motion.p>
 
         {/* Selector Container */}
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-          className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 md:p-8 shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-visible"
+          transition={{ delay: 0.2, type: "spring", stiffness: 80, damping: 20 }}
+          className="bg-white/[0.04] backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.4)] relative overflow-visible"
+          style={{ boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.1)' }}
         >
           <h3 className="text-sm font-bold tracking-widest text-white mb-6 uppercase text-left">
             WHAT ARE YOU LOOKING TO DO?
@@ -73,7 +111,7 @@ export default function SolutionsSelector() {
           <div className="relative mb-8 text-left">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl border transition-all duration-300 ${isOpen ? 'bg-emerald-500/10 border-emerald-500 shadow-[0_0_20px_rgba(52,211,153,0.2)]' : 'bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/10'}`}
+              className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl border transition-all duration-300 outline-none focus:ring-2 focus:ring-emerald-500/50 ${isOpen ? 'bg-emerald-500/10 border-emerald-500/50 shadow-[0_0_30px_rgba(52,211,153,0.15)]' : 'bg-black/40 border-white/10 hover:border-white/20 hover:bg-black/60 hover:shadow-lg'}`}
             >
               <span className={`text-base md:text-lg font-bold tracking-wide ${selectedOption ? 'text-white' : 'text-gray-400'}`}>
                 {selectedOption ? selectedOption.label : "Select what you're looking for"}
@@ -85,14 +123,13 @@ export default function SolutionsSelector() {
             <AnimatePresence>
               {isOpen && (
                 <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                  className="overflow-hidden mt-2"
+                  initial={{ height: 0, opacity: 0, y: -10 }}
+                  animate={{ height: "auto", opacity: 1, y: 0 }}
+                  exit={{ height: 0, opacity: 0, y: -10 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="overflow-hidden mt-2 absolute w-full z-50 rounded-2xl border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl bg-[#030e08]/95"
                 >
-                  <div className="bg-[#0A2213] border border-white/10 rounded-2xl shadow-inner overflow-y-auto custom-scrollbar max-h-[250px]">
-                    <div className="p-2 space-y-1">
+                  <div className="overflow-y-auto custom-scrollbar max-h-[300px] p-2 space-y-1">
                       {options.map((option, idx) => (
                         <button
                           key={idx}
@@ -100,14 +137,13 @@ export default function SolutionsSelector() {
                             setSelectedIndex(idx);
                             setIsOpen(false);
                           }}
-                          className={`w-full text-left px-4 py-4 rounded-xl flex items-center justify-between transition-colors ${selectedIndex === idx ? 'bg-emerald-500/20 text-emerald-400 font-bold' : 'text-gray-300 hover:bg-white/5 hover:text-white'}`}
+                          className={`w-full text-left px-5 py-4 rounded-xl flex items-center justify-between transition-all duration-200 group ${selectedIndex === idx ? 'bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/20' : 'text-gray-300 hover:bg-white/10 hover:text-white border border-transparent'}`}
                         >
                           <span className="text-sm md:text-base">{option.label}</span>
                           {selectedIndex === idx && <Check className="w-4 h-4 text-emerald-400" />}
                         </button>
                       ))}
                     </div>
-                  </div>
                 </motion.div>
               )}
             </AnimatePresence>

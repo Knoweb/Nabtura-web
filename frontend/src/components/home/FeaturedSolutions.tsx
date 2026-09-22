@@ -37,7 +37,7 @@ const featured = [
 
 export default function FeaturedSolutions() {
   return (
-    <section className="bg-nabtura-slate text-white pt-20 pb-10 md:pt-32 md:pb-16 border-t border-white/5 relative">
+    <section className="bg-transparent text-white pt-20 pb-10 md:pt-32 md:pb-16 border-t border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +74,7 @@ export default function FeaturedSolutions() {
               />
               
               {/* Stronger gradient overlay for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020504] via-[#020504]/80 to-transparent z-10 transition-opacity duration-300 group-hover:from-[#020504]/90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/80 to-transparent z-10 transition-opacity duration-300 group-hover:from-[#0a1811]/90" />
               
               <div className="relative z-20 p-8 flex flex-col h-full justify-end">
                 <div className="flex flex-wrap gap-2 mb-6">

@@ -63,7 +63,7 @@ export default function Investment() {
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
                 
                 {/* Content Area with Gradient Background */}
-                <div className="absolute inset-x-0 bottom-0 p-8 pt-24 flex flex-col justify-end bg-gradient-to-t from-[#020504] via-[#020504]/90 to-transparent">
+                <div className="absolute inset-x-0 bottom-0 p-8 pt-24 flex flex-col justify-end bg-gradient-to-t from-[#0a1811] via-[#0a1811]/90 to-transparent">
                   <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mb-6 group-hover:bg-nabtura-sand/20 transition-colors duration-500 border border-white/10 group-hover:border-nabtura-sand/50">
                     <Icon className="w-5 h-5 text-nabtura-sand" />
                   </div>

@@ -121,7 +121,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
         <motion.svg
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 w-[200%] h-[300px] md:h-[400px] fill-emerald-900/40"
+          className="absolute bottom-0 w-[200%] h-[300px] md:h-[400px] fill-[#0a1811]/40 mix-blend-screen"
           viewBox="0 0 2880 320"
           preserveAspectRatio="none"
         >
@@ -132,7 +132,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
         <motion.svg
           animate={{ x: ["-50%", "0%"] }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 w-[200%] h-[250px] md:h-[350px] fill-[#024a27]/50"
+          className="absolute bottom-0 w-[200%] h-[250px] md:h-[350px] fill-emerald-500/10 mix-blend-screen"
           viewBox="0 0 2880 320"
           preserveAspectRatio="none"
         >
@@ -143,7 +143,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
         <motion.svg
           animate={{ x: ["0%", "-50%"] }}
           transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30"
+          className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/20 mix-blend-screen"
           viewBox="0 0 2880 320"
           preserveAspectRatio="none"
         >
@@ -180,7 +180,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.2 }}
-                className="group flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-center bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors gap-6"
+                className="group flex-1 flex flex-col sm:flex-row items-start sm:items-center justify-center bg-white/[0.03] backdrop-blur-3xl border border-white/10 rounded-2xl p-6 hover:bg-white/[0.06] transition-colors gap-6 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
               >
                 <div className={`w-16 h-16 flex-shrink-0 rounded-full flex items-center justify-center transition-all border border-transparent ${pillar.iconBg}`}>
                   <pillar.icon className={`w-8 h-8 transition-colors ${pillar.iconColor}`} />
@@ -207,7 +207,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
             viewport={{ once: true }}
-            className="h-full flex flex-col bg-white/5 border border-white/10 rounded-3xl p-6 xl:p-8 relative overflow-hidden"
+            className="h-full flex flex-col bg-white/[0.03] backdrop-blur-3xl border border-white/10 rounded-3xl p-6 xl:p-8 relative overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
           >
             {/* Soft Glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/10 blur-[80px] rounded-full pointer-events-none" />
@@ -232,7 +232,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
               >
                 {displayBlogs.map((blog) => (
                   <div key={blog.id} className="min-w-full px-1 flex flex-col h-full">
-                    <div className="flex flex-col flex-grow bg-black/40 border border-white/5 rounded-2xl overflow-hidden hover:border-nabtura-green/30 transition-colors group">
+                    <div className="flex flex-col flex-grow bg-white/[0.03] backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden hover:border-nabtura-green/30 transition-colors group">
                       <div className="h-48 xl:h-56 w-full overflow-hidden relative flex-shrink-0">
                         <img 
                           src={getImageUrl(blog.coverImage?.url)} 
@@ -315,7 +315,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: idx * 0.2, type: "spring", stiffness: 200, damping: 15 }}
                     viewport={{ once: true }}
-                    className="w-20 h-20 rounded-full bg-[#0a0a0a] border-2 border-white/10 group-hover:border-nabtura-green flex items-center justify-center mb-6 transition-all duration-500 relative"
+                    className="w-20 h-20 rounded-full bg-white/[0.03] backdrop-blur-md border border-white/10 group-hover:border-nabtura-green flex items-center justify-center mb-6 transition-all duration-500 relative shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
                   >
                     {/* Synchronized Glowing Ring */}
                     <motion.div

@@ -62,7 +62,7 @@ export default function HowWeWork() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-70 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050A08] via-[#050A08]/50 to-transparent opacity-90" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/50 to-transparent opacity-90" />
                   
                   {/* Icon floating on the image */}
                   <div className="absolute bottom-4 left-6 w-12 h-12 rounded-xl bg-black/60 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:border-nabtura-green/50 group-hover:bg-nabtura-green/20 group-hover:shadow-[0_0_20px_rgba(21,184,118,0.3)] transition-all duration-300">
@@ -88,7 +88,7 @@ export default function HowWeWork() {
         </div>
 
         {/* Premium Banner */}
-        <div className="text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 bg-gradient-to-r from-[#050A08] via-white/5 to-[#050A08] p-8 md:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
+        <div className="text-center max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 bg-[#0a1811]/60 backdrop-blur-3xl p-8 md:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] border border-white/10">
           {/* Subtle glow behind the banner text */}
           <div className="absolute left-0 right-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
           

@@ -100,7 +100,7 @@ export default function SpaceTransformation() {
 
           {/* Transformation Display */}
           <div className="lg:col-span-7">
-            <div className="relative bg-transparent border border-white/10 rounded-3xl p-6 md:p-10 min-h-[500px] flex flex-col justify-center overflow-hidden shadow-2xl">
+            <div className="relative bg-white/[0.03] backdrop-blur-3xl border border-white/10 rounded-3xl p-6 md:p-10 min-h-[500px] flex flex-col justify-center overflow-hidden shadow-2xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
               
               {/* Decorative accent */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-nabtura-green/10 blur-[80px] rounded-full pointer-events-none" />
@@ -117,7 +117,7 @@ export default function SpaceTransformation() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
                     
                     {/* Before Image Panel (Realistic Empty State) */}
-                    <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-white/5 bg-[#050505]">
+                    <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-white/5 bg-[#0a1811]/60 backdrop-blur-md">
                       <img 
                         src={transformations[activeIndex].imgBefore} 
                         alt="Before" 
@@ -144,7 +144,7 @@ export default function SpaceTransformation() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
                       
                       {/* Transformation Arrow (Mobile Overlay) */}
-                      <div className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 md:hidden bg-nabtura-slate rounded-full p-1 border border-white/10">
+                      <div className="absolute -left-4 top-1/2 -translate-y-1/2 z-20 md:hidden bg-[#0a1811] rounded-full p-1 border border-white/10">
                         <ArrowRightCircle className="w-8 h-8 text-nabtura-green" />
                       </div>
 

@@ -23,7 +23,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[80vh] lg:min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#050A08] text-content pt-32 pb-16 px-6">
+    <section className="relative min-h-[80vh] lg:min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-transparent text-content pt-32 pb-16 px-6">
       {/* Cinematic Background Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence>
@@ -33,12 +33,12 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-60"
             style={{ backgroundImage: `url(${bgImages[index % bgImages.length]})` }}
           />
         </AnimatePresence>
-        {/* Soft gradient to keep text readable */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050A08]/90 via-[#050A08]/60 to-[#050A08]/90 z-10" />
+        {/* Soft gradient to keep text readable while letting the global background shine through */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1811]/90 via-[#0a1811]/40 to-transparent z-10" />
       </div>
 
       <div className="relative z-20 text-center max-w-5xl mx-auto w-full flex flex-col items-center">

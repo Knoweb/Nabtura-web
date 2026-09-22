@@ -259,7 +259,7 @@ export default function WhoWeServe() {
           </div>
 
           {/* Bottom Section: Dynamic Content Panel with Background Image */}
-          <div className="relative border border-white/10 rounded-[2rem] min-h-[700px] lg:min-h-[750px] flex flex-col shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden group bg-nabtura-slate">
+          <div className="relative border border-white/10 rounded-[2rem] min-h-[700px] lg:min-h-[750px] flex flex-col shadow-[0_30px_60px_-15px_rgba(0,0,0,0.8)] overflow-hidden group bg-[#0a1811]/80 backdrop-blur-3xl">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeContent.id}
@@ -275,8 +275,8 @@ export default function WhoWeServe() {
                   fill
                   className="object-cover opacity-50 group-hover:opacity-60 transition-opacity duration-1000 mix-blend-overlay"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#020504] via-[#020504]/80 to-[#020504]/40" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#020504]/90 via-[#020504]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/80 to-[#0a1811]/40" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0a1811]/90 via-[#0a1811]/40 to-transparent" />
               </motion.div>
             </AnimatePresence>
 

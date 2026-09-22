@@ -67,7 +67,7 @@ export default function SmartGrowing() {
         <div className="max-w-5xl mx-auto mt-24 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-nabtura-green/20 via-nabtura-blue/20 to-nabtura-green/20 blur-2xl rounded-[3rem] pointer-events-none" />
           
-          <div className="relative bg-[#050A08]/60 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-[3rem] text-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+          <div className="relative bg-[#0a1811]/60 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-[3rem] text-center shadow-[0_0_50px_rgba(0,0,0,0.5)]">
             <h4 className="text-3xl md:text-5xl font-black text-white mb-10 tracking-tight">
               SOIL ISN'T ALWAYS <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">REQUIRED</span>
             </h4>

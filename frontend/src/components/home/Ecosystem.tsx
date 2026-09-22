@@ -89,7 +89,7 @@ export default function Ecosystem() {
                 className={`relative px-6 py-3 rounded-full flex items-center gap-3 transition-all duration-300 border ${
                   isActive 
                     ? `bg-white/10 border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.05)]` 
-                    : `bg-black/20 border-white/5 hover:bg-white/5 hover:border-white/10`
+                    : `bg-white/[0.03] backdrop-blur-md border-white/5 hover:bg-white/5 hover:border-white/10`
                 }`}
               >
                 <Icon className={`w-5 h-5 ${isActive ? node.color : "text-gray-500"}`} />
@@ -109,7 +109,7 @@ export default function Ecosystem() {
         </div>
 
         {/* Main Canvas Area */}
-        <div className="relative w-full min-h-[500px] md:min-h-[420px] flex rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 bg-[#050A08]">
+        <div className="relative w-full min-h-[500px] md:min-h-[420px] flex rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 bg-[#0a1811]/80 backdrop-blur-3xl">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeNode.id}
@@ -127,7 +127,7 @@ export default function Ecosystem() {
                 className="object-cover opacity-60"
               />
               {/* Gradient to ensure text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#050A08] via-[#050A08]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0a1811] via-[#0a1811]/80 to-transparent" />
             </motion.div>
           </AnimatePresence>
 
