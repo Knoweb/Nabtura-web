@@ -12,6 +12,8 @@ export type EnquiryType =
   | "plants" 
   | "smartcare" 
   | "investment" 
+  | "media"
+  | "not_sure"
   | "general";
 
 interface EnquiryState {

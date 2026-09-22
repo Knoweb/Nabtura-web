@@ -8,16 +8,12 @@ import { submitEnquiry } from "@/lib/api";
 import { useEnquiry, EnquiryType } from "@/context/EnquiryContext";
 
 const ENQUIRY_OPTIONS = [
-  { id: "grow_food", title: "I WANT TO GROW FOOD", subtitle: "Smart Greenhouses • Smart Microgreens" },
-  { id: "grow_food_home", title: "I WANT TO GROW FOOD AT HOME", subtitle: "Smart Home Greenhouse • Hydroponics • Edible Growing" },
-  { id: "water", title: "I WANT TO MANAGE WATER", subtitle: "Smart Irrigation • Water Management • Monitoring" },
-  { id: "green_space", title: "I WANT TO CREATE A GREEN SPACE", subtitle: "Landscapes • Urban Forests • Green Experiences" },
-  { id: "green_land", title: "I WANT TO GREEN LAND", subtitle: "Desert Greening • Land Transformation" },
-  { id: "challenge", title: "I HAVE AN ENVIRONMENTAL CHALLENGE", subtitle: "Custom • Integrated • Project-Specific Solutions" },
-  { id: "plants", title: "I NEED PLANTS FOR A PROJECT", subtitle: "Nursery Solutions • Plant Sourcing • Project Supply" },
-  { id: "smartcare", title: "I NEED ONGOING SUPPORT", subtitle: "NABTURA SmartCare" },
-  { id: "investment", title: "I WANT TO INVEST OR PARTNER", subtitle: "Investment • Land • Technology • Capability • Partnership" },
-  { id: "general", title: "I'M NOT SURE", subtitle: "Help me find the right solution" },
+  { id: "challenge", title: "NEW PROJECT ENQUIRY", subtitle: "Discuss a new project or idea." },
+  { id: "plants", title: "PLANT SUPPLY / NURSERY", subtitle: "Source plants for a project." },
+  { id: "investment", title: "INVESTMENT / PARTNERSHIP", subtitle: "Discuss an opportunity or collaboration." },
+  { id: "smartcare", title: "SMARTCARE SUPPORT", subtitle: "Get support for an existing system." },
+  { id: "media", title: "MEDIA / PRESS", subtitle: "Media enquiries." },
+  { id: "general", title: "GENERAL ENQUIRY", subtitle: "Something else." },
 ];
 
 export default function ContactPage() {
@@ -152,7 +148,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-transparent pt-20 pb-32">
       <SolutionHero
         eyebrow="CONTACT NABTURA"
-        headline={<>LET'S START<br/>A CONVERSATION.</>}
+        headline={<>HOW CAN WE<br/>HELP?</>}
         tagline="Have a project, space, land, idea or opportunity? Tell us what you're looking to achieve and we'll help identify the right NABTURA path."
         bgImageUrl="/possibility_smart_greenhouse_1788160454551.jpg"
         accentColor="text-white"
@@ -163,7 +159,7 @@ export default function ContactPage() {
           }}
           className="inline-flex items-center gap-2 bg-nabtura-green text-black px-8 py-4 rounded-full text-xs font-bold tracking-widest uppercase hover:bg-nabtura-light-green transition-all shadow-[0_0_20px_rgba(46,204,113,0.3)] hover:shadow-[0_0_30px_rgba(46,204,113,0.5)]"
         >
-          START BELOW <ArrowRight className="w-4 h-4 rotate-90" />
+          START CONVERSATION <ArrowRight className="w-4 h-4 rotate-90" />
         </button>
       </SolutionHero>
 
