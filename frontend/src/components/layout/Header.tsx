@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight, Activity } from "lucide-react";
+import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight, Activity, Search } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -96,14 +96,13 @@ export default function Header() {
   ];
 
   const navLinks = [
-    { name: "HOME", href: "/" },
-    { name: "SOLUTIONS", href: "/solutions" },
-    { name: "WHO WE SERVE", href: "/who-we-serve" },
-    { name: "WORK WITH NABTURA", href: "/work-with-nabtura" },
-    { name: "POSSIBILITIES", href: "/possibilities" },
-    { name: "NEWS / BLOGS", href: "/blog" },
-    { name: "ABOUT", href: "/about" },
-    { name: "CONTACT", href: "/contact" },
+    { name: "Home", href: "/" },
+    { name: "Solutions", href: "/solutions" },
+    { name: "Who We Serve", href: "/who-we-serve" },
+    { name: "Work With Nabtura", href: "/work-with-nabtura" },
+    { name: "Possibilities", href: "/possibilities" },
+    { name: "News / Blogs", href: "/blog" },
+    { name: "About", href: "/about" },
   ];
 
   const checkIsActive = (href: string) => {
@@ -156,26 +155,43 @@ export default function Header() {
     }
   };
 
+  const NabturaLogo = () => (
+    <svg viewBox="0 0 100 100" className="w-9 h-9 shrink-0 transition-transform group-hover:scale-105 duration-300" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 95 C 20 85, 10 50, 20 30 C 40 30, 55 60, 50 95 Z" fill="#2E7D32"/>
+      <path d="M50 95 C 75 80, 95 40, 85 15 C 60 15, 40 50, 50 95 Z" fill="#4CAF50"/>
+      <path d="M20 30 Q 35 60 50 95" fill="none" stroke="#05150C" strokeWidth="1.5"/>
+      <path d="M85 15 Q 60 50 50 95" fill="none" stroke="#05150C" strokeWidth="2"/>
+    </svg>
+  );
+
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled ? "bg-black/90 backdrop-blur-xl shadow-lg shadow-black" : "bg-gradient-to-b from-black/80 to-transparent"
     }`}>
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-24 w-full">
-          {/* Logo (Left) */}
-          <div className="flex-shrink-0 flex items-center z-50 lg:w-[200px]">
-            <Link href="/" className="text-3xl font-bold tracking-[0.2em] text-white hover:text-nabtura-green transition-colors">
-              NABTURA
+          {/* Logo & Tagline (Left) */}
+          <div className="flex-shrink-0 flex items-center z-50 lg:w-[300px]">
+            <Link href="/" className="flex items-center gap-3 group">
+              <NabturaLogo />
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-[0.15em] text-white group-hover:text-nabtura-green transition-colors leading-none pb-1">
+                  NABTURA
+                </span>
+                <span className="text-[7.5px] font-bold tracking-[0.2em] text-gray-400 uppercase leading-none">
+                  GREEN POSSIBILITIES. REAL SOLUTIONS.
+                </span>
+              </div>
             </Link>
           </div>
 
           {/* Desktop Navigation (Center) */}
           <div className="hidden xl:flex flex-1 justify-center">
-            <nav className="flex items-center gap-5 2xl:gap-8">
+            <nav className="flex items-center gap-4 2xl:gap-6">
               {navLinks.map((link) => {
                 const isActive = checkIsActive(link.href);
 
-                if (link.name === "SOLUTIONS") {
+                if (link.name === "Solutions") {
                   return (
                     <div 
                       key={link.name} 
@@ -190,7 +206,7 @@ export default function Header() {
                         <motion.span
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className={`inline-flex items-center relative text-[12px] 2xl:text-[13px] font-bold tracking-widest uppercase whitespace-nowrap transition-colors py-2 cursor-pointer ${
+                          className={`inline-flex items-center relative text-[15.5px] font-semibold tracking-wide whitespace-nowrap transition-colors py-2 cursor-pointer ${
                             isActive ? "text-nabtura-green" : "text-gray-300 hover:text-white"
                           }`}
                         >
@@ -260,7 +276,7 @@ export default function Header() {
                     <motion.span
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className={`inline-block relative text-[12px] 2xl:text-[13px] font-bold tracking-widest uppercase whitespace-nowrap transition-colors py-2 cursor-pointer ${
+                      className={`inline-block relative text-[15.5px] font-semibold tracking-wide whitespace-nowrap transition-colors py-2 cursor-pointer ${
                         isActive ? "text-nabtura-green" : "text-gray-300 hover:text-white"
                       }`}
                     >
@@ -282,15 +298,26 @@ export default function Header() {
             </nav>
           </div>
 
-          {/* CTA (Right) */}
-          <div className="hidden xl:flex justify-end lg:w-[250px]">
+          {/* Right Side Icons & CTA */}
+          <div className="hidden xl:flex justify-end items-center gap-6 lg:w-[300px]">
+            <div className="flex items-center gap-4 text-white">
+              <button className="flex items-center gap-1 hover:text-nabtura-green transition-colors text-[13px] font-semibold">
+                <Globe2 className="w-5 h-5" />
+                EN
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+            </div>
             <Link href="/contact">
               <motion.span
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block bg-nabtura-green text-black px-6 py-3 rounded-full text-[12px] 2xl:text-[13px] font-extrabold tracking-widest hover:bg-nabtura-light-green transition-all uppercase shadow-lg shadow-nabtura-green/20 whitespace-nowrap cursor-pointer"
+                className="relative inline-flex items-center justify-center bg-gradient-to-r from-nabtura-green to-emerald-400 text-black px-6 py-2.5 rounded-full text-[14px] font-bold tracking-widest uppercase hover:from-emerald-400 hover:to-nabtura-green transition-all shadow-[0_0_20px_rgba(0,255,163,0.4)] hover:shadow-[0_0_30px_rgba(0,255,163,0.7)] whitespace-nowrap cursor-pointer group overflow-hidden"
               >
-                START A CONVERSATION
+                <div className="absolute inset-0 bg-white/40 w-1/2 h-full -skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
+                <span className="relative z-10 flex items-center">
+                  Contact Us
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
               </motion.span>
             </Link>
           </div>
@@ -336,9 +363,13 @@ export default function Header() {
               <Link
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="bg-nabtura-green text-black text-center px-8 py-4 rounded-full text-sm font-bold tracking-widest hover:bg-nabtura-light-green transition-all uppercase mt-8"
+                className="relative overflow-hidden bg-gradient-to-r from-nabtura-green to-emerald-400 text-black text-center px-8 py-4 rounded-full text-sm font-bold tracking-widest uppercase hover:from-emerald-400 hover:to-nabtura-green transition-all mt-8 shadow-[0_0_20px_rgba(0,255,163,0.4)] flex items-center justify-center group"
               >
-                START A CONVERSATION
+                <div className="absolute inset-0 bg-white/40 w-1/2 h-full -skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
+                <span className="relative z-10 flex items-center">
+                  Contact Us
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </span>
               </Link>
             </div>
           </motion.div>

@@ -4,21 +4,25 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronDown, Leaf } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useEnquiry, EnquiryType } from "@/context/EnquiryContext";
 
-const INTEREST_OPTIONS = [
-  { label: "Growing fresh food locally", value: "/solutions/smart-microgreens" },
-  { label: "Managing water resources", value: "/solutions/smart-irrigation" },
-  { label: "Transforming an urban space", value: "/solutions/urban-forests" },
-  { label: "Landscaping a property", value: "/solutions/landscapes" },
-  { label: "Desert greening projects", value: "/solutions/desert-greening" },
-  { label: "Environmental restoration", value: "/solutions/environmental-projects" },
-  { label: "Investing in green technology", value: "/contact" },
+const INTEREST_OPTIONS: { label: string; enquiryType: EnquiryType }[] = [
+  { label: "Grow Food", enquiryType: "grow_food" },
+  { label: "Grow At Home", enquiryType: "grow_food_home" },
+  { label: "Manage Water", enquiryType: "water" },
+  { label: "Create a Green Space", enquiryType: "green_space" },
+  { label: "Create a Green Experience", enquiryType: "green_space" },
+  { label: "Green Land", enquiryType: "green_space" },
+  { label: "Solve an Environmental Challenge", enquiryType: "challenge" },
+  { label: "Invest or Partner", enquiryType: "investment" },
+  { label: "I'm Not Sure", enquiryType: "not_sure" },
 ];
 
 export default function WhatNabturaDoes() {
   const router = useRouter();
+  const { setEnquiryState } = useEnquiry();
   const [isOpen, setIsOpen] = useState(false);
-  const [selected, setSelected] = useState<{ label: string; value: string } | null>(null);
+  const [selected, setSelected] = useState<{ label: string; enquiryType: EnquiryType } | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,7 +37,11 @@ export default function WhatNabturaDoes() {
 
   const handleNavigate = () => {
     if (selected) {
-      router.push(selected.value);
+      setEnquiryState({
+        type: selected.enquiryType,
+        adaptiveAnswer: {},
+      });
+      router.push("/contact");
     }
   };
 
