@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowDown, ArrowRight, Sprout, Utensils, BookOpen, Home, Briefcase, Coffee, Users, RefreshCw, Sparkles, MoveRight, Leaf, Sun, Droplets, TreePine, Globe2 } from 'lucide-react';
 
@@ -53,6 +54,15 @@ export default function PossibilitiesPage() {
   const categories = [
     'GROW', 'DINE', 'LEARN', 'LIVE', 'WORK', 'RELAX', 'GATHER', 'TRANSFORM'
   ];
+
+  const [currentLiveIdx, setCurrentLiveIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentLiveIdx((prev) => (prev === 0 ? 1 : 0));
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [liveItems.length]);
 
   return (
     <main className="min-h-screen bg-nabtura-slate pt-20 overflow-hidden text-white selection:bg-nabtura-green selection:text-black">
@@ -307,27 +317,21 @@ export default function PossibilitiesPage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 relative z-10 auto-rows-[250px] md:auto-rows-[300px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 relative z-10 auto-rows-[200px] md:auto-rows-[220px]">
             {learnItems.map((item, idx) => {
               const Icon = item.icon;
               
-              // Bento Box layout
-              let spanClasses = "md:col-span-1 md:row-span-1";
-              if (idx === 0) spanClasses = "md:col-span-2 md:row-span-2";
-              else if (idx === 1) spanClasses = "md:col-span-2 md:row-span-1";
-              else if (idx === 4) spanClasses = "md:col-span-3 md:row-span-1";
-
               return (
-                <div key={idx} className={`group block rounded-[2rem] p-6 md:p-8 hover:border-blue-400/50 transition-all duration-500 shadow-2xl overflow-hidden relative border border-white/10 bg-[#050a08] flex flex-col justify-end ${spanClasses} min-h-[250px] md:min-h-0`}>
-                  <div className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
+                <div key={idx} className="group block rounded-[1.5rem] p-5 hover:border-blue-400/50 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] flex flex-col justify-end min-h-[200px] md:min-h-0">
+                  <div className="absolute inset-0 bg-cover bg-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/95 via-[#0a0a0a]/60 to-transparent"></div>
                   
                   <div className="relative z-10 mt-auto">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-blue-400/10 flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.2)]">
-                      <Icon className="w-5 h-5 text-blue-400" />
+                    <div className="w-8 h-8 mb-2 rounded-xl bg-blue-400/10 flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.2)]">
+                      <Icon className="w-4 h-4 text-blue-400" />
                     </div>
-                    <h4 className={`${idx === 0 ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl'} font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md`}>{item.title}</h4>
-                    <p className="text-gray-300 font-light text-xs md:text-sm leading-relaxed max-w-md">{item.desc}</p>
+                    <h4 className="text-sm md:text-base font-bold tracking-tight text-white mb-1 uppercase group-hover:text-blue-300 transition-colors">{item.title}</h4>
+                    <p className="text-gray-400 font-light text-ms line-clamp-2 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               )
@@ -351,31 +355,47 @@ export default function PossibilitiesPage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10 lg:pt-12 lg:pb-24">
-            {liveItems.map((item, idx) => {
-              const Icon = item.icon;
-              
-              // Waterfall Stagger Effect
-              const colOffset = 
-                idx % 3 === 0 ? "lg:-translate-y-8" :
-                idx % 3 === 1 ? "lg:translate-y-16" :
-                "lg:translate-y-4";
-
-              return (
-                <div key={idx} className={`group block rounded-[2rem] p-8 hover:border-emerald-400/50 transition-all duration-500 shadow-2xl overflow-hidden relative border border-white/10 bg-[#050a08] h-[350px] lg:h-[420px] flex flex-col justify-end ${colOffset}`}>
-                  <div className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
-                  
-                  <div className="relative z-10 mt-auto">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-400/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(52,211,153,0.2)]">
-                      <Icon className="w-5 h-5 text-emerald-400" />
+          <div className="relative z-10 w-full max-w-7xl mx-auto py-4 mt-2">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentLiveIdx}
+                initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 1.05, filter: 'blur(5px)' }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5"
+              >
+                {liveItems.slice(currentLiveIdx * 3, currentLiveIdx * 3 + 3).map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={idx} className="group block rounded-[1.5rem] p-5 hover:border-emerald-400/50 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] flex flex-col justify-end min-h-[200px] md:min-h-[220px]">
+                      <div className="absolute inset-0 bg-cover bg-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/95 via-[#0a0a0a]/60 to-transparent"></div>
+                      
+                      <div className="relative z-10 mt-auto">
+                        <div className="w-8 h-8 mb-2 rounded-xl bg-emerald-400/10 flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(52,211,153,0.2)]">
+                          <Icon className="w-4 h-4 text-emerald-400" />
+                        </div>
+                        <h4 className="text-sm md:text-base font-bold tracking-tight text-white mb-1 uppercase group-hover:text-emerald-300 transition-colors">{item.title}</h4>
+                        <p className="text-gray-400 font-light text-ms line-clamp-2 leading-relaxed">{item.desc}</p>
+                      </div>
                     </div>
-                    <h4 className="text-xl lg:text-2xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">{item.title}</h4>
-                    <p className="text-gray-300 font-light text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              )
-            })}
+                  )
+                })}
+              </motion.div>
+            </AnimatePresence>
+            
+            {/* Indicators */}
+            <div className="flex justify-center gap-2 mt-8 relative z-20">
+              {[0, 1].map((idx) => (
+                <button 
+                  key={idx} 
+                  onClick={() => setCurrentLiveIdx(idx)}
+                  className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${idx === currentLiveIdx ? 'w-8 bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]' : 'w-2 bg-white/20 hover:bg-white/40'}`}
+                  aria-label={`Go to page ${idx + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </motion.section>
 
@@ -395,25 +415,25 @@ export default function PossibilitiesPage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 relative z-10 auto-rows-[250px] md:auto-rows-[300px]">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 relative z-10 auto-rows-[200px] md:auto-rows-[220px]">
             {transformItems.map((item, idx) => {
               const Icon = item.icon;
               
-              // Hero Gallery Layout for 5 items
+              // Bento Box Layout for 5 items
               let spanClasses = "md:col-span-1 md:row-span-1";
-              if (idx === 0) spanClasses = "md:col-span-2 md:row-span-2"; // 0: Huge 2x2 featured card on left
+              if (idx === 0) spanClasses = "md:col-span-1 md:row-span-2"; // Narrower featured card (1 column width, 2 rows height)
               
               return (
-                <div key={idx} className={`group block rounded-[2rem] p-6 md:p-8 hover:border-nabtura-sand/50 transition-all duration-500 shadow-2xl overflow-hidden relative border border-white/10 bg-[#050a08] flex flex-col justify-end ${spanClasses} min-h-[250px] md:min-h-0`}>
-                  <div className="absolute inset-0 bg-cover bg-center opacity-40 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/50 to-transparent"></div>
+                <div key={idx} className={`group block rounded-[1.5rem] p-5 hover:border-nabtura-sand/50 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] flex flex-col justify-end ${spanClasses} min-h-[200px] md:min-h-0`}>
+                  <div className="absolute inset-0 bg-cover bg-center opacity-50 group-hover:opacity-80 transition-all duration-700 group-hover:scale-105" style={{ backgroundImage: `url(${item.bgImage})` }}></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/95 via-[#0a0a0a]/60 to-transparent"></div>
                   
                   <div className="relative z-10 mt-auto">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-nabtura-sand/10 flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(212,175,55,0.2)]">
-                      <Icon className="w-5 h-5 text-nabtura-sand" />
+                    <div className={`${idx === 0 ? 'w-12 h-12 mb-4' : 'w-8 h-8 mb-2'} rounded-xl bg-nabtura-sand/10 flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(212,175,55,0.2)]`}>
+                      <Icon className={`${idx === 0 ? 'w-6 h-6' : 'w-4 h-4'} text-nabtura-sand`} />
                     </div>
-                    <h4 className={`${idx === 0 ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-lg md:text-xl'} font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md`}>{item.title}</h4>
-                    <p className="text-gray-300 font-light text-xs md:text-sm leading-relaxed max-w-md">{item.desc}</p>
+                    <h4 className="text-sm md:text-base font-bold tracking-tight text-white mb-1 uppercase group-hover:text-yellow-300 transition-colors">{item.title}</h4>
+                    <p className={`text-gray-400 font-light ${idx === 0 ? 'text-sm' : 'text-sm line-clamp-2'} leading-relaxed`}>{item.desc}</p>
                   </div>
                 </div>
               )
