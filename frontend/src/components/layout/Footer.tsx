@@ -25,7 +25,7 @@ const FacebookIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="bg-[#05150C] text-gray-400 relative border-t border-white/5 overflow-hidden font-sans pt-12">
+    <footer className="bg-[#0a1811] text-gray-400 relative border-t border-white/5 overflow-hidden font-sans pt-12">
       {/* Subtle Premium Glows */}
       <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-nabtura-green/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-emerald-600/5 blur-[120px] rounded-full pointer-events-none" />

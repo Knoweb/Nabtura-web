@@ -231,17 +231,17 @@ export default function Header() {
                             initial={{ opacity: 0, y: 15, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                            transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[260px] z-50"
+                            transition={{ duration: 0.2, type: "spring", stiffness: 100, damping: 20 }}
+                            className="absolute top-full left-1/2 -translate-x-1/2 pt-6 w-[340px] z-50"
                           >
-                            <div className="bg-[#050a08]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] shadow-nabtura-green/5 flex flex-col gap-4">
+                            <div className="bg-[#0a1811]/60 backdrop-blur-3xl border border-white/10 rounded-3xl p-7 shadow-[0_20px_60px_rgba(0,0,0,0.6)] shadow-nabtura-green/10 flex flex-col gap-6" style={{ boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.05)' }}>
                               {solutionsMegaMenu.map((section, idx) => {
                                 const Icon = section.icon;
                                 return (
                                   <div key={idx} className="flex flex-col">
-                                    <div className={`flex items-center gap-2 mb-2 border-b border-white/5 pb-1`}>
+                                    <div className={`flex items-center gap-2 mb-3 border-b border-white/5 pb-2`}>
                                       <Icon className={`w-4 h-4 ${section.color}`} />
-                                      <span className="text-[10px] font-bold tracking-widest text-white uppercase">{section.category}</span>
+                                      <span className="text-[11px] font-bold tracking-widest text-white uppercase drop-shadow-sm">{section.category}</span>
                                     </div>
                                     <div className="flex flex-col gap-1">
                                       {section.links.map(sublink => (
@@ -249,10 +249,10 @@ export default function Header() {
                                           key={sublink.name} 
                                           href={sublink.href}
                                           onClick={() => setIsSolutionsHovered(false)}
-                                          className={`text-sm text-gray-300 hover:${section.color} hover:translate-x-1 transition-all flex items-center group py-1`}
+                                          className={`text-sm text-gray-300 hover:${section.color} hover:bg-white/[0.03] px-2 py-1.5 rounded-lg transition-all flex items-center group -ml-2`}
                                         >
-                                          <span className="w-1.5 h-1.5 rounded-full bg-white/20 mr-2 group-hover:bg-current transition-colors shrink-0"></span>
-                                          {sublink.name}
+                                          <span className={`w-1.5 h-1.5 rounded-full bg-white/10 mr-3 group-hover:bg-current transition-colors shrink-0 group-hover:scale-125`}></span>
+                                          <span className="group-hover:translate-x-1 transition-transform">{sublink.name}</span>
                                         </Link>
                                       ))}
                                     </div>

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-background: #061A12;
+  --color-background: #0a1811;
   --color-foreground: #ededed;
   --font-sans: var(--font-outfit);
   
@@ -16,7 +16,7 @@
   --color-nabtura-sand: #D4AF37;
   
   /* Premium Dark Background (Rich Forest Green) */
-  --color-nabtura-slate: #061A12;
+  --color-nabtura-slate: #0a1811;
 }
 
 body {
