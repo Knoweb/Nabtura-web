@@ -3,9 +3,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
+  const { t } = useLanguage();
 
   const bgImages = [
     "/images/greenhouse.jpg",
@@ -52,7 +54,7 @@ export default function Hero() {
         >
           <p className="text-xs md:text-sm tracking-[0.3em] uppercase font-semibold flex items-center justify-center gap-3 flex-wrap">
             <span className="text-white">NABTURA</span>
-            <span className="text-nabtura-green">SMART AGRICULTURE & INTELLIGENT GREEN SOLUTIONS</span>
+            <span className="text-nabtura-green">{t.hero.eyebrow}</span>
           </p>
         </motion.div>
 
@@ -63,9 +65,9 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 1 }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black tracking-tighter text-white leading-tight drop-shadow-2xl flex flex-col gap-1 items-center mb-4"
         >
-          <span>GROW FOOD</span>
-          <span className="text-gray-300">MANAGE WATER</span>
-          <span className="text-nabtura-green">CREATE GREEN</span>
+          <span>{t.hero.line1}</span>
+          <span className="text-gray-300">{t.hero.line2}</span>
+          <span className="text-nabtura-green">{t.hero.line3}</span>
         </motion.h1>
 
         {/* Supporting Line with dual elegant lines */}
@@ -78,7 +80,7 @@ export default function Hero() {
           <div className="flex items-center gap-4">
             <span className="w-12 h-[1px] bg-gradient-to-l from-nabtura-green to-transparent hidden md:block"></span>
             <span className="text-nabtura-light-green font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm drop-shadow-md">
-              Smart. Controlled. Adapted.
+              {t.hero.tagline}
             </span>
             <span className="w-12 h-[1px] bg-gradient-to-r from-nabtura-green to-transparent hidden md:block"></span>
           </div>
@@ -91,7 +93,7 @@ export default function Hero() {
           transition={{ delay: 0.7, duration: 0.8 }}
           className="text-gray-300 max-w-2xl mx-auto mb-6 text-base sm:text-lg font-light leading-relaxed text-balance"
         >
-          Based in the UAE. Designed for challenging environments. Built for wider markets.
+          {t.hero.description}
         </motion.p>
 
         {/* Centered CTAs */}
@@ -114,7 +116,7 @@ export default function Hero() {
               href="/contact"
               className="w-full flex justify-center sm:w-auto px-10 py-4 bg-black/40 backdrop-blur-md border border-white/20 text-white font-bold tracking-widest text-sm rounded-full hover:bg-white/10 hover:border-white/40 transition-all uppercase whitespace-nowrap"
             >
-              TELL US ABOUT YOUR LOCATION
+              {t.hero.cta2}
             </Link>
           </motion.div>
         </motion.div>
@@ -127,7 +129,7 @@ export default function Hero() {
         >
           <motion.div whileTap={{ scale: 0.95 }} className="inline-block">
             <Link href="#invest" className="text-xs sm:text-sm text-gray-400 hover:text-white flex items-center justify-center gap-3 transition-colors py-2 font-medium tracking-widest uppercase group">
-              Looking to invest? Explore opportunities
+              {t.hero.investCta}
               <span className="text-nabtura-green group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </motion.div>

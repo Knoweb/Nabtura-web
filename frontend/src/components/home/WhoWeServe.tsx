@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 const clusters = [
   {
@@ -158,6 +159,7 @@ export default function WhoWeServe() {
   const [activeCluster, setActiveCluster] = useState(clusters[0].id);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (isHovered) return;
@@ -195,13 +197,13 @@ export default function WhoWeServe() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="mb-12 text-center">
           <h2 className="text-[10px] md:text-xs tracking-[0.3em] text-nabtura-green font-bold mb-4 uppercase">
-            BUILT AROUND YOUR PURPOSE
+            {t.whoWeServe.eyebrow}
           </h2>
           <h3 className="text-4xl md:text-5xl font-black tracking-tight mb-4">
-            WHAT COULD NABTURA DO FOR YOU?
+            {t.whoWeServe.headline}
           </h3>
           <p className="text-gray-400 text-lg md:text-xl font-light">
-            Tell us who you are. We'll show you what's possible.
+            {t.whoWeServe.subheadline}
           </p>
         </div>
 

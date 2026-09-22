@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import CookieBanner from "@/components/layout/CookieBanner";
 import GlobalAnimatedBackground from "@/components/home/GlobalAnimatedBackground";
 import { EnquiryProvider } from "@/context/EnquiryContext";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -28,20 +29,22 @@ export default function RootLayout({
       className={`${outfit.variable} h-full antialiased scroll-pt-28`}
     >
       <body className="min-h-full flex flex-col bg-transparent text-white font-sans relative selection:bg-nabtura-green selection:text-black">
-        <EnquiryProvider>
-          <GlobalAnimatedBackground />
-          
-          {/* Ambient Premium Glows */}
-          <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-            <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-nabtura-green/10 blur-[120px] rounded-full mix-blend-screen opacity-50"></div>
-            <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-nabtura-blue/10 blur-[150px] rounded-full mix-blend-screen opacity-50"></div>
-          </div>
+        <LanguageProvider>
+          <EnquiryProvider>
+            <GlobalAnimatedBackground />
+            
+            {/* Ambient Premium Glows */}
+            <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+              <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-nabtura-green/10 blur-[120px] rounded-full mix-blend-screen opacity-50"></div>
+              <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-nabtura-blue/10 blur-[150px] rounded-full mix-blend-screen opacity-50"></div>
+            </div>
 
-          <Header />
-          <main className="flex-grow relative z-0">{children}</main>
-          <Footer />
-          <CookieBanner />
-        </EnquiryProvider>
+            <Header />
+            <main className="flex-grow relative z-0">{children}</main>
+            <Footer />
+            <CookieBanner />
+          </EnquiryProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

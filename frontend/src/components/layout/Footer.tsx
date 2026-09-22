@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Phone, Mail, Globe } from "lucide-react";
 import CookiePreferencesButton from "./CookiePreferencesButton";
+import { useLanguage } from "@/context/LanguageContext";
 
 const NabturaLogo = () => (
   <svg viewBox="0 0 100 100" className="w-9 h-9 shrink-0 transition-transform group-hover:scale-105 duration-300" xmlns="http://www.w3.org/2000/svg">
@@ -24,6 +27,7 @@ const FacebookIcon = () => (
 );
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-[#0a1811] text-gray-400 relative border-t border-white/5 overflow-hidden font-sans pt-12">
       {/* Subtle Premium Glows */}
@@ -48,13 +52,13 @@ export default function Footer() {
               </Link>
               <div className="space-y-3 pt-2">
                 <p className="text-[10px] font-bold tracking-[0.15em] uppercase text-white/90 leading-snug">
-                  SMART AGRICULTURE & INTELLIGENT GREEN SOLUTIONS
+                  {t.footer.tagline}
                 </p>
                 <p className="text-[12px] font-semibold text-nabtura-green tracking-wide">
                   GROW FOOD. MANAGE WATER. CREATE GREEN.
                 </p>
                 <p className="text-[12px] font-light text-gray-400 leading-relaxed pr-2">
-                  Based in the UAE. Designed for challenging environments. Built for wider markets.
+                  {t.footer.description}
                 </p>
                 <p className="text-[10px] text-gray-500 italic">
                   A business of INFORGRID FZC — UAE
@@ -72,7 +76,7 @@ export default function Footer() {
 
           {/* 2. SOLUTIONS & 3. SUPPORTING CAPABILITIES */}
           <div>
-            <h4 className="text-[10px] font-bold tracking-[0.2em] text-white uppercase mb-3">Solutions</h4>
+            <h4 className="text-[10px] font-bold tracking-[0.2em] text-white uppercase mb-3">{t.footer.solutions}</h4>
             <ul className="space-y-1.5 text-[12px] font-light text-gray-400">
               <li><Link href="/solutions/smart-greenhouses" className="hover:text-nabtura-green transition-colors duration-300">Smart Greenhouses</Link></li>
               <li><Link href="/solutions/smart-microgreens" className="hover:text-nabtura-green transition-colors duration-300">Smart Microgreens</Link></li>
@@ -95,7 +99,7 @@ export default function Footer() {
 
           {/* 5. WHO WE SERVE */}
           <div>
-            <h4 className="text-[10px] font-bold tracking-[0.2em] text-white uppercase mb-3">Who We Serve</h4>
+            <h4 className="text-[10px] font-bold tracking-[0.2em] text-white uppercase mb-3">{t.footer.whoWeServe}</h4>
             <ul className="space-y-1.5 text-[12px] font-light text-gray-400">
               <li><Link href="/who-we-serve/hotels-resorts" className="hover:text-nabtura-green transition-colors duration-300">Hotels & Resorts</Link></li>
               <li><Link href="/who-we-serve/restaurants-fb" className="hover:text-nabtura-green transition-colors duration-300">Restaurants & F&B</Link></li>
@@ -191,9 +195,9 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-[10px] font-light text-gray-500">
-            <Link href="/legal/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy Policy</Link>
-            <Link href="/legal/terms-of-use" className="hover:text-white transition-colors duration-300">Terms of Use</Link>
-            <Link href="/legal/cookie-policy" className="hover:text-white transition-colors duration-300">Cookie Policy</Link>
+            <Link href="/legal/privacy-policy" className="hover:text-white transition-colors duration-300">{t.footer.privacyPolicy}</Link>
+            <Link href="/legal/terms-of-use" className="hover:text-white transition-colors duration-300">{t.footer.termsOfUse}</Link>
+            <Link href="/legal/cookie-policy" className="hover:text-white transition-colors duration-300">{t.footer.cookiePolicy}</Link>
             <CookiePreferencesButton />
           </div>
         </div>

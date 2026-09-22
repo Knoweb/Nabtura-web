@@ -1,22 +1,40 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight, Activity, Search } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight, Activity } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import { languages } from "@/translations";
+import type { Language } from "@/translations";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSolutionsHovered, setIsSolutionsHovered] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState("");
+  const { language, setLanguage, t } = useLanguage();
+  const currentLang = languages.find((l) => l.code === language) || languages[0];
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close language dropdown on outside click
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => document.removeEventListener("mousedown", handleOutsideClick);
   }, []);
 
   useEffect(() => {
@@ -96,13 +114,13 @@ export default function Header() {
   ];
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Solutions", href: "/solutions" },
-    { name: "Who We Serve", href: "/who-we-serve" },
-    { name: "Work With Nabtura", href: "/work-with-nabtura" },
-    { name: "Possibilities", href: "/possibilities" },
-    { name: "News / Blogs", href: "/blog" },
-    { name: "About", href: "/about" },
+    { name: t.nav.home, href: "/" },
+    { name: t.nav.solutions, href: "/solutions" },
+    { name: t.nav.whoWeServe, href: "/who-we-serve" },
+    { name: t.nav.workWithNabtura, href: "/work-with-nabtura" },
+    { name: t.nav.possibilities, href: "/possibilities" },
+    { name: t.nav.newsBlogs, href: "/blog" },
+    { name: t.nav.about, href: "/about" },
   ];
 
   const checkIsActive = (href: string) => {
@@ -301,11 +319,50 @@ export default function Header() {
           {/* Right Side Icons & CTA */}
           <div className="hidden xl:flex justify-end items-center gap-6 lg:w-[300px]">
             <div className="flex items-center gap-4 text-white">
-              <button className="flex items-center gap-1 hover:text-nabtura-green transition-colors text-[13px] font-semibold">
-                <Globe2 className="w-5 h-5" />
-                EN
-                <ChevronDown className="w-3.5 h-3.5" />
-              </button>
+              {/* Language Dropdown */}
+              <div className="relative" ref={langRef}>
+                <button
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className="flex items-center gap-1.5 hover:text-nabtura-green transition-colors text-[13px] font-semibold px-3 py-2 rounded-full hover:bg-white/5 border border-transparent hover:border-white/10"
+                >
+                  <Globe2 className="w-4 h-4" />
+                  <span>{currentLang.flag}</span>
+                  <span>{currentLang.code.toUpperCase()}</span>
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isLangOpen ? 'rotate-180 text-nabtura-green' : ''}`} />
+                </button>
+
+                <AnimatePresence>
+                  {isLangOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                      transition={{ duration: 0.15, type: "spring", stiffness: 200, damping: 20 }}
+                      className="absolute top-full right-0 mt-2 w-44 z-50"
+                    >
+                      <div className="bg-[#0a1811]/90 backdrop-blur-3xl border border-white/10 rounded-2xl p-2 shadow-[0_20px_60px_rgba(0,0,0,0.6)]" style={{ boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.05)' }}>
+                        {languages.map((lang) => (
+                          <button
+                            key={lang.code}
+                            onClick={() => { setLanguage(lang.code as Language); setIsLangOpen(false); }}
+                            className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                              language === lang.code
+                                ? 'bg-nabtura-green/20 text-nabtura-green border border-nabtura-green/30'
+                                : 'text-gray-300 hover:bg-white/[0.05] hover:text-white border border-transparent'
+                            }`}
+                          >
+                            <span className="text-lg">{lang.flag}</span>
+                            <span className="flex-1 text-left">{lang.label}</span>
+                            {language === lang.code && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-nabtura-green shadow-[0_0_6px_rgba(21,184,118,0.8)]"></span>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
             <Link href="/contact">
               <motion.span
@@ -315,7 +372,7 @@ export default function Header() {
               >
                 <div className="absolute inset-0 bg-white/40 w-1/2 h-full -skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
                 <span className="relative z-10 flex items-center">
-                  Contact Us
+                  {t.nav.contactUs}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </span>
               </motion.span>
@@ -367,10 +424,31 @@ export default function Header() {
               >
                 <div className="absolute inset-0 bg-white/40 w-1/2 h-full -skew-x-12 -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-700 ease-in-out" />
                 <span className="relative z-10 flex items-center">
-                  Contact Us
+                  {t.nav.contactUs}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
+
+              {/* Mobile Language Picker */}
+              <div className="mt-6 border-t border-white/10 pt-6">
+                <p className="text-xs tracking-widest text-gray-500 uppercase mb-4">Language</p>
+                <div className="flex flex-wrap gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => { setLanguage(lang.code as Language); setIsMobileMenuOpen(false); }}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border transition-all ${
+                        language === lang.code
+                          ? 'bg-nabtura-green/20 text-nabtura-green border-nabtura-green/40'
+                          : 'text-gray-400 border-white/10 hover:text-white hover:bg-white/5'
+                      }`}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
