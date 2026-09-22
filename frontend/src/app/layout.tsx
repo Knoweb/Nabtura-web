@@ -7,6 +7,7 @@ import CookieBanner from "@/components/layout/CookieBanner";
 import GlobalAnimatedBackground from "@/components/home/GlobalAnimatedBackground";
 import { EnquiryProvider } from "@/context/EnquiryContext";
 import { LanguageProvider } from "@/context/LanguageContext";
+import AutoTranslate from "@/components/ui/AutoTranslate";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -30,6 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-transparent text-white font-sans relative selection:bg-nabtura-green selection:text-black">
         <LanguageProvider>
+          <AutoTranslate />
           <EnquiryProvider>
             <GlobalAnimatedBackground />
             

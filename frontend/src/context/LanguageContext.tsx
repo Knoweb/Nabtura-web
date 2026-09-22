@@ -4,12 +4,15 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { translations, languages } from "@/translations";
 import type { Language } from "@/translations";
 import type { TranslationKeys } from "@/translations/en";
+import { phraseDicts } from "@/translations/phrases";
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
   t: TranslationKeys;
   dir: "ltr" | "rtl";
+  /** Translates any arbitrary English phrase using the phrase dictionary */
+  translate: (text: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -41,6 +44,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const langConfig = languages.find((l) => l.code === language);
   const dir = langConfig?.dir ?? "ltr";
 
+  const translate = useCallback((text: string): string => {
+    if (language === "en" || !text) return text;
+    const dict = phraseDicts[language];
+    if (!dict) return text;
+    if (dict[text] !== undefined) return dict[text];
+    const trimmed = text.trim();
+    if (dict[trimmed] !== undefined) return dict[trimmed];
+    return text;
+  }, [language]);
+
   return (
     <LanguageContext.Provider
       value={{
@@ -48,6 +61,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
         setLanguage,
         t: translations[language],
         dir,
+        translate,
       }}
     >
       {children}
