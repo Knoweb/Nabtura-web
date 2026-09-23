@@ -100,8 +100,8 @@ export default function SolutionsSelector() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, type: "spring", stiffness: 80, damping: 20 }}
-          className="bg-gradient-to-br from-[#081f12]/90 to-[#030d07]/95 backdrop-blur-3xl border border-emerald-900/50 rounded-[2rem] p-8 md:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.8)] relative overflow-visible ring-1 ring-white/5"
-          style={{ boxShadow: 'inset 0 2px 10px rgba(255,255,255,0.05)' }}
+          className="bg-gradient-to-br from-[#103a24]/80 to-[#082214]/90 backdrop-blur-3xl border border-emerald-500/30 rounded-[2rem] p-8 md:p-12 shadow-[0_20px_50px_rgba(16,185,129,0.15)] relative overflow-visible ring-1 ring-white/10"
+          style={{ boxShadow: 'inset 0 2px 20px rgba(255,255,255,0.05)' }}
         >
           <h3 className="text-sm font-bold tracking-[0.2em] text-emerald-400 mb-8 uppercase text-left drop-shadow-md">
             WHAT ARE YOU LOOKING TO DO?
@@ -111,7 +111,7 @@ export default function SolutionsSelector() {
           <div className="relative mb-8 text-left">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl border transition-all duration-300 outline-none focus:ring-2 focus:ring-emerald-500/50 ${isOpen ? 'bg-emerald-500/10 border-emerald-500/50 shadow-[0_0_30px_rgba(52,211,153,0.2)]' : 'bg-[#030c07]/80 border-emerald-900/60 hover:border-emerald-600/50 hover:bg-[#06150b] hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)]'}`}
+              className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl border transition-all duration-300 outline-none focus:ring-2 focus:ring-emerald-500/50 ${isOpen ? 'bg-emerald-500/10 border-emerald-400/50 shadow-[0_0_30px_rgba(52,211,153,0.3)]' : 'bg-white/5 border-emerald-500/30 hover:border-emerald-400/50 hover:bg-white/10 hover:shadow-[0_15px_40px_rgba(16,185,129,0.2)]'}`}
             >
               <span className={`text-base md:text-lg font-bold tracking-wide ${selectedOption ? 'text-white' : 'text-gray-400'}`}>
                 {selectedOption ? selectedOption.label : "Select what you're looking for"}
@@ -127,9 +127,9 @@ export default function SolutionsSelector() {
                   animate={{ height: "auto", opacity: 1, y: 0 }}
                   exit={{ height: 0, opacity: 0, y: -10 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="overflow-hidden mt-2 absolute w-full z-50 rounded-2xl border border-emerald-900/50 shadow-[0_40px_80px_rgba(0,0,0,0.9)] backdrop-blur-2xl bg-[#030e08]/95 ring-1 ring-white/5"
+                  className="overflow-hidden mt-2 absolute w-full z-50 rounded-2xl border border-emerald-500/30 shadow-[0_40px_80px_rgba(0,0,0,0.9)] backdrop-blur-2xl bg-gradient-to-b from-[#0d2a1b]/95 to-[#081f14]/95 ring-1 ring-white/10"
                 >
-                  <div className="overflow-y-auto custom-scrollbar max-h-[300px] p-2 space-y-1">
+                  <div className="overflow-y-auto custom-scrollbar max-h-[260px] p-2 space-y-[2px]">
                       {options.map((option, idx) => (
                         <button
                           key={idx}
@@ -137,7 +137,7 @@ export default function SolutionsSelector() {
                             setSelectedIndex(idx);
                             setIsOpen(false);
                           }}
-                          className={`w-full text-left px-5 py-4 rounded-xl flex items-center justify-between transition-all duration-200 group ${selectedIndex === idx ? 'bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/20' : 'text-gray-300 hover:bg-white/10 hover:text-white border border-transparent'}`}
+                          className={`w-full text-left px-4 py-3 rounded-xl flex items-center justify-between transition-all duration-200 group ${selectedIndex === idx ? 'bg-emerald-500/15 text-emerald-400 font-bold border border-emerald-500/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]' : 'text-gray-300 hover:bg-emerald-900/30 hover:text-white border border-transparent'}`}
                         >
                           <span className="text-sm md:text-base">{option.label}</span>
                           {selectedIndex === idx && <Check className="w-4 h-4 text-emerald-400" />}
