@@ -29,6 +29,22 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} h-full antialiased scroll-pt-28`}
     >
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent', 'default', {
+                analytics_storage: 'denied'
+              });
+              gtag('js', new Date());
+              gtag('config', 'G-2E5L1KV1QD');
+            `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-transparent text-white font-sans relative selection:bg-nabtura-green selection:text-black">
         <LanguageProvider>
           <AutoTranslate />

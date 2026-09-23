@@ -26,6 +26,17 @@ export default function CookieBanner() {
     const storedPreferences = localStorage.getItem("nabtura_cookie_preferences");
     if (!storedPreferences) {
       setIsVisible(true);
+    } else {
+      try {
+        const parsed = JSON.parse(storedPreferences);
+        if (parsed.analytics && typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+          (window as any).gtag('consent', 'update', {
+            analytics_storage: 'granted'
+          });
+        }
+      } catch (e) {
+        // ignore parse errors
+      }
     }
 
     const handleOpenPreferences = () => {
@@ -46,6 +57,11 @@ export default function CookieBanner() {
     };
     setPreferences(allAccepted);
     localStorage.setItem("nabtura_cookie_preferences", JSON.stringify(allAccepted));
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag('consent', 'update', {
+        analytics_storage: 'granted'
+      });
+    }
     setIsVisible(false);
   };
 
@@ -58,11 +74,21 @@ export default function CookieBanner() {
     };
     setPreferences(allRejected);
     localStorage.setItem("nabtura_cookie_preferences", JSON.stringify(allRejected));
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag('consent', 'update', {
+        analytics_storage: 'denied'
+      });
+    }
     setIsVisible(false);
   };
 
   const handleSavePreferences = () => {
     localStorage.setItem("nabtura_cookie_preferences", JSON.stringify(preferences));
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag('consent', 'update', {
+        analytics_storage: preferences.analytics ? 'granted' : 'denied'
+      });
+    }
     setIsVisible(false);
   };
 
