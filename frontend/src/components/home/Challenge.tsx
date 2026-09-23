@@ -116,7 +116,7 @@ export default function Challenge() {
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Interactive Words */}
-          <div className="flex flex-wrap items-center gap-6 md:gap-10 mb-8 border-b border-white/10 pb-4">
+          <div className="flex flex-wrap items-center gap-6 md:gap-10 mb-8 pb-4">
             {challenges.map((challenge) => (
               <button
                 key={challenge.id}
@@ -149,7 +149,7 @@ export default function Challenge() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
               >
-                <p className="text-xl md:text-2xl lg:text-3xl font-light leading-snug text-white border-l-2 border-nabtura-green/50 pl-6 py-2">
+                <p className="text-2xl md:text-3xl lg:text-4xl font-light italic tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60 drop-shadow-md leading-relaxed">
                   {activeChallenge?.description}
                 </p>
               </motion.div>
