@@ -25,7 +25,7 @@ export default function SolutionsSelector() {
   return (
     <section className="py-10 md:py-16 relative border-y border-white/5 z-20">
       {/* Background Base */}
-      <div className="absolute inset-0 bg-[#0a150f] z-0"></div>
+      <div className="absolute inset-0 bg-[#030e07] z-0"></div>
       <div className="absolute inset-0 bg-[url('/images/uae_green_city.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay z-0"></div>
       
       {/* Animated Background Grid & Orbs */}
@@ -100,10 +100,10 @@ export default function SolutionsSelector() {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, type: "spring", stiffness: 80, damping: 20 }}
-          className="bg-white/[0.04] backdrop-blur-3xl border border-white/10 rounded-[2rem] p-8 md:p-12 shadow-[0_20px_60px_rgba(0,0,0,0.4)] relative overflow-visible"
-          style={{ boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.1)' }}
+          className="bg-gradient-to-br from-[#081f12]/90 to-[#030d07]/95 backdrop-blur-3xl border border-emerald-900/50 rounded-[2rem] p-8 md:p-12 shadow-[0_30px_80px_rgba(0,0,0,0.8)] relative overflow-visible ring-1 ring-white/5"
+          style={{ boxShadow: 'inset 0 2px 10px rgba(255,255,255,0.05)' }}
         >
-          <h3 className="text-sm font-bold tracking-widest text-white mb-6 uppercase text-left">
+          <h3 className="text-sm font-bold tracking-[0.2em] text-emerald-400 mb-8 uppercase text-left drop-shadow-md">
             WHAT ARE YOU LOOKING TO DO?
           </h3>
 
@@ -111,7 +111,7 @@ export default function SolutionsSelector() {
           <div className="relative mb-8 text-left">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl border transition-all duration-300 outline-none focus:ring-2 focus:ring-emerald-500/50 ${isOpen ? 'bg-emerald-500/10 border-emerald-500/50 shadow-[0_0_30px_rgba(52,211,153,0.15)]' : 'bg-black/40 border-white/10 hover:border-white/20 hover:bg-black/60 hover:shadow-lg'}`}
+              className={`w-full flex items-center justify-between px-6 py-5 rounded-2xl border transition-all duration-300 outline-none focus:ring-2 focus:ring-emerald-500/50 ${isOpen ? 'bg-emerald-500/10 border-emerald-500/50 shadow-[0_0_30px_rgba(52,211,153,0.2)]' : 'bg-[#030c07]/80 border-emerald-900/60 hover:border-emerald-600/50 hover:bg-[#06150b] hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)]'}`}
             >
               <span className={`text-base md:text-lg font-bold tracking-wide ${selectedOption ? 'text-white' : 'text-gray-400'}`}>
                 {selectedOption ? selectedOption.label : "Select what you're looking for"}
@@ -127,7 +127,7 @@ export default function SolutionsSelector() {
                   animate={{ height: "auto", opacity: 1, y: 0 }}
                   exit={{ height: 0, opacity: 0, y: -10 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="overflow-hidden mt-2 absolute w-full z-50 rounded-2xl border border-white/10 shadow-[0_30px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl bg-[#030e08]/95"
+                  className="overflow-hidden mt-2 absolute w-full z-50 rounded-2xl border border-emerald-900/50 shadow-[0_40px_80px_rgba(0,0,0,0.9)] backdrop-blur-2xl bg-[#030e08]/95 ring-1 ring-white/5"
                 >
                   <div className="overflow-y-auto custom-scrollbar max-h-[300px] p-2 space-y-1">
                       {options.map((option, idx) => (
