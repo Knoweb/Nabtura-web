@@ -30,7 +30,7 @@ export default function RootLayout({
       className={`${outfit.variable} h-full antialiased scroll-pt-28`}
     >
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2E5L1KV1QD"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
