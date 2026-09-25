@@ -26,9 +26,6 @@ export default function UAECredibility() {
     <section className="bg-transparent text-white relative py-16 md:py-24 border-b border-white/5 overflow-hidden">
       
       {/* UAE Background */}
-      <div className="absolute inset-0 z-0 mix-blend-screen opacity-30">
-        <div className="absolute inset-0 bg-[url('/smart_landscapes_mockup_1788109519811.jpg')] bg-cover bg-center grayscale sepia-[0.3]" />
-      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-[#020504]/90 via-[#020504]/80 to-transparent z-0" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
