@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import Image from "next/image";
 
 const challenges = [
   {
@@ -71,9 +72,18 @@ export default function Challenge() {
               opacity: { duration: 1, ease: "easeInOut" },
               scale: { duration: 25, ease: "linear" } 
             }}
-            className="absolute inset-0 bg-cover bg-center mix-blend-screen"
-            style={{ backgroundImage: `url('${activeChallenge?.image}')` }}
-          />
+            className="absolute inset-0 mix-blend-screen"
+          >
+            {activeChallenge?.image && (
+              <Image 
+                src={activeChallenge.image} 
+                alt={activeChallenge.title} 
+                fill 
+                className="object-cover object-center" 
+                sizes="100vw"
+              />
+            )}
+          </motion.div>
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a1811]/95 via-[#0a1811]/70 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a1811]/50 pointer-events-none" />

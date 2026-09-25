@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp, Handshake, MapPin, Building2 } from "lucide-react";
+import Image from "next/image";
 
 const options = [
   { title: "OWN A PROJECT", desc: "Create a NABTURA solution around your location.", icon: Building2 },
@@ -54,10 +55,15 @@ export default function Investment() {
                 className="relative h-[400px] lg:h-[450px] rounded-[2rem] overflow-hidden group cursor-pointer border border-white/5 hover:border-nabtura-sand/30 transition-colors duration-500"
               >
                 {/* Background Image */}
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
-                  style={{ backgroundImage: `url('${opt.image}')` }}
-                />
+                <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-110">
+                  <Image 
+                    src={opt.image}
+                    alt={opt.title}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  />
+                </div>
                 
                 {/* Gradient Overlays */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />

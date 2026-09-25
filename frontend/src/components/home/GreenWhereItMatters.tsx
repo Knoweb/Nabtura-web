@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const concepts = [
   { id: "dining", title: "Dining Forest", desc: "Dine within nature.", image: "/possibility_forest_restaurant_1788160295877.jpg" },
@@ -79,9 +80,16 @@ export default function GreenWhereItMatters() {
                 animate={{ opacity: 0.4, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: -50, scale: 1.05 }}
                 transition={{ duration: 1.5, ease: "easeInOut" }}
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url('${concepts[activeConcept].image}')` }}
-              />
+                className="absolute inset-0"
+              >
+                <Image 
+                  src={concepts[activeConcept].image} 
+                  alt={concepts[activeConcept].title} 
+                  fill 
+                  className="object-cover object-center" 
+                  sizes="(max-width: 768px) 100vw, 80vw"
+                />
+              </motion.div>
             </AnimatePresence>
             <div className="absolute inset-0 bg-gradient-to-t from-nabtura-slate via-nabtura-slate/60 to-nabtura-slate/40" />
           </div>
