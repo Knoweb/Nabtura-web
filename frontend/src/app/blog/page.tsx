@@ -75,6 +75,7 @@ export default async function BlogIndexPage() {
               return (
                 <Link 
                   href={`/blog/${featured.slug || featured.documentId}`}
+                  prefetch={false}
                   className="group flex flex-col lg:flex-row bg-white/5 border border-white/10 rounded-3xl overflow-hidden hover:bg-white/10 transition-all hover:border-nabtura-green/50 shadow-2xl"
                 >
                   <div className="relative w-full lg:w-2/3 h-72 lg:h-[450px] overflow-hidden bg-black/50">
@@ -129,6 +130,7 @@ export default async function BlogIndexPage() {
                     <Link 
                       key={blog.id} 
                       href={`/blog/${blog.slug || blog.documentId}`}
+                      prefetch={false}
                       className="group flex flex-col h-[420px] bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 transition-all hover:border-nabtura-green/50 shadow-lg"
                     >
                       <div className="relative w-full h-56 overflow-hidden bg-black/50">
