@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
@@ -158,11 +158,13 @@ const clusters = [
 export default function WhoWeServe() {
   const [activeCluster, setActiveCluster] = useState(clusters[0].id);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef);
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguage();
 
   useEffect(() => {
-    if (isHovered) return;
+    if (isHovered || !isInView) return;
     const interval = setInterval(() => {
       setActiveCluster((current) => {
         const currentIndex = clusters.findIndex(c => c.id === current);
@@ -182,7 +184,7 @@ export default function WhoWeServe() {
       });
     }, 6000); // 6 seconds per slide
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isHovered, isInView]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
@@ -193,7 +195,7 @@ export default function WhoWeServe() {
   const activeContent = clusters.find(c => c.id === activeCluster) || clusters[0];
 
   return (
-    <section id="who-we-serve" className="relative text-white py-16 md:py-24 border-t border-white/5">
+    <section ref={sectionRef} id="who-we-serve" className="relative text-white py-16 md:py-24 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         <div className="mb-12 text-center">
           <h2 className="text-[10px] md:text-xs tracking-[0.3em] text-nabtura-green font-bold mb-4 uppercase">
@@ -250,6 +252,7 @@ export default function WhoWeServe() {
                 transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
+                aria-label="Scroll right"
                 className="w-12 h-12 rounded-full bg-transparent flex items-center justify-center text-nabtura-green border border-white/20 shadow-[0_0_20px_rgba(0,0,0,0.9)] hover:bg-nabtura-green hover:text-black transition-colors"
               >
                 <ChevronRight className="w-6 h-6 ml-1" />

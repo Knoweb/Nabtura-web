@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, ArrowRightCircle } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -49,17 +50,20 @@ export default function SpaceTransformation() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const { t } = useLanguage();
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
-    if (isHovered) return;
+    if (isHovered || !isInView) return;
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % transformations.length);
     }, 4000); // Auto-advance every 4 seconds
     return () => clearInterval(timer);
-  }, [isHovered]);
+  }, [isHovered, isInView]);
 
   return (
     <section 
+      ref={ref}
       className="bg-transparent text-white py-16 md:py-12 md:py-16 border-b border-white/5"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -121,10 +125,11 @@ export default function SpaceTransformation() {
                     
                     {/* Before Image Panel (Realistic Empty State) */}
                     <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-white/5 bg-[#0a1811]/60 backdrop-blur-md">
-                      <img 
+                      <Image 
                         src={transformations[activeIndex].imgBefore} 
                         alt="Before" 
-                        className="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
+                        fill
+                        className="object-cover grayscale opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
                       <div className="absolute bottom-6 left-6 right-6 z-10 pointer-events-none">
@@ -139,10 +144,11 @@ export default function SpaceTransformation() {
 
                     {/* After Image Panel */}
                     <div className="relative h-64 md:h-full min-h-[250px] rounded-2xl overflow-hidden group border border-nabtura-green/20 shadow-[0_0_30px_rgba(21,184,118,0.1)]">
-                      <img 
+                      <Image 
                         src={transformations[activeIndex].imgAfter} 
                         alt="After" 
-                        className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                        fill
+                        className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
                       

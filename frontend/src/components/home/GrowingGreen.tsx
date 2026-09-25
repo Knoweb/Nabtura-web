@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 const benefits = [
   "Local Production",
@@ -35,10 +36,15 @@ export default function GrowingGreen() {
             transition={{ duration: 0.6 }}
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-[url('/possibility_smart_greenhouse_1788160454551.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/40 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8">
+            <Image 
+              src="/possibility_smart_greenhouse_1788160454551.jpg" 
+              alt="Controlled Food Production"
+              fill
+              className="object-cover object-center transition-transform duration-1000 group-hover:scale-105 -z-10"
+            />
+            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/40 to-transparent pointer-events-none" />
+            <div className="absolute bottom-8 left-8 right-8 pointer-events-none">
               <p className="text-sm tracking-widest font-bold text-nabtura-light-green mb-2 uppercase">Agriculture</p>
               <h4 className="text-3xl font-bold text-content">Controlled Food Production</h4>
             </div>
@@ -51,10 +57,15 @@ export default function GrowingGreen() {
             transition={{ delay: 0.2, duration: 0.6 }}
             className="relative h-[400px] rounded-[2rem] overflow-hidden group"
           >
-            <div className="absolute inset-0 bg-[url('/possibility_urban_oasis_1788160434157.jpg')] bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" />
-            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/40 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8">
+            <Image 
+              src="/possibility_urban_oasis_1788160434157.jpg" 
+              alt="Green Environment"
+              fill
+              className="object-cover object-center transition-transform duration-1000 group-hover:scale-105 -z-10"
+            />
+            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-colors pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a1811] via-[#0a1811]/40 to-transparent pointer-events-none" />
+            <div className="absolute bottom-8 left-8 right-8 pointer-events-none">
               <p className="text-sm tracking-widest font-bold text-nabtura-green mb-2 uppercase">Environment</p>
               <h4 className="text-3xl font-bold text-content">Green Environment</h4>
             </div>

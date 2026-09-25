@@ -2,6 +2,59 @@ import { notFound } from "next/navigation";
 import { fetchAPI } from "@/lib/api";
 import Image from "next/image";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const revalidate = 3600;
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  let blog = null;
+  
+  try {
+    const res = await fetchAPI(`/blogs?filters[slug][$eq]=${slug}&populate=*`);
+    if (res.data && res.data.length > 0) {
+      blog = res.data[0];
+    } else {
+      const idRes = await fetchAPI(`/blogs/${slug}?populate=*`);
+      if (idRes.data) {
+        blog = idRes.data;
+      }
+    }
+  } catch (error) {
+    // Ignore error
+  }
+
+  if (!blog) {
+    const sampleBlogs = [
+      { documentId: "sample-1", title: "NABTURA Wins Global Innovation Award for Smart Agriculture", slug: "nabtura-wins-global-innovation-award" },
+      { documentId: "sample-2", title: "New Vertical Farming Facility Opens in Dubai", slug: "new-vertical-farming-facility-dubai" },
+      { documentId: "sample-3", title: "Strategic Partnership Announced for Desert Greening", slug: "strategic-partnership-desert-greening" }
+    ];
+    blog = sampleBlogs.find(b => b.slug === slug || b.documentId === slug);
+  }
+
+  if (!blog) {
+    return {
+      title: "Blog Post Not Found | NABTURA"
+    };
+  }
+
+  const title = blog.title || blog.Title || "Blog Post";
+  const contentStr = typeof (blog.content || blog.Content) === 'string' ? (blog.content || blog.Content).replace(/<[^>]*>?/gm, '').substring(0, 160) : "";
+  const coverImage = blog.coverImage || blog.coverimage || blog.CoverImage;
+  const imageUrl = coverImage ? (coverImage.url.startsWith('http') ? coverImage.url : `https://nabtura.com${coverImage.url}`) : undefined;
+
+  return {
+    title: `${title} | NABTURA`,
+    description: contentStr || "Read the latest updates from NABTURA.",
+    openGraph: {
+      title: `${title} | NABTURA`,
+      description: contentStr || "Read the latest updates from NABTURA.",
+      url: `https://nabtura.com/blog/${slug}`,
+      images: imageUrl ? [{ url: imageUrl }] : [],
+    }
+  };
+}
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

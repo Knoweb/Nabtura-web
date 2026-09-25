@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, MapPin } from "lucide-react";
 import Image from "next/image";
 
@@ -14,16 +14,19 @@ const IMAGES = [
 
 export default function UAECredibility() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
+    if (!isInView) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % IMAGES.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isInView]);
 
   return (
-    <section className="bg-transparent text-white relative py-16 md:py-24 border-b border-white/5 overflow-hidden">
+    <section ref={ref} className="bg-transparent text-white relative py-16 md:py-24 border-b border-white/5 overflow-hidden">
       
       {/* UAE Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#020504]/90 via-[#020504]/80 to-transparent z-0" />

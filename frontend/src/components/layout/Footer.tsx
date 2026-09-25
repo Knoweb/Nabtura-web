@@ -174,13 +174,13 @@ export default function Footer() {
 
             <h4 className="text-[10px] font-bold tracking-[0.2em] text-white uppercase mt-6 mb-3">Follow NABTURA</h4>
             <div className="flex gap-2">
-              <a href="#" className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-gray-400 hover:bg-nabtura-green hover:text-[#05150C] hover:border-nabtura-green transition-all duration-300">
+              <a href="#" aria-label="LinkedIn" className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-gray-400 hover:bg-nabtura-green hover:text-[#05150C] hover:border-nabtura-green transition-all duration-300">
                 <LinkedinIcon />
               </a>
-              <a href="#" className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-gray-400 hover:bg-nabtura-green hover:text-[#05150C] hover:border-nabtura-green transition-all duration-300">
+              <a href="#" aria-label="Instagram" className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-gray-400 hover:bg-nabtura-green hover:text-[#05150C] hover:border-nabtura-green transition-all duration-300">
                 <InstagramIcon />
               </a>
-              <a href="#" className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-gray-400 hover:bg-nabtura-green hover:text-[#05150C] hover:border-nabtura-green transition-all duration-300">
+              <a href="#" aria-label="Facebook" className="flex items-center justify-center w-8 h-8 rounded-full border border-white/10 text-gray-400 hover:bg-nabtura-green hover:text-[#05150C] hover:border-nabtura-green transition-all duration-300">
                 <FacebookIcon />
               </a>
             </div>

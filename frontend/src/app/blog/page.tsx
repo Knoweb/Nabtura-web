@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // We disable caching for this page so it shows new blogs right away in dev, 
 // for production you might use revalidate or webhook based invalidation
-export const revalidate = 0;
+export const revalidate = 3600;
 
 export default async function BlogIndexPage() {
   let blogs: any[] = [];

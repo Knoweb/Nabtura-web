@@ -15,8 +15,17 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nabtura.com'),
   title: "NABTURA | Smart Agriculture & Intelligent Green Solutions",
   description: "NABTURA is a UAE-based brand delivering intelligent solutions for food production, water management, greening and environmental transformation.",
+  openGraph: {
+    title: "NABTURA | Smart Agriculture & Intelligent Green Solutions",
+    description: "NABTURA is a UAE-based brand delivering intelligent solutions for food production, water management, greening and environmental transformation.",
+    url: 'https://nabtura.com',
+    siteName: 'NABTURA',
+    locale: 'en_US',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

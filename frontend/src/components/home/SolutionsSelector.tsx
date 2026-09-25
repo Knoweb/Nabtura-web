@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ChevronDown, ArrowRight, Check } from 'lucide-react';
+import Image from 'next/image';
 
 const options = [
   { label: "Grow Food", target: "Smart Greenhouses / Smart Microgreens", link: "/solutions#explore" },
@@ -26,7 +27,14 @@ export default function SolutionsSelector() {
     <section className="py-10 md:py-16 relative border-y border-white/5 z-20">
       {/* Background Base */}
       <div className="absolute inset-0 bg-[#030e07] z-0"></div>
-      <div className="absolute inset-0 bg-[url('/images/uae_green_city.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay z-0"></div>
+      <div className="absolute inset-0 opacity-10 mix-blend-overlay z-0 overflow-hidden">
+        <Image 
+          src="/images/uae_green_city.jpg" 
+          alt="UAE Green City" 
+          fill 
+          className="object-cover object-center" 
+        />
+      </div>
       
       {/* Animated Background Grid & Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center">

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
@@ -17,17 +17,20 @@ const actionWords = ["GROW", "FEED", "TEACH", "RELAX", "GATHER", "BEAUTIFY", "RE
 
 export default function GreenWhereItMatters() {
   const [activeConcept, setActiveConcept] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   // Auto-rotate concepts
   useEffect(() => {
+    if (!isInView) return;
     const timer = setInterval(() => {
       setActiveConcept((prev) => (prev + 1) % concepts.length);
     }, 4000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isInView]);
 
   return (
-    <section className="bg-transparent text-content py-16 md:py-12 md:py-16 relative overflow-hidden">
+    <section ref={ref} className="bg-transparent text-content py-16 md:py-12 md:py-16 relative overflow-hidden">
       {/* Static subtle background for the section */}
       <div className="absolute inset-0 z-0 bg-transparent">
         <div className="absolute inset-0 bg-gradient-to-b from-nabtura-slate via-nabtura-slate/50 to-nabtura-slate pointer-events-none" />
@@ -129,7 +132,7 @@ export default function GreenWhereItMatters() {
               <button
                 key={i}
                 onClick={() => setActiveConcept(i)}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                className={`relative after:absolute after:-inset-3 h-2 rounded-full transition-all duration-300 ${
                   activeConcept === i ? "w-12 bg-nabtura-green" : "w-2 bg-white/20 hover:bg-white/40"
                 }`}
                 aria-label={`View concept ${i + 1}`}

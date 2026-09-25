@@ -1,9 +1,11 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+
+import Image from "next/image";
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
@@ -17,15 +19,19 @@ export default function Hero() {
     "/images/dubai-greenhouse.jpg",
   ];
 
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
   useEffect(() => {
+    if (!isInView) return;
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % bgImages.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isInView]);
 
   return (
-    <section className="relative min-h-[80vh] lg:min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#050A08] text-content pt-32 pb-16 px-6">
+    <section ref={ref} className="relative min-h-[80vh] lg:min-h-[85vh] w-full flex flex-col items-center justify-center overflow-hidden bg-[#050A08] text-content pt-32 pb-16 px-6">
       {/* Cinematic Background Slider */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <AnimatePresence>
@@ -35,9 +41,17 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 2, ease: "easeInOut" }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${bgImages[index % bgImages.length]})` }}
-          />
+            className="absolute inset-0"
+          >
+            <Image
+              src={bgImages[index % bgImages.length]}
+              alt="Nabtura Background"
+              fill
+              className="object-cover object-center"
+              priority={index === 0}
+              quality={90}
+            />
+          </motion.div>
         </AnimatePresence>
         {/* Soft gradient to keep text readable */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050A08]/90 via-[#050A08]/60 to-[#050A08]/90 z-10" />

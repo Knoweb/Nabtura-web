@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { Zap, SlidersHorizontal, MapPin, Activity, Eye, BrainCircuit, Sliders, Cpu, Sparkles } from "lucide-react";
 
 const sampleBlogs = [
@@ -105,16 +105,19 @@ const cycleSteps = [
 export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
   const displayBlogs = blogs && blogs.length > 0 ? blogs : sampleBlogs;
   const [currentBlogIdx, setCurrentBlogIdx] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
+    if (!isInView) return;
     const timer = setInterval(() => {
       setCurrentBlogIdx((prev) => (prev + 1) % displayBlogs.length);
     }, 5000); // Auto-slide every 5 seconds
     return () => clearInterval(timer);
-  }, [displayBlogs.length]);
+  }, [displayBlogs.length, isInView]);
 
   return (
-    <section className="bg-transparent text-white py-12 md:py-16 border-t border-white/5 relative overflow-hidden">
+    <section ref={ref} className="bg-transparent text-white py-12 md:py-16 border-t border-white/5 relative overflow-hidden">
       {/* Animated Waves Background */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden opacity-40">
         {/* Wave 1 (Back, slow) */}
@@ -237,6 +240,8 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                         <img 
                           src={getImageUrl(blog.coverImage?.url)} 
                           alt={blog.title} 
+                          loading="lazy"
+                          decoding="async"
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                         />
                       </div>
@@ -263,7 +268,7 @@ export default function Difference({ blogs = [] }: { blogs?: Blog[] }) {
                 <button
                   key={idx}
                   onClick={() => setCurrentBlogIdx(idx)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`relative after:absolute after:-inset-3 h-2 rounded-full transition-all duration-300 ${
                     idx === currentBlogIdx ? "bg-nabtura-green w-8" : "bg-white/20 hover:bg-white/40 w-2"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}

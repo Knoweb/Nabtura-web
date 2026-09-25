@@ -26,7 +26,4 @@ body {
   overflow-x: hidden;
 }
 
-/* Override section backgrounds for the home page global animated background */
-.global-bg-wrapper section {
-  background-color: transparent !important;
-}
+

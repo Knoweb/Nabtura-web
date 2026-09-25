@@ -152,6 +152,7 @@ export default function CookieBanner() {
                 {/* Desktop Close Button */}
                 <button 
                   onClick={() => setIsVisible(false)}
+                  aria-label="Close cookie banner"
                   className="hidden lg:flex items-center justify-center w-10 h-10 ml-2 rounded-full border border-white/10 text-gray-500 hover:text-white hover:bg-white/5 hover:border-white/20 transition-all"
                 >
                   <X className="w-4 h-4" />
@@ -173,6 +174,7 @@ export default function CookieBanner() {
                 <h3 className="text-xl md:text-2xl font-black tracking-tight text-white uppercase">MANAGE YOUR PREFERENCES</h3>
                 <button 
                   onClick={() => setShowPreferences(false)}
+                  aria-label="Close preferences"
                   className="text-gray-500 hover:text-white transition-colors"
                 >
                   <X className="w-5 h-5" />
@@ -203,6 +205,7 @@ export default function CookieBanner() {
                   <p className="text-xs text-gray-400 font-light flex-1">Support enhanced functionality and preferences.</p>
                   <button 
                     onClick={() => setPreferences(prev => ({ ...prev, functional: !prev.functional }))}
+                    aria-label="Toggle Functional cookies"
                     className={`w-12 h-6 rounded-full transition-colors flex items-center p-1 mt-2 ${preferences.functional ? 'bg-nabtura-green justify-end' : 'bg-gray-700 justify-start'}`}
                   >
                     <div className="w-4 h-4 rounded-full bg-white shadow-sm" />
@@ -217,6 +220,7 @@ export default function CookieBanner() {
                   <p className="text-xs text-gray-400 font-light flex-1">Help us understand and improve website use.</p>
                   <button 
                     onClick={() => setPreferences(prev => ({ ...prev, analytics: !prev.analytics }))}
+                    aria-label="Toggle Analytics cookies"
                     className={`w-12 h-6 rounded-full transition-colors flex items-center p-1 mt-2 ${preferences.analytics ? 'bg-nabtura-green justify-end' : 'bg-gray-700 justify-start'}`}
                   >
                     <div className="w-4 h-4 rounded-full bg-white shadow-sm" />
@@ -231,6 +235,7 @@ export default function CookieBanner() {
                   <p className="text-xs text-gray-400 font-light flex-1">Support campaign measurement and relevant marketing where used.</p>
                   <button 
                     onClick={() => setPreferences(prev => ({ ...prev, marketing: !prev.marketing }))}
+                    aria-label="Toggle Marketing cookies"
                     className={`w-12 h-6 rounded-full transition-colors flex items-center p-1 mt-2 ${preferences.marketing ? 'bg-nabtura-green justify-end' : 'bg-gray-700 justify-start'}`}
                   >
                     <div className="w-4 h-4 rounded-full bg-white shadow-sm" />

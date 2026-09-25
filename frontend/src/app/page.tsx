@@ -1,9 +1,6 @@
 import Hero from "@/components/home/Hero";
-import GlobalAnimatedBackground from "@/components/home/GlobalAnimatedBackground";
-import MiniSelector from "@/components/audience/MiniSelector";
-import { Sprout, Home as HomeIcon, Droplets, Leaf, Sparkles, Trees, ShieldAlert, Building2, HelpCircle } from "lucide-react";
 
-export const revalidate = 0;
+export const revalidate = 3600;
 import Challenge from "@/components/home/Challenge";
 import Difference from "@/components/home/Difference";
 import FeaturedSolutions from "@/components/home/FeaturedSolutions";
@@ -39,7 +36,7 @@ export default async function Home() {
     <>
       <Hero />
       <SolutionsSelector />
-      <div className="global-bg-wrapper relative z-10">
+      <div className="[&_section]:!bg-transparent relative z-10">
 
         <Challenge />
         <Difference blogs={latestBlogs} />

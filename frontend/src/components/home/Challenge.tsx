@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useRef } from "react";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 
 const challenges = [
   {
@@ -33,9 +34,11 @@ const challenges = [
 export default function Challenge() {
   const [activeTab, setActiveTab] = useState(challenges[0].id);
   const [isHovered, setIsHovered] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
-    if (isHovered) return;
+    if (isHovered || !isInView) return;
 
     const interval = setInterval(() => {
       setActiveTab((currentId) => {
@@ -46,12 +49,12 @@ export default function Challenge() {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isHovered, isInView]);
 
   const activeChallenge = challenges.find((c) => c.id === activeTab);
 
   return (
-    <section id="why-nabtura" className="relative bg-transparent text-content overflow-hidden pt-4 pb-8 md:pt-8 md:pb-12">
+    <section ref={ref} id="why-nabtura" className="relative bg-transparent text-content overflow-hidden pt-4 pb-8 md:pt-8 md:pb-12">
       {/* Ambient Glowing Background */}
       <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[800px] h-[800px] bg-nabtura-green/15 blur-[150px] rounded-full pointer-events-none z-0 mix-blend-screen" />
       <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-nabtura-blue/10 blur-[150px] rounded-full pointer-events-none z-0 mix-blend-screen" />
