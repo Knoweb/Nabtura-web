@@ -3,19 +3,19 @@ const de = {
   nav: {
     home: "Startseite",
     solutions: "Lösungen",
-    whoWeServe: "Unsere Kunden",
+    whoWeServe: "Wem wir dienen",
     workWithNabtura: "Mit NABTURA arbeiten",
     possibilities: "Möglichkeiten",
-    newsBlogs: "Neuigkeiten / Blog",
+    newsBlogs: "News / Blogs",
     about: "Über uns",
     contactUs: "Kontakt",
   },
 
   solutions: {
     growFood: "LEBENSMITTEL ANBAUEN",
-    manageWater: "WASSER VERWALTEN",
+    manageWater: "WASSERMANAGEMENT",
     createGreen: "GRÜN SCHAFFEN",
-    transform: "TRANSFORMIEREN",
+    transform: "UMWELT VERWANDELN",
     capabilities: "UNTERSTÜTZENDE FÄHIGKEITEN",
     smartGreenhouses: "Intelligente Gewächshäuser",
     smartMicrogreens: "Intelligente Microgreens",
@@ -31,20 +31,20 @@ const de = {
   hero: {
     eyebrow: "INTELLIGENTE LANDWIRTSCHAFT & GRÜNE LÖSUNGEN",
     line1: "LEBENSMITTEL ANBAUEN",
-    line2: "WASSER VERWALTEN",
+    line2: "WASSERMANAGEMENT",
     line3: "GRÜN SCHAFFEN",
     tagline: "Intelligent. Kontrolliert. Angepasst.",
-    description: "In den VAE ansässig. Für schwierige Umgebungen entwickelt. Für breitere Märkte gebaut.",
+    description: "Mit Sitz in den VAE. Konzipiert für anspruchsvolle Umgebungen. Entwickelt für breitere Märkte.",
     cta1: "NABTURA ENTDECKEN",
-    cta2: "ERZÄHLEN SIE UNS VON IHREM STANDORT",
-    investCta: "Möchten Sie investieren? Chancen erkunden",
+    cta2: "Teilen Sie uns Ihren Standort mit.",
+    investCta: "Sie möchten investieren? Entdecken Sie die Möglichkeiten",
   },
 
   spaceTransformation: {
     eyebrow: "BEGINNEN SIE MIT DEM STANDORT",
     headline1: "SIE HABEN DEN PLATZ",
     headline2: "LASSEN SIE UNS DIE MÖGLICHKEIT ERKUNDEN",
-    subheadline: "Garten. Dachterrasse. Restaurant. Schule. Hotel. Gewerbeimmobilie. Land.",
+    subheadline: "Garten. Dachterrasse. Restaurant. Schule. Hotels. Gewerbeimmobilien. Grundstück.",
     selectPrompt: "Ausgangspunkt wählen",
     before: "Vorher",
     after: "NABTURA Transformation",
@@ -61,24 +61,24 @@ const de = {
   },
 
   finalCta: {
-    eyebrow: "EIN GESPRÄCH BEGINNEN",
+    eyebrow: "EIN GESPRÄCH STARTEN",
     headline: "WAS KÖNNTE IHR STANDORT, IHR RAUM ODER IHR PROJEKT WERDEN?",
     description: "Erzählen Sie uns von Ihrem Standort, Ihrem Raum oder Ihrem Projekt. Wir erkunden gemeinsam mit Ihnen die Möglichkeiten.",
     cta: "NABTURA KONTAKTIEREN",
   },
 
   footer: {
-    tagline: "Intelligente Landwirtschaft & Grüne Lösungen",
-    description: "VAE-basiert. Für schwierige Umgebungen gebaut. Für breitere Märkte entwickelt.",
+    tagline: "Intelligente Landwirtschaft und intelligente grüne Lösungen",
+    description: "Mit Sitz in den VAE. Konzipiert für anspruchsvolle Umgebungen. Entwickelt für breitere Märkte.",
     quickLinks: "Schnelllinks",
     solutions: "Lösungen",
-    whoWeServe: "Unsere Kunden",
+    whoWeServe: "Wem wir dienen",
     legal: "Rechtliches",
     privacyPolicy: "Datenschutzrichtlinie",
     cookiePolicy: "Cookie-Richtlinie",
     termsOfUse: "Nutzungsbedingungen",
     rights: "Alle Rechte vorbehalten.",
-    builtBy: "Eine Marke von INFORGRID FZC",
+    builtBy: "NABTURA - Eine Marke von INFORGRID FZC, VAE",
     contactUs: "Kontakt",
   },
 
@@ -96,7 +96,7 @@ const de = {
 
   cookie: {
     title: "IHR DATENSCHUTZ. IHRE WAHL.",
-    description: "Wir verwenden wesentliche Technologien, um die NABTURA-Website funktionsfähig zu halten. Mit Ihrer Erlaubnis können wir auch optionale Cookies verwenden, um die Funktionalität zu verbessern.",
+    description: "Wir verwenden grundlegende Technologien für den Betrieb der NABTURA-Website. Mit Ihrer Erlaubnis verwenden wir zudem optionale Technologien für Funktionalität, Analyse und Marketing.",
     acceptAll: "ALLE AKZEPTIEREN",
     rejectOptional: "OPTIONALE ABLEHNEN",
     managePreferences: "EINSTELLUNGEN VERWALTEN",
