@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { languages } from "@/translations";
 import type { Language } from "@/translations";
+import FlagIcon from "@/components/ui/FlagIcon";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -325,8 +326,8 @@ export default function Header() {
                   onClick={() => setIsLangOpen(!isLangOpen)}
                   className="flex items-center gap-1.5 hover:text-nabtura-green transition-colors text-[13px] font-semibold px-3 py-2 rounded-full hover:bg-white/5 border border-transparent hover:border-white/10"
                 >
-                  <Globe2 className="w-4 h-4" />
-                  <span>{currentLang.flag}</span>
+                  <Globe2 className="w-4 h-4 text-gray-400" />
+                  <FlagIcon country={currentLang.code} className="w-4 h-2.5 shadow-sm" />
                   <span>{currentLang.code.toUpperCase()}</span>
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isLangOpen ? 'rotate-180 text-nabtura-green' : ''}`} />
                 </button>
@@ -351,7 +352,7 @@ export default function Header() {
                                 : 'text-gray-300 hover:bg-white/[0.05] hover:text-white border border-transparent'
                             }`}
                           >
-                            <span className="text-lg">{lang.flag}</span>
+                            <FlagIcon country={lang.code} className="w-5 h-3.5 shadow-sm" />
                             <span className="flex-1 text-left">{lang.label}</span>
                             {language === lang.code && (
                               <span className="w-1.5 h-1.5 rounded-full bg-nabtura-green shadow-[0_0_6px_rgba(21,184,118,0.8)]"></span>
@@ -444,7 +445,7 @@ export default function Header() {
                           : 'text-gray-400 border-white/10 hover:text-white hover:bg-white/5'
                       }`}
                     >
-                      <span>{lang.flag}</span>
+                      <FlagIcon country={lang.code} className="w-4 h-3 shadow-sm" />
                       <span>{lang.label}</span>
                     </button>
                   ))}
