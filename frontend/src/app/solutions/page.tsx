@@ -124,7 +124,7 @@ export default function SolutionsOverviewPage() {
               <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-blue via-blue-400 to-transparent rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
               <div className="pl-4 sm:pl-6">
                 <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-100 to-nabtura-blue drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">MANAGE<br className="hidden lg:block"/> WATER.</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-100 to-nabtura-blue drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">MANAGE WATER.</span>
                 </h2>
                 <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-blue to-white font-black tracking-widest uppercase drop-shadow-md">Make every drop work smarter.</p>
               </div>
@@ -239,7 +239,7 @@ export default function SolutionsOverviewPage() {
               <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-sand via-orange-300 to-transparent rounded-full shadow-[0_0_15px_rgba(251,146,60,0.5)]"></div>
               <div className="pl-4 sm:pl-6">
                 <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-100 to-nabtura-sand drop-shadow-[0_0_20px_rgba(251,146,60,0.2)]">TRANSFORM<br className="hidden lg:block"/> ENVIRONMENTS.</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-100 to-nabtura-sand drop-shadow-[0_0_20px_rgba(251,146,60,0.2)]">TRANSFORM ENVIRONMENTS.</span>
                 </h2>
                 <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-white font-black tracking-widest uppercase mb-6 drop-shadow-md">START WITH THE CHALLENGE.</p>
                 
