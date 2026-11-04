@@ -67,7 +67,7 @@ export default function SolutionsOverviewPage() {
                   <p className="text-nabtura-light-green font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Grow beyond the climate.</p>
                   <p className="text-gray-300 font-light mb-6 leading-snug">Smart growing environments designed around your crop, location and commercial objective.</p>
                 </div>
-                <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start mt-4">
+                <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
                   EXPLORE SMART GREENHOUSES
                   <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-light-green/20 flex items-center justify-center group-hover:bg-nabtura-light-green group-hover:text-black transition-colors">
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -89,7 +89,7 @@ export default function SolutionsOverviewPage() {
                   <p className="text-nabtura-light-green font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Small space. Smart growing.</p>
                   <p className="text-gray-300 font-light mb-6 leading-snug">Controlled microgreen growing solutions for fresh production closer to where food is used.</p>
                 </div>
-                <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start mt-4">
+                <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
                   EXPLORE SMART MICROGREENS
                   <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-light-green/20 flex items-center justify-center group-hover:bg-nabtura-light-green group-hover:text-black transition-colors">
                     <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -119,18 +119,18 @@ export default function SolutionsOverviewPage() {
         <motion.section initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7 }} className="relative">
           <div className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-nabtura-blue/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6 items-center">
-            <div className="lg:col-span-1 relative mb-8 lg:mb-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-4 xl:col-span-5 relative mb-8 lg:mb-0">
               <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-blue via-blue-400 to-transparent rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
               <div className="pl-4 sm:pl-6">
-                <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
+                <h2 className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold uppercase mb-4 tracking-normal break-words">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-100 to-nabtura-blue drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">MANAGE WATER.</span>
                 </h2>
-                <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-blue to-white font-black tracking-widest uppercase drop-shadow-md">Make every drop work smarter.</p>
+                <p className="text-base sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-nabtura-blue to-white font-black tracking-widest uppercase drop-shadow-md">Make every drop work smarter.</p>
               </div>
             </div>
 
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-8 xl:col-span-7">
               <Link href="/solutions/smart-irrigation" className="group block rounded-[2rem] p-8 md:p-12 hover:border-nabtura-blue/30 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] h-full">
                 <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
@@ -151,7 +151,7 @@ export default function SolutionsOverviewPage() {
                     <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">OPTIMIZE</span>
                   </div>
 
-                  <span className="inline-flex items-center bg-nabtura-blue/10 border border-nabtura-blue/20 group-hover:border-nabtura-blue/50 group-hover:bg-nabtura-blue/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-nabtura-blue uppercase transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] backdrop-blur-md self-start mt-4">
+                  <span className="inline-flex items-center bg-nabtura-blue/10 border border-nabtura-blue/20 group-hover:border-nabtura-blue/50 group-hover:bg-nabtura-blue/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-blue uppercase transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
                     EXPLORE SMART IRRIGATION
                     <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-blue/20 flex items-center justify-center group-hover:bg-nabtura-blue group-hover:text-black transition-colors">
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -217,7 +217,7 @@ export default function SolutionsOverviewPage() {
                       <p className="text-nabtura-green font-bold text-xs tracking-widest uppercase mb-4 drop-shadow-sm">{item.tag}</p>
                       <p className="text-gray-300 font-light mb-8 text-sm leading-relaxed">{item.desc}</p>
                     </div>
-                    <span className="inline-flex items-center bg-nabtura-green/10 border border-nabtura-green/20 group-hover:border-nabtura-green/50 group-hover:bg-nabtura-green/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-nabtura-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.1)] backdrop-blur-md self-start mt-4">
+                    <span className="inline-flex items-center bg-nabtura-green/10 border border-nabtura-green/20 group-hover:border-nabtura-green/50 group-hover:bg-nabtura-green/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
                       {item.linkText}
                       <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-green/20 flex items-center justify-center group-hover:bg-nabtura-green group-hover:text-black transition-colors">
                         <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -234,14 +234,14 @@ export default function SolutionsOverviewPage() {
         <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7 }} className="relative">
           <div className="absolute top-0 left-1/4 w-[30rem] h-[30rem] bg-nabtura-sand/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-6 items-center">
-            <div className="lg:col-span-1 relative mb-8 lg:mb-0">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-4 xl:col-span-5 relative mb-8 lg:mb-0">
               <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-sand via-orange-300 to-transparent rounded-full shadow-[0_0_15px_rgba(251,146,60,0.5)]"></div>
               <div className="pl-4 sm:pl-6">
-                <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
+                <h2 className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold uppercase mb-4 tracking-normal break-words">
                   <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-orange-100 to-nabtura-sand drop-shadow-[0_0_20px_rgba(251,146,60,0.2)]">TRANSFORM ENVIRONMENTS.</span>
                 </h2>
-                <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-white font-black tracking-widest uppercase mb-6 drop-shadow-md">START WITH THE CHALLENGE.</p>
+                <p className="text-base sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-white font-black tracking-widest uppercase mb-6 drop-shadow-md">START WITH THE CHALLENGE.</p>
                 
                 <div className="bg-gradient-to-r from-white/5 to-transparent p-6 rounded-3xl border border-white/5 backdrop-blur-md relative overflow-hidden group">
                   <div className="absolute inset-0 bg-nabtura-sand/5 opacity-0 group-hover:opacity-40 group-hover:opacity-60 transition-opacity duration-700"></div>
@@ -252,7 +252,7 @@ export default function SolutionsOverviewPage() {
               </div>
             </div>
 
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-8 xl:col-span-7">
               <Link href="/solutions/environmental-projects" className="group block rounded-[2rem] p-8 md:p-12 hover:border-nabtura-sand/30 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] h-full">
                 <div className="absolute inset-0 bg-[url('/images/before_arid.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
@@ -279,7 +279,7 @@ export default function SolutionsOverviewPage() {
 
                   <p className="text-white font-medium italic text-sm tracking-wide mb-10">"The solution follows the challenge—not the other way around."</p>
 
-                  <span className="inline-flex items-center bg-nabtura-sand/10 border border-nabtura-sand/20 group-hover:border-nabtura-sand/50 group-hover:bg-nabtura-sand/20 px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-widest text-nabtura-sand uppercase transition-all duration-300 shadow-[0_0_15px_rgba(251,146,60,0.1)] backdrop-blur-md self-start mt-4">
+                  <span className="inline-flex items-center bg-nabtura-sand/10 border border-nabtura-sand/20 group-hover:border-nabtura-sand/50 group-hover:bg-nabtura-sand/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-sand uppercase transition-all duration-300 shadow-[0_0_15px_rgba(251,146,60,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
                     EXPLORE ENVIRONMENTAL PROJECTS
                     <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-sand/20 flex items-center justify-center group-hover:bg-nabtura-sand group-hover:text-black transition-colors">
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />

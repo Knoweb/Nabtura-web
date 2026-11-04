@@ -174,8 +174,8 @@ export default function WhoWeServePage() {
         eyebrow="WHO WE SERVE"
         headline={
           <>
-            DIFFERENT NEEDS. <br className="hidden sm:block" />
-            SMARTER GREEN POSSIBILITIES.
+            <span>DIFFERENT NEEDS.</span> <br className="hidden sm:block" />
+            <span>SMARTER GREEN POSSIBILITIES.</span>
           </>
         }
         tagline="NABTURA works with people, businesses and organizations looking to grow food, manage water, create green or transform environments."
@@ -287,15 +287,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-light-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
 
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Tractor
-                    className="w-8 h-8 text-nabtura-light-green animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(74,222,128,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s" }}
-                  />
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-light-green transition-all duration-300 drop-shadow-md">
-                    GROWERS & FARMS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-light-green/10 border border-nabtura-light-green/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(74,222,128,0.4)] transition-all duration-300">
+                  <Tractor className="w-6 h-6 text-nabtura-light-green" />
                 </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-light-green transition-all duration-300 drop-shadow-md break-words">
+                  GROWERS & FARMS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mb-8 transition-colors duration-300">
                   Improve or develop smarter growing environments.
                 </p>
@@ -337,15 +334,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-light-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
 
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Map
-                    className="w-8 h-8 text-nabtura-light-green animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(74,222,128,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "0.5s" }}
-                  />
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-light-green transition-all duration-300 drop-shadow-md">
-                    LANDOWNERS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-light-green/10 border border-nabtura-light-green/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(74,222,128,0.4)] transition-all duration-300">
+                  <Map className="w-6 h-6 text-nabtura-light-green" />
                 </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-light-green transition-all duration-300 drop-shadow-md break-words">
+                  LANDOWNERS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mb-8 transition-colors duration-300">
                   Explore what your land could grow, become or support.
                 </p>
@@ -387,15 +381,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-light-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
 
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Lightbulb
-                    className="w-8 h-8 text-nabtura-light-green animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(74,222,128,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "1s" }}
-                  />
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-light-green transition-all duration-300 drop-shadow-md">
-                    ENTREPRENEURS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-light-green/10 border border-nabtura-light-green/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(74,222,128,0.4)] transition-all duration-300">
+                  <Lightbulb className="w-6 h-6 text-nabtura-light-green" />
                 </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-light-green transition-all duration-300 drop-shadow-md break-words">
+                  ENTREPRENEURS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mb-8 transition-colors duration-300">
                   Turn a growing idea into a potential business opportunity.
                 </p>
@@ -494,15 +485,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/landscapes.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Hotel
-                    className="w-8 h-8 text-nabtura-green animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s" }}
-                  />
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-green transition-all duration-300 drop-shadow-md">
-                    HOTELS & RESORTS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-green/10 border border-nabtura-green/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300">
+                  <Hotel className="w-6 h-6 text-nabtura-green" />
                 </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-green transition-all duration-300 drop-shadow-md break-words">
+                  HOTELS & RESORTS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-4 transition-colors duration-300">
                   Create memorable green experiences—from landscapes and chef gardens to fresh growing and intelligent irrigation.
                 </p>
@@ -526,15 +514,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/before_microgreens.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Coffee
-                    className="w-8 h-8 text-nabtura-green animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "0.5s" }}
-                  />
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-green transition-all duration-300 drop-shadow-md">
-                    RESTAURANTS & F&B
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-green/10 border border-nabtura-green/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300">
+                  <Coffee className="w-6 h-6 text-nabtura-green" />
                 </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-green transition-all duration-300 drop-shadow-md break-words">
+                  RESTAURANTS & F&B
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-4 transition-colors duration-300">
                   Grow closer to the kitchen or transform outdoor spaces into distinctive dining environments.
                 </p>
@@ -558,15 +543,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-green/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Briefcase
-                    className="w-8 h-8 text-nabtura-green animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(16,185,129,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "1s" }}
-                  />
-                  <h3 className="text-2xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-green transition-all duration-300 drop-shadow-md">
-                    BUSINESSES & CORPORATE
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-green/10 border border-nabtura-green/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300">
+                  <Briefcase className="w-6 h-6 text-nabtura-green" />
                 </div>
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-green transition-all duration-300 drop-shadow-md break-words">
+                  BUSINESSES & CORPORATE
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-4 transition-colors duration-300">
                   Turn workplaces and properties into greener, more engaging environments.
                 </p>
@@ -678,15 +660,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/uae_green_city.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Building
-                    className="w-8 h-8 text-nabtura-sand animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(251,146,60,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md">
-                    PROPERTY DEVELOPERS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-sand/10 border border-nabtura-sand/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(251,146,60,0.4)] transition-all duration-300">
+                  <Building className="w-6 h-6 text-nabtura-sand" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md break-words leading-snug mb-3">
+                  PROPERTY DEVELOPERS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-4 transition-colors duration-300">
                   Integrate landscapes, smart irrigation, productive green and green experiences into developments.
                 </p>
@@ -710,15 +689,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/before_courtyard.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <GraduationCap
-                    className="w-8 h-8 text-nabtura-sand animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(251,146,60,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "0.5s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md">
-                    SCHOOLS & UNIVERSITIES
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-sand/10 border border-nabtura-sand/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(251,146,60,0.4)] transition-all duration-300">
+                  <GraduationCap className="w-6 h-6 text-nabtura-sand" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md break-words leading-snug mb-3">
+                  SCHOOLS & UNIVERSITIES
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-4 transition-colors duration-300">
                   Create environments where people can grow, learn and experience nature.
                 </p>
@@ -742,15 +718,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/uae_water_tech.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Landmark
-                    className="w-8 h-8 text-nabtura-sand animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(251,146,60,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "1s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md">
-                    GOVERNMENT & INSTITUTIONS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-sand/10 border border-nabtura-sand/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(251,146,60,0.4)] transition-all duration-300">
+                  <Landmark className="w-6 h-6 text-nabtura-sand" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md break-words leading-snug mb-3">
+                  GOVERNMENT & INSTITUTIONS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-4 transition-colors duration-300">
                   Explore project-specific green, water and environmental interventions.
                 </p>
@@ -774,15 +747,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/before_arid.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-sand/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Users
-                    className="w-8 h-8 text-nabtura-sand animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(251,146,60,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "1.5s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md">
-                    COMMUNITIES
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-sand/10 border border-nabtura-sand/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(251,146,60,0.4)] transition-all duration-300">
+                  <Users className="w-6 h-6 text-nabtura-sand" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-r from-white to-nabtura-sand transition-all duration-300 drop-shadow-md break-words leading-snug mb-3">
+                  COMMUNITIES
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-4 transition-colors duration-300">
                   Create shared green environments designed for people and place.
                 </p>
@@ -898,15 +868,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/greenhouse.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-blue/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Home
-                    className="w-6 h-6 text-nabtura-blue animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md">
-                    SMART HOME GREENHOUSE
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 border border-nabtura-blue/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300">
+                  <Home className="w-6 h-6 text-nabtura-blue" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md break-words">
+                  SMART HOME GREENHOUSE
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-2 transition-colors duration-300">
                   Grow fresh food at home.
                 </p>
@@ -930,15 +897,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/before_microgreens.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-blue/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Utensils
-                    className="w-6 h-6 text-nabtura-blue animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "0.5s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md">
-                    KITCHEN & EDIBLE GARDENS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 border border-nabtura-blue/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300">
+                  <Utensils className="w-6 h-6 text-nabtura-blue" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md break-words">
+                  KITCHEN & EDIBLE GARDENS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-2 transition-colors duration-300">
                   Make part of your landscape productive.
                 </p>
@@ -962,15 +926,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/microgreens.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-blue/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Sprout
-                    className="w-6 h-6 text-nabtura-blue animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "1s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md">
-                    HOME MICROGREENS
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 border border-nabtura-blue/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300">
+                  <Sprout className="w-6 h-6 text-nabtura-blue" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md break-words">
+                  HOME MICROGREENS
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-2 transition-colors duration-300">
                   Fresh growing in compact spaces.
                 </p>
@@ -994,15 +955,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/before_landscapes.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-blue/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Trees
-                    className="w-6 h-6 text-nabtura-blue animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "1.5s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md">
-                    LANDSCAPES
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 border border-nabtura-blue/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300">
+                  <Trees className="w-6 h-6 text-nabtura-blue" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md break-words">
+                  LANDSCAPES
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-2 transition-colors duration-300">
                   Create green spaces around how you live.
                 </p>
@@ -1026,15 +984,12 @@ export default function WhoWeServePage() {
               <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-10 group-hover:opacity-30 grayscale group-hover:grayscale-0 transition-all duration-700 z-0 scale-100 group-hover:scale-110 mix-blend-lighten"></div>
               <div className="absolute inset-0 bg-gradient-to-br from-nabtura-blue/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0 pointer-events-none"></div>
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-3">
-                  <Droplets
-                    className="w-6 h-6 text-nabtura-blue animate-pulse group-hover:animate-none group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-300"
-                    style={{ animationDuration: "3s", animationDelay: "2s" }}
-                  />
-                  <h3 className="text-xl font-extrabold tracking-normal text-white uppercase group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md">
-                    SMART IRRIGATION
-                  </h3>
+                <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 border border-nabtura-blue/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-[0_0_15px_rgba(59,130,246,0.4)] transition-all duration-300">
+                  <Droplets className="w-6 h-6 text-nabtura-blue" />
                 </div>
+                <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white uppercase mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-nabtura-blue transition-all duration-300 drop-shadow-md break-words">
+                  SMART IRRIGATION
+                </h3>
                 <p className="text-gray-300 font-light text-base leading-relaxed mt-2 transition-colors duration-300">
                   Manage garden water more intelligently.
                 </p>
@@ -1250,8 +1205,7 @@ export default function WhoWeServePage() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
-            WHAT ARE YOU <br />
-            LOOKING TO ACHIEVE?
+            WHAT ARE YOU LOOKING TO ACHIEVE?
           </h2>
 
           <p className="text-gray-300 text-base md:text-lg font-light max-w-2xl mx-auto mb-12">
