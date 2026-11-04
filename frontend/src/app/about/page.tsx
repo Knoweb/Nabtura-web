@@ -169,7 +169,7 @@ export default function AboutPage() {
           >
             <motion.p variants={fadeUp} className="text-green-500 font-bold uppercase tracking-widest text-sm mb-4">Our Approach</motion.p>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-black">
-              SMART. <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">CONTROLLED.</span> ADAPTED.
+              <span>SMART. CONTROLLED. ADAPTED.</span>
             </motion.h2>
           </motion.div>
 
@@ -206,7 +206,7 @@ export default function AboutPage() {
             className="mt-16 text-center"
           >
             <p className="inline-block px-10 py-4 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-white tracking-wide shadow-inner">
-              The solution follows the environment—<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 font-bold">not the other way around.</span>
+              <span>The solution follows the environment—not the other way around.</span>
             </p>
           </motion.div>
         </div>
@@ -223,8 +223,7 @@ export default function AboutPage() {
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}>
               <motion.p variants={fadeUp} className="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">Technology + Nature</motion.p>
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-black leading-tight mb-8">
-                CONNECTING TECHNOLOGY<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">WITH WHAT GROWS.</span>
+                <span>CONNECTING TECHNOLOGY WITH WHAT GROWS.</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-lg text-gray-300 leading-relaxed mb-8">
                 Technology should help us understand, manage and improve the environments we create.
@@ -547,8 +546,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight uppercase"
           >
-            WHAT COULD WE<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">CREATE TOGETHER?</span>
+            <span>WHAT COULD WE CREATE TOGETHER?</span>
           </motion.h2>
 
           <motion.p

@@ -460,7 +460,7 @@ export default function DesertGreeningPage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
-            WHAT COULD <br />YOUR LAND BECOME?
+            <span>WHAT COULD YOUR LAND BECOME?</span>
           </h2>
           <p className="text-gray-200 text-lg md:text-xl font-medium mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Choose your starting point:

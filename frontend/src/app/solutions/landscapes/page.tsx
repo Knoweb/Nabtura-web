@@ -241,7 +241,7 @@ export default function LandscapesPage() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
-              WHAT COULD <br />YOUR SPACE BECOME?
+              <span>WHAT COULD YOUR SPACE BECOME?</span>
             </h2>
           </motion.div>
 

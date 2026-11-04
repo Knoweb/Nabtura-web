@@ -145,7 +145,7 @@ export default function UrbanForestsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16 relative z-10">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-10 uppercase leading-tight drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
-              WHAT COULD <br className="hidden md:block" />YOUR FOREST BECOME?
+              <span>WHAT COULD YOUR FOREST BECOME?</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
@@ -316,7 +316,7 @@ export default function UrbanForestsPage() {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 px-4">
             <h2 className="text-3xl md:text-5xl font-bold text-white uppercase leading-tight">
-              WHAT COULD <br />THIS SPACE BECOME?
+              <span>WHAT COULD THIS SPACE BECOME?</span>
             </h2>
           </div>
 
@@ -497,7 +497,7 @@ export default function UrbanForestsPage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter leading-[1.1] mb-6 drop-shadow-[0_5px_15px_rgba(0,0,0,0.8)]">
-            WHAT COULD <br />YOUR SPACE BECOME?
+            <span>WHAT COULD YOUR SPACE BECOME?</span>
           </h2>
           <p className="text-gray-200 text-lg md:text-xl font-medium mb-10 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
             Choose your starting point:

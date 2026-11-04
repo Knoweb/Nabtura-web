@@ -314,7 +314,7 @@ export default function SmartMicrogreensPage() {
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-12 uppercase text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-            WHAT COULD <br className="hidden sm:block" />YOUR SPACE GROW?
+            <span>WHAT COULD YOUR SPACE GROW?</span>
           </h2>
 
           <p className="font-bold tracking-widest uppercase text-xs mb-8 text-gray-400">Choose a starting point:</p>

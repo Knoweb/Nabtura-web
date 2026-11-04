@@ -345,8 +345,7 @@ export default function EnvironmentalProjectsPage() {
             className="text-center mb-20"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white uppercase leading-tight mb-6">
-              WHAT COULD <br className="hidden md:block" />
-              <span className="text-gray-500">CHANGE?</span>
+              <span>WHAT COULD CHANGE?</span>
             </h2>
           </motion.div>
 

@@ -23,7 +23,7 @@ export default function GrowingGreen() {
             GROWING FOOD. GROWING GREEN.
           </h2>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
-            GROWING DOES <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-nabtura-green">MORE THAN</span> PRODUCE FOOD
+            <span>GROWING DOES MORE THAN PRODUCE FOOD</span>
           </h3>
         </div>
 

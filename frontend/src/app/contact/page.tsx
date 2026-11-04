@@ -148,7 +148,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-transparent pt-20 pb-32">
       <SolutionHero
         eyebrow="CONTACT NABTURA"
-        headline={<>HOW CAN WE<br/>HELP?</>}
+        headline={<span>HOW CAN WE HELP?</span>}
         tagline="Have a project, space, land, idea or opportunity? Tell us what you're looking to achieve and we'll help identify the right NABTURA path."
         bgImageUrl="/possibility_smart_greenhouse_1788160454551.jpg"
         accentColor="text-white"
@@ -203,7 +203,7 @@ export default function ContactPage() {
               {/* STEP 1: ENQUIRY TYPE */}
               {step === 1 && (
                 <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
-                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight">WHAT WOULD YOU<br/><span className="text-gray-400">LIKE TO DO?</span></h2>
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight"><span>WHAT WOULD YOU LIKE TO DO?</span></h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {ENQUIRY_OPTIONS.map((option) => (
                       <button
@@ -244,7 +244,7 @@ export default function ContactPage() {
               {/* STEP 2: ADAPTIVE QUESTIONS */}
               {step === 2 && adaptiveQuestions && (
                 <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
-                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight">TELL US<br/><span className="text-gray-400">A LITTLE MORE.</span></h2>
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight"><span>TELL US A LITTLE MORE.</span></h2>
                   
                   <div className="space-y-10">
                     {adaptiveQuestions.map((q) => (
@@ -285,7 +285,7 @@ export default function ContactPage() {
               {/* STEP 3: PROJECT INFORMATION */}
               {step === 3 && (
                 <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 space-y-10">
-                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-2 leading-tight">SHOW US<br/><span className="text-gray-400">WHAT YOU HAVE.</span></h2>
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-2 leading-tight"><span>SHOW US WHAT YOU HAVE.</span></h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                     <div>
@@ -366,7 +366,7 @@ export default function ContactPage() {
               {/* STEP 4: CONTACT DETAILS */}
               {step === 4 && (
                 <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 space-y-10">
-                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight">HOW SHOULD<br/><span className="text-gray-400">WE REACH YOU?</span></h2>
+                  <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-10 leading-tight"><span>HOW SHOULD WE REACH YOU?</span></h2>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
