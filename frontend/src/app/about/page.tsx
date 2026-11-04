@@ -4,6 +4,7 @@ import { motion, Variants, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Leaf, Droplets, MapPin, Building2, Cpu, Settings, Activity, BarChart3, ShieldCheck, CheckCircle, RefreshCw, Globe } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import FluidWaves from "@/components/about/FluidWaves";
 
 export default function AboutPage() {
   const { scrollY } = useScroll();
@@ -27,11 +28,8 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-transparent text-white overflow-hidden font-sans pt-20">
-      {/* Global Fixed Animated Waves Background */}
-      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30 bg-transparent">
-        <motion.svg animate={{ x: ["0%", "-50%"] }} transition={{ duration: 60, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[250px] md:h-[400px] fill-emerald-900/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,160 Q360,40 720,160 T1440,160 Q1800,40 2160,160 T2880,160 L2880,320 L0,320 Z" /></motion.svg>
-        <motion.svg animate={{ x: ["-50%", "0%"] }} transition={{ duration: 40, repeat: Infinity, ease: "linear" }} className="absolute bottom-0 w-[200%] h-[200px] md:h-[300px] fill-nabtura-green/30" viewBox="0 0 2880 320" preserveAspectRatio="none"><path d="M0,120 Q360,240 720,120 T1440,120 Q1800,240 2160,120 T2880,120 L2880,320 L0,320 Z" /></motion.svg>
-      </div>
+      {/* Fluid Live Waves Background */}
+      <FluidWaves />
 
 
       {/* 1. HERO SECTION */}
