@@ -5,10 +5,11 @@
  * 
  * Watches for text and route changes and translates all visible text nodes
  * and input placeholders using the phrase dictionary.
- * Works across all pages and interactive components.
+ * Supports English, German, and Arabic.
  */
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { phraseDicts } from "@/translations/phrases";
 
@@ -52,14 +53,15 @@ function getTranslation(raw: string, dict: Record<string, string>): string | nul
 
 export default function AutoTranslate() {
   const { language } = useLanguage();
+  const pathname = usePathname();
   const prevLangRef = useRef<string>("en");
   const originalsRef = useRef<Map<Text, string>>(new Map());
   const originalPlaceholdersRef = useRef<Map<HTMLInputElement | HTMLTextAreaElement, string>>(new Map());
   const isTranslatingRef = useRef<boolean>(false);
 
   useEffect(() => {
+    // If language is English, restore all nodes to their original English values
     if (language === "en") {
-      // Restore original text nodes
       originalsRef.current.forEach((original, node) => {
         if (node.nodeValue !== null) {
           node.nodeValue = original;
@@ -67,7 +69,6 @@ export default function AutoTranslate() {
       });
       originalsRef.current.clear();
 
-      // Restore original placeholders
       originalPlaceholdersRef.current.forEach((origPlaceholder, el) => {
         el.setAttribute("placeholder", origPlaceholder);
       });
@@ -80,20 +81,28 @@ export default function AutoTranslate() {
     const dict = phraseDicts[language];
     if (!dict) return;
 
+    // If language changed from another non-English language (e.g. de -> ar), restore first
+    if (prevLangRef.current !== "en" && prevLangRef.current !== language) {
+      originalsRef.current.forEach((original, node) => {
+        if (node.nodeValue !== null) {
+          node.nodeValue = original;
+        }
+      });
+      originalsRef.current.clear();
+
+      originalPlaceholdersRef.current.forEach((origPlaceholder, el) => {
+        el.setAttribute("placeholder", origPlaceholder);
+      });
+      originalPlaceholdersRef.current.clear();
+    }
+    prevLangRef.current = language;
+
     function doTranslate() {
       if (isTranslatingRef.current) return;
       isTranslatingRef.current = true;
 
       try {
-        // Restore previous originals first to prevent double-translation
-        originalsRef.current.forEach((original, node) => {
-          if (node.nodeValue !== null) {
-            node.nodeValue = original;
-          }
-        });
-        originalsRef.current.clear();
-
-        // 1. Translate all text nodes in document.body
+        // 1. Walk document.body text nodes
         const walker = document.createTreeWalker(
           document.body,
           NodeFilter.SHOW_TEXT,
@@ -115,13 +124,21 @@ export default function AutoTranslate() {
         }
 
         nodes.forEach(node => {
-          const original = node.nodeValue;
-          if (!original || original.trim() === "") return;
+          const currentVal = node.nodeValue;
+          if (!currentVal || currentVal.trim() === "") return;
 
+          // Retrieve original text or store currentVal as original
+          const original = originalsRef.current.get(node) || currentVal;
           const translated = getTranslation(original, dict);
-          if (translated && translated !== original.trim()) {
-            originalsRef.current.set(node, original);
-            node.nodeValue = original.replace(original.trim(), translated);
+
+          if (translated) {
+            if (!originalsRef.current.has(node)) {
+              originalsRef.current.set(node, original);
+            }
+            const targetVal = original.replace(original.trim(), translated);
+            if (node.nodeValue !== targetVal) {
+              node.nodeValue = targetVal;
+            }
           }
         });
 
@@ -139,7 +156,7 @@ export default function AutoTranslate() {
 
           const orig = originalPlaceholdersRef.current.get(el) || currentPlaceholder;
           const translated = getTranslation(orig, dict);
-          if (translated) {
+          if (translated && el.getAttribute("placeholder") !== translated) {
             el.setAttribute("placeholder", translated);
           }
         });
@@ -148,34 +165,38 @@ export default function AutoTranslate() {
       }
     }
 
-    // Execute translation
+    // Run translation immediately
     doTranslate();
-    prevLangRef.current = language;
 
-    // Observe DOM mutations
-    const observer = new MutationObserver((mutations) => {
+    // Re-run after short delays to catch hydrated content & framer-motion elements
+    const t1 = setTimeout(doTranslate, 60);
+    const t2 = setTimeout(doTranslate, 250);
+    const t3 = setTimeout(doTranslate, 600);
+
+    // Observe DOM mutations for dynamically inserted content
+    let timeoutId: NodeJS.Timeout | null = null;
+    const observer = new MutationObserver(() => {
       if (isTranslatingRef.current) return;
-      let hasMeaningfulChange = false;
-      for (const m of mutations) {
-        if (m.addedNodes.length > 0) {
-          hasMeaningfulChange = true;
-          break;
-        }
-      }
-      if (hasMeaningfulChange) {
-        requestAnimationFrame(doTranslate);
-      }
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        doTranslate();
+      }, 50);
     });
 
     observer.observe(document.body, {
       childList: true,
       subtree: true,
+      characterData: true,
     });
 
     return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      if (timeoutId) clearTimeout(timeoutId);
       observer.disconnect();
     };
-  }, [language]);
+  }, [language, pathname]);
 
   return null;
 }
