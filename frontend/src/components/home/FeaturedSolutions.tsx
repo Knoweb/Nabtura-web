@@ -89,8 +89,8 @@ export default function FeaturedSolutions() {
                 <p className="text-nabtura-green font-bold text-sm tracking-widest mb-4 uppercase">{item.description}</p>
                 <p className="text-gray-300 font-light mb-8 line-clamp-3">{item.details}</p>
                 
-                <Link href={item.link} className="inline-flex items-center justify-center w-full py-4 rounded-full bg-white/10 hover:bg-nabtura-green hover:text-black font-bold tracking-widest text-sm uppercase transition-all group-hover:shadow-[0_0_30px_rgba(0,255,157,0.3)]">
-                  {item.cta} <ArrowRight size={18} className="ml-2" />
+                <Link href={item.link} className="inline-flex items-center justify-center w-full px-4 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-nabtura-green hover:text-black font-bold tracking-wider text-xs sm:text-sm uppercase transition-all group-hover:shadow-[0_0_30px_rgba(0,255,157,0.3)] whitespace-nowrap leading-tight">
+                  {item.cta} <ArrowRight size={18} className="ml-2 shrink-0" />
                 </Link>
               </div>
             </motion.div>

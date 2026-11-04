@@ -116,50 +116,48 @@ export default function SolutionsOverviewPage() {
         </motion.section>
 
         {/* 3. MANAGE WATER */}
-        <motion.section initial={{ opacity: 0, y: 5 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7 }} className="relative">
+        <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7 }} className="relative">
           <div className="absolute top-0 left-0 w-[30rem] h-[30rem] bg-nabtura-blue/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-4 xl:col-span-5 relative mb-8 lg:mb-0">
-              <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-blue via-blue-400 to-transparent rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
-              <div className="pl-4 sm:pl-6">
-                <h2 className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold uppercase mb-4 tracking-normal break-words">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-100 to-nabtura-blue drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">MANAGE WATER.</span>
-                </h2>
-                <p className="text-base sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-nabtura-blue to-white font-black tracking-widest uppercase drop-shadow-md">Make every drop work smarter.</p>
-              </div>
+          <div className="mb-12 relative">
+            <div className="absolute -left-4 sm:-left-6 top-2 bottom-2 w-1.5 bg-gradient-to-b from-nabtura-blue via-blue-400 to-transparent rounded-full shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+            <div className="pl-4 sm:pl-6">
+              <h2 className="text-4xl md:text-5xl font-extrabold uppercase mb-4 tracking-normal">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-white via-blue-100 to-nabtura-blue drop-shadow-[0_0_20px_rgba(59,130,246,0.2)]">MANAGE WATER.</span>
+              </h2>
+              <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-nabtura-blue to-white font-black tracking-widest uppercase drop-shadow-md">Make every drop work smarter.</p>
             </div>
+          </div>
 
-            <div className="lg:col-span-8 xl:col-span-7">
-              <Link href="/solutions/smart-irrigation" className="group block rounded-[2rem] p-8 md:p-12 hover:border-nabtura-blue/30 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] h-full">
-                <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
-                
-                <div className="relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Droplets className="w-6 h-6 text-nabtura-blue" />
-                  </div>
-                  <h3 className="text-xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART IRRIGATION</h3>
-                  <p className="text-nabtura-blue font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Water where it matters. When it matters.</p>
-                  <p className="text-gray-300 font-light mb-6 leading-snug">Intelligent irrigation designed around the plants, landscape, crop, climate and actual water requirements of the project.</p>
-                  
-                  <div className="flex flex-wrap items-center gap-2 text-nabtura-blue text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-10">
-                    <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">SENSE</span> <ArrowRight className="w-3 h-3 text-gray-600" />
-                    <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">DECIDE</span> <ArrowRight className="w-3 h-3 text-gray-600" />
-                    <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">DELIVER</span> <ArrowRight className="w-3 h-3 text-gray-600" />
-                    <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">MONITOR</span> <ArrowRight className="w-3 h-3 text-gray-600" />
-                    <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">OPTIMIZE</span>
-                  </div>
-
-                  <span className="inline-flex items-center bg-nabtura-blue/10 border border-nabtura-blue/20 group-hover:border-nabtura-blue/50 group-hover:bg-nabtura-blue/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-blue uppercase transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
-                    EXPLORE SMART IRRIGATION
-                    <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-blue/20 flex items-center justify-center group-hover:bg-nabtura-blue group-hover:text-black transition-colors">
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </span>
+          <div>
+            <Link href="/solutions/smart-irrigation" className="group block rounded-[2rem] p-8 md:p-12 hover:border-nabtura-blue/30 transition-all duration-500 shadow-xl overflow-hidden relative border border-white/10 bg-[#050a08] h-full">
+              <div className="absolute inset-0 bg-[url('/images/dubai-water.jpg')] bg-cover bg-center opacity-40 group-hover:opacity-60 transition-opacity duration-700 group-hover:scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-[#0a0a0a]/30"></div>
+              
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-xl bg-nabtura-blue/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Droplets className="w-6 h-6 text-nabtura-blue" />
                 </div>
-              </Link>
-            </div>
+                <h3 className="text-xl font-extrabold tracking-normal text-white mb-2 uppercase drop-shadow-md">SMART IRRIGATION</h3>
+                <p className="text-nabtura-blue font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Water where it matters. When it matters.</p>
+                <p className="text-gray-300 font-light mb-6 leading-snug">Intelligent irrigation designed around the plants, landscape, crop, climate and actual water requirements of the project.</p>
+                
+                <div className="flex flex-wrap items-center gap-2 text-nabtura-blue text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-10">
+                  <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">SENSE</span> <ArrowRight className="w-3 h-3 text-gray-600" />
+                  <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">DECIDE</span> <ArrowRight className="w-3 h-3 text-gray-600" />
+                  <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">DELIVER</span> <ArrowRight className="w-3 h-3 text-gray-600" />
+                  <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">MONITOR</span> <ArrowRight className="w-3 h-3 text-gray-600" />
+                  <span className="bg-nabtura-blue/10 px-3 py-1.5 rounded-md border border-nabtura-blue/20">OPTIMIZE</span>
+                </div>
+
+                <span className="inline-flex items-center bg-nabtura-blue/10 border border-nabtura-blue/20 group-hover:border-nabtura-blue/50 group-hover:bg-nabtura-blue/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-blue uppercase transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
+                  EXPLORE SMART IRRIGATION
+                  <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-blue/20 flex items-center justify-center group-hover:bg-nabtura-blue group-hover:text-black transition-colors">
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </span>
+              </div>
+            </Link>
           </div>
         </motion.section>
 

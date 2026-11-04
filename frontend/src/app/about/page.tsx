@@ -56,8 +56,8 @@ export default function AboutPage() {
           </motion.h2>
 
           <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-normal mb-5 leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-            INTELLIGENT <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-light-green to-emerald-400">GREEN</span> SOLUTIONS.<br />
-            BUILT TO WORK.
+            <span>INTELLIGENT GREEN SOLUTIONS.</span><br />
+            <span>BUILT TO WORK.</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="text-xl md:text-2xl font-light text-gray-300 mb-8 max-w-3xl leading-relaxed">
@@ -95,8 +95,7 @@ export default function AboutPage() {
               className="relative z-10"
             >
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight tracking-tight mb-6">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">GREEN.</span><br />
-                <span className="text-white">MADE SMARTER.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">GREEN. MADE SMARTER.</span>
               </motion.h2>
               <motion.div variants={fadeUp} className="w-24 h-1 bg-gradient-to-r from-green-500 to-transparent mb-6"></motion.div>
 
@@ -288,8 +287,7 @@ export default function AboutPage() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer} className="mb-20 text-center">
             <motion.p variants={fadeUp} className="text-emerald-400 font-bold uppercase tracking-widest text-sm mb-4">What We Create</motion.p>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight uppercase">
-              ONE CONNECTED<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">GREEN ECOSYSTEM.</span>
+              <span>ONE CONNECTED GREEN ECOSYSTEM.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-6 text-xl text-gray-400 font-light max-w-2xl mx-auto">NABTURA operates across seven core businesses:</motion.p>
           </motion.div>
@@ -505,8 +503,7 @@ export default function AboutPage() {
             >
               <p className="text-emerald-400 font-bold uppercase tracking-widest text-xs mb-3">Our Direction</p>
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-black mb-8 uppercase leading-tight">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">GREEN CAN</span><br />
-                <span className="text-white">DO MORE.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">GREEN CAN DO MORE.</span>
               </h3>
 
               <ul className="space-y-2.5 text-base md:text-lg text-gray-300 font-light mb-8">
