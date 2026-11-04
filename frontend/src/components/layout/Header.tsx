@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight, Activity } from "lucide-react";
+import { Menu, X, ChevronDown, Sprout, Droplets, TreePine, Globe2, ArrowRight, Activity, ExternalLink } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
@@ -74,6 +74,7 @@ export default function Header() {
       color: "text-nabtura-light-green",
       links: [
         { name: "Smart Greenhouses", href: "/solutions/smart-greenhouses" },
+        { name: "Sanota Greenhouse (Live App)", href: "https://sanota-greenhouse.vercel.app/" },
         { name: "Smart Microgreens", href: "/solutions/smart-microgreens" }
       ]
     },
@@ -263,17 +264,35 @@ export default function Header() {
                                       <span className="text-[11px] font-bold tracking-widest text-white uppercase drop-shadow-sm">{section.category}</span>
                                     </div>
                                     <div className="flex flex-col gap-1">
-                                      {section.links.map(sublink => (
-                                        <Link 
-                                          key={sublink.name} 
-                                          href={sublink.href}
-                                          onClick={() => setIsSolutionsHovered(false)}
-                                          className={`text-sm text-gray-300 hover:${section.color} hover:bg-white/[0.03] px-2 py-1.5 rounded-lg transition-all flex items-center group -ml-2`}
-                                        >
-                                          <span className={`w-1.5 h-1.5 rounded-full bg-white/10 mr-3 group-hover:bg-current transition-colors shrink-0 group-hover:scale-125`}></span>
-                                          <span className="group-hover:translate-x-1 transition-transform">{sublink.name}</span>
-                                        </Link>
-                                      ))}
+                                      {section.links.map(sublink => {
+                                        const isExternal = sublink.href.startsWith("http");
+                                        return isExternal ? (
+                                          <a
+                                            key={sublink.name}
+                                            href={sublink.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={() => setIsSolutionsHovered(false)}
+                                            className="text-sm text-emerald-400 hover:text-white hover:bg-white/[0.04] px-2 py-1.5 rounded-lg transition-all flex items-center justify-between group -ml-2"
+                                          >
+                                            <div className="flex items-center">
+                                              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-3 shrink-0 animate-pulse"></span>
+                                              <span className="group-hover:translate-x-1 transition-transform font-medium">{sublink.name}</span>
+                                            </div>
+                                            <ExternalLink className="w-3.5 h-3.5 opacity-60 group-hover:opacity-100 ml-1.5" />
+                                          </a>
+                                        ) : (
+                                          <Link 
+                                            key={sublink.name} 
+                                            href={sublink.href}
+                                            onClick={() => setIsSolutionsHovered(false)}
+                                            className={`text-sm text-gray-300 hover:${section.color} hover:bg-white/[0.03] px-2 py-1.5 rounded-lg transition-all flex items-center group -ml-2`}
+                                          >
+                                            <span className={`w-1.5 h-1.5 rounded-full bg-white/10 mr-3 group-hover:bg-current transition-colors shrink-0 group-hover:scale-125`}></span>
+                                            <span className="group-hover:translate-x-1 transition-transform">{sublink.name}</span>
+                                          </Link>
+                                        );
+                                      })}
                                     </div>
                                   </div>
                                 )

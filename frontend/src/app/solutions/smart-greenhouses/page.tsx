@@ -1,7 +1,7 @@
 "use client";
 
 import SolutionHero from "@/components/solutions/SolutionHero";
-import { ArrowRight, CheckCircle2, Leaf, Droplets, Wind, Sun, Activity, CheckCircle, Target, MapPin } from "lucide-react";
+import { ArrowRight, CheckCircle2, Leaf, Droplets, Wind, Sun, Activity, CheckCircle, Target, MapPin, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import WhatCanIGrow from "@/components/tools/WhatCanIGrow";
@@ -16,10 +16,37 @@ export default function SmartGreenhousesPage() {
         tagline="Smart growing environments designed around your crop, location and commercial objective."
         bgImageUrl="/images/dubai-greenhouse.jpg"
         accentColor="text-nabtura-green"
-      />
+      >
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <a
+            href="https://sanota-greenhouse.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-nabtura-green to-emerald-400 text-black font-extrabold text-sm tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_35px_rgba(46,204,113,0.5)] transition-all duration-300 shadow-[0_0_20px_rgba(46,204,113,0.3)] cursor-pointer"
+          >
+            <span>VISIT SANOTA GREENHOUSE</span>
+            <ExternalLink className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </a>
+          <Link
+            href="#explore"
+            className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold text-sm tracking-widest uppercase hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+          >
+            EXPLORE THE SYSTEM <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </SolutionHero>
 
       <div className="bg-gradient-to-r from-nabtura-slate via-white/5 to-nabtura-slate border-b border-white/10 py-4 text-center">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12">
+          <a
+            href="https://sanota-greenhouse.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs font-bold tracking-widest text-emerald-400 hover:text-white uppercase transition-all flex items-center gap-2 group"
+          >
+            <span>VISIT SANOTA GREENHOUSE SITE</span> <ExternalLink className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
+          </a>
+          <div className="hidden sm:block w-1 h-1 rounded-full bg-white/20"></div>
           <Link href="#explore" className="text-xs font-bold tracking-widest text-nabtura-green hover:text-white uppercase transition-all flex items-center gap-2 group">
             EXPLORE THE SYSTEM <ArrowRight className="w-4 h-4 group-hover:translate-y-1 group-hover:rotate-90 transition-transform" />
           </Link>
@@ -29,6 +56,36 @@ export default function SmartGreenhousesPage() {
           </Link>
         </div>
       </div>
+
+            {/* LIVE PLATFORM CONNECT BANNER */}
+      <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.8 }} className="py-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-r from-[#031c0e] via-[#052e16] to-[#031c0e] border border-emerald-500/30 p-8 md:p-12 shadow-[0_20px_50px_rgba(16,185,129,0.15)] flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="relative z-10 max-w-2xl text-left">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-widest uppercase mb-4">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              LIVE GREENHOUSE SITE
+            </div>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-black text-white uppercase tracking-tight mb-3">
+              EXPERIENCE SANOTA GREENHOUSE
+            </h3>
+            <p className="text-gray-300 font-light text-sm md:text-base leading-relaxed">
+              Visit our dedicated Sanota Greenhouse site to explore interactive greenhouse models, live crop planning, and smart agricultural specifications.
+            </p>
+          </div>
+          <div className="relative z-10 shrink-0">
+            <a
+              href="https://sanota-greenhouse.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-nabtura-green hover:bg-emerald-400 text-black font-extrabold text-xs sm:text-sm tracking-widest uppercase shadow-[0_0_25px_rgba(21,184,118,0.4)] hover:shadow-[0_0_35px_rgba(21,184,118,0.7)] transition-all duration-300 hover:scale-105"
+            >
+              <span>VISIT SANOTA GREENHOUSE</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </motion.section>
 
       {/* 2. MORE THAN A GREENHOUSE */}
       <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 1.2, ease: "easeOut" }} id="explore" className="pt-10 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -329,8 +386,18 @@ export default function SmartGreenhousesPage() {
           </div>
 
           <div className="flex flex-col items-center gap-6">
-            <Link href="/contact" className="inline-flex items-center text-black bg-nabtura-green px-10 py-3 rounded-full font-black tracking-widest uppercase text-sm hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.3)] hover:shadow-[0_0_50px_rgba(34,197,94,0.5)]">
-              DISCUSS MY SMART GREENHOUSE <ArrowRight className="ml-3 w-5 h-5" />
+            <a
+              href="https://sanota-greenhouse.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 text-black bg-gradient-to-r from-nabtura-green to-emerald-400 px-10 py-4 rounded-full font-black tracking-widest uppercase text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:shadow-[0_0_50px_rgba(34,197,94,0.6)]"
+            >
+              <span>VISIT SANOTA GREENHOUSE PLATFORM</span>
+              <ExternalLink className="w-5 h-5" />
+            </a>
+
+            <Link href="/contact" className="inline-flex items-center text-white border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 rounded-full font-bold tracking-widest uppercase text-xs transition-all duration-300">
+              DISCUSS MY SMART GREENHOUSE <ArrowRight className="ml-3 w-4 h-4" />
             </Link>
 
             <Link href="/contact" className="inline-flex items-center text-nabtura-green font-bold tracking-widest uppercase text-xs hover:text-white transition-colors group/link">

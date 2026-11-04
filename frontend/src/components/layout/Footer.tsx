@@ -79,6 +79,7 @@ export default function Footer() {
             <h4 className="text-[10px] font-bold tracking-[0.2em] text-white uppercase mb-3">{t.footer.solutions}</h4>
             <ul className="space-y-1.5 text-[12px] font-light text-gray-400">
               <li><Link href="/solutions/smart-greenhouses" className="hover:text-nabtura-green transition-colors duration-300">Smart Greenhouses</Link></li>
+              <li><a href="https://sanota-greenhouse.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 text-emerald-400/90 transition-colors duration-300 inline-flex items-center gap-1.5">Sanota Greenhouse (Live App) <span className="text-[10px]">↗</span></a></li>
               <li><Link href="/solutions/smart-microgreens" className="hover:text-nabtura-green transition-colors duration-300">Smart Microgreens</Link></li>
               <li><Link href="/solutions/smart-irrigation" className="hover:text-nabtura-green transition-colors duration-300">Smart Irrigation</Link></li>
               <li><Link href="/solutions/landscapes" className="hover:text-nabtura-green transition-colors duration-300">Landscapes</Link></li>

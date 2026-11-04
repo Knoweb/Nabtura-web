@@ -2,7 +2,7 @@
 
 import SolutionHero from "@/components/solutions/SolutionHero";
 import Link from "next/link";
-import { ArrowRight, Sprout, Droplets, TreePine, Globe2, Leaf, Sun, ShieldCheck } from "lucide-react";
+import { ArrowRight, Sprout, Droplets, TreePine, Globe2, Leaf, Sun, ShieldCheck, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function SolutionsOverviewPage() {
@@ -67,12 +67,24 @@ export default function SolutionsOverviewPage() {
                   <p className="text-nabtura-light-green font-bold text-sm tracking-widest uppercase mb-4 drop-shadow-sm">Grow beyond the climate.</p>
                   <p className="text-gray-300 font-light mb-6 leading-snug">Smart growing environments designed around your crop, location and commercial objective.</p>
                 </div>
-                <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start mt-4 max-w-full leading-normal">
-                  EXPLORE SMART GREENHOUSES
-                  <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-light-green/20 flex items-center justify-center group-hover:bg-nabtura-light-green group-hover:text-black transition-colors">
-                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                <div className="flex flex-wrap items-center gap-3 mt-4">
+                  <span className="inline-flex items-center bg-nabtura-light-green/10 border border-nabtura-light-green/20 group-hover:border-nabtura-light-green/50 group-hover:bg-nabtura-light-green/20 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider text-nabtura-light-green uppercase transition-all duration-300 shadow-[0_0_15px_rgba(74,222,128,0.1)] backdrop-blur-md self-start max-w-full leading-normal">
+                    EXPLORE SMART GREENHOUSES
+                    <span className="ml-4 w-6 h-6 rounded-full bg-nabtura-light-green/20 flex items-center justify-center group-hover:bg-nabtura-light-green group-hover:text-black transition-colors">
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </span>
-                </span>
+                  <a
+                    href="https://sanota-greenhouse.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/40 hover:bg-emerald-500 hover:text-black text-emerald-400 px-4 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] z-20"
+                  >
+                    <span>VISIT SANOTA GREENHOUSE</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               </div>
             </Link>
 
