@@ -73,9 +73,8 @@ export default function WorkWithNabturaPage() {
           </motion.h2>
 
           <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-normal mb-8 leading-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] uppercase">
-            GROW THE<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-200 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">OPPORTUNITY.</span><br />
-            TOGETHER.
+            <span>GROW THE OPPORTUNITY.</span><br />
+            <span>TOGETHER.</span>
           </motion.h1>
 
           <motion.div variants={fadeUp} className="flex flex-wrap justify-center items-center gap-3 md:gap-6 mb-10 mt-4">
@@ -114,7 +113,7 @@ export default function WorkWithNabturaPage() {
               <span className="text-xs font-bold tracking-[0.25em] uppercase text-emerald-500">THE OPPORTUNITY</span>
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-5xl font-black mb-0 uppercase leading-tight">
-              GREEN CAN BECOME <br />
+              <span>GREEN CAN BECOME</span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">AN OPPORTUNITY.</span>
             </motion.h2>
 
@@ -204,7 +203,7 @@ export default function WorkWithNabturaPage() {
                 <span className="text-xs font-bold tracking-[0.25em] uppercase text-blue-500">INVEST WITH NABTURA</span>
               </motion.div>
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-5xl font-black mb-6 uppercase leading-tight">
-                INVEST IN <br />
+                <span>INVEST IN</span> <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 drop-shadow-[0_0_15px_rgba(96,165,250,0.3)]">WHAT CAN GROW.</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-lg text-gray-400 font-light mb-8 leading-relaxed max-w-xl">
@@ -300,7 +299,7 @@ export default function WorkWithNabturaPage() {
                 <span className="text-xs font-bold tracking-[0.25em] uppercase text-yellow-500">BRING LAND OR SPACE</span>
               </motion.div>
               <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-5xl font-black mb-6 uppercase leading-tight">
-                WHAT COULD <br />
+                <span>WHAT COULD</span> <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400 drop-shadow-[0_0_15px_rgba(250,204,21,0.3)]">YOUR LAND BECOME?</span>
               </motion.h2>
               <motion.p variants={fadeUp} className="text-lg text-gray-300 font-light mb-6 leading-relaxed max-w-xl">
@@ -410,7 +409,7 @@ export default function WorkWithNabturaPage() {
               <span className="text-xs font-bold tracking-[0.25em] uppercase text-emerald-500">HOW OPPORTUNITIES DEVELOP</span>
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-5xl font-black mb-16 uppercase leading-tight">
-              FROM POSSIBILITY <br />
+              <span>FROM POSSIBILITY</span> <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">TO PROJECT.</span>
             </motion.h2>
 
@@ -462,7 +461,7 @@ export default function WorkWithNabturaPage() {
               <span className="text-xs font-bold tracking-[0.25em] uppercase text-emerald-500">WHAT DO YOU BRING?</span>
             </div>
             <h3 className="text-4xl md:text-5xl lg:text-5xl font-black uppercase leading-tight drop-shadow-lg">
-              START WITH <br className="md:hidden" />
+              <span>START WITH</span> <br className="md:hidden" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">WHAT YOU HAVE.</span>
             </h3>
           </div>
@@ -566,7 +565,7 @@ export default function WorkWithNabturaPage() {
             initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
             className="text-4xl md:text-5xl lg:text-5xl font-black mb-8 leading-tight tracking-tight uppercase"
           >
-            LET'S EXPLORE<br />
+            <span>LET'S EXPLORE</span><br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 drop-shadow-md">WHAT COULD WORK.</span>
           </motion.h2>
 

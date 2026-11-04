@@ -258,7 +258,7 @@ export default function PossibilitiesPage() {
           <div className="flex flex-col items-center text-center mb-16 relative z-10">
             <h2 className="text-xs md:text-sm tracking-[0.3em] text-amber-400 font-bold mb-4 uppercase">EXPERIENCE</h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight mb-8 drop-shadow-lg text-center">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-orange-100 to-white">CREATE GREEN</span><br/>
+              <span>CREATE GREEN</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500 drop-shadow-[0_0_25px_rgba(251,191,36,0.5)]">PEOPLE REMEMBER.</span>
             </h3>
 
@@ -314,7 +314,7 @@ export default function PossibilitiesPage() {
           <div className="flex flex-col items-center text-center mb-16 relative z-10">
             <h2 className="text-xs md:text-sm tracking-[0.3em] text-blue-400 font-bold mb-4 uppercase">LEARN & CONNECT</h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight mb-8 drop-shadow-lg text-center">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white">LET GREEN</span><br/>
+              <span>LET GREEN</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]">BRING PEOPLE TOGETHER.</span>
             </h3>
 
@@ -352,7 +352,7 @@ export default function PossibilitiesPage() {
           <div className="flex flex-col items-center text-center mb-16 relative z-10">
             <h2 className="text-xs md:text-sm tracking-[0.3em] text-emerald-400 font-bold mb-4 uppercase">LIVE & WORK GREENER</h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight mb-8 drop-shadow-lg text-center">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">BRING GREEN</span><br/>
+              <span>BRING GREEN</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500 drop-shadow-[0_0_25px_rgba(52,211,153,0.5)]">INTO EVERYDAY LIFE.</span>
             </h3>
 
@@ -412,7 +412,7 @@ export default function PossibilitiesPage() {
           <div className="flex flex-col items-center text-center mb-16 relative z-10">
             <h2 className="text-xs md:text-sm tracking-[0.3em] text-nabtura-sand font-bold mb-4 uppercase">TRANSFORM</h2>
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-black uppercase leading-tight mb-8 drop-shadow-lg text-center">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-100 to-white">SEE MORE</span><br/>
+              <span>SEE MORE</span><br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-nabtura-sand to-yellow-600 drop-shadow-[0_0_25px_rgba(212,175,55,0.5)]">THAN WHAT IS THERE TODAY.</span>
             </h3>
 
@@ -465,7 +465,7 @@ export default function PossibilitiesPage() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-4 drop-shadow-lg text-center"
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-green-100 to-white">DON'T SEE</span><br/>
+            <span>DON'T SEE</span><br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500 drop-shadow-[0_0_25px_rgba(21,184,118,0.5)]">YOUR IDEA HERE?</span>
           </motion.h2>
           
