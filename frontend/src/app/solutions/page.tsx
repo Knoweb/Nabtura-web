@@ -75,7 +75,7 @@ export default function SolutionsOverviewPage() {
                     </span>
                   </span>
                   <a
-                    href="https://sanota-greenhouse.vercel.app/"
+                    href="/sanota-greenhouse"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}

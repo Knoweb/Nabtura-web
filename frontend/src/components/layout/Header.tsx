@@ -74,7 +74,7 @@ export default function Header() {
       color: "text-nabtura-light-green",
       links: [
         { name: "Smart Greenhouses", href: "/solutions/smart-greenhouses" },
-        { name: "Sanota Greenhouse (Live App)", href: "https://sanota-greenhouse.vercel.app/" },
+        { name: "Sanota Greenhouse (Live App)", href: "/sanota-greenhouse" },
         { name: "Smart Microgreens", href: "/solutions/smart-microgreens" }
       ]
     },
@@ -265,7 +265,7 @@ export default function Header() {
                                     </div>
                                     <div className="flex flex-col gap-1">
                                       {section.links.map(sublink => {
-                                        const isExternal = sublink.href.startsWith("http");
+                                        const isExternal = sublink.href.startsWith("http") || sublink.href.includes("sanota-greenhouse");
                                         return isExternal ? (
                                           <a
                                             key={sublink.name}

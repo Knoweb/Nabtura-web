@@ -19,7 +19,7 @@ export default function SmartGreenhousesPage() {
       >
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <a
-            href="https://sanota-greenhouse.vercel.app/"
+            href="/sanota-greenhouse"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-nabtura-green to-emerald-400 text-black font-extrabold text-sm tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_35px_rgba(46,204,113,0.5)] transition-all duration-300 shadow-[0_0_20px_rgba(46,204,113,0.3)] cursor-pointer"
@@ -39,7 +39,7 @@ export default function SmartGreenhousesPage() {
       <div className="bg-gradient-to-r from-nabtura-slate via-white/5 to-nabtura-slate border-b border-white/10 py-4 text-center">
         <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-12">
           <a
-            href="https://sanota-greenhouse.vercel.app/"
+            href="/sanota-greenhouse"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs font-bold tracking-widest text-emerald-400 hover:text-white uppercase transition-all flex items-center gap-2 group"
@@ -75,7 +75,7 @@ export default function SmartGreenhousesPage() {
           </div>
           <div className="relative z-10 shrink-0">
             <a
-              href="https://sanota-greenhouse.vercel.app/"
+              href="/sanota-greenhouse"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-nabtura-green hover:bg-emerald-400 text-black font-extrabold text-xs sm:text-sm tracking-widest uppercase shadow-[0_0_25px_rgba(21,184,118,0.4)] hover:shadow-[0_0_35px_rgba(21,184,118,0.7)] transition-all duration-300 hover:scale-105"
@@ -387,7 +387,7 @@ export default function SmartGreenhousesPage() {
 
           <div className="flex flex-col items-center gap-6">
             <a
-              href="https://sanota-greenhouse.vercel.app/"
+              href="/sanota-greenhouse"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-black bg-gradient-to-r from-nabtura-green to-emerald-400 px-10 py-4 rounded-full font-black tracking-widest uppercase text-sm hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.4)] hover:shadow-[0_0_50px_rgba(34,197,94,0.6)]"
