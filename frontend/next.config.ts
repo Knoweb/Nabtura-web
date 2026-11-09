@@ -25,6 +25,22 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return [
+      {
+        source: '/sanota-greenhouse',
+        destination: 'http://165.22.251.111/',
+      },
+      {
+        source: '/sanota-greenhouse/:path*',
+        destination: 'http://165.22.251.111/:path*',
+      },
+      {
+        source: '/assets/:path*',
+        destination: 'http://165.22.251.111/assets/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
